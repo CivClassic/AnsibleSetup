@@ -1,0 +1,16 @@
+groups:
+  creationOnFirstJoin: true
+  enable: true
+  grouplimit: 15
+persistance:
+  forceloadnamecaching: false
+sql:
+  dbname: {{ mysql_db_name }}
+  hostname: {{ mysql_host }}
+  password: {{ mysql_non_root_pass }}
+  port: 3306
+  username: {{ mysql_user }}
+  poolsize: 10
+  connection_timeout: 10000
+  idle_timeout: 600000
+  max_lifetime: 7200000

@@ -1,0 +1,117 @@
+#Log when a player forcefully breaks reinforcements?
+logHostileBreaks: true
+
+#Log when a player bypasses friendly reinforcements?
+logFriendlyBreaks: true
+
+#Log every time damage is done to a reinforcement? Only recommended for debugging        
+logDamage: true
+
+#Log creation of reinforcements?
+logCreation: true
+
+#Log message replies sent to users? Very useful
+logMessages: true
+
+
+#General debug messages
+debug: true
+
+reinforcements:
+  stone_tier:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: STONE
+    effect:
+      type: ENCHANTMENT_TABLE
+      speed: 0.5
+      particleCount: 50
+    mature_time: 5m
+    acid_time: 20m
+    name: Stone
+    hit_points: 50
+    id: 1
+  iron_tier:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: IRON_INGOT
+    effect:
+      type: ENCHANTMENT_TABLE
+      speed: 0.5
+      particleCount: 50
+    mature_time: 30m
+    acid_time: 6h
+    name: Iron
+    hit_points: 300
+    id: 2
+  diamond_tier:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: DIAMOND
+    effect:
+      type: ENCHANTMENT_TABLE
+      speed: 0.5
+      particleCount: 50
+    mature_time: 4h
+    acid_time: 48h
+    name: Diamond
+    hit_points: 2000
+    id: 3
+  bedrock_tier:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: BEDROCK
+    effect:
+      type: ENCHANTMENT_TABLE
+      speed: 0.5
+      particleCount: 50
+    mature_time: 1s
+    acid_time: 1s
+    name: Bedrock
+    hit_points: 420420420
+    id: 4
+
+non_reinforceables:
+ - BEDROCK
+ - ENDER_PORTAL_FRAME
+ - SAPLING
+ - LONG_GRASS
+ - DEAD_BUSH
+ - PISTON_EXTENSION
+ - PISTON_MOVING_PIECE
+ - RED_ROSE
+ - YELLOW_FLOWER
+ - BROWN_MUSHROOM
+ - RED_MUSHROOM
+ - TNT
+ - CROPS
+ - FIRE
+ - SNOW
+ - ICE
+ - CACTUS
+ - SUGAR_CANE_BLOCK
+ - PORTAL
+ - CAKE_BLOCK
+ - PUMPKIN_STEM
+ - MELON_STEM
+ - VINE
+ - NETHER_WARTS
+ - ENDER_PORTAL
+ 
+acidblock_material:
+ - GOLD_BLOCK
+
+# reinforcement_damageMultiplier is m where BlockDamage = 2 ^ (n/m) where n is equal to the number of days the group has been inactive
+reinforcement_damageMultiplier: 365
+database:
+  ==: vg.civcraft.mc.civmodcore.dao.ManagedDatasource
+  plugin: Citadel
+  user: '{{ mysql_user }}'
+  password: '{{ mysql_non_root_pass }}'
+  host: '{{ mysql_host }}'
+  port: 3306
+  database: '{{ mysql_db_name }}'
+  poolsize: 5
+  connection_timeout: 10000
+  idle_timeout: 600000
+  max_lifetime: 7200000  

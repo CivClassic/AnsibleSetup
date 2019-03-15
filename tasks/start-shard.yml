@@ -1,0 +1,11 @@
+---
+#task to restart shards
+
+- name: Wait for Shard to stop
+  wait_for: "port={{ shard_item.port }} state=absent"
+
+- name: Send Start command
+  shell: "tmux send -t {{ shard_item.name }} ENTER 'bash spigot.sh' ENTER" 
+
+- name: Wait for Shard to start
+  wait_for: "port={{ shard_item.port }} state=present"

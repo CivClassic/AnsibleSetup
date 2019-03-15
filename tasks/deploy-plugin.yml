@@ -1,0 +1,17 @@
+---
+#task to deploy a single plugin
+
+- name: "Copy {{ plugin_name }} jarfile"
+  copy: src={{ pluginname }} dest={{ dir }}/plugins/{{ pluginname | basename }} owner={{ username }} mode="u=rw,g=r,o=r"
+  with_fileglob: jarfiles/{{ plugin_dir }}/{{ plugin_name }}-*.jar
+  loop_control:
+    loop_var: pluginname
+
+- name: "Create {{ plugin_name }} Folder"
+  file: "path={{ dir }}/plugins/{{ plugin_name }} state=directory owner={{ username }} mode=0755"
+
+- name: "Copy {{ plugin_name }} configuration"
+  template: src={{ configname }} dest={{ dir }}/plugins/{{ plugin_name }}/{{ configname | basename | regex_replace('\.j2','') }}
+  with_fileglob: "{{ templates }}/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
+  loop_control:
+    loop_var: configname

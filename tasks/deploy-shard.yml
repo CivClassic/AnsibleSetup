@@ -1,0 +1,37 @@
+---
+#task to deploy a single shard
+
+- name: "Create {{ shard_name }} Directory"
+  file: "path={{ dir }} state=directory owner={{ username }} mode=0755"
+
+- name: "Create {{ shard_name }} Plugins Directory"
+  file: "path={{ dir }}/plugins state=directory owner={{ username }} mode=0755"
+
+- name: "Copy {{ shard_name }} top level templates"
+  template: "src={{ templates }}/{{ item }}.j2 dest={{ dir }}/{{ item }} \
+             owner={{ username }} mode='u=rw,g=r,o=r'"
+  with_items: "{{ top_level_templates }}"
+
+- name: "Copy {{ shard_name }} Spigot.jar"
+  copy: "src={{ jarfiles }}/spigot.jar dest={{ dir }} owner={{ username }}"
+
+- name: "Clean existing Jarfiles"
+  shell: "rm {{ dir }}/plugins/*.jar"
+  ignore_errors: true
+
+- name: "Deploy {{ shard_name }} plugins"
+  include: "tasks/deploy-plugin.yml plugin_name={{ item }} plugin_dir=plugins"
+  with_items: "{{ plugins }}"
+
+- name: Ensure mariadb is running and starts on boot
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+  become: yes
+
+- name: "Create {{ shard_name }} Database"	
+  mysql_db: "name={{ shard_name }} state=present login_user=root login_password={{ mysql_root_pass }} login_unix_socket=/var/run/mysqld/mysqld.sock"
+
+- name: "Create {{ shard_name }} MariaDB user"
+  mysql_user: "name={{ shard_name }} password={{ mysql_non_root_pass }} login_password={{ mysql_root_pass }} priv={{ shard_name }}.*:ALL host=localhost state=present login_user=root"

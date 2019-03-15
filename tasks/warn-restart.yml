@@ -1,0 +1,23 @@
+---
+# Ansible task to warn players of restart
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t lobby ENTER 'sayall Restarting in 10 minutes' ENTER"
+  when: "{{ has_lobby }}"
+
+- name: "Wait for 5 minutes"
+  pause: minutes=5
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t lobby ENTER 'sayall Restarting in 5 minutes' ENTER"
+  when: "{{ has_lobby }}"
+
+- name: "Wait for 4 minutes"
+  pause: minutes=4
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t lobby ENTER 'sayall Restarting in 1 minute' ENTER"
+  when: "{{ has_lobby }}"
+
+- name: "Wait for 1 minute"
+  pause: minutes=1

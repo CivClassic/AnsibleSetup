@@ -1,0 +1,16 @@
+#!/bin/bash
+
+java -server \
+     -XX:+UseG1GC \
+     -XX:MaxGCPauseMillis=500 \
+     -XX:ParallelGCThreads=16 \
+     -XX:+UseStringDeduplication \
+     -XX:+UseCompressedOops \
+     -XX:+UseAES \
+     -XX:+UseAESIntrinsics \
+     -Xmx{{ shard_mem }} -Xms128M \
+     -XX:UseSSE=3 \
+     -XX:+DisableExplicitGC \
+     -XX:+UseNUMA \
+     -Xloggc:"logs/gc.log" \
+     -jar spigot.jar
