@@ -1,0 +1,28 @@
+#User name of the user who will own the server at /home/username/
+username: mc
+#Name of the server
+name: civclassic
+#Port to use
+port: 25565
+#How much memory is used at max
+shard_mem: 8G
+host: localhost
+jarfiles: jarfiles/
+templates: templates/
+plugins:
+ - Citadel
+ - CivModCore
+ - FactoryMod
+ - Finale
+ - NameLayer
+ - ProtocolLib
+top_level_templates:
+ - bukkit.yml
+ - commands.yml
+ - spigot.sh
+ - eula.txt
+ - help.yml
+ - ops.json
+ - server.properties
+ - spigot.yml
+ - wepif.yml
