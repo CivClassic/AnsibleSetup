@@ -7,9 +7,15 @@
   gather_facts: true
   vars_files:
    - group_vars/all.yml
-   - group_vars/passwords.yml
 
   tasks:
+   - name: Include variables
+     include_vars:
+       dir: group_vars
+       extensions:
+        - yml
+
+
    - name: Deploy Shard
      include: "tasks/deploy-shard.yml shard_name={{ name }} \
             dir=/home/{{ username }}/{{ name }} \

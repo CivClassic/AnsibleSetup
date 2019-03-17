@@ -1,8 +1,7 @@
 default_update_time: 1s
 default_fuel:
   charcoal:
-    material: COAL
-    durability: 1
+    material: CHARCOAL
 default_fuel_consumption_intervall: 1s
 default_menu_factory: Dirt Factory
 default_return_rate: 0.5
@@ -82,12 +81,10 @@ factories:
     citadelBreakReduction: 1.0
     setupcost:
       charcoal:
-        material: COAL
+        material: CHARCOAL
         amount: 512
-        durability: 1
     recipes:
      - charcoal_from_logs
-     - charcoal_from_logs_2
      - charcoal_from_coal
      - repair_charcoal_factory
   aesthetics:
@@ -98,10 +95,9 @@ factories:
       stone:
         material: STONE
         amount: 256
-      dye:
-        material: INK_SACK
+      bone meal:
+        material: BONE_MEAL
         amount: 32
-        durability: -1
     recipes:
      - make_cracked_stone_brick
      - make_mossy_stone_brick
@@ -130,12 +126,10 @@ factories:
     name: Wool Dying Factory
     citadelBreakReduction: 1.0
     setupcost:
-      wool:
-        material: WOOL
+      white wool:
+        material: WHITE_WOOL
         amount: 32
-        durability: -1
     recipes:
-     - dye_wool_white
      - dye_wool_orange
      - dye_wool_magenta
      - dye_wool_light_blue
@@ -157,10 +151,9 @@ factories:
     name: Clay Dying Factory
     citadelBreakReduction: 1.0
     setupcost:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 32
-        durability: -1
     recipes:
      - dye_clay_white
      - dye_clay_orange
@@ -231,11 +224,10 @@ factories:
     citadelBreakReduction: 1.0
     setupcost:
       brick:
-        material: CLAY_BRICK
+        material: BRICKS
         amount: 64
-      log:
-        material: LOG
-        durability: -1
+      oak log:
+        material: OAK_LOG
         amount: 12
     recipes:
      - bake_bread
@@ -265,7 +257,7 @@ factories:
      - smelt_redstone_ore
      - smelt_lapis_ore
      - make_refractor
-     - crack_fossil
+#     - crack_fossil
      - repair_ore_smelter
   diamond_helm:
     type: FCC
@@ -400,10 +392,9 @@ factories:
     name: Bio Lab
     citadelBreakReduction: 1.0
     setupcost:
-      sapling:
-        material: SAPLING
+      oak sapling:
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
       Dirt!:
         material: DIRT
         amount: 256
@@ -412,7 +403,6 @@ factories:
      - dirt_to_grass
      - dirt_to_podzol
      - dirt_to_mycelium
-     - sapling_to_oak
      - sapling_to_spruce
      - sapling_to_birch
      - sapling_to_jungle
@@ -540,7 +530,7 @@ factories:
         lore:
           - Casing for bastion
       gearbox:
-        material: WATCH
+        material: CLOCK
         amount: 32
         name: Gearbox
         lore:
@@ -629,7 +619,7 @@ factories:
         material: REDSTONE_BLOCK
         amount: 16
       piston:
-        material: PISTON_BASE
+        material: PISTON
         amount: 64
       crate:
         material: CHEST
@@ -646,7 +636,7 @@ factories:
     citadelBreakReduction: 0.1
     setupcost:
       ink:
-        material: INK_SACK
+        material: INK_SAC
         amount: 32
       paper:
         material: PAPER
@@ -727,7 +717,7 @@ recipes:
     type: PRODUCTION
     input:
       raw_beef:
-        material: RAW_BEEF
+        material: BEEF
         amount: 32
     output:
       cooked_beef:
@@ -739,7 +729,7 @@ recipes:
     type: PRODUCTION
     input:
       raw_chicken:
-        material: RAW_CHICKEN
+        material: CHICKEN
         amount: 32
     output:
       cooked_chicken:
@@ -750,12 +740,12 @@ recipes:
     name: Cook Fish
     type: PRODUCTION
     input:
-      raw_fish:
-        material: RAW_FISH
+      cod:
+        material: COD
         amount: 32
     output:
       cooked_fish:
-        material: COOKED_FISH
+        material: COOKED_COD
         amount: 48
   cook_mutton:
     production_time: 4s
@@ -775,11 +765,11 @@ recipes:
     type: PRODUCTION
     input:
       raw_pork:
-        material: PORK
+        material: PORKCHOP
         amount: 32
     output:
       cooked_pork:
-        material: GRILLED_PORK
+        material: COOKED_PORKCHOP
         amount: 48
   cook_rabbit:
     production_time: 4s
@@ -799,14 +789,12 @@ recipes:
     type: PRODUCTION
     input:
       raw_salmon:
-        material: RAW_FISH
+        material: SALMON
         amount: 32
-        durability: 1
     output:
       cooked_salmon:
-        material: COOKED_FISH
+        material: COOKED_SALMON
         amount: 48
-        durability: 1
   bake_bread:
     production_time: 4s
     fuel_consumption_intervall: 40t
@@ -827,7 +815,7 @@ recipes:
     type: PRODUCTION
     input:
       potato:
-        material: POTATO_ITEM
+        material: POTATO
         amount: 32
     output:
       baked_potato:
@@ -946,7 +934,7 @@ recipes:
         amount: 1
     output:
       craft:
-        material: EYE_OF_ENDER
+        material: ENDER_EYE
         amount: 1
   upgrade_to_stone_smelter:
     production_time: 4s
@@ -965,10 +953,9 @@ recipes:
       stone:
         material: STONE
         amount: 256
-      dye:
-        material: INK_SACK
+      bone meal:
+        material: BONE_MEAL
         amount: 32
-        durability: -1
     factory: Aesthetics Factory
   upgrade_to_charcoal_maker:
     production_time: 4s
@@ -986,11 +973,10 @@ recipes:
     type: UPGRADE
     input:
       brick:
-        material: CLAY_BRICK
+        material: BRICKS
         amount: 64
       log:
-        material: LOG
-        durability: -1
+        material: OAK_LOG
         amount: 12
     factory: Bakery
   upgrade_to_grill:
@@ -1109,10 +1095,9 @@ recipes:
     name: Upgrade to Clay Dying Factory
     type: UPGRADE
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 32
-        durability: -1
     factory: Clay Dying Factory
   upgrade_to_wool_dye:
     production_time: 4s
@@ -1120,9 +1105,8 @@ recipes:
     type: UPGRADE
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 32
-        durability: -1
     factory: Wool Dying Factory
   upgrade_to_glass_dye:
     production_time: 4s
@@ -1153,7 +1137,6 @@ recipes:
     input:
       sand:
         material: SAND
-        durability: -1
         amount: 64
     output:
       glass:
@@ -1181,39 +1164,23 @@ recipes:
         material: NETHERRACK
         amount: 64
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 64
     output:
       red_netherbrick:
-        material: RED_NETHER_BRICK
+        material: RED_NETHER_BRICKS
         amount: 32
   charcoal_from_logs:
     production_time: 4s
-    name: Make Charcoal from Logs
+    name: Make Charcoal from Oak Logs
     type: PRODUCTION
     input:
       log:
-        material: LOG
-        durability: -1
+        material: OAK_LOG
         amount: 64
     output:
       charcoal:
-        material: COAL
-        durability: 1
-        amount: 128
-  charcoal_from_logs_2:
-    production_time: 4s
-    name: Make Charcoal from Logs 2
-    type: PRODUCTION
-    input:
-      log:
-        material: LOG_2
-        durability: -1
-        amount: 64
-    output:
-      charcoal:
-        material: COAL
-        durability: 1
+        material: CHARCOAL
         amount: 128
   charcoal_from_coal:
     production_time: 4s
@@ -1225,8 +1192,7 @@ recipes:
         amount: 64
     output:
       charcoal:
-        material: COAL
-        durability: 1
+        material: CHARCOAL
         amount: 64
   make_cracked_stone_brick:
     production_time: 4s
@@ -1234,48 +1200,45 @@ recipes:
     type: PRODUCTION
     input:
       stone_brick:
-        material: SMOOTH_BRICK
+        material: STONE_BRICKS
         amount: 64
       gravel:
         material: GRAVEL
         amount: 8
     output:
       cracked_stone_brick:
-        material: SMOOTH_BRICK
+        material: CRACKED_STONE_BRICKS
         amount: 64
-        durability: 2
   make_circle_stone_brick:
     production_time: 4s
     name: Make Chiseled Stone Brick
     type: PRODUCTION
     input:
       stone_brick:
-        material: SMOOTH_BRICK
+        material: STONE_BRICKS
         amount: 64
       flint:
         material: FLINT
         amount: 8
     output:
       circle_stone_brick:
-        material: SMOOTH_BRICK
+        material: CHISELED_STONE_BRICKS
         amount: 64
-        durability: 3
   make_mossy_stone_brick:
     production_time: 4s
     name: Make Mossy Stone Brick
     type: PRODUCTION
     input:
       stone_brick:
-        material: SMOOTH_BRICK
+        material: STONE_BRICKS
         amount: 64
       vine:
         material: VINE
         amount: 8
     output:
       moss_stone_brick:
-        material: SMOOTH_BRICK
+        material: MOSSY_STONE_BRICKS
         amount: 64
-        durability: 1
   make_mossy_cobble:
     production_time: 4s
     name: Make Mossy Cobble
@@ -1299,10 +1262,9 @@ recipes:
       stone:
         material: STONE
         amount: 64
-        durability: -1
-      dye:
-        material: INK_SACK
-        durability: 15
+      bone meal:
+        material: BONE_MEAL
+        amount: 16
     output:
       quartz:
         material: QUARTZ_BLOCK
@@ -1362,7 +1324,7 @@ recipes:
         durability: 1
   make_red_sand:
     production_time: 4s
-    name: Make Red SAND
+    name: Make Red Sand
     type: PRODUCTION
     input:
       sand:
@@ -1373,19 +1335,17 @@ recipes:
         amount: 8
     output:
       red_sand:
-        material: SAND
+        material: RED_SAND
         amount: 64
-        durability: 1
   clean_red_sand:
     forceInclude: true
     production_time: 4s
-    name: Clean Red SAND
+    name: Clean Red Sand
     type: PRODUCTION
     input:
       red_sand:
-        material: SAND
+        material: RED_SAND
         amount: 64
-        durability: 1
       water:
         material: WATER_BUCKET
         amount: 1
@@ -1404,11 +1364,9 @@ recipes:
       stone:
         material: STONE
         amount: 64
-        durability: -1
-      dye:
-        material: INK_SACK
+      purple dye:
+        material: PURPLE_DYE
         amount: 8
-        durability: 5
     output:
       purpur:
         material: PURPUR_BLOCK
@@ -1420,7 +1378,7 @@ recipes:
     type: PRODUCTION
     input:
       fruit:
-        material: CHORUS_FRUIT_POPPED
+        material: POPPED_CHORUS_FRUIT
         amount: 64
     output:
       purpur:
@@ -1435,8 +1393,7 @@ recipes:
         material: STONE
         amount: 64
       lapis:
-        material: INK_SACK
-        durability: 4
+        material: LAPIS_LAZULI
         amount: 4
     output:
       prismarine:
@@ -1448,16 +1405,14 @@ recipes:
     type: PRODUCTION
     input:
       stone_brick:
-        material: SMOOTH_BRICK
+        material: STONE_BRICKS
         amount: 64
       lapis:
-        material: INK_SACK
-        durability: 4
+        material: LAPIS_LAZULI
         amount: 4
     output:
       prismarine_bricks:
-        material: PRISMARINE
-        durability: 1
+        material: PRISMARINE_BRICKS
         amount: 64
   make_dark_prismarine:
     production_time: 4s
@@ -1468,16 +1423,14 @@ recipes:
         material: STONE
         amount: 64
       lapis:
-        material: INK_SACK
-        durability: 4
+        material: LAPIS_LAZULI
         amount: 4
       ink:
-        material: INK_SACK
+        material: INK_SAC
         amount: 4
     output:
       dark_prismarine:
-        material: PRISMARINE
-        durability: 2
+        material: DARK_PRISMARINE
         amount: 64
   make_sea_lantern:
     production_time: 4s
@@ -1488,8 +1441,7 @@ recipes:
         material: GLOWSTONE
         amount: 32
       lapis:
-        material: INK_SACK
-        durability: 4
+        material: LAPIS_LAZULI
         amount: 4
     output:
       sea_lantern:
@@ -1509,7 +1461,7 @@ recipes:
         amount: 8
     output:
       redstone_lamp:
-        material: REDSTONE_LAMP_OFF
+        material: REDSTONE_LAMP
         amount: 32
   make_diamond_helm:
     production_time: 4s
@@ -1617,7 +1569,7 @@ recipes:
         amount: 5
     output:
       diamond_shovel:
-        material: DIAMOND_SPADE
+        material: DIAMOND_SHOVEL
         amount: 15
   make_bastion:
     production_time: 4s
@@ -1631,7 +1583,7 @@ recipes:
         lore:
           - Casing for bastion
       gearbox:
-        material: WATCH
+        material: CLOCK
         amount: 16
         name: Gearbox
         lore:
@@ -1682,7 +1634,7 @@ recipes:
         lore:
           - Casing for bastion
       gearbox:
-        material: WATCH
+        material: CLOCK
         amount: 1
         name: Gearbox
         lore:
@@ -1724,9 +1676,8 @@ recipes:
     type: UPGRADE
     input:
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
       Dirt!:
         material: DIRT
         amount: 256
@@ -1754,9 +1705,8 @@ recipes:
         amount: 64
     output:
       podzol:
-        material: DIRT
+        material: PODZOL
         amount: 64
-        durability: 2
   dirt_to_mycelium:
     production_time: 4s
     name: Convert Dirt to Mycelium
@@ -1767,396 +1717,307 @@ recipes:
         amount: 64
     output:
       mycelium:
-        material: MYCEL
+        material: MYCELIUM
         amount: 64
-  sapling_to_oak:
-    production_time: 4s
-    name: Convert Sapling to Oak
-    type: PRODUCTION
-    input:
-      sapling:
-        material: SAPLING
-        amount: 32
-        durability: -1
-    output:
-      oak_sapling:
-        material: SAPLING
-        amount: 32
   sapling_to_spruce:
     production_time: 4s
-    name: Convert Sapling to Spruce
+    name: Convert Oak Sapling to Spruce
     type: PRODUCTION
     input:
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
     output:
       spruce_sapling:
-        material: SAPLING
+        material: SPRUCE_SAPLING
         amount: 32
-        durability: 1
   sapling_to_birch:
     production_time: 4s
-    name: Convert Sapling to Birch
+    name: Convert Oak Sapling to Birch
     type: PRODUCTION
     input:
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
     output:
       birch_sapling:
-        material: SAPLING
+        material:  BIRCH_SAPLING
         amount: 32
-        durability: 2
   sapling_to_jungle:
     production_time: 4s
-    name: Convert Sapling to Jungle
+    name: Convert Oak Sapling to Jungle
     type: PRODUCTION
     input:
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
     output:
       jungle_sapling:
-        material: SAPLING
+        material: JUNGLE_SAPLING
         amount: 32
-        durability: 3
   sapling_to_acacia:
     production_time: 4s
-    name: Convert Sapling to Acacia
+    name: Convert Oak Sapling to Acacia
     type: PRODUCTION
     input:
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
     output:
       acacia_sapling:
-        material: SAPLING
+        material: ACACIA_SAPLING
         amount: 32
-        durability: 4
   sapling_to_dark_oak:
     production_time: 4s
-    name: Convert Sapling to Dark Oak
+    name: Convert Oak Sapling to Dark Oak
     type: PRODUCTION
     input:
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
     output:
       dark_oak_sapling:
-        material: SAPLING
+        material: DARK_OAK_SAPLING
         amount: 32
-        durability: 5
   dye_clay_white:
     production_time: 4s
     name: Dye Clay White
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       white_dye:
-        material: INK_SACK
-        durability: 15
+        material: BONE_MEAL
         amount: 4
     output:
-      white_clay:
-        material: STAINED_CLAY
-        durability: 0
+      white_terracotta:
+        material: WHITE_TERRACOTTA
         amount: 64
   dye_clay_orange:
     production_time: 4s
     name: Dye Clay Orange
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       orange_dye:
-        material: INK_SACK
-        durability: 14
+        material: ORANGE_DYE
         amount: 4
     output:
-      orange_clay:
-        material: STAINED_CLAY
-        durability: 1
+      orange_terracotta:
+        material: ORANGE_TERRACOTTA
         amount: 64
   dye_clay_magenta:
     production_time: 4s
     name: Dye Clay Magenta
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       magenta_dye:
-        material: INK_SACK
-        durability: 13
+        material: MAGENTA_DYE
         amount: 4
     output:
-      magenta_clay:
-        material: STAINED_CLAY
-        durability: 2
+      magenta_terracotta:
+        material: MAGENTA_TERRACOTTA
         amount: 64
   dye_clay_light_blue:
     production_time: 4s
     name: Dye Clay Light Blue
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       light_blue_dye:
-        material: INK_SACK
-        durability: 12
+        material: LIGHT_BLUE_DYE
         amount: 4
     output:
-      light_blue_clay:
-        material: STAINED_CLAY
-        durability: 3
+      light_blue_terracotta:
+        material: LIGHT_BLUE_TERRACOTTA
         amount: 64
   dye_clay_yellow:
     production_time: 4s
     name: Dye Clay Yellow
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       yellow_dye:
-        material: INK_SACK
-        durability: 11
+        material: DANDELION_YELLOW
         amount: 4
     output:
-      yellow_clay:
-        material: STAINED_CLAY
-        durability: 4
+      yellow_terracotta:
+        material: YELLOW_TERRACOTTA
         amount: 64
   dye_clay_lime:
     production_time: 4s
     name: Dye Clay Lime
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       lime_dye:
-        material: INK_SACK
-        durability: 10
+        material: LIME_DYE
         amount: 4
     output:
-      lime_clay:
-        material: STAINED_CLAY
-        durability: 5
+      lime_terracotta:
+        material: LIME_TERRACOTTA
         amount: 64
   dye_clay_pink:
     production_time: 4s
     name: Dye Clay Pink
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       pink_dye:
-        material: INK_SACK
-        durability: 9
+        material: PINK_DYE
         amount: 4
     output:
-      pink_clay:
-        material: STAINED_CLAY
-        durability: 6
+      pink_terracotta:
+        material: PINK_TERRACOTTA
         amount: 64
   dye_clay_gray:
     production_time: 4s
     name: Dye Clay Gray
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       gray_dye:
-        material: INK_SACK
-        durability: 8
+        material: GRAY_DYE
         amount: 4
     output:
       gray_clay:
-        material: STAINED_CLAY
-        durability: 7
+        material: GRAY_TERRACOTTA
         amount: 64
   dye_clay_light_gray:
     production_time: 4s
     name: Dye Clay Light Gray
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       light_gray_dye:
-        material: INK_SACK
-        durability: 7
+        material: LIGHT_GRAY_DYE
         amount: 4
     output:
-      light_gray_clay:
-        material: STAINED_CLAY
-        durability: 8
+      light_gray_terracotta:
+        material: LIGHT_GRAY_TERRACOTTA
         amount: 64
   dye_clay_cyan:
     production_time: 4s
     name: Dye Clay Cyan
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       cyan_dye:
-        material: INK_SACK
-        durability: 6
+        material: CYAN_DYE
         amount: 4
     output:
-      cyan_clay:
-        material: STAINED_CLAY
-        durability: 9
+      cyan_terracotta:
+        material: CYAN_TERRACOTTA
         amount: 64
   dye_clay_purple:
     production_time: 4s
     name: Dye Clay Purple
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
       purple_dye:
-        material: INK_SACK
-        durability: 5
+        material: PURPLE_DYE
         amount: 4
     output:
-      purple_clay:
-        material: STAINED_CLAY
-        durability: 10
+      purple_terracotta:
+        material: PURPLE_TERRACOTTA
         amount: 64
   dye_clay_blue:
     production_time: 4s
     name: Dye Clay Blue
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
-      blue_dye:
-        material: INK_SACK
-        durability: 4
+      lapis:
+        material: LAPIS_LAZULI
         amount: 4
     output:
-      blue_clay:
-        material: STAINED_CLAY
-        durability: 11
+      blue_terracotta:
+        material: BLUE_TERRACOTTA
         amount: 64
   dye_clay_brown:
     production_time: 4s
     name: Dye Clay Brown
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
-      brown_dye:
-        material: INK_SACK
-        durability: 3
+      cocoa:
+        material: COCOA_BEANS
         amount: 4
     output:
-      brown_clay:
-        material: STAINED_CLAY
-        durability: 12
+      brown_terracotta:
+        material: BROWN_TERRACOTTA
         amount: 64
   dye_clay_green:
     production_time: 4s
     name: Dye Clay Green
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
-      green_dye:
-        material: INK_SACK
-        durability: 2
+      cactus green:
+        material: CACTUS_GREEN
         amount: 4
     output:
-      green_clay:
-        material: STAINED_CLAY
-        durability: 13
+      green_terracotta:
+        material: GREEN_TERRACOTTA
         amount: 64
   dye_clay_red:
     production_time: 4s
     name: Dye Clay Red
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
-      red_dye:
-        material: INK_SACK
-        durability: 1
+      rose:
+        material: ROSE_RED
         amount: 4
     output:
       red_clay:
-        material: STAINED_CLAY
-        durability: 14
+        material: RED_TERRACOTTA
         amount: 64
   dye_clay_black:
     production_time: 4s
     name: Dye Clay Black
     type: PRODUCTION
     input:
-      clay:
-        material: HARD_CLAY
+      Terracotta:
+        material: TERRACOTTA
         amount: 64
-        durability: -1
-      black_dye:
-        material: INK_SACK
-        durability: 0
+      ink sac:
+        material: INK_SAC
         amount: 4
     output:
-      black_clay:
-        material: STAINED_CLAY
-        durability: 15
-        amount: 64
-  dye_wool_white:
-    production_time: 4s
-    name: Dye Wool White
-    type: PRODUCTION
-    input:
-      wool:
-        material: WOOL
-        amount: 64
-        durability: 0
-      white_dye:
-        material: INK_SACK
-        durability: 15
-        amount: 4
-    output:
-      white_wool:
-        material: WOOL
-        durability: 0
+      black_terracotta:
+        material: BLACK_TERRACOTTA
         amount: 64
   dye_wool_orange:
     production_time: 4s
@@ -2164,17 +2025,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       orange_dye:
-        material: INK_SACK
-        durability: 14
+        material: ORANGE_DYE
         amount: 4
     output:
       orange_wool:
-        material: WOOL
-        durability: 1
+        material: ORANGE_WOOL
         amount: 64
   dye_wool_magenta:
     production_time: 4s
@@ -2182,17 +2040,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       magenta_dye:
-        material: INK_SACK
-        durability: 13
+        material: MAGENTA_DYE
         amount: 4
     output:
       magenta_wool:
-        material: WOOL
-        durability: 2
+        material: MAGENTA_WOOL
         amount: 64
   dye_wool_light_blue:
     production_time: 4s
@@ -2200,17 +2055,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       light_blue_dye:
-        material: INK_SACK
-        durability: 12
+        material: LIGHT_BLUE_DYE
         amount: 4
     output:
       light_blue_wool:
-        material: WOOL
-        durability: 3
+        material: LIGHT_BLUE_WOOL
         amount: 64
   dye_wool_yellow:
     production_time: 4s
@@ -2218,17 +2070,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       yellow_dye:
-        material: INK_SACK
-        durability: 11
+        material: DANDELION_YELLOW
         amount: 4
     output:
       yellow_wool:
-        material: WOOL
-        durability: 4
+        material: YELLOW_WOOL
         amount: 64
   dye_wool_lime:
     production_time: 4s
@@ -2236,17 +2085,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       lime_dye:
-        material: INK_SACK
-        durability: 10
+        material: LIME_DYE
         amount: 4
     output:
       lime_wool:
-        material: WOOL
-        durability: 5
+        material: LIME_WOOL
         amount: 64
   dye_wool_pink:
     production_time: 4s
@@ -2254,17 +2100,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       pink_dye:
-        material: INK_SACK
-        durability: 9
+        material: PINK_DYE
         amount: 4
     output:
       pink_wool:
-        material: WOOL
-        durability: 6
+        material: PINK_WOOL
         amount: 64
   dye_wool_gray:
     production_time: 4s
@@ -2272,17 +2115,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       gray_dye:
-        material: INK_SACK
-        durability: 8
+        material: GRAY_DYE
         amount: 4
     output:
       gray_wool:
-        material: WOOL
-        durability: 7
+        material: GRAY_WOOL
         amount: 64
   dye_wool_light_gray:
     production_time: 4s
@@ -2290,17 +2130,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       light_gray_dye:
-        material: INK_SACK
-        durability: 7
+        material: LIGHT_GRAY_DYE
         amount: 4
     output:
       light_gray_wool:
-        material: WOOL
-        durability: 8
+        material: LIGHT_GRAY_WOOL
         amount: 64
   dye_wool_cyan:
     production_time: 4s
@@ -2308,17 +2145,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       cyan_dye:
-        material: INK_SACK
-        durability: 6
+        material: CYAN_DYE
         amount: 4
     output:
       cyan_wool:
-        material: WOOL
-        durability: 9
+        material: CYAN_WOOL
         amount: 64
   dye_wool_purple:
     production_time: 4s
@@ -2326,17 +2160,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
       purple_dye:
-        material: INK_SACK
-        durability: 5
+        material: PURPLE_DYE
         amount: 4
     output:
       purple_wool:
-        material: WOOL
-        durability: 10
+        material: PURPLE_WOOL
         amount: 64
   dye_wool_blue:
     production_time: 4s
@@ -2344,17 +2175,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
-      blue_dye:
-        material: INK_SACK
-        durability: 4
+      lapis:
+        material: LAPIS_LAZULI
         amount: 4
     output:
       blue_wool:
-        material: WOOL
-        durability: 11
+        material: BLUE_WOOL
         amount: 64
   dye_wool_brown:
     production_time: 4s
@@ -2362,17 +2190,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
-      brown_dye:
-        material: INK_SACK
-        durability: 3
+      cocoa:
+        material: COCOA_BEANS
         amount: 4
     output:
       brown_wool:
-        material: WOOL
-        durability: 12
+        material: BROWN_WOOL
         amount: 64
   dye_wool_green:
     production_time: 4s
@@ -2380,17 +2205,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
-      green_dye:
-        material: INK_SACK
-        durability: 2
+      cactus green:
+        material: CACTUS_GREEN
         amount: 4
     output:
       green_wool:
-        material: WOOL
-        durability: 13
+        material: GREEN_WOOL
         amount: 64
   dye_wool_red:
     production_time: 4s
@@ -2398,17 +2220,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
-      red_dye:
-        material: INK_SACK
-        durability: 1
+      rose red:
+        material: ROSE_RED
         amount: 4
     output:
       red_wool:
-        material: WOOL
-        durability: 14
+        material: RED_WOOL
         amount: 64
   dye_wool_black:
     production_time: 4s
@@ -2416,17 +2235,14 @@ recipes:
     type: PRODUCTION
     input:
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 64
-        durability: 0
-      black_dye:
-        material: INK_SACK
-        durability: 0
+      ink sac:
+        material: INK_SAC
         amount: 4
     output:
       black_wool:
-        material: WOOL
-        durability: 15
+        material: BLACK_WOOL
         amount: 64
   dye_glass_white:
     production_time: 4s
@@ -2437,13 +2253,11 @@ recipes:
         material: GLASS
         amount: 64
       white_dye:
-        material: INK_SACK
-        durability: 15
+        material: BONE_MEAL
         amount: 4
     output:
       white_glass:
-        material: STAINED_GLASS
-        durability: 0
+        material: WHITE_STAINED_GLASS
         amount: 64
   dye_glass_orange:
     production_time: 4s
@@ -2454,13 +2268,11 @@ recipes:
         material: GLASS
         amount: 64
       orange_dye:
-        material: INK_SACK
-        durability: 14
+        material: ORANGE_DYE
         amount: 4
     output:
       orange_glass:
-        material: STAINED_GLASS
-        durability: 1
+        material: ORANGE_STAINED_GLASS
         amount: 64
   dye_glass_magenta:
     production_time: 4s
@@ -2471,13 +2283,11 @@ recipes:
         material: GLASS
         amount: 64
       magenta_dye:
-        material: INK_SACK
-        durability: 13
+        material: MAGENTA_DYE
         amount: 4
     output:
       magenta_glass:
-        material: STAINED_GLASS
-        durability: 2
+        material: MAGENTA_STAINED_GLASS
         amount: 64
   dye_glass_light_blue:
     production_time: 4s
@@ -2488,13 +2298,11 @@ recipes:
         material: GLASS
         amount: 64
       light_blue_dye:
-        material: INK_SACK
-        durability: 12
+        material: LIGHT_BLUE_DYE
         amount: 4
     output:
       light_blue_glass:
-        material: STAINED_GLASS
-        durability: 3
+        material: LIGHT_BLUE_STAINED_GLASS
         amount: 64
   dye_glass_yellow:
     production_time: 4s
@@ -2505,13 +2313,11 @@ recipes:
         material: GLASS
         amount: 64
       yellow_dye:
-        material: INK_SACK
-        durability: 11
+        material: DANDELION_YELLOW
         amount: 4
     output:
       yellow_glass:
-        material: STAINED_GLASS
-        durability: 4
+        material: YELLOW_STAINED_GLASS
         amount: 64
   dye_glass_lime:
     production_time: 4s
@@ -2522,13 +2328,11 @@ recipes:
         material: GLASS
         amount: 64
       lime_dye:
-        material: INK_SACK
-        durability: 10
+        material: LIME_DYE
         amount: 4
     output:
       lime_glass:
-        material: STAINED_GLASS
-        durability: 5
+        material: LIME_STAINED_GLASS
         amount: 64
   dye_glass_pink:
     production_time: 4s
@@ -2539,13 +2343,11 @@ recipes:
         material: GLASS
         amount: 64
       pink_dye:
-        material: INK_SACK
-        durability: 9
+        material: PINK_DYE
         amount: 4
     output:
       pink_glass:
-        material: STAINED_GLASS
-        durability: 6
+        material: PINK_STAINED_GLASS
         amount: 64
   dye_glass_gray:
     production_time: 4s
@@ -2556,13 +2358,11 @@ recipes:
         material: GLASS
         amount: 64
       gray_dye:
-        material: INK_SACK
-        durability: 8
+        material: GRAY_DYE
         amount: 4
     output:
       gray_glass:
-        material: STAINED_GLASS
-        durability: 7
+        material: GRAY_STAINED_GLASS
         amount: 64
   dye_glass_light_gray:
     production_time: 4s
@@ -2573,13 +2373,11 @@ recipes:
         material: GLASS
         amount: 64
       light_gray_dye:
-        material: INK_SACK
-        durability: 7
+        material: LIGHT_GRAY_DYE
         amount: 4
     output:
       light_gray_glass:
-        material: STAINED_GLASS
-        durability: 8
+        material: LIGHT_GRAY_STAINED_GLASS
         amount: 64
   dye_glass_cyan:
     production_time: 4s
@@ -2590,13 +2388,11 @@ recipes:
         material: GLASS
         amount: 64
       cyan_dye:
-        material: INK_SACK
-        durability: 6
+        material: CYAN_DYE
         amount: 4
     output:
       cyan_glass:
-        material: STAINED_GLASS
-        durability: 9
+        material: CYAN_STAINED_GLASS
         amount: 64
   dye_glass_purple:
     production_time: 4s
@@ -2607,13 +2403,11 @@ recipes:
         material: GLASS
         amount: 64
       purple_dye:
-        material: INK_SACK
-        durability: 5
+        material: PURPLE_DYE
         amount: 4
     output:
       purple_glass:
-        material: STAINED_GLASS
-        durability: 10
+        material: PURPLE_STAINED_GLASS
         amount: 64
   dye_glass_blue:
     production_time: 4s
@@ -2624,13 +2418,11 @@ recipes:
         material: GLASS
         amount: 64
       blue_dye:
-        material: INK_SACK
-        durability: 4
+        material: LAPIS_LAZULI
         amount: 4
     output:
       blue_glass:
-        material: STAINED_GLASS
-        durability: 11
+        material: BLUE_STAINED_GLASS
         amount: 64
   dye_glass_brown:
     production_time: 4s
@@ -2641,13 +2433,11 @@ recipes:
         material: GLASS
         amount: 64
       brown_dye:
-        material: INK_SACK
-        durability: 3
+        material: COCOA_BEANS
         amount: 4
     output:
       brown_glass:
-        material: STAINED_GLASS
-        durability: 12
+        material: BROWN_STAINED_GLASS
         amount: 64
   dye_glass_green:
     production_time: 4s
@@ -2658,13 +2448,11 @@ recipes:
         material: GLASS
         amount: 64
       green_dye:
-        material: INK_SACK
-        durability: 2
+        material: CACTUS_GREEN
         amount: 4
     output:
       green_glass:
-        material: STAINED_GLASS
-        durability: 13
+        material: GREEN_STAINED_GLASS
         amount: 64
   dye_glass_red:
     production_time: 4s
@@ -2675,13 +2463,11 @@ recipes:
         material: GLASS
         amount: 64
       red_dye:
-        material: INK_SACK
-        durability: 1
+        material: ROSE_RED
         amount: 4
     output:
       red_glass:
-        material: STAINED_GLASS
-        durability: 14
+        material: RED_STAINED_GLASS
         amount: 64
   dye_glass_black:
     production_time: 4s
@@ -2692,13 +2478,11 @@ recipes:
         material: GLASS
         amount: 64
       black_dye:
-        material: INK_SACK
-        durability: 0
+        material: INK_SAC
         amount: 4
     output:
       black_glass:
-        material: STAINED_GLASS
-        durability: 15
+        material: BLACK_STAINED_GLASS
         amount: 64
   mix_concrete_white:
     production_time: 4s
@@ -2712,13 +2496,11 @@ recipes:
         material: GRAVEL
         amount: 32
       white_dye:
-        material: INK_SACK
-        durability: 15
+        material: BONE_MEAL
         amount: 4
     output:
       white_concrete:
-        material: CONCRETE_POWDER
-        durability: 0
+        material: WHITE_CONCRETE_POWDER
         amount: 64
   mix_concrete_orange:
     production_time: 4s
@@ -2732,13 +2514,11 @@ recipes:
         material: GRAVEL
         amount: 32
       orange_dye:
-        material: INK_SACK
-        durability: 14
+        material: ORANGE_DYE
         amount: 4
     output:
       orange_concrete:
-        material: CONCRETE_POWDER
-        durability: 1
+        material: ORANGE_CONCRETE_POWDER
         amount: 64
   mix_concrete_magenta:
     production_time: 4s
@@ -2752,13 +2532,11 @@ recipes:
         material: GRAVEL
         amount: 32
       magenta_dye:
-        material: INK_SACK
-        durability: 13
+        material: MAGENTA_DYE
         amount: 4
     output:
       magenta_concrete:
-        material: CONCRETE_POWDER
-        durability: 2
+        material: MAGENTA_CONCRETE_POWDER
         amount: 64
   mix_concrete_light_blue:
     production_time: 4s
@@ -2772,13 +2550,11 @@ recipes:
         material: GRAVEL
         amount: 32
       light_blue_dye:
-        material: INK_SACK
-        durability: 12
+        material: LIGHT_BLUE_DYE
         amount: 4
     output:
       light_blue_concrete:
-        material: CONCRETE_POWDER
-        durability: 3
+        material: LIGHT_BLUE_CONCRETE_POWDER
         amount: 64
   mix_concrete_yellow:
     production_time: 4s
@@ -2792,13 +2568,11 @@ recipes:
         material: GRAVEL
         amount: 32
       yellow_dye:
-        material: INK_SACK
-        durability: 11
+        material: DANDELION_YELLOW
         amount: 4
     output:
       yellow_concrete:
-        material: CONCRETE_POWDER
-        durability: 4
+        material: YELLOW_CONCRETE_POWDER
         amount: 64
   mix_concrete_lime:
     production_time: 4s
@@ -2812,13 +2586,11 @@ recipes:
         material: GRAVEL
         amount: 32
       lime_dye:
-        material: INK_SACK
-        durability: 10
+        material: LIME_DYE
         amount: 4
     output:
       lime_concrete:
-        material: CONCRETE_POWDER
-        durability: 5
+        material: LIME_CONCRETE_POWDER
         amount: 64
   mix_concrete_pink:
     production_time: 4s
@@ -2832,13 +2604,11 @@ recipes:
         material: GRAVEL
         amount: 32
       pink_dye:
-        material: INK_SACK
-        durability: 9
+        material: PINK_DYE
         amount: 4
     output:
       pink_concrete:
-        material: CONCRETE_POWDER
-        durability: 6
+        material: PINK_CONCRETE_POWDER
         amount: 64
   mix_concrete_gray:
     production_time: 4s
@@ -2852,13 +2622,11 @@ recipes:
         material: GRAVEL
         amount: 32
       gray_dye:
-        material: INK_SACK
-        durability: 8
+        material: GRAY_DYE
         amount: 4
     output:
       gray_concrete:
-        material: CONCRETE_POWDER
-        durability: 7
+        material: GRAY_CONCRETE_POWDER
         amount: 64
   mix_concrete_light_gray:
     production_time: 4s
@@ -2872,13 +2640,11 @@ recipes:
         material: GRAVEL
         amount: 32
       light_gray_dye:
-        material: INK_SACK
-        durability: 7
+        material: LIGHT_GRAY_DYE
         amount: 4
     output:
       light_gray_concrete:
-        material: CONCRETE_POWDER
-        durability: 8
+        material: LIGHT_GRAY_CONCRETE_POWDER
         amount: 64
   mix_concrete_cyan:
     production_time: 4s
@@ -2892,13 +2658,11 @@ recipes:
         material: GRAVEL
         amount: 32
       cyan_dye:
-        material: INK_SACK
-        durability: 6
+        material: CYAN_DYE
         amount: 4
     output:
       cyan_concrete:
-        material: CONCRETE_POWDER
-        durability: 9
+        material: CYAN_CONCRETE_POWDER
         amount: 64
   mix_concrete_purple:
     production_time: 4s
@@ -2912,13 +2676,11 @@ recipes:
         material: GRAVEL
         amount: 32
       purple_dye:
-        material: INK_SACK
-        durability: 5
+        material: PURPLE_DYE
         amount: 4
     output:
       purple_concrete:
-        material: CONCRETE_POWDER
-        durability: 10
+        material: PURPLE_CONCRETE_POWDER
         amount: 64
   mix_concrete_blue:
     production_time: 4s
@@ -2932,13 +2694,11 @@ recipes:
         material: GRAVEL
         amount: 32
       blue_dye:
-        material: INK_SACK
-        durability: 4
+        material: LAPIS_LAZULI
         amount: 4
     output:
       blue_concrete:
-        material: CONCRETE_POWDER
-        durability: 11
+        material: BLUE_CONCRETE_POWDER
         amount: 64
   mix_concrete_brown:
     production_time: 4s
@@ -2952,13 +2712,11 @@ recipes:
         material: GRAVEL
         amount: 32
       brown_dye:
-        material: INK_SACK
-        durability: 3
+        material: COCOA_BEANS
         amount: 4
     output:
       brown_concrete:
-        material: CONCRETE_POWDER
-        durability: 12
+        material: BROWN_CONCRETE_POWDER
         amount: 64
   mix_concrete_green:
     production_time: 4s
@@ -2972,13 +2730,11 @@ recipes:
         material: GRAVEL
         amount: 32
       green_dye:
-        material: INK_SACK
-        durability: 2
+        material: CACTUS_GREEN
         amount: 4
     output:
       green_concrete:
-        material: CONCRETE_POWDER
-        durability: 13
+        material: GREEN_CONCRETE_POWDER
         amount: 64
   mix_concrete_red:
     production_time: 4s
@@ -2992,13 +2748,11 @@ recipes:
         material: GRAVEL
         amount: 32
       red_dye:
-        material: INK_SACK
-        durability: 1
+        material: ROSE_RED
         amount: 4
     output:
       red_concrete:
-        material: CONCRETE_POWDER
-        durability: 14
+        material: RED_CONCRETE_POWDER
         amount: 64
   mix_concrete_black:
     production_time: 4s
@@ -3012,13 +2766,11 @@ recipes:
         material: GRAVEL
         amount: 32
       black_dye:
-        material: INK_SACK
-        durability: 0
+        material: INK_SAC
         amount: 4
     output:
       black_concrete:
-        material: CONCRETE_POWDER
-        durability: 15
+        material: BLACK_CONCRETE_POWDER
         amount: 64
   repair_dirt_factory:
     production_time: 4s
@@ -3045,8 +2797,7 @@ recipes:
     type: REPAIR
     input:
       charcoal:
-        material: COAL
-        durability: 1
+        material: CHARCOAL
         amount: 16
     health_gained: 10000
   repair_aesthetics:
@@ -3064,8 +2815,7 @@ recipes:
     type: REPAIR
     input:
       wool:
-        material: WOOL
-        durability: -1
+        material: WHITE_WOOL
         amount: 16
     health_gained: 10000
   repair_clay:
@@ -3074,8 +2824,7 @@ recipes:
     type: REPAIR
     input:
       clay:
-        material: HARD_CLAY
-        durability: -1
+        material: TERRACOTTA
         amount: 16
     health_gained: 10000
   repair_glass:
@@ -3114,7 +2863,7 @@ recipes:
     type: REPAIR
     input:
       brick:
-        material: CLAY_BRICK
+        material: BRICKS
         amount: 16
     health_gained: 10000
   repair_ore_smelter:
@@ -3160,7 +2909,7 @@ recipes:
         amount: 12
     output:
       fence:
-        material: FENCE
+        material: OAK_FENCE
         amount: 256
   make_signs:
     production_time: 4s
@@ -3211,7 +2960,7 @@ recipes:
         amount: 48
     output:
       trapdoor:
-        material: TRAP_DOOR
+        material: OAK_TRAPDOOR
         amount: 256
   make_wood_doors:
     production_time: 4s
@@ -3223,7 +2972,7 @@ recipes:
         amount: 16
     output:
       door:
-        material: WOOD_DOOR
+        material: OAK_DOOR
         amount: 32
   make_six_sided_oak:
     forceInclude: true
@@ -3232,14 +2981,12 @@ recipes:
     type: PRODUCTION
     input:
       oak:
-        material: LOG
-        amount: 64
-        durability: 0
+        material: CHEST
+        amount: 8
     output:
       six_sided_oak:
-        material: LOG
+        material: OAK_LOG
         amount: 64
-        durability: 0
         lore:
           - Sixsided log
   make_six_sided_spruce:
@@ -3249,14 +2996,12 @@ recipes:
     type: PRODUCTION
     input:
       spruce:
-        material: LOG
-        amount: 64
-        durability: 1
+        material: CHEST
+        amount: 8
     output:
       six_sided_spruce:
-        material: LOG
+        material: SPRUCE_LOG
         amount: 64
-        durability: 1
         lore:
           - Sixsided log
   make_six_sided_birch:
@@ -3266,14 +3011,12 @@ recipes:
     type: PRODUCTION
     input:
       birch:
-        material: LOG
-        amount: 64
-        durability: 2
+        material: CHEST
+        amount: 8
     output:
       six_sided_birch:
-        material: LOG
+        material: BIRCH_LOG
         amount: 64
-        durability: 2
         lore:
           - Sixsided log
   make_six_sided_jungle:
@@ -3283,14 +3026,12 @@ recipes:
     type: PRODUCTION
     input:
       jungle:
-        material: LOG
-        amount: 64
-        durability: 3
+        material: CHEST
+        amount: 8
     output:
       six_sided_jungle:
-        material: LOG
+        material: JUNGLE_LOG
         amount: 64
-        durability: 3
         lore:
           - Sixsided log
   make_six_sided_acacia:
@@ -3300,14 +3041,12 @@ recipes:
     type: PRODUCTION
     input:
       acacia:
-        material: LOG_2
-        amount: 64
-        durability: 0
+        material: CHEST
+        amount: 8
     output:
       six_sided_acacia:
-        material: LOG_2
+        material: ACACIA_LOG
         amount: 64
-        durability: 0
         lore:
           - Sixsided log
   make_six_sided_dark_oak:
@@ -3317,14 +3056,12 @@ recipes:
     type: PRODUCTION
     input:
       dark_oak:
-        material: LOG_2
-        amount: 64
-        durability: 1
+        material: CHEST
+        amount: 8
     output:
       six_sided_dark_oak:
-        material: LOG_2
+        material: DARK_OAK_LOG
         amount: 64
-        durability: 1
         lore:
           - Sixsided log
   repair_carpentry:
@@ -3364,7 +3101,7 @@ recipes:
         amount: 16
     output:
       rails:
-        material: RAILS
+        material: RAIL
         amount: 576
   make_powered_rail:
     production_time: 4s
@@ -3471,7 +3208,7 @@ recipes:
         lore:
           - Casing for bastion
       gearbox:
-        material: WATCH
+        material: CLOCK
         amount: 32
         name: Gearbox
         lore:
@@ -3522,9 +3259,8 @@ recipes:
         material: LEATHER
         amount: 32
       wool:
-        material: WOOL
+        material: WHITE_WOOL
         amount: 16
-        durability: -1
       iron:
         material: IRON_INGOT
         amount: 16
@@ -3545,7 +3281,7 @@ recipes:
         amount: 64
     output:
       redstone_torch:
-        material: REDSTONE_TORCH_ON
+        material: REDSTONE_TORCH
         amount: 128
   make_hopper:
     production_time: 4s
@@ -3575,9 +3311,10 @@ recipes:
         amount: 128
       quartz:
         material: QUARTZ
+        amount: 1
     output:
       comparator:
-        material: REDSTONE_COMPARATOR
+        material: COMPARATOR
         amount: 32
   make_repeater:
     production_time: 4s
@@ -3592,7 +3329,7 @@ recipes:
         amount: 128
     output:
       repeater:
-        material: DIODE
+        material: REPEATER
         amount: 96
   repair_redstone:
     production_time: 4s
@@ -3715,7 +3452,7 @@ recipes:
         amount: 5
     output:
       iron_shovel:
-        material: IRON_SPADE
+        material: IRON_SHOVEL
         amount: 15
   repair_diamond_helm_factory:
     production_time: 4s
@@ -3810,7 +3547,7 @@ recipes:
         lore:
           - Casing for bastion
       gearbox:
-        material: WATCH
+        material: CLOCK
         amount: 4
         name: Gearbox
         lore:
@@ -3850,7 +3587,7 @@ recipes:
         amount: 24
     output:
       iron_bars:
-        material: IRON_FENCE
+        material: IRON_BARS
         amount: 256
   make_anvil:
     production_time: 4s
@@ -3946,7 +3683,7 @@ recipes:
         amount: 4
     output:
       leads:
-        material: LEASH
+        material: LEAD
         amount: 12
   repair_husbandry:
     production_time: 4s
@@ -3973,7 +3710,7 @@ recipes:
         amount: 128
     output:
       bricks:
-        material: CLAY_BRICK
+        material: BRICKS
         amount: 256
   smelt_hard_clay:
     production_time: 4s
@@ -3984,8 +3721,8 @@ recipes:
         material: CLAY
         amount: 128
     output:
-      hard_clay:
-        material: HARD_CLAY
+      terracotta:
+        material: TERRACOTTA
         amount: 256
   smelt_sandstone:
     forceInclude: true
@@ -4051,7 +3788,7 @@ recipes:
         material: REDSTONE
         amount: 16
       ender_eye:
-        material: EYE_OF_ENDER
+        material: ENDER_EYE
         amount: 8
     output:
       radar:
@@ -4097,7 +3834,7 @@ recipes:
         amount: 32
     output:
       gearbox:
-        material: WATCH
+        material: CLOCK
         amount: 1
         name: Gearbox
         lore:
@@ -4111,11 +3848,10 @@ recipes:
         material: EMERALD
         amount: 6
       charcoal:
-        material: COAL
+        material: CHARCOAL
         amount: 32
-        durability: 1
       gunpowder:
-        material: SULPHUR
+        material: GUNPOWDER
         amount: 6
     output:
       energizer:
@@ -4160,7 +3896,7 @@ recipes:
         material: GLASS_BOTTLE
         amount: 24
       carrot:
-        material: CARROT_ITEM
+        material: CARROT
         amount: 256
       cactus:
         material: CACTUS
@@ -4170,7 +3906,7 @@ recipes:
         amount: 256
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 24
   basic_xp_2:
     production_time: 4s
@@ -4181,17 +3917,17 @@ recipes:
         material: GLASS_BOTTLE
         amount: 14
       carrot:
-        material: CARROT_ITEM
+        material: CARROT
         amount: 256
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 256
       baked_potato:
         material: BAKED_POTATO
         amount: 256
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 14
   basic_xp_3:
     production_time: 4s
@@ -4202,11 +3938,10 @@ recipes:
         material: GLASS_BOTTLE
         amount: 42
       carrot:
-        material: CARROT_ITEM
+        material: CARROT
         amount: 128
       cocoa:
-        material: INK_SACK
-        durability: 3
+        material: COCOA_BEANS
         amount: 64
       pumpkin:
         material: PUMPKIN
@@ -4222,7 +3957,7 @@ recipes:
         amount: 128
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 42
   basic_xp_4:
     production_time: 4s
@@ -4233,10 +3968,10 @@ recipes:
         material: GLASS_BOTTLE
         amount: 42
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 256
       melon:
-        material: MELON_BLOCK
+        material: MELON
         amount: 64
       sugar_cane:
         material: SUGAR_CANE
@@ -4248,12 +3983,11 @@ recipes:
         material: BAKED_POTATO
         amount: 64
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 16
-        durability: -1
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 42
   wither_skull:
     forceInclude: true
@@ -4262,8 +3996,7 @@ recipes:
     type: PRODUCTION
     input:
       wither_skull:
-        material: SKULL_ITEM
-        durability: 1
+        material: WITHER_SKELETON_SKULL
         amount: 3
     output:
       nether_star:
@@ -4290,16 +4023,16 @@ recipes:
         material: GLASS_BOTTLE
         amount: 128
       carrot:
-        material: CARROT_ITEM
+        material: CARROT
         amount: 96
       melon:
-        material: MELON_BLOCK
+        material: MELON
         amount: 32
       cactus:
         material: CACTUS
         amount: 256
       rose:
-        material: RED_ROSE
+        material: ROSE_RED
         amount: 8
       rotten_flesh:
         material: ROTTEN_FLESH
@@ -4314,12 +4047,11 @@ recipes:
         material: BREAD
         amount: 128
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 128
   int_xp_2:
     production_time: 4s
@@ -4330,16 +4062,16 @@ recipes:
         material: GLASS_BOTTLE
         amount: 128
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 64
       melon:
-        material: MELON_BLOCK
+        material: MELON
         amount: 32
       sugar_cane:
         material: SUGAR_CANE
         amount: 128
       yellow_flower:
-        material: YELLOW_FLOWER
+        material: DANDELION
         amount: 16
       rotten_flesh:
         material: ROTTEN_FLESH
@@ -4358,7 +4090,7 @@ recipes:
         amount: 128
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 128
   int_xp_3:
     production_time: 4s
@@ -4372,8 +4104,7 @@ recipes:
         material: WHEAT
         amount: 128
       cocoa:
-        material: INK_SACK
-        durability: 3
+        material: COCOA_BEANS
         amount: 16
       pumpkin:
         material: PUMPKIN
@@ -4382,7 +4113,7 @@ recipes:
         material: CACTUS
         amount: 256
       rose:
-        material: RED_ROSE
+        material: ROSE_RED
         amount: 8
       spider_eye:
         material: SPIDER_EYE
@@ -4391,16 +4122,14 @@ recipes:
         material: RED_MUSHROOM
         amount: 16
       grass:
-        material: LONG_GRASS
+        material: GRASS
         amount: 32
-        durability: 1
       sapling:
-        material: SAPLING
-        durability: -1
+        material: OAK_SAPLING
         amount: 32
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 128
   int_xp_4:
     production_time: 4s
@@ -4411,7 +4140,7 @@ recipes:
         material: GLASS_BOTTLE
         amount: 128
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 64
       pumpkin:
         material: PUMPKIN
@@ -4420,7 +4149,7 @@ recipes:
         material: SUGAR_CANE
         amount: 128
       yellow_flower:
-        material: YELLOW_FLOWER
+        material: DANDELION
         amount: 16
       spider_eye:
         material: SPIDER_EYE
@@ -4429,9 +4158,8 @@ recipes:
         material: BROWN_MUSHROOM
         amount: 64
       grass:
-        material: LONG_GRASS
+        material: GRASS
         amount: 32
-        durability: 1
       cookie:
         material: COOKIE
         amount: 256
@@ -4440,7 +4168,7 @@ recipes:
         amount: 128
     output:
       exp:
-        material: EXP_BOTTLE
+        material: EXPERIENCE_BOTTLE
         amount: 128
   upgrade_to_intermediate_cauldron:
     production_time: 4s
@@ -4471,12 +4199,12 @@ recipes:
         lore:
           - Compacted Item
       carrot:
-        material: CARROT_ITEM
+        material: CARROT
         amount: 96
         lore:
           - Compacted Item
       melon:
-        material: MELON_BLOCK
+        material: MELON
         amount: 32
         lore:
           - Compacted Item
@@ -4486,7 +4214,7 @@ recipes:
         lore:
           - Compacted Item
       rose:
-        material: RED_ROSE
+        material: ROSE_RED
         amount: 8
         lore:
           - Compacted Item
@@ -4511,9 +4239,8 @@ recipes:
         lore:
           - Compacted Item
       sapling:
-        material: SAPLING
+        material: OAK_SAPLING
         amount: 32
-        durability: -1
         lore:
           - Compacted Item
     output:
@@ -4533,12 +4260,12 @@ recipes:
         lore:
           - Compacted Item
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 64
         lore:
           - Compacted Item
       melon:
-        material: MELON_BLOCK
+        material: MELON
         amount: 32
         lore:
           - Compacted Item
@@ -4548,7 +4275,7 @@ recipes:
         lore:
           - Compacted Item
       yellow_flower:
-        material: YELLOW_FLOWER
+        material: DANDELION
         amount: 16
         lore:
           - Compacted Item
@@ -4599,8 +4326,7 @@ recipes:
         lore:
           - Compacted Item
       cocoa:
-        material: INK_SACK
-        durability: 3
+        material: COCOA_BEANS
         amount: 16
         lore:
           - Compacted Item
@@ -4615,7 +4341,7 @@ recipes:
         lore:
           - Compacted Item
       rose:
-        material: RED_ROSE
+        material: ROSE_RED
         amount: 8
         lore:
           - Compacted Item
@@ -4630,14 +4356,13 @@ recipes:
         lore:
           - Compacted Item
       grass:
-        material: LONG_GRASS
+        material: GRASS
         amount: 32
         durability: 1
         lore:
           - Compacted Item
       sapling:
-        material: SAPLING
-        durability: -1
+        material: OAK_SAPLING
         amount: 32
         lore:
           - Compacted Item
@@ -4658,7 +4383,7 @@ recipes:
         lore:
           - Compacted Item
       nether_wart:
-        material: NETHER_STALK
+        material: NETHER_WART
         amount: 64
         lore:
           - Compacted Item
@@ -4673,7 +4398,7 @@ recipes:
         lore:
           - Compacted Item
       yellow_flower:
-        material: YELLOW_FLOWER
+        material: DANDELION
         amount: 16
         lore:
           - Compacted Item
@@ -4688,9 +4413,8 @@ recipes:
         lore:
           - Compacted Item
       grass:
-        material: LONG_GRASS
+        material: GRASS
         amount: 32
-        durability: 1
         lore:
           - Compacted Item
       cookie:
@@ -4718,9 +4442,8 @@ recipes:
         material: EMERALD_BLOCK
         amount: 128
       wither_skull:
-        material: SKULL_ITEM
+        material: WITHER_SKELETON_SKULL
         amount: 1
-        durability: 1
     factory: Advanced Cauldron
   repair_advanced_cauldron:
     production_time: 4s
@@ -4743,7 +4466,7 @@ recipes:
         material: REDSTONE_BLOCK
         amount: 16
       piston:
-        material: PISTON_BASE
+        material: PISTON
         amount: 64
       crate:
         material: CHEST
@@ -4783,7 +4506,7 @@ recipes:
         material: REDSTONE_BLOCK
         amount: 2
       piston:
-        material: PISTON_BASE
+        material: PISTON
         amount: 6
       crate:
         material: CHEST
@@ -4818,8 +4541,7 @@ recipes:
         amount: 64
     output:
       brown_mushroom_block:
-        material: HUGE_MUSHROOM_1
-        durability: 14
+        material: BROWN_MUSHROOM_BLOCK
         amount: 16
   make_mushroom_red:
     type: PRODUCTION
@@ -4831,8 +4553,7 @@ recipes:
         amount: 64
     output:
       red_mushroom_block:
-        material: HUGE_MUSHROOM_2
-        durability: 14
+        material: RED_MUSHROOM_BLOCK
         amount: 16
   make_mushroom_stem:
     type: PRODUCTION
@@ -4844,8 +4565,7 @@ recipes:
         amount: 64
     output:
       stem_mushroom_block:
-        material: HUGE_MUSHROOM_1
-        durability: 10
+        material: MUSHROOM_STEM
         amount: 16
         lore:
           - Mushroom stem
@@ -4859,7 +4579,7 @@ recipes:
         amount: 64
     output:
       pore_mushroom_block:
-        material: HUGE_MUSHROOM_1
+        material: BROWN_MUSHROOM_BLOCK
         amount: 16
         lore:
           - Mushroom pores
@@ -4874,9 +4594,8 @@ recipes:
         material: WHEAT
         amount: 128
       cocoa:
-        material: INK_SACK
+        material: COCOA_BEANS
         amount: 64
-        durability: 3
     output:
       cookie:
         material: COOKIE
@@ -4925,9 +4644,8 @@ recipes:
         amount: 64
     output:
       stone_slab:
-        material: STEP
+        material: STONE_SLAB
         amount: 64
-        durability: 0
         lore:
           - Smooth double slab
   make_smooth_sandstone_slab:
@@ -4941,9 +4659,8 @@ recipes:
         amount: 64
     output:
       sandstone_slab:
-        material: STEP
+        material: SANDSTONE_SLAB
         amount: 64
-        durability: 1
         lore:
           - Smooth double slab
   make_smooth_quartz_slab:
@@ -4957,9 +4674,8 @@ recipes:
         amount: 64
     output:
       quartz_slab:
-        material: STEP
+        material: QUARTZ_SLAB
         amount: 64
-        durability: 7
         lore:
           - Smooth double slab
   upgrade_to_printer:
@@ -4969,7 +4685,7 @@ recipes:
     name: Upgrade to Printing Press
     input:
       ink:
-        material: INK_SACK
+        material: INK_SAC
         amount: 32
       paper:
         material: PAPER
@@ -5002,11 +4718,11 @@ recipes:
         material: LEATHER
         amount: 6
       ink:
-        material: INK_SACK
+        material: INK_SAC
         amount: 6
     output:
       books:
-        material: BOOK_AND_QUILL
+        material: WRITABLE_BOOK
         amount: 12
   craft_printing_plate:
     type: PRINTINGPLATE
@@ -5018,7 +4734,7 @@ recipes:
         amount: 1
     output:
       plate:
-        material: TRAP_DOOR
+        material: OAK_TRAPDOOR
         amount: 1
   print_book:
     type: PRINTBOOK
@@ -5030,11 +4746,11 @@ recipes:
         material: PAPER
         amount: 18
       ink:
-        material: INK_SACK
+        material: INK_SAC
         amount: 1
     printingplate:
       plate:
-        material: TRAP_DOOR
+        material: OAK_TRAPDOOR
         amount: 1
   print_note:
     type: PRINTNOTE
@@ -5049,7 +4765,7 @@ recipes:
         amount: 5
     printingplate:
       plate:
-        material: TRAP_DOOR
+        material: OAK_TRAPDOOR
         amount: 1
   print_secure_note:
     type: PRINTNOTE
@@ -5064,7 +4780,7 @@ recipes:
         amount: 5
     printingplate:
       plate:
-        material: TRAP_DOOR
+        material: OAK_TRAPDOOR
         amount: 1
   repair_printer:
     forceInclude: true
@@ -5073,920 +4789,919 @@ recipes:
     production_time: 4s
     input:
       ink:
-        material: INK_SACK
+        material: INK_SAC
         amount: 3
       paper:
         material: PAPER
         amount: 6
     health_gained: 10000
-  crack_fossil:
-    type: RANDOM
-    name: Crack Fossil
-    production_time: 1s
-    fuel_consumption_intervall: 99999s
-    input:
-      fossil:
-        material: PRISMARINE_SHARD
-        amount: 1
-        name: §3Fossil
-        lore:
-          - Crack me in a factory for a prize!
-    outputs:
-      dragon_egg:
-        chance: 0.0000000001
-        dragon_egg:
-          material: DRAGON_EGG
-          amount: 1
-          lore:
-           - Egg of Creation
-      gezo:
-        chance: 0.0000040909
-        gezo:
-          material: PAPER
-          amount: 1
-          lore:
-           - Gezo was here !!!
-      clockback:
-        chance: 0.0000040909
-        clockback:
-          material: WATCH
-          amount: 1
-          lore:
-           - Clockback
-          enchants:
-            kb:
-              enchant: KNOCKBACK
-              level: 3
-      apollo_bow:
-        chance: 0.0000040909
-        apollo_bow:
-          material: BOW
-          amount: 1
-          lore:
-           - Apollo's Bow
-          enchants:
-            power:
-              enchant: ARROW_DAMAGE
-              level: 5
-            ub:
-              enchant: DURABILITY
-              level: 3
-            flame:
-              enchant: ARROW_FIRE
-              level: 1
-            infinity:
-              enchant: ARROW_INFINITE
-              level: 1
-      imcando_pick:
-        chance: 0.0000040909
-        imcando_pick:
-          material: DIAMOND_PICKAXE
-          amount: 1
-          lore:
-           - Imcando Pickaxe
-          enchants:
-            efficiency:
-              enchant: DIG_SPEED
-              level: 5
-            ub:
-              enchant: DURABILITY
-              level: 3
-      power_5_book:
-        chance: 0.0000120909
-        power_5_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            power5:
-              enchant: ARROW_DAMAGE
-              level: 5
-      infinity_book:
-        chance: 0.0000120909
-        infinity_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            infinity:
-              enchant: ARROW_INFINITE
-              level: 1
-      efficiency_5_book:
-        chance: 0.0000120909
-        efficiency_5_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            eff5:
-              enchant: DIG_SPEED
-              level: 5
-      unbreaking_3_book:
-        chance: 0.0000120909
-        unbreaking_3_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            ub3:
-              enchant: DURABILITY
-              level: 3
-      sharpness_5_book:
-        chance: 0.0000120909
-        sharpness_5_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            sharpness5:
-              enchant: DAMAGE_ALL
-              level: 5
-      protection_4_book:
-        chance: 0.0000120909
-        protection_4_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            protection4:
-              enchant: PROTECTION_ENVIRONMENTAL
-              level: 4
-      silk_touch_book:
-        chance: 0.0000110909
-        silk_touch_book:
-          material: ENCHANTED_BOOK 
-          amount: 1
-          stored_enchants:
-            silktouch:
-              enchant: SILK_TOUCH
-              level: 1
-      diamond_horse_armor:
-        chance: 0.000037038
-        diamond_horse_armor:
-          material: DIAMOND_BARDING
-          amount: 1
-      bastion:
-        chance: 0.000037037
-        bastion:
-          material: SPONGE
-          name: Bastion
-          lore:
-           - This bastion will protect you from grief
-           - It will also block pearls when they land
-           - As well as stop elytra
-          amount: 1
-      diamond_pickaxe:
-        chance: 0.000037037
-        diamond_pickaxe:
-          material: DIAMOND_PICKAXE
-          amount: 1
-      diamond_axe:
-        chance: 0.000037037
-        diamond_axe:
-          material: DIAMOND_AXE
-          amount: 1
-      diamond_shovel:
-        chance: 0.000037037
-        diamond_shovel:
-          material: DIAMOND_SPADE
-          amount: 1
-      diamond_chestplate:
-        chance: 0.000037037
-        diamond_chestplate:
-          material: DIAMOND_CHESTPLATE
-          amount: 1
-      diamond_leggings:
-        chance: 0.000037037
-        diamond_leggings:
-          material: DIAMOND_LEGGINGS
-          amount: 1
-      diamond_helmet:
-        chance: 0.000037037
-        diamond_helmet:
-          material: DIAMOND_HELMET
-          amount: 1
-      diamond_boots:
-        chance: 0.000037037
-        diamond_boots:
-          material: DIAMOND_BOOTS
-          amount: 1
-      iron_ingots:
-        chance: 0.000037037
-        iron_ingots:
-          material: IRON_INGOT
-          amount: 64
-      diamond_block:
-        chance: 0.000037037
-        diamond_block:
-          material: DIAMOND_BLOCK
-          amount: 1
-      creeper:
-        chance: 0.000037037
-        creeper:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 50
-      zombie:
-        chance: 0.000037037
-        zombie:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 54
-      skeleton:
-        chance: 0.000037037
-        skeleton:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 51
-      spider:
-        chance: 0.000037037
-        spider:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 52
-      blaze:
-        chance: 0.000037037
-        blaze:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 61
-      ghast:
-        chance: 0.000037037
-        ghast:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 56
-      guardian:
-        chance: 0.000037037
-        guardian:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 68
-      magmacube:
-        chance: 0.000037037
-        magmacube:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 62
-      slime:
-        chance: 0.000037037
-        slime:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 55
-      witch:
-        chance: 0.000037037
-        witch:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 66
-      villager:
-        chance: 0.000037037
-        villager:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 120
-      cavespider:
-        chance: 0.000037037
-        cavespider:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 59
-      enderman:
-        chance: 0.000037037
-        enderman:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 58
-      zombiepigman:
-        chance: 0.000037037
-        zombiepigman:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 57
-      charcoal:
-        chance: 0.000037037
-        charcoal:
-          material: COAL
-          amount: 2048
-          durability: 1
-      beacon:
-        chance: 0.000037037
-        beacon:
-          material: BEACON
-          amount: 1
-      iron_pickaxe:
-        chance: 0.0029411764
-        iron_pickaxe:
-          material: IRON_PICKAXE
-          amount: 1
-      iron_spade:
-        chance: 0.00029411764
-        iron_spade:
-          material: IRON_SPADE
-          amount: 1
-      iron_axe:
-        chance: 0.00029411764
-        iron_axe:
-          material: IRON_AXE
-          amount: 1
-      iron_sword:
-        chance: 0.00029411764
-        iron_sword:
-          material: IRON_SWORD
-          amount: 1
-      note_blocks:
-        chance: 0.00029411764
-        note_blocks:
-          material: NOTE_BLOCK
-          amount: 5
-      diamond:
-        chance: 0.00029411764
-        diamond:
-          material: DIAMOND
-          amount: 1
-      emerald:
-        chance: 0.00029411764
-        emerald:
-          material: EMERALD
-          amount: 1
-      iron_block:
-        chance: 0.00029411764
-        iron_block:
-          material: IRON_BLOCK
-          amount: 1
-      redstone_block:
-        chance: 0.00029411764
-        redstone_block:
-          material: REDSTONE_BLOCK
-          amount: 1
-      lapis_block:
-        chance: 0.00029411764
-        lapis_block:
-          material: LAPIS_BLOCK
-          amount: 1
-      record_13:
-        chance: 0.000029411766
-        record_13:
-          material: GOLD_RECORD
-          amount: 1
-      record_cats:
-        chance: 0.000029411764
-        record_cats:
-          material: GREEN_RECORD
-          amount: 1
-      record_blocks:
-        chance: 0.000029411764
-        record_blocks:
-          material: RECORD_3
-          amount: 1
-      record_chirp:
-        chance: 0.000029411764
-        record_chirp:
-          material: RECORD_4
-          amount: 1
-      record_far:
-        chance: 0.000029411764
-        record_far:
-          material: RECORD_5
-          amount: 1
-      record_mall:
-        chance: 0.000029411764
-        record_mall:
-          material: RECORD_6
-          amount: 1
-      record_mellohi:
-        chance: 0.000029411764
-        record_mellohi:
-          material: RECORD_7
-          amount: 1
-      record_stal:
-        chance: 0.000029411764
-        record_stal:
-          material: RECORD_8
-          amount: 1
-      record_strad:
-        chance: 0.000029411764
-        record_strad:
-          material: RECORD_9
-          amount: 1
-      record_ward:
-        chance: 0.000029411764
-        record_ward:
-          material: RECORD_10
-          amount: 1
-      record_11:
-        chance: 0.000029411764
-        record_11:
-          material: RECORD_11
-          amount: 1
-      record_wait:
-        chance: 0.000029411764
-        record_wait:
-          material: RECORD_12
-          amount: 1
-      minecart:
-        chance: 0.00062352939
-        minecart:
-          material: MINECART
-          amount: 1
-      mooshroom:
-        chance: 0.00029411764
-        mooshroom:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 96
-      horse:
-        chance: 0.00029411764
-        horse:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 100
-      rabbit:
-        chance: 0.00029411764
-        rabbit:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 101
-      ocelot:
-        chance: 0.00029411764
-        ocelot:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 98
-      squid:
-        chance: 0.00029411764
-        squid:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 94
-      wolf:
-        chance: 0.00029411764
-        wolf:
-          material: MONSTER_EGG
-          amount: 1
-          durability: 95
-      iron_horse_armor:
-        chance: 0.00029411764
-        iron_horse_armor:
-          material: IRON_BARDING
-          amount: 1
-      bucket:
-        chance: 0.00029411764
-        bucket:
-          material: BUCKET
-          amount: 1
-      prismarine_shards:
-        chance: 0.00029411764
-        prismarine_shards:
-          material: PRISMARINE_SHARD
-          amount: 5
-      prismarine_crystals:
-        chance: 0.00029411788
-        prismarine_crystals:
-          material: PRISMARINE_CRYSTALS
-          amount: 3
-      jukebox:
-        chance: 0.00029411764
-        jukebox:
-          material: JUKEBOX
-          amount: 1
-      llama:
-        chance: 0.00029411764
-        llama:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:llama"
-      parrot:
-        chance: 0.00029411764
-        parrot:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:parrot"
-      polarbear:
-        chance: 0.00029411764
-        polarbear:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:polar_bear"
-      donkey:
-        chance: 0.00029411764
-        donkey:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:donkey"
-      skeletonhorse:
-        chance: 0.00029411764
-        skeletonhorse:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:skeleton_horse"
-      zombiehorse:
-        chance: 0.00029411764
-        zombiehorse:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:zombie_horse"
-      endermite:
-        chance: 0.00029411764
-        endermite:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:endermite"
-      silverfish:
-        chance: 0.00029411764
-        silverfish:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:silverfish"
-      vex:
-        chance: 0.00029411764
-        vex:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:vex"
-      vindicator:
-        chance: 0.00029411764
-        vindicator:
-          material: MONSTER_EGG
-          amount: 1
-          nbt:
-            EntityTag:
-              id: "minecraft:vindication_illager"
-      city_bastion:
-        chance: 0.000037037
-        city_bastion:
-          material: BONE_BLOCK
-          name: City Bastion
-          lore:
-            - City bastions block exiled players and reinforcements
-          amount: 1
-      tealnerd_skull:
-        chance: 0.0029411764
-        tealnerd_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner: TealNerd
-      iebagi_skull:
-        chance: 0.0029411764
-        iebagi_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner: iebagi
-      dsclouse_skull:
-        chance: 0.0029411764
-        dsclouse_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner: Dsclouse
-      ttk2_skull:
-        chance: 0.0029411764
-        ttk2_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner: ttk2
-      bonkill_skull:
-        chance: 0.0029411764
-        bonkill_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner: Bonkill
-      programmerdan_skull:
-        chance: 0.0029411764
-        programmerdan_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner: ProgrammerDan
-      decorative_bread_skull:
-        chance: 0.0029411764
-        decorative_bread_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: a75e3f60-2242-4429-8ece-bcde77
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM0ODdkNDU3ZjkwNjJkNzg3YTNlNmNlMWM0NjY0YmY3NDAyZWM2N2RkMTExMjU2ZjE5YjM4Y2U0ZjY3MCJ9fX0=
-      decorative_melon_skull:
-        chance: 0.0029411764
-        decorative_melon_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 21186685-3336-4dbd-8dda-493bc7
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzNmZWQ1MTRjM2UyMzhjYTdhYzFjOTRiODk3ZmY2NzExYjFkYmU1MDE3NGFmYzIzNWM4ZjgwZDAyOSJ9fX0=
-      decorative_pumpkin_skull:
-        chance: 0.0029411764
-        decorative_pumpkin_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 9650240d-aa92-4ceb-9cfa-676f0c
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDdkN2FkMmRjYjU3ZGZhOWYwMjNkYmI5OWI2OThmYzUzMDc1YzNlOWQ2NTQ1MDYxMzlhNjQ3YWM5MDdmZGRjNSJ9fX0=
-      decorative_cup_of_tea_skull:
-        chance: 0.0029411764
-        decorative_cup_of_tea_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 2a3545d4-3ea5-4d26-9033-c28047
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhlOTRkZGQ3NjlhNWJlYTc0ODM3NmI0ZWM3MzgzZmQzNmQyNjc4OTRkN2MzYmVlMDExZThlNGY1ZmNkNyJ9fX0=
-      decorative_hamburger_skull:
-        chance: 0.0029411764
-        decorative_hamburger_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: bb7dc51c-1dce-42f4-ae93-6a7907
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZlZjFjMjVmNTE2ZjJlN2Q2Zjc2Njc0MjBlMzNhZGNmM2NkZjkzOGNiMzdmOWE0MWE4YjM1ODY5ZjU2OWIifX19
-      decorative_clock_skull:
-        chance: 0.0029411764
-        decorative_clock_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: f952235c-44a2-4f91-a6aa-0fcf36
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRlNGUyNzgzZjg1YTM5MTIyMWRkOTE2NTZiYTY4OGU3ZTQyZDE2ZjZhYmJmYmNmYWQ5Y2E1MzYxN2ZjYTYifX19
-      decorative_monitor_skull:
-        chance: 0.0029411764
-        decorative_monitor_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 6522a7fd-3649-4d2c-a6b4-3c24e5
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTVjMjkyYTI0ZjU0YTdhNDM3ODUyNjY1NTJkYmE3YTE4NGY5YzUwZTBkOTRiMzM3ZDhkM2U3NmU5ZTljY2U3In19fQ==
-      decorative_pile_of_books_skull:
-        chance: 0.0029411764
-        decorative_pile_of_books_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 6e166933-a807-4a73-8a19-e44053
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjFjNjNkOWI5ZmQ4NzQyZWFlYjA0YzY5MjE3MmNiOWRhNDM3ODE2OThhNTc1Y2RhYmUxYzA0ZGYxMmMzZiJ9fX0=
-      decorative_chest_skull:
-        chance: 0.0029411764
-        decorative_chest_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 148ce164-81e8-43d3-b057-4b21cf
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmY2OGQ1MDliNWQxNjY5Yjk3MWRkMWQ0ZGYyZTQ3ZTE5YmNiMWIzM2JmMWE3ZmYxZGRhMjliZmM2ZjllYmYifX19
-      decorative_medicine_chest_skull:
-        chance: 0.0029411764
-        decorative_medicine_chest_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: f32f4e87-9fb0-48b0-8cc4-56eebf
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjdjN2RmNTJiNWU1MGJhZGI2MWZlZDcyMTJkOTc5ZTYzZmU5NGYxYmRlMDJiMjk2OGM2YjE1NmE3NzAxMjZjIn19fQ==
-      decorative_eye_skull:
-        chance: 0.0029411764
-        decorative_eye_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: f9f975e2-cdf7-411b-9323-f5db99
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNlZjg3NzcyYWZkODViNDY4ZjRjN2ZiOTU3MWUzMTQzNWVmNzY1YWQ0MTNmZTQ2MDI2MjE1MDQyM2UyMDIxIn19fQ==
-      decorative_present_skull:
-        chance: 0.0029411764
-        decorative_present_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: cc5fdd1a-60f8-40d6-b667-a197e3
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjBhZmE0ZmZmZDEwODYzZTc2YzY5OGRhMmM5YzllNzk5YmNmOWFiOWFhMzdkODMxMjg4MTczNDIyNWQzY2EifX19
-      decorative_poke_ball_skull:
-        chance: 0.0029411764
-        decorative_poke_ball_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 04be8421-c832-4cf8-82e5-9b88d8
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQzZDRiN2FjMjRhMWQ2NTBkZGY3M2JkMTQwZjQ5ZmMxMmQyNzM2ZmMxNGE4ZGMyNWMwZjNmMjlkODVmOGYifX19
-      decorative_globe_skull:
-        chance: 0.0029411764
-        decorative_globe_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 10174993-9b01-4045-919c-bf82db
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkZDRmZTRhNDI5YWJkNjY1ZGZkYjNlMjEzMjFkNmVmYTZhNmI1ZTdiOTU2ZGI5YzVkNTljOWVmYWIyNSJ9fX0=
-      decorative_blaze_skull:
-        chance: 0.0029411764
-        decorative_blaze_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 7ceb88b2-7f5f-4399-abb9-706825
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc4ZWYyZTRjZjJjNDFhMmQxNGJmZGU5Y2FmZjEwMjE5ZjViMWJmNWIzNWE0OWViNTFjNjQ2Nzg4MmNiNWYwIn19fQ==
-      decorative_ghast_skull:
-        chance: 0.0029411764
-        decorative_ghast_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 807f287f-6499-4e93-a887-0a298a
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19
-      decorative_pigzombie_skull:
-        chance: 0.0029411764
-        decorative_pigzombie_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 6540c046-d6ea-4aff-9766-32a54e
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRlOWM2ZTk4NTgyZmZkOGZmOGZlYjMzMjJjZDE4NDljNDNmYjE2YjE1OGFiYjExY2E3YjQyZWRhNzc0M2ViIn19fQ==
-      decorative_enderman_skull:
-        chance: 0.0029411764
-        decorative_enderman_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 0de98464-1274-4dd6-bba8-370efa
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E1OWJiMGE3YTMyOTY1YjNkOTBkOGVhZmE4OTlkMTgzNWY0MjQ1MDllYWRkNGU2YjcwOWFkYTUwYjljZiJ9fX0=
-      decorative_guardian_skull:
-        chance: 0.0029411764
-        decorative_guardian_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 2e9c0a67-92b3-4949-9be1-faf123
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTMyYzI0NTI0YzgyYWIzYjNlNTdjMjA1MmM1MzNmMTNkZDhjMGJlYjhiZGQwNjM2OWJiMjU1NGRhODZjMTIzIn19fQ==
-      decorative_skull_skull:
-        chance: 0.0029411764
-        decorative_skull_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: c659cdd4-e436-4977-a6a7-d5518e
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFlMzg1NWY5NTJjZDRhMDNjMTQ4YTk0NmUzZjgxMmE1OTU1YWQzNWNiY2I1MjYyN2VhNGFjZDQ3ZDMwODEifX19
-      decorative_potted_azalea_plant_skull:
-        chance: 0.0029411764
-        decorative_potted_azalea_plant_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: faec9b66-94ca-4b6f-b6cd-f9a54b
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM1MjU3Yjc5OWQzOTQ2OTI3ZjJiMzI1ZDM2NmViNTEwNGE1YzM1MjE5ZWU0ZTRkMzU3MjFiZjI4YTIxMCJ9fX0=
-      decorative_potted_camellia_plant_skull:
-        chance: 0.0029411764
-        decorative_potted_camellia_plant_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: e5fdfdc7-f8a4-4a77-8d7c-17d98c
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWRjNGMxMmJmMjYxOWNiZmM4ZjIyZGM2MmMwMjJjZTE1MTI2Y2VhM2UyMTJjMjhkOWY5NmVhMzEwYWM0YzQyIn19fQ==
-      decorative_wink_skull:
-        chance: 0.0029411764
-        decorative_wink_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 81faf4e7-33e6-4cfd-bb15-21268d8def8b
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjRlYTJkNmY5MzlmZWZlZmY1ZDEyMmU2M2RkMjZmYThhNDI3ZGY5MGIyOTI4YmMxZmE4OWE4MjUyYTdlIn19fQ==
-      decorative_apple_skull:
-        chance: 0.0029411764
-        decorative_apple_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 0d5fd9c3-d044-478f-b774-d37b5f86fa2a
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTJiMzViZGE1ZWJkZjEzNWY0ZTcxY2U0OTcyNmZiZWM1NzM5ZjBhZGVkZjAxYzUxOWUyYWVhN2Y1MTk1MWVhMiJ9fX0=
-      decorative_sushi_salmon_skull:
-        chance: 0.0029411764
-        decorative_sushi_salmon_skull:
-          material: SKULL_ITEM
-          durability: 3
-          amount: 1
-          nbt:
-            SkullOwner:
-              Id: 56810a43-92a9-4974-8693-48ace62881ff
-              Properties:
-                textures:
-                  - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWU5ZDIyZDlhZGE2M2UyODE0MjBhZTMzNjkxODgwODY5ZmExYTE0YmZkZjg3ZDhlNTM4ZTk5OGE4ZjI5NTk1YiJ9fX0=
-      dirt:
-        chance: 0.894945318
-        dirt:
-          material: DIRT
-          amount: 1
-          name: Dirt!
+  # crack_fossil:
+  #   type: RANDOM
+  #   name: Crack Fossil
+  #   production_time: 1s
+  #   fuel_consumption_intervall: 99999s
+  #   input:
+  #     fossil:
+  #       material: PRISMARINE_SHARD
+  #       amount: 1
+  #       name: §3Fossil
+  #       lore:
+  #         - Crack me in a factory for a prize!
+  #   outputs:
+  #     dragon_egg:
+  #       chance: 0.0000000001
+  #       dragon_egg:
+  #         material: DRAGON_EGG
+  #         amount: 1
+  #         lore:
+  #          - Egg of Creation
+  #     gezo:
+  #       chance: 0.0000040909
+  #       gezo:
+  #         material: PAPER
+  #         amount: 1
+  #         lore:
+  #          - Gezo was here !!!
+  #     clockback:
+  #       chance: 0.0000040909
+  #       clockback:
+  #         material: CLOCK
+  #         amount: 1
+  #         lore:
+  #          - Clockback
+  #         enchants:
+  #           kb:
+  #             enchant: KNOCKBACK
+  #             level: 3
+  #     apollo_bow:
+  #       chance: 0.0000040909
+  #       apollo_bow:
+  #         material: BOW
+  #         amount: 1
+  #         lore:
+  #          - Apollo's Bow
+  #         enchants:
+  #           power:
+  #             enchant: ARROW_DAMAGE
+  #             level: 5
+  #           ub:
+  #             enchant: DURABILITY
+  #             level: 3
+  #           flame:
+  #             enchant: ARROW_FIRE
+  #             level: 1
+  #           infinity:
+  #             enchant: ARROW_INFINITE
+  #             level: 1
+  #     imcando_pick:
+  #       chance: 0.0000040909
+  #       imcando_pick:
+  #         material: DIAMOND_PICKAXE
+  #         amount: 1
+  #         lore:
+  #          - Imcando Pickaxe
+  #         enchants:
+  #           efficiency:
+  #             enchant: DIG_SPEED
+  #             level: 5
+  #           ub:
+  #             enchant: DURABILITY
+  #             level: 3
+  #     power_5_book:
+  #       chance: 0.0000120909
+  #       power_5_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           power5:
+  #             enchant: ARROW_DAMAGE
+  #             level: 5
+  #     infinity_book:
+  #       chance: 0.0000120909
+  #       infinity_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           infinity:
+  #             enchant: ARROW_INFINITE
+  #             level: 1
+  #     efficiency_5_book:
+  #       chance: 0.0000120909
+  #       efficiency_5_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           eff5:
+  #             enchant: DIG_SPEED
+  #             level: 5
+  #     unbreaking_3_book:
+  #       chance: 0.0000120909
+  #       unbreaking_3_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           ub3:
+  #             enchant: DURABILITY
+  #             level: 3
+  #     sharpness_5_book:
+  #       chance: 0.0000120909
+  #       sharpness_5_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           sharpness5:
+  #             enchant: DAMAGE_ALL
+  #             level: 5
+  #     protection_4_book:
+  #       chance: 0.0000120909
+  #       protection_4_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           protection4:
+  #             enchant: PROTECTION_ENVIRONMENTAL
+  #             level: 4
+  #     silk_touch_book:
+  #       chance: 0.0000110909
+  #       silk_touch_book:
+  #         material: ENCHANTED_BOOK 
+  #         amount: 1
+  #         stored_enchants:
+  #           silktouch:
+  #             enchant: SILK_TOUCH
+  #             level: 1
+  #     diamond_horse_armor:
+  #       chance: 0.000037038
+  #       diamond_horse_armor:
+  #         material: DIAMOND_HORSE_ARMOR
+  #         amount: 1
+  #     bastion:
+  #       chance: 0.000037037
+  #       bastion:
+  #         material: SPONGE
+  #         name: Bastion
+  #         lore:
+  #          - This bastion will protect you from grief
+  #          - It will also block pearls when they land
+  #          - As well as stop elytra
+  #         amount: 1
+  #     diamond_pickaxe:
+  #       chance: 0.000037037
+  #       diamond_pickaxe:
+  #         material: DIAMOND_PICKAXE
+  #         amount: 1
+  #     diamond_axe:
+  #       chance: 0.000037037
+  #       diamond_axe:
+  #         material: DIAMOND_AXE
+  #         amount: 1
+  #     diamond_shovel:
+  #       chance: 0.000037037
+  #       diamond_shovel:
+  #         material: DIAMOND_SHOVEL
+  #         amount: 1
+  #     diamond_chestplate:
+  #       chance: 0.000037037
+  #       diamond_chestplate:
+  #         material: DIAMOND_CHESTPLATE
+  #         amount: 1
+  #     diamond_leggings:
+  #       chance: 0.000037037
+  #       diamond_leggings:
+  #         material: DIAMOND_LEGGINGS
+  #         amount: 1
+  #     diamond_helmet:
+  #       chance: 0.000037037
+  #       diamond_helmet:
+  #         material: DIAMOND_HELMET
+  #         amount: 1
+  #     diamond_boots:
+  #       chance: 0.000037037
+  #       diamond_boots:
+  #         material: DIAMOND_BOOTS
+  #         amount: 1
+  #     iron_ingots:
+  #       chance: 0.000037037
+  #       iron_ingots:
+  #         material: IRON_INGOT
+  #         amount: 64
+  #     diamond_block:
+  #       chance: 0.000037037
+  #       diamond_block:
+  #         material: DIAMOND_BLOCK
+  #         amount: 1
+  #     creeper:
+  #       chance: 0.000037037
+  #       creeper:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 50
+  #     zombie:
+  #       chance: 0.000037037
+  #       zombie:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 54
+  #     skeleton:
+  #       chance: 0.000037037
+  #       skeleton:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 51
+  #     spider:
+  #       chance: 0.000037037
+  #       spider:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 52
+  #     blaze:
+  #       chance: 0.000037037
+  #       blaze:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 61
+  #     ghast:
+  #       chance: 0.000037037
+  #       ghast:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 56
+  #     guardian:
+  #       chance: 0.000037037
+  #       guardian:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 68
+  #     magmacube:
+  #       chance: 0.000037037
+  #       magmacube:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 62
+  #     slime:
+  #       chance: 0.000037037
+  #       slime:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 55
+  #     witch:
+  #       chance: 0.000037037
+  #       witch:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 66
+  #     villager:
+  #       chance: 0.000037037
+  #       villager:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 120
+  #     cavespider:
+  #       chance: 0.000037037
+  #       cavespider:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 59
+  #     enderman:
+  #       chance: 0.000037037
+  #       enderman:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 58
+  #     zombiepigman:
+  #       chance: 0.000037037
+  #       zombiepigman:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 57
+  #     charcoal:
+  #       chance: 0.000037037
+  #       charcoal:
+  #         material: CHARCOAL
+  #         amount: 2048
+  #     beacon:
+  #       chance: 0.000037037
+  #       beacon:
+  #         material: BEACON
+  #         amount: 1
+  #     iron_pickaxe:
+  #       chance: 0.0029411764
+  #       iron_pickaxe:
+  #         material: IRON_PICKAXE
+  #         amount: 1
+  #     iron_spade:
+  #       chance: 0.00029411764
+  #       iron_spade:
+  #         material: IRON_SHOVEL
+  #         amount: 1
+  #     iron_axe:
+  #       chance: 0.00029411764
+  #       iron_axe:
+  #         material: IRON_AXE
+  #         amount: 1
+  #     iron_sword:
+  #       chance: 0.00029411764
+  #       iron_sword:
+  #         material: IRON_SWORD
+  #         amount: 1
+  #     note_blocks:
+  #       chance: 0.00029411764
+  #       note_blocks:
+  #         material: NOTE_BLOCK
+  #         amount: 5
+  #     diamond:
+  #       chance: 0.00029411764
+  #       diamond:
+  #         material: DIAMOND
+  #         amount: 1
+  #     emerald:
+  #       chance: 0.00029411764
+  #       emerald:
+  #         material: EMERALD
+  #         amount: 1
+  #     iron_block:
+  #       chance: 0.00029411764
+  #       iron_block:
+  #         material: IRON_BLOCK
+  #         amount: 1
+  #     redstone_block:
+  #       chance: 0.00029411764
+  #       redstone_block:
+  #         material: REDSTONE_BLOCK
+  #         amount: 1
+  #     lapis_block:
+  #       chance: 0.00029411764
+  #       lapis_block:
+  #         material: LAPIS_BLOCK
+  #         amount: 1
+  #     record_13:
+  #       chance: 0.000029411766
+  #       record_13:
+  #         material: GOLD_RECORD
+  #         amount: 1
+  #     record_cats:
+  #       chance: 0.000029411764
+  #       record_cats:
+  #         material: GREEN_RECORD
+  #         amount: 1
+  #     record_blocks:
+  #       chance: 0.000029411764
+  #       record_blocks:
+  #         material: RECORD_3
+  #         amount: 1
+  #     record_chirp:
+  #       chance: 0.000029411764
+  #       record_chirp:
+  #         material: RECORD_4
+  #         amount: 1
+  #     record_far:
+  #       chance: 0.000029411764
+  #       record_far:
+  #         material: RECORD_5
+  #         amount: 1
+  #     record_mall:
+  #       chance: 0.000029411764
+  #       record_mall:
+  #         material: RECORD_6
+  #         amount: 1
+  #     record_mellohi:
+  #       chance: 0.000029411764
+  #       record_mellohi:
+  #         material: RECORD_7
+  #         amount: 1
+  #     record_stal:
+  #       chance: 0.000029411764
+  #       record_stal:
+  #         material: RECORD_8
+  #         amount: 1
+  #     record_strad:
+  #       chance: 0.000029411764
+  #       record_strad:
+  #         material: RECORD_9
+  #         amount: 1
+  #     record_ward:
+  #       chance: 0.000029411764
+  #       record_ward:
+  #         material: RECORD_10
+  #         amount: 1
+  #     record_11:
+  #       chance: 0.000029411764
+  #       record_11:
+  #         material: RECORD_11
+  #         amount: 1
+  #     record_wait:
+  #       chance: 0.000029411764
+  #       record_wait:
+  #         material: RECORD_12
+  #         amount: 1
+  #     minecart:
+  #       chance: 0.00062352939
+  #       minecart:
+  #         material: MINECART
+  #         amount: 1
+  #     mooshroom:
+  #       chance: 0.00029411764
+  #       mooshroom:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 96
+  #     horse:
+  #       chance: 0.00029411764
+  #       horse:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 100
+  #     rabbit:
+  #       chance: 0.00029411764
+  #       rabbit:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 101
+  #     ocelot:
+  #       chance: 0.00029411764
+  #       ocelot:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 98
+  #     squid:
+  #       chance: 0.00029411764
+  #       squid:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 94
+  #     wolf:
+  #       chance: 0.00029411764
+  #       wolf:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         durability: 95
+  #     iron_horse_armor:
+  #       chance: 0.00029411764
+  #       iron_horse_armor:
+  #         material: IRON_BARDING
+  #         amount: 1
+  #     bucket:
+  #       chance: 0.00029411764
+  #       bucket:
+  #         material: BUCKET
+  #         amount: 1
+  #     prismarine_shards:
+  #       chance: 0.00029411764
+  #       prismarine_shards:
+  #         material: PRISMARINE_SHARD
+  #         amount: 5
+  #     prismarine_crystals:
+  #       chance: 0.00029411788
+  #       prismarine_crystals:
+  #         material: PRISMARINE_CRYSTALS
+  #         amount: 3
+  #     jukebox:
+  #       chance: 0.00029411764
+  #       jukebox:
+  #         material: JUKEBOX
+  #         amount: 1
+  #     llama:
+  #       chance: 0.00029411764
+  #       llama:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:llama"
+  #     parrot:
+  #       chance: 0.00029411764
+  #       parrot:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:parrot"
+  #     polarbear:
+  #       chance: 0.00029411764
+  #       polarbear:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:polar_bear"
+  #     donkey:
+  #       chance: 0.00029411764
+  #       donkey:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:donkey"
+  #     skeletonhorse:
+  #       chance: 0.00029411764
+  #       skeletonhorse:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:skeleton_horse"
+  #     zombiehorse:
+  #       chance: 0.00029411764
+  #       zombiehorse:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:zombie_horse"
+  #     endermite:
+  #       chance: 0.00029411764
+  #       endermite:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:endermite"
+  #     silverfish:
+  #       chance: 0.00029411764
+  #       silverfish:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:silverfish"
+  #     vex:
+  #       chance: 0.00029411764
+  #       vex:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:vex"
+  #     vindicator:
+  #       chance: 0.00029411764
+  #       vindicator:
+  #         material: MONSTER_EGG
+  #         amount: 1
+  #         nbt:
+  #           EntityTag:
+  #             id: "minecraft:vindication_illager"
+  #     city_bastion:
+  #       chance: 0.000037037
+  #       city_bastion:
+  #         material: BONE_BLOCK
+  #         name: City Bastion
+  #         lore:
+  #           - City bastions block exiled players and reinforcements
+  #         amount: 1
+  #     tealnerd_skull:
+  #       chance: 0.0029411764
+  #       tealnerd_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner: TealNerd
+  #     iebagi_skull:
+  #       chance: 0.0029411764
+  #       iebagi_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner: iebagi
+  #     dsclouse_skull:
+  #       chance: 0.0029411764
+  #       dsclouse_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner: Dsclouse
+  #     ttk2_skull:
+  #       chance: 0.0029411764
+  #       ttk2_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner: ttk2
+  #     bonkill_skull:
+  #       chance: 0.0029411764
+  #       bonkill_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner: Bonkill
+  #     programmerdan_skull:
+  #       chance: 0.0029411764
+  #       programmerdan_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner: ProgrammerDan
+  #     decorative_bread_skull:
+  #       chance: 0.0029411764
+  #       decorative_bread_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: a75e3f60-2242-4429-8ece-bcde77
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM0ODdkNDU3ZjkwNjJkNzg3YTNlNmNlMWM0NjY0YmY3NDAyZWM2N2RkMTExMjU2ZjE5YjM4Y2U0ZjY3MCJ9fX0=
+  #     decorative_melon_skull:
+  #       chance: 0.0029411764
+  #       decorative_melon_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 21186685-3336-4dbd-8dda-493bc7
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzNmZWQ1MTRjM2UyMzhjYTdhYzFjOTRiODk3ZmY2NzExYjFkYmU1MDE3NGFmYzIzNWM4ZjgwZDAyOSJ9fX0=
+  #     decorative_pumpkin_skull:
+  #       chance: 0.0029411764
+  #       decorative_pumpkin_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 9650240d-aa92-4ceb-9cfa-676f0c
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDdkN2FkMmRjYjU3ZGZhOWYwMjNkYmI5OWI2OThmYzUzMDc1YzNlOWQ2NTQ1MDYxMzlhNjQ3YWM5MDdmZGRjNSJ9fX0=
+  #     decorative_cup_of_tea_skull:
+  #       chance: 0.0029411764
+  #       decorative_cup_of_tea_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 2a3545d4-3ea5-4d26-9033-c28047
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDhlOTRkZGQ3NjlhNWJlYTc0ODM3NmI0ZWM3MzgzZmQzNmQyNjc4OTRkN2MzYmVlMDExZThlNGY1ZmNkNyJ9fX0=
+  #     decorative_hamburger_skull:
+  #       chance: 0.0029411764
+  #       decorative_hamburger_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: bb7dc51c-1dce-42f4-ae93-6a7907
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZlZjFjMjVmNTE2ZjJlN2Q2Zjc2Njc0MjBlMzNhZGNmM2NkZjkzOGNiMzdmOWE0MWE4YjM1ODY5ZjU2OWIifX19
+  #     decorative_clock_skull:
+  #       chance: 0.0029411764
+  #       decorative_clock_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: f952235c-44a2-4f91-a6aa-0fcf36
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmRlNGUyNzgzZjg1YTM5MTIyMWRkOTE2NTZiYTY4OGU3ZTQyZDE2ZjZhYmJmYmNmYWQ5Y2E1MzYxN2ZjYTYifX19
+  #     decorative_monitor_skull:
+  #       chance: 0.0029411764
+  #       decorative_monitor_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 6522a7fd-3649-4d2c-a6b4-3c24e5
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTVjMjkyYTI0ZjU0YTdhNDM3ODUyNjY1NTJkYmE3YTE4NGY5YzUwZTBkOTRiMzM3ZDhkM2U3NmU5ZTljY2U3In19fQ==
+  #     decorative_pile_of_books_skull:
+  #       chance: 0.0029411764
+  #       decorative_pile_of_books_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 6e166933-a807-4a73-8a19-e44053
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjFjNjNkOWI5ZmQ4NzQyZWFlYjA0YzY5MjE3MmNiOWRhNDM3ODE2OThhNTc1Y2RhYmUxYzA0ZGYxMmMzZiJ9fX0=
+  #     decorative_chest_skull:
+  #       chance: 0.0029411764
+  #       decorative_chest_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 148ce164-81e8-43d3-b057-4b21cf
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmY2OGQ1MDliNWQxNjY5Yjk3MWRkMWQ0ZGYyZTQ3ZTE5YmNiMWIzM2JmMWE3ZmYxZGRhMjliZmM2ZjllYmYifX19
+  #     decorative_medicine_chest_skull:
+  #       chance: 0.0029411764
+  #       decorative_medicine_chest_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: f32f4e87-9fb0-48b0-8cc4-56eebf
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjdjN2RmNTJiNWU1MGJhZGI2MWZlZDcyMTJkOTc5ZTYzZmU5NGYxYmRlMDJiMjk2OGM2YjE1NmE3NzAxMjZjIn19fQ==
+  #     decorative_eye_skull:
+  #       chance: 0.0029411764
+  #       decorative_eye_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: f9f975e2-cdf7-411b-9323-f5db99
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNlZjg3NzcyYWZkODViNDY4ZjRjN2ZiOTU3MWUzMTQzNWVmNzY1YWQ0MTNmZTQ2MDI2MjE1MDQyM2UyMDIxIn19fQ==
+  #     decorative_present_skull:
+  #       chance: 0.0029411764
+  #       decorative_present_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: cc5fdd1a-60f8-40d6-b667-a197e3
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjBhZmE0ZmZmZDEwODYzZTc2YzY5OGRhMmM5YzllNzk5YmNmOWFiOWFhMzdkODMxMjg4MTczNDIyNWQzY2EifX19
+  #     decorative_poke_ball_skull:
+  #       chance: 0.0029411764
+  #       decorative_poke_ball_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 04be8421-c832-4cf8-82e5-9b88d8
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQzZDRiN2FjMjRhMWQ2NTBkZGY3M2JkMTQwZjQ5ZmMxMmQyNzM2ZmMxNGE4ZGMyNWMwZjNmMjlkODVmOGYifX19
+  #     decorative_globe_skull:
+  #       chance: 0.0029411764
+  #       decorative_globe_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 10174993-9b01-4045-919c-bf82db
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFkZDRmZTRhNDI5YWJkNjY1ZGZkYjNlMjEzMjFkNmVmYTZhNmI1ZTdiOTU2ZGI5YzVkNTljOWVmYWIyNSJ9fX0=
+  #     decorative_blaze_skull:
+  #       chance: 0.0029411764
+  #       decorative_blaze_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 7ceb88b2-7f5f-4399-abb9-706825
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc4ZWYyZTRjZjJjNDFhMmQxNGJmZGU5Y2FmZjEwMjE5ZjViMWJmNWIzNWE0OWViNTFjNjQ2Nzg4MmNiNWYwIn19fQ==
+  #     decorative_ghast_skull:
+  #       chance: 0.0029411764
+  #       decorative_ghast_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 807f287f-6499-4e93-a887-0a298a
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19
+  #     decorative_pigzombie_skull:
+  #       chance: 0.0029411764
+  #       decorative_pigzombie_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 6540c046-d6ea-4aff-9766-32a54e
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRlOWM2ZTk4NTgyZmZkOGZmOGZlYjMzMjJjZDE4NDljNDNmYjE2YjE1OGFiYjExY2E3YjQyZWRhNzc0M2ViIn19fQ==
+  #     decorative_enderman_skull:
+  #       chance: 0.0029411764
+  #       decorative_enderman_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 0de98464-1274-4dd6-bba8-370efa
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E1OWJiMGE3YTMyOTY1YjNkOTBkOGVhZmE4OTlkMTgzNWY0MjQ1MDllYWRkNGU2YjcwOWFkYTUwYjljZiJ9fX0=
+  #     decorative_guardian_skull:
+  #       chance: 0.0029411764
+  #       decorative_guardian_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 2e9c0a67-92b3-4949-9be1-faf123
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTMyYzI0NTI0YzgyYWIzYjNlNTdjMjA1MmM1MzNmMTNkZDhjMGJlYjhiZGQwNjM2OWJiMjU1NGRhODZjMTIzIn19fQ==
+  #     decorative_skull_skull:
+  #       chance: 0.0029411764
+  #       decorative_skull_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: c659cdd4-e436-4977-a6a7-d5518e
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFlMzg1NWY5NTJjZDRhMDNjMTQ4YTk0NmUzZjgxMmE1OTU1YWQzNWNiY2I1MjYyN2VhNGFjZDQ3ZDMwODEifX19
+  #     decorative_potted_azalea_plant_skull:
+  #       chance: 0.0029411764
+  #       decorative_potted_azalea_plant_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: faec9b66-94ca-4b6f-b6cd-f9a54b
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM1MjU3Yjc5OWQzOTQ2OTI3ZjJiMzI1ZDM2NmViNTEwNGE1YzM1MjE5ZWU0ZTRkMzU3MjFiZjI4YTIxMCJ9fX0=
+  #     decorative_potted_camellia_plant_skull:
+  #       chance: 0.0029411764
+  #       decorative_potted_camellia_plant_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: e5fdfdc7-f8a4-4a77-8d7c-17d98c
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWRjNGMxMmJmMjYxOWNiZmM4ZjIyZGM2MmMwMjJjZTE1MTI2Y2VhM2UyMTJjMjhkOWY5NmVhMzEwYWM0YzQyIn19fQ==
+  #     decorative_wink_skull:
+  #       chance: 0.0029411764
+  #       decorative_wink_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 81faf4e7-33e6-4cfd-bb15-21268d8def8b
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjRlYTJkNmY5MzlmZWZlZmY1ZDEyMmU2M2RkMjZmYThhNDI3ZGY5MGIyOTI4YmMxZmE4OWE4MjUyYTdlIn19fQ==
+  #     decorative_apple_skull:
+  #       chance: 0.0029411764
+  #       decorative_apple_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 0d5fd9c3-d044-478f-b774-d37b5f86fa2a
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTJiMzViZGE1ZWJkZjEzNWY0ZTcxY2U0OTcyNmZiZWM1NzM5ZjBhZGVkZjAxYzUxOWUyYWVhN2Y1MTk1MWVhMiJ9fX0=
+  #     decorative_sushi_salmon_skull:
+  #       chance: 0.0029411764
+  #       decorative_sushi_salmon_skull:
+  #         material: SKULL_ITEM
+  #         durability: 3
+  #         amount: 1
+  #         nbt:
+  #           SkullOwner:
+  #             Id: 56810a43-92a9-4974-8693-48ace62881ff
+  #             Properties:
+  #               textures:
+  #                 - Value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWU5ZDIyZDlhZGE2M2UyODE0MjBhZTMzNjkxODgwODY5ZmExYTE0YmZkZjg3ZDhlNTM4ZTk5OGE4ZjI5NTk1YiJ9fX0=
+  #     dirt:
+  #       chance: 0.894945318
+  #       dirt:
+  #         material: DIRT
+  #         amount: 1
+  #         name: Dirt!
   upgrade_to_gold_forge:
     forceinclude: true
     production_time: 4s
@@ -6018,7 +5733,7 @@ recipes:
       ub3_eff4:
         chance: 0.20000000000000000
         ub3_eff4:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6030,7 +5745,7 @@ recipes:
       ub3_for3:
         chance: 0.15000000000000000
         ub3_for3:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6042,7 +5757,7 @@ recipes:
       ub3_silk:
         chance: 0.15000000000000000
         ub3_silk:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6054,7 +5769,7 @@ recipes:
       ub3:
         chance: 0.10000000000000000
         ub3:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6063,7 +5778,7 @@ recipes:
       ub3_for3_eff4:
         chance: 0.10000000000000000
         ub3_for3_eff4:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6078,7 +5793,7 @@ recipes:
       ub3_silk_eff4:
         chance: 0.10000000000000000
         ub3_silk_eff4:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6093,7 +5808,7 @@ recipes:
       ub3_eff5:
         chance: 0.10000000000000000
         ub3_eff5:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6108,7 +5823,7 @@ recipes:
       ub3_for3_eff5:
         chance: 0.050000000000000000
         ub3_for3_eff5:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6123,7 +5838,7 @@ recipes:
       ub3_silk_eff5:
         chance: 0.050000000000000000
         ub3_silk_eff5:
-          material: GOLD_PICKAXE
+          material: GOLDEN_PICKAXE
           amount: 1
           enchants:
             ub:
@@ -6147,7 +5862,7 @@ recipes:
       ub3_eff4:
         chance: 0.20000000000000000
         ub3_eff4:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6159,7 +5874,7 @@ recipes:
       ub3_for3:
         chance: 0.15000000000000000
         ub3_for3:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6171,7 +5886,7 @@ recipes:
       ub3_silk:
         chance: 0.15000000000000000
         ub3_silk:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6183,7 +5898,7 @@ recipes:
       ub3:
         chance: 0.10000000000000000
         ub3:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6192,7 +5907,7 @@ recipes:
       ub3_for3_eff4:
         chance: 0.10000000000000000
         ub3_for3_eff4:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6207,7 +5922,7 @@ recipes:
       ub3_silk_eff4:
         chance: 0.10000000000000000
         ub3_silk_eff4:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6222,7 +5937,7 @@ recipes:
       ub3_eff5:
         chance: 0.10000000000000000
         ub3_eff5:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6237,7 +5952,7 @@ recipes:
       ub3_for3_eff5:
         chance: 0.050000000000000000
         ub3_for3_eff5:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6252,7 +5967,7 @@ recipes:
       ub3_silk_eff5:
         chance: 0.050000000000000000
         ub3_silk_eff5:
-          material: GOLD_SPADE
+          material: GOLDEN_SHOVEL
           amount: 1
           enchants:
             ub:
@@ -6276,7 +5991,7 @@ recipes:
       ub3_eff4:
         chance: 0.16000000000000000
         ub3_eff4:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6288,7 +6003,7 @@ recipes:
       ub3_for3:
         chance: 0.07000000000000000
         ub3_for3:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6300,7 +6015,7 @@ recipes:
       ub3_silk:
         chance: 0.07000000000000000
         ub3_silk:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6312,7 +6027,7 @@ recipes:
       ub3_sha4:
         chance: 0.07000000000000000
         ub3_sha4:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6324,7 +6039,7 @@ recipes:
       ub3_boa4:
         chance: 0.07000000000000000
         ub3_boa4:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6336,7 +6051,7 @@ recipes:
       ub3_smi4:
         chance: 0.06000000000000000
         ub3_smi4:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6348,7 +6063,7 @@ recipes:
       ub3:
         chance: 0.050000000000000000
         ub3:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6357,7 +6072,7 @@ recipes:
       ub3_for3_eff4:
         chance: 0.050000000000000000
         ub3_for3_eff4:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6372,7 +6087,7 @@ recipes:
       ub3_silk_eff4:
         chance: 0.050000000000000000
         ub3_silk_eff4:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6387,7 +6102,7 @@ recipes:
       ub3_eff5:
         chance: 0.050000000000000000
         ub3_eff5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6402,7 +6117,7 @@ recipes:
       ub3_for3_eff5:
         chance: 0.0500000000000000
         ub3_for3_eff5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6417,7 +6132,7 @@ recipes:
       ub3_silk_eff5:
         chance: 0.0500000000000000
         ub3_silk_eff5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6432,7 +6147,7 @@ recipes:
       ub3_sha5:
         chance: 0.0300000000000000
         ub3_sha5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6444,7 +6159,7 @@ recipes:
       ub3_boa5:
         chance: 0.0300000000000000
         ub3_boa5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6456,7 +6171,7 @@ recipes:
       ub3_smi5:
         chance: 0.0300000000000000
         ub3_smi5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6468,7 +6183,7 @@ recipes:
       ub3_eff4_sha5:
         chance: 0.0400000000000000
         ub3_eff4_sha5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6483,7 +6198,7 @@ recipes:
       ub3_eff4_boa5:
         chance: 0.0400000000000000
         ub3_eff4_boa5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6498,7 +6213,7 @@ recipes:
       ub3_eff4_smi5:
         chance: 0.0300000000000000
         ub3_eff4_smi5:
-          material: GOLD_AXE
+          material: GOLDEN_AXE
           amount: 1
           enchants:
             ub:
@@ -6522,7 +6237,7 @@ recipes:
       ub3:
         chance: 0.90000000000000000
         ub3:
-          material: GOLD_HOE
+          material: GOLDEN_HOE
           amount: 1
           enchants:
             ub:
@@ -6531,7 +6246,7 @@ recipes:
       ub4:
         chance: 0.10000000000000000
         ub4:
-          material: GOLD_HOE
+          material: GOLDEN_HOE
           amount: 1
           enchants:
             ub:
@@ -6549,7 +6264,7 @@ recipes:
       ub3_sha4:
         chance: 0.1000000000000000
         ub3_sha4:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6561,7 +6276,7 @@ recipes:
       ub3_boa4:
         chance: 0.1000000000000000
         ub3_boa4:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6573,7 +6288,7 @@ recipes:
       ub3_smi4:
         chance: 0.1000000000000000
         ub3_smi4:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6585,7 +6300,7 @@ recipes:
       ub3_fa3:
         chance: 0.1000000000000000
         ub3_smi4:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6597,7 +6312,7 @@ recipes:
       ub3_sha5:
         chance: 0.1000000000000000
         ub3_sha5:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6609,7 +6324,7 @@ recipes:
       ub3_boa5:
         chance: 0.1000000000000000
         ub3_boa5:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6621,7 +6336,7 @@ recipes:
       ub3_smi5:
         chance: 0.1000000000000000
         ub3_smi5:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6633,7 +6348,7 @@ recipes:
       ub3_swe3:
         chance: 0.0700000000000000
         ub3_swe3:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6645,7 +6360,7 @@ recipes:
       ub3_swe3_sha5:
         chance: 0.0300000000000000
         ub3_swe3_sha5:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6660,7 +6375,7 @@ recipes:
       ub3_kb2:
         chance: 0.0700000000000000
         ub3_kb2:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6672,7 +6387,7 @@ recipes:
       ub3_kb2_sha5:
         chance: 0.0300000000000000
         ub3_kb2_sha5:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6687,7 +6402,7 @@ recipes:
       ub3_loo3:
         chance: 0.1000000000000000
         ub3_loo3:
-          material: GOLD_SWORD
+          material: GOLDEN_SWORD
           amount: 1
           enchants:
             ub:
@@ -6711,7 +6426,7 @@ recipes:
       ub3_prot4:
         chance: 0.2000000000000000
         ub3_prot4:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6723,7 +6438,7 @@ recipes:
       ub3_proj4:
         chance: 0.1000000000000000
         ub3_proj4:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6735,7 +6450,7 @@ recipes:
       ub3_fire4:
         chance: 0.1000000000000000
         ub3_fire4:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6747,7 +6462,7 @@ recipes:
       ub3_blast4:
         chance: 0.1000000000000000
         ub3_blast4:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6759,7 +6474,7 @@ recipes:
       ub3_aqaf:
         chance: 0.1000000000000000
         ub3_aqaf:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6771,7 +6486,7 @@ recipes:
       ub3_resp3:
         chance: 0.1000000000000000
         ub3_resp3:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6783,7 +6498,7 @@ recipes:
       ub3_tho3:
         chance: 0.1000000000000000
         ub3_tho3:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6795,7 +6510,7 @@ recipes:
       ub3_prot4_aqaf:
         chance: 0.0700000000000000
         ub3_prot4_aqaf:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6810,7 +6525,7 @@ recipes:
       ub3_prot4_resp3:
         chance: 0.0700000000000000
         ub3_prot4_resp3:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6825,7 +6540,7 @@ recipes:
       ub3_prot4_aqaf_resp3:
         chance: 0.0600000000000000
         ub3_prot4_aqaf_resp3:
-          material: GOLD_HELMET
+          material: GOLDEN_HELMET
           amount: 1
           enchants:
             ub:
@@ -6855,7 +6570,7 @@ recipes:
       ub3_prot4:
         chance: 0.3000000000000000
         ub3_prot4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6867,7 +6582,7 @@ recipes:
       ub3_proj4:
         chance: 0.1000000000000000
         ub3_proj4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6879,7 +6594,7 @@ recipes:
       ub3_proj4_prot4:
         chance: 0.0750000000000000
         ub3_proj4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6894,7 +6609,7 @@ recipes:
       ub3_fire4:
         chance: 0.1000000000000000
         ub3_fire4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6906,7 +6621,7 @@ recipes:
       ub3_fire4_prot4:
         chance: 0.0750000000000000
         ub3_fire4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6921,7 +6636,7 @@ recipes:
       ub3_blast4:
         chance: 0.1000000000000000
         ub3_blast4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6933,7 +6648,7 @@ recipes:
       ub3_blast4_prot4:
         chance: 0.0750000000000000
         ub3_blast4:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6948,7 +6663,7 @@ recipes:
       ub3_tho3:
         chance: 0.1000000000000000
         ub3_tho3:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6960,7 +6675,7 @@ recipes:
       ub3_tho3_prot4:
         chance: 0.0750000000000000
         ub3_tho3:
-          material: GOLD_CHESTPLATE
+          material: GOLDEN_CHESTPLATE
           amount: 1
           enchants:
             ub:
@@ -6987,7 +6702,7 @@ recipes:
       ub3_prot4:
         chance: 0.3000000000000000
         ub3_prot4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -6999,7 +6714,7 @@ recipes:
       ub3_proj4:
         chance: 0.1000000000000000
         ub3_proj4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7011,7 +6726,7 @@ recipes:
       ub3_proj4_prot4:
         chance: 0.0750000000000000
         ub3_proj4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7026,7 +6741,7 @@ recipes:
       ub3_fire4:
         chance: 0.1000000000000000
         ub3_fire4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7038,7 +6753,7 @@ recipes:
       ub3_fire4_prot4:
         chance: 0.0750000000000000
         ub3_fire4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7053,7 +6768,7 @@ recipes:
       ub3_blast4:
         chance: 0.1000000000000000
         ub3_blast4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7065,7 +6780,7 @@ recipes:
       ub3_blast4_prot4:
         chance: 0.0750000000000000
         ub3_blast4:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7080,7 +6795,7 @@ recipes:
       ub3_tho3:
         chance: 0.1000000000000000
         ub3_tho3:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7092,7 +6807,7 @@ recipes:
       ub3_tho3_prot4:
         chance: 0.0750000000000000
         ub3_tho3:
-          material: GOLD_LEGGINGS
+          material: GOLDEN_LEGGINGS
           amount: 1
           enchants:
             ub:
@@ -7119,7 +6834,7 @@ recipes:
       ub3_prot4:
         chance: 0.2000000000000000
         ub3_prot4:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7131,7 +6846,7 @@ recipes:
       ub3_proj4:
         chance: 0.1000000000000000
         ub3_proj4:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7143,7 +6858,7 @@ recipes:
       ub3_fire4:
         chance: 0.1000000000000000
         ub3_fire4:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7155,7 +6870,7 @@ recipes:
       ub3_blast4:
         chance: 0.1000000000000000
         ub3_blast4:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7167,7 +6882,7 @@ recipes:
       ub3_ff4:
         chance: 0.1000000000000000
         ub3_ff4:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7179,7 +6894,7 @@ recipes:
       ub3_ds3:
         chance: 0.1000000000000000
         ub3_ds3:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7191,7 +6906,7 @@ recipes:
       ub3_tho3:
         chance: 0.1000000000000000
         ub3_tho3:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7203,7 +6918,7 @@ recipes:
       ub3_prot4_ff4:
         chance: 0.0700000000000000
         ub3_prot4_ff4:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7218,7 +6933,7 @@ recipes:
       ub3_prot4_ds3:
         chance: 0.0700000000000000
         ub3_prot4_ds3:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:
@@ -7233,7 +6948,7 @@ recipes:
       ub3_prot4_ff4_ds3:
         chance: 0.0600000000000000
         ub3_prot4_ff4_ds3:
-          material: GOLD_BOOTS
+          material: GOLDEN_BOOTS
           amount: 1
           enchants:
             ub:

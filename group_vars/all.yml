@@ -26,3 +26,5 @@ top_level_templates:
  - server.properties
  - spigot.yml
  - wepif.yml
+spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
+mc_version: "1.13.2"
