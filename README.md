@@ -3,7 +3,7 @@ Civclassic 1.13 Ansible setup
 
 ## How to use:
 
-- Install Java
+- Install Java (minimum 8)
 
 https://www.java.com/en/download/help/linux_x64_install.xml
 
