@@ -1,0 +1,11 @@
+- name: Check if Spigot exists
+  stat:
+    path: "{{ dir }}/BuildTools/spigot-{{ mc_version }}.jar"
+  register: spigot_exist
+
+- name: Build Spigot if necessary
+  include: "tasks/build-spigot.yml"
+  when: spigot_exist.stat.exists == False
+
+- name: "Copy {{ shard_name }} Spigot.jar"
+  copy: "src={{ dir }}/BuildTools/spigot-{{ mc_version }}.jar dest={{ dir }}/{{ server_jar }}.jar owner={{ username }}"

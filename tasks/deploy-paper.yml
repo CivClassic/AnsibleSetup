@@ -1,0 +1,10 @@
+- name: Download Paper
+  get_url:
+    url: "{{ paper_url }}"
+    dest: "{{ dir }}/paper.jar"
+    mode: 0755
+    owner: "{{ username }}"
+    force: true
+
+- name: "Copy {{ shard_name }} paper.jar"
+  copy: "src={{ dir }}/paper.jar dest={{ dir }}/{{ server_jar }}.jar owner={{ username }}"

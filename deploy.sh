@@ -1,1 +1,1 @@
-ansible-playbook deploy-shard.yml 
+ansible-playbook deploy-server.yml

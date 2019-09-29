@@ -6,18 +6,18 @@
   hosts: "{{ host }}"
   gather_facts: true
   vars_files:
-   - group_vars/all.yml
+   - variables/all.yml
 
   tasks:
    - name: Include variables
      include_vars:
-       dir: group_vars
+       dir: variables
        extensions:
         - yml
 
 
    - name: Deploy Shard
-     include: "tasks/deploy-shard.yml shard_name={{ name }} \
+     include: "tasks/deploy-server.yml shard_name={{ name }} \
             dir=/home/{{ username }}/{{ name }} \
             port_num={{ port }} \
             gamemode=0"

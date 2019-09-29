@@ -6,16 +6,21 @@ name: civclassic
 port: 25565
 #How much memory is used at max
 shard_mem: 8G
+#Use PaperMC instead of Spigot?
+use_paper: true
 host: localhost
 jarfiles: jarfiles/
 templates: templates/
 plugins:
  - Citadel
+ - CivChat2
  - CivModCore
  - FactoryMod
  - Finale
+ - HolographicDisplays
  - NameLayer
  - ProtocolLib
+ - RealisticBiomes
 top_level_templates:
  - bukkit.yml
  - commands.yml
@@ -25,6 +30,9 @@ top_level_templates:
  - ops.json
  - server.properties
  - spigot.yml
+ - paper.yml
  - wepif.yml
+mc_version: "1.14.4"
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
-mc_version: "1.13.2"
+paper_url: "https://papermc.io/api/v1/paper/{{ mc_version }}/latest/download"
+server_jar: "minecraft"

@@ -1,2 +1,3 @@
 *.swo
 jarfiles/spigot.jar
+variables/passwords.yml

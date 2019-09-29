@@ -1,0 +1,113 @@
+cache_entire_database: true
+
+ # Set to true if you want tapping a plant with bonemeal to double it.
+allow_tallplant_replication: true
+
+ # categories of biomes
+biome_aliases:
+  water:
+  - BEACH
+  - STONE_BEACH
+  - DEEP_OCEAN
+  - RIVER
+  - OCEAN
+  - STONE_SHORE
+  freshwater:
+  - RIVER
+  - FROZEN_RIVER
+  cold_water:
+  - FROZEN_OCEAN
+  - FROZEN_RIVER
+  temperate:
+  - PLAINS
+  - SAVANNA
+  - SAVANNA_PLATEAU
+  - SHATTERED_SAVANNA
+  - SHATTERED_SAVANNA_PLATEAU
+  forest:
+  - BIRCH_FOREST
+  - BIRCH_FOREST_HILLS
+  - DARK_FOREST
+  - DARK_FOREST_HILLS
+  - FLOWER_FOREST
+  - FOREST
+  - TALL_BIRCH_FOREST
+  - TALL_BIRCH_HILLS
+  cold:
+  - ICE_SPIKES
+  - GIANT_SPRUCE_TAIGA
+  - GIANT_SPRUCE_TAIGA_HILLS
+  - GIANT_TREE_TAIGA
+  - GIANT_TREE_TAIGA_HILLS
+  - TAIGA
+  - TAIGA_HILLS
+  - TAIGA_MOUNTAINS
+  - SNOWY_TUNDRA
+  - SNOWY_BEACH
+  - SNOWY_MOUNTAINS
+  - SNOWY_TAIGA
+  - SNOWY_TAIGA_HILLS
+  - SNOWY_TAIGA_MOUNTAINS
+  cold_forest:
+  - GIANT_SPRUCE_TAIGA
+  - GIANT_SPRUCE_TAIGA_HILLS
+  - GIANT_TREE_TAIGA
+  - GIANT_TREE_TAIGA_HILLS
+  - TAIGA
+  - TAIGA_HILLS
+  - TAIGA_MOUNTAINS
+  hot_dry:
+  - DESERT
+  - DESERT_HILLS
+  - DESERT_LAKES
+  hot_rainy:
+  - JUNGLE
+  - JUNGLE_EDGE
+  - JUNGLE_HILLS
+  mountain:
+  - EXTREME_HILLS
+  - EXTREME_HILLS_WITH_TREES
+  - SMALLER_EXTREME_HILLS
+  mesa:
+  - BADLANDS
+  - BADLANDS_PLATEAU
+  - ERODED_BADLANDS
+  - WOODED_BADLANDS_PLATEAU
+  mushroom:
+  - MUSHROOM_FIELDS
+  - MUSHROOM_FIELD_SHORE
+  swamp:
+  - SWAMP
+  - SWAMP_HILLS
+  other:
+  - END_BARRENS
+  - END_HIGHLANDS
+  - END_MIDLANDS
+  - THE_VOID
+  - THE_END
+  - NETHER
+
+plants:
+  CARROTS:
+   persistent_growth_period: 1m
+   biomes:
+    hot_rainy: 1.0
+    SWAMPLAND: 0.5
+    temperate: 0.25
+    hot_dry: 0.1
+    SAVANNA: 1.0
+
+
+database:
+  ==: vg.civcraft.mc.civmodcore.dao.ManagedDatasource
+  plugin: RealisticBiomes
+  user: '{{ mysql_user }}'
+  password: '{{ mysql_non_root_pass }}'
+  host: '{{ mysql_host }}'   
+  port: 3306
+  database: '{{ mysql_db_name }}'
+  poolsize: 5
+  connection_timeout: 10000
+  idle_timeout: 600000
+  max_lifetime: 7200000
+

@@ -12,17 +12,13 @@
              owner={{ username }} mode='u=rw,g=r,o=r'"
   with_items: "{{ top_level_templates }}"
 
-- name: Check if Spigot exists
-  stat:
-    path: "{{ dir }}/BuildTools/spigot-{{ mc_version }}.jar"
-  register: spigot_exist
+- name: Deploy Spigot
+  include: "tasks/deploy-spigot.yml"
+  when: not use_paper
 
-- name: Build Spigot if necessary
-  include: "tasks/build-spigot.yml"
-  when: spigot_exist.stat.exists == False
-
-- name: "Copy {{ shard_name }} Spigot.jar"
-  copy: "src={{ dir }}/BuildTools/spigot-{{ mc_version }}.jar dest={{ dir }}/spigot.jar owner={{ username }}"
+- name: Deploy Paper
+  include: "tasks/deploy-paper.yml"
+  when: use_paper
 
 - name: "Clean existing Jarfiles"
   shell: "rm {{ dir }}/plugins/*.jar"
