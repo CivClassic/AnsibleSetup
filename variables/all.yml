@@ -18,6 +18,7 @@ plugins:
  - FactoryMod
  - Finale
  - HolographicDisplays
+ - JukeAlert
  - NameLayer
  - ProtocolLib
  - RealisticBiomes
