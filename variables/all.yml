@@ -12,6 +12,7 @@ host: localhost
 jarfiles: jarfiles/
 templates: templates/
 plugins:
+ - Bastion
  - Citadel
  - CivChat2
  - CivModCore
@@ -22,6 +23,7 @@ plugins:
  - NameLayer
  - ProtocolLib
  - RealisticBiomes
+ - WorldEdit
 top_level_templates:
  - bukkit.yml
  - commands.yml

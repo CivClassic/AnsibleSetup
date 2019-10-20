@@ -27,7 +27,20 @@ snitchConfigs:
         lifeTime: 4 weeks
         dormantTime: 4 weeks
       showownerondestroy: {}
-      levertoggle: {}
+      levertoggle:
+        NORTH:
+          trigger:
+           - ENTER
+           - LOGIN
+        SOUTH: 
+          trigger:
+           - OPEN_CONTAINER
+        EAST: 
+          trigger:
+           - PLACE_BLOCK
+        WEST: 
+          trigger:
+           - BREAK_BLOCK
       log: {}
 
 
