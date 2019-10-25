@@ -7,10 +7,16 @@
 - name: "Create {{ shard_name }} Plugins Directory"
   file: "path={{ dir }}/plugins state=directory owner={{ username }} mode=0755"
 
-- name: "Copy {{ shard_name }} top level templates"
-  template: "src={{ templates }}/{{ item }}.j2 dest={{ dir }}/{{ item }} \
+- name: "Copy {{ shard_name }} top level public templates"
+  template: "src={{ templates }}public/{{ item }}.j2 dest={{ dir }}/{{ item }} \
              owner={{ username }} mode='u=rw,g=r,o=r'"
   with_items: "{{ top_level_templates }}"
+
+- name: "Copy {{ shard_name }} top level private templates"
+  template: "src={{ templates }}private/{{ item }}.j2 dest={{ dir }}/{{ item }} \
+             owner={{ username }} mode='u=rw,g=r,o=r'"
+  with_items: "{{ secret_top_level_templates }}"
+  when: groups["secret_top_level_templates"] is defined
 
 - name: Deploy Spigot
   include: "tasks/deploy-spigot.yml"

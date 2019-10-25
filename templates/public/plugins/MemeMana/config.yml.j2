@@ -1,0 +1,18 @@
+mysql:
+  user: '{{ mysql_user }}'
+  password: '{{ mysql_non_root_pass }}'
+  host: '{{ mysql_host }}'
+  database: '{{ mysql_db_name }}'
+  port: 3306
+  poolsize: 10
+  connectionTimeout: 10000
+  idleTimout: 600000
+  maxLifetime: 7200000
+manaRotTime: 30d
+manaGainTimeout: 22h
+maximumDailyMana: 0
+pearlRefillAmount:
+  EXILE: 84 # 1344 pearl hp units per week divided by 16 mana per week = 84 pearl hp units per mana
+  PRISON: 21 # 1344 pearl hp units per week divided by 64 mana per week = 21 pearl hp units per mana
+pearlUpgradeAmount: 64
+
