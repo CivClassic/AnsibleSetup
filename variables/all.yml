@@ -30,6 +30,7 @@ plugins:
  - OldEnchanting
  - ProtocolLib
  - RealisticBiomes
+ - SimpleAdminHacks
  - WorldBorder
  - WorldEdit
 top_level_templates:
