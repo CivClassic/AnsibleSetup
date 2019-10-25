@@ -1,3 +1,4 @@
 *.swo
 jarfiles/spigot.jar
 variables/passwords.yml
+templates/private/*

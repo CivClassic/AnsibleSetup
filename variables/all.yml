@@ -12,17 +12,25 @@ host: localhost
 jarfiles: jarfiles/
 templates: templates/
 plugins:
+ - AttrHider
+ - BanStick
  - Bastion
+ - Brewery
  - Citadel
  - CivChat2
  - CivModCore
+# - CivSpy
+ - ExilePearl
  - FactoryMod
  - Finale
  - HolographicDisplays
  - JukeAlert
+ - MemeMana
  - NameLayer
+ - OldEnchanting
  - ProtocolLib
  - RealisticBiomes
+ - WorldBorder
  - WorldEdit
 top_level_templates:
  - bukkit.yml
@@ -35,6 +43,8 @@ top_level_templates:
  - spigot.yml
  - paper.yml
  - wepif.yml
+secret_top_level_templates:
+
 mc_version: "1.14.4"
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 paper_url: "https://papermc.io/api/v1/paper/{{ mc_version }}/latest/download"
