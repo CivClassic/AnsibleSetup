@@ -8,7 +8,11 @@ snitchConfigs:
     name: Snitch
     range: 11
     appender:
-      broadcast: {}
+      broadcast:
+        trigger:
+         - ENTRY
+         - LOGIN
+         - LOGOUT
       dormantcull:
         lifeTime: 2 weeks
         dormantTime: 2 weeks
@@ -22,7 +26,11 @@ snitchConfigs:
     name: Logsnitch
     range: 11
     appender:
-      broadcast: {}
+      broadcast:
+        trigger:
+         - ENTRY
+         - LOGIN
+         - LOGOUT
       dormantcull:
         lifeTime: 4 weeks
         dormantTime: 4 weeks
@@ -41,7 +49,8 @@ snitchConfigs:
         WEST: 
           trigger:
            - BREAK_BLOCK
-      log: {}
+      log:
+        acceptAll: true
 
 
 database:
