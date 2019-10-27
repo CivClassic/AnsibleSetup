@@ -22,10 +22,21 @@ reinforcements:
     item:
       ==: org.bukkit.inventory.ItemStack
       type: STONE
-    effect:
-      type: ENCHANTMENT_TABLE
-      speed: 0.5
-      particleCount: 50
+    creation_effect:
+      type: PORTAL
+      speed: 0.8
+      particleCount: 200
+      offset: 0.0
+    damage_effect:
+      type: SMOKE_NORMAL
+      speed: 0.06
+      particleCount: 100
+      offset: 0
+    destruction_effect:
+      type: SMOKE_LARGE
+      speed: 0.04
+      particleCount: 250
+      offset: 0.0
     mature_time: 5m
     acid_time: 20m
     name: Stone
@@ -35,10 +46,21 @@ reinforcements:
     item:
       ==: org.bukkit.inventory.ItemStack
       type: IRON_INGOT
-    effect:
+    creation_effect:
       type: ENCHANTMENT_TABLE
-      speed: 0.5
-      particleCount: 50
+      speed: 1
+      particleCount: 100
+      offset: 0.1
+    damage_effect:
+      type: END_ROD
+      speed: 0.07
+      particleCount: 100
+      offset: 0.0
+    destruction_effect:
+      type: END_ROD
+      speed: 0.13
+      particleCount: 500
+      offset: 0
     mature_time: 30m
     acid_time: 6h
     name: Iron
@@ -48,10 +70,21 @@ reinforcements:
     item:
       ==: org.bukkit.inventory.ItemStack
       type: DIAMOND
-    effect:
-      type: ENCHANTMENT_TABLE
+    creation_effect:
+      type: NAUTILUS
+      speed: 0.6
+      particleCount: 100
+      offset: 0.1
+    damage_effect:
+      type: BUBBLE_POP
+      speed: 0.2
+      particleCount: 100
+      offset: 0.1
+    destruction_effect:
+      type: BUBBLE_POP
       speed: 0.5
-      particleCount: 50
+      particleCount: 500
+      offset: 0.1
     mature_time: 4h
     acid_time: 48h
     name: Diamond
@@ -61,10 +94,6 @@ reinforcements:
     item:
       ==: org.bukkit.inventory.ItemStack
       type: BEDROCK
-    effect:
-      type: ENCHANTMENT_TABLE
-      speed: 0.5
-      particleCount: 50
     mature_time: 1s
     acid_time: 1s
     name: Bedrock
