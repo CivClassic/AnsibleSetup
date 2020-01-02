@@ -9,7 +9,7 @@ https://www.java.com/en/download/help/linux_x64_install.xml
 
 - Install Python
 
-sudo apt-get install git python3
+sudo apt-get install git python3 python3-pip
 
 - Install Ansible
 
