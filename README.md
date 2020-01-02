@@ -26,12 +26,13 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 - Configure a root password for MariaDB
 
 - Clone this repo
-
+```
 git clone https://github.com/CivClassic/AnsibleSetup.git
 cd AnsibleSetup
+```
 
 - Put the MariaDB root password and a password for a new mysql user account in group_vars/secrets.yml
 
 - Run the deploy script
 
-bash deploy.sh
+`bash deploy.sh`
