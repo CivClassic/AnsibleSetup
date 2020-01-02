@@ -12,8 +12,6 @@
    - name: Include variables
      include_vars:
        dir: variables
-       extensions:
-        - yml
 
 
    - name: Deploy Shard

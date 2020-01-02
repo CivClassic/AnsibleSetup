@@ -5,7 +5,7 @@ name: civclassic
 #Port to use
 port: 25565
 #How much memory is used at max
-shard_mem: 8G
+shard_mem: 4G
 #Use PaperMC instead of Spigot?
 use_paper: true
 host: localhost

@@ -42,7 +42,7 @@
   become: yes
 
 - name: "Create {{ shard_name }} Database"	
-  mysql_db: "name={{ shard_name }} state=present login_user=root login_password={{ mysql_root_pass }} login_unix_socket=/var/run/mysqld/mysqld.sock"
+  mysql_db: "name={{ shard_name }} state=present login_user=root login_password={{ mysql_root_pass }} login_unix_socket=/var/run/mysqld/mysqld.sock encoding=latin1"
 
 - name: "Create {{ shard_name }} MariaDB user"
   mysql_user: "name={{ shard_name }} password={{ mysql_non_root_pass }} login_password={{ mysql_root_pass }} priv={{ shard_name }}.*:ALL host=localhost state=present login_user=root"
