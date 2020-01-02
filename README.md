@@ -9,7 +9,7 @@ https://www.java.com/en/download/help/linux_x64_install.xml
 
 - Install Git and Python
 
-`sudo apt-get install git python3 python3-pip python3-dev default-libmysqlclient-dev`
+`sudo apt-get install git python python-pip python-dev default-libmysqlclient-dev`
 
 - Install Ansible
 
@@ -17,7 +17,7 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 - Install PyMySQL
 
-`sudo pip3 install PyMySQL`
+`sudo pip install PyMySQL`
 
 - Install MariaDB
 
