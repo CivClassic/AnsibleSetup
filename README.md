@@ -17,7 +17,7 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 - Install PyMySQL
 
-`sudo pip install PyMySQL`
+`sudo pip3 install PyMySQL`
 
 - Install MariaDB
 
