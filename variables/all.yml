@@ -20,17 +20,24 @@ plugins:
  - CivChat2
  - CivModCore
 # - CivSpy
+ - CombatTagPlus
  - ExilePearl
  - FactoryMod
  - Finale
+ - HiddenOre
  - HolographicDisplays
  - JukeAlert
+ - LuckPerms
  - MemeMana
+ - NameColors
  - NameLayer
  - OldEnchanting
  - ProtocolLib
+ - RailSwitch
+ - RandomSpawn
  - RealisticBiomes
  - SimpleAdminHacks
+ - Vault
  - WorldBorder
  - WorldEdit
 top_level_templates:
