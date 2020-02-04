@@ -32,6 +32,7 @@ plugins:
  - NameColors
  - NameLayer
  - OldEnchanting
+ - Orebfuscator
  - ProtocolLib
  - RailSwitch
  - RandomSpawn
