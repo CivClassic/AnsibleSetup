@@ -7,7 +7,6 @@ allow_tallplant_replication: true
 biome_aliases:
   water:
   - BEACH
-  - STONE_BEACH
   - DEEP_OCEAN
   - RIVER
   - OCEAN
@@ -65,9 +64,11 @@ biome_aliases:
   - JUNGLE_EDGE
   - JUNGLE_HILLS
   mountain:
-  - EXTREME_HILLS
-  - EXTREME_HILLS_WITH_TREES
-  - SMALLER_EXTREME_HILLS
+  - MOUNTAINS
+  - MOUNTAIN_EDGE
+  - GRAVELLY_MOUNTAINS
+  - MODIFIED_GRAVELLY_MOUNTAINS
+  - WOODED_MOUNTAINS
   mesa:
   - BADLANDS
   - BADLANDS_PLATEAU
@@ -79,6 +80,12 @@ biome_aliases:
   swamp:
   - SWAMP
   - SWAMP_HILLS
+  end:
+  - END_BARRENS
+  - END_HIGHLANDS
+  - END_MIDLANDS
+  - THE_VOID
+  - THE_END
   other:
   - END_BARRENS
   - END_HIGHLANDS
@@ -88,78 +95,157 @@ biome_aliases:
   - NETHER
 
 plants:
+  WHEAT:
+   persistent_growth_period: 3h
+   biomes:
+    temperate: 1.0
+    forest: 0.75 
+    other: 0.5
+    cold: 0.25
+    hot_dry: 0.25
+    mountain: 0.25
+    mushroom: 0.25
+    water: 0.1
+    cold_water: 0.1
+    hot_rainy: 0.1 
+
   CARROT:
-   persistent_growth_period: 30s
+   persistent_growth_period: 3h
    biomes:
     hot_rainy: 1.0
-    SWAMPLAND: 0.5
-    temperate: 1.0
+    swamp: 0.5
+    temperate: 0.25
     hot_dry: 0.1
-    FOREST: 1.0
+    end: 0.1
+
   POTATO:
-   persistent_growth_period: 30s
+   persistent_growth_period: 3h
+   biomes:
+    mountain: 1.0
+    temperate: 0.5
+    cold: 0.25
+    other: 0.1
+
+  BEETROOT:
+   persistent_growth_period: 3h
+   biomes:    
+    temperate: 1.0
+    forest: 0.75
+    other: 0.5
+    cold: 0.25
+    hot_dry: 0.25
+    mountain: 0.25
+    mushroom: 0.25
+
+  
+  NETHER_WART:
+   persistent_growth_period: 16h
+   needs_sun_light: false
+   soil_max_layers: 4
+   soil_boni:
+     SOUL_SAND: 0.5
+   biomes:
+    NETHER: 1.0
+    mushroom: 0.5
+    hot_dry: 0.25
+
+  COCOA:
+   persistent_growth_period: 24h
+   soil_max_layers: 25
+   soil_boni:
+     VINE: 0.3
    biomes:
     hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
+
+
+
   MELON:
-   persistent_growth_period: 30s
+   persistent_growth_period: 3h
    biomes:
-    hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
+    biomes: 1.0
+    hot_rainy: 0.5
+    temperate: 0.25
+
+
   MELON_STEM:
-   persistent_growth_period: 30s
+   persistent_growth_period: 12h
    biomes:
-    hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
+    swamp: 1.0
+    hot_rainy: 0.5
+    temperate: 0.25
+
+  PUMPKIN:
+   persistent_growth_period: 3h
+   biomes:
+    cold: 1.0
+    temperate: 0.25
+
+  PUMPKIN_STEM:
+   persistent_growth_period: 12h
+   biomes:
+    cold: 1.0
+    temperate: 0.25
+
+
+
   CACTUS:
-   persistent_growth_period: 30s
+   persistent_growth_period: 6h
    biomes:
-    hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
+    hot_dry: 1.0
+    NETHER: 0.5
+    mesa: 0.5
+
   SUGAR_CANE:
-   persistent_growth_period: 30s
+   persistent_growth_period: 6h
    biomes:
     hot_rainy: 1.0
-    SWAMPLAND: 0.5   
+    swamp: 0.5
+    water: 0.5  
+
+  OAK_SAPLING:
+   persistent_growth_period: 6h
+   biomes:
+    swamp: 0.5
+    forest: 2.0
+    temperate: 0.25
+    hot_rainy: 0.5
+    other: 0.25
+
+  BIRCH_SAPLING:
+   persistent_growth_period: 6h
+   biomes:
+    forest: 2.0
+    temperate: 0.25
+
+  SPRUCE_SAPLING:
+   persistent_growth_period: 6h
+   biomes:
+    cold: 0.75
+    cold_forest: 2.0
+    mountain: 0.75
+
+  JUNGLE_SAPLING:
+   persistent_growth_period: 6h
+   biomes:
+    hot_rainy: 1.0
+
+  ACACIA_SAPLING:
+   persistent_growth_period: 6h
+   biomes:
+    hot_dry: 2.0
     temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
+    mushroom: 0.0
+    freshwater: 0.0
+    temperate: 1.0
+
   DARK_OAK_SAPLING:
    persistent_growth_period: 30s
    biomes:
-    hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
-  OAK_SAPLING:
-   persistent_growth_period: 30s
-   biomes:
-    hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
-  JUNGLE_SAPLING:
-   persistent_growth_period: 30s
-   biomes:
-    hot_rainy: 1.0
-    SWAMPLAND: 0.5   
-    temperate: 1.0
-    hot_dry: 0.1
-    FOREST: 1.0
+    swamp: 2.0
+    forest: 1.0
+    cold_forest: 0.5
+
+
 
 
 database:
