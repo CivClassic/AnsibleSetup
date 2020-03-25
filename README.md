@@ -7,9 +7,9 @@ Civclassic 1.13 Ansible setup
 
 https://www.java.com/en/download/help/linux_x64_install.xml
 
-- Install Git and Python
+- Install Git, Python and MariaDB
 
-`sudo apt-get install git python python-pip python-dev default-libmysqlclient-dev python-mysqldb`
+`sudo apt-get install git python python-pip python-dev default-libmysqlclient-dev python-mysqldb mariadb-server mariadb-client`
 
 - Install Ansible
 
@@ -18,10 +18,6 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 - Install PyMySQL
 
 `sudo pip install PyMySQL`
-
-- Install MariaDB
-
-`sudo apt-get install mariadb-server mariadb-client`
 
 - Configure a root password for MariaDB
 
