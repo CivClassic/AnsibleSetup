@@ -51,8 +51,6 @@
     owner: root
     mode: 0600
   become: yes
-  notify:
-   - restart mariadb
 
 - name: Restart MariaDB and ensure it starts on boot
   service:
