@@ -1,1 +1,1 @@
-ansible-playbook deploy-server.yml
+ansible-playbook --ask-become-pass deploy-server.yml

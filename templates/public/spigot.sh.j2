@@ -8,7 +8,7 @@ java -server \
      -XX:+UseCompressedOops \
      -XX:+UseAES \
      -XX:+UseAESIntrinsics \
-     -Xmx{{ shard_mem }} -Xms128M \
+     -Xmx{{ shard_mem }} -Xms{{ shard_mem }} \
      -XX:UseSSE=3 \
      -XX:+DisableExplicitGC \
      -XX:+UseNUMA \
