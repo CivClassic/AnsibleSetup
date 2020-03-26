@@ -12,6 +12,9 @@
              owner={{ username }} mode='u=rw,g=r,o=r'"
   with_items: "{{ top_level_templates }}"
 
+- name: Make startup script executable
+  file: dest={{ dir }}/{{ startup_script }} mode=u+x
+
 - name: "Copy {{ shard_name }} top level private templates"
   template: "src={{ templates }}private/{{ item }}.j2 dest={{ dir }}/{{ item }} \
              owner={{ username }} mode='u=rw,g=r,o=r'"

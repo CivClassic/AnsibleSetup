@@ -1,16 +1,19 @@
-#User name of the user who will own the server at /home/username/
+#User name of the OS user who will own the server at /home/username/
 username: mc
 #Name of the server
 name: civclassic
-#Port to use
+#Port to use for MC server
 port: 25567
 #How much memory is used at max
 shard_mem: 4G
 #Use PaperMC instead of Spigot?
 use_paper: true
 host: localhost
+#Folder containg all plugin jars
 jarfiles: jarfiles/
+#Folder containing the configurations and templates files
 templates: templates/
+#Plugins to deploy, including jar and config files
 plugins:
  - AttrHider
  - BanStick
@@ -41,6 +44,7 @@ plugins:
  - Vault
  - WorldBorder
  - WorldEdit
+#Public server files not specific to a plugin, templates for these are under templates/public/
 top_level_templates:
  - bukkit.yml
  - commands.yml
@@ -52,12 +56,19 @@ top_level_templates:
  - spigot.yml
  - paper.yml
  - wepif.yml
+#Nonpublic server files not specific to a plugin, templates for these are under templates/private/
 secret_top_level_templates:
 
+#Minecraft version
 mc_version: "1.14.4"
+#URL to pull BuildTools from for building Spigot
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
+#URL to pull Paper build from
 paper_url: "https://papermc.io/api/v1/paper/{{ mc_version }}/latest/download"
+#Name of the final server jar put into the server folder
 server_jar: "minecraft"
+#Startup bash script file name
+startup_script: "start.sh"
 
-#Mysql socket location
+#Mysql socket location, you likely want to changes this something like "/var/run/mysql/mysql.sock". You can find the correct path in '/etc/my.cnf' under [mysqld] --> socket
 mysql_socket_location: "/home/mysql/mysqld.sock"
