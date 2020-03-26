@@ -1,9 +1,9 @@
 #User name of the OS user who will own the server at /home/username/
 username: mc
 #Name of the server
-name: civclassic
+servername: civclassic
 #Port to use for MC server
-port: 25567
+mc_port: 25567
 #How much memory is used at max
 shard_mem: 4G
 #Use PaperMC instead of Spigot?
