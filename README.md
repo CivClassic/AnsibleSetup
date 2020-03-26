@@ -1,7 +1,10 @@
 # AnsibleSetup
-Civclassic 1.13 Ansible setup
+Civclassic 1.14.4 Ansible setup
 
-## How to use:
+
+## How to deploy:
+
+First of all note that Ansible does not support Windows, you will need a UNIX based operating system. Civclassics uses Debian/Ubuntu and all instructions in the following will be based on that.
 
 - Install Java (minimum 8)
 
@@ -21,14 +24,43 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 
 - Configure a root password for MariaDB
 
+https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password
+
+Note that in the following the terms MariaDB and Mysql are used interchangeably
+
 - Clone this repo
 ```
 git clone https://github.com/CivClassic/AnsibleSetup.git
 cd AnsibleSetup
 ```
 
-- Put the MariaDB root password and a password for a new mysql user account in group_vars/secrets.yml
+- Create the file variables/passwords.yml and fill it as follows:
+
+```
+#Name of the mysql root user
+mysql_root_user: root
+#Mysql root password
+mysql_root_pass: squidlover69
+#Password to use for the newly created mysql user
+mysql_non_root_pass: squidlover420
+#Host of the mysql database
+mysql_host: localhost
+#Name of the mysql user to use, will be automatically created
+mysql_user: '{{ shard_name }}'
+#Name of the database to use
+mysql_db_name: 'civclassic'
+#Optional API key to make Bansticks ip hub lookup work
+ip_hub_key:
+```
+
+You should only have to change `mysql_root_pass` to your MariaDB root password and change `mysql_non_root_pass` to an arbitrary random string for this to work
+
+- Configure the setup according to your needs
+
+Check out `variables/all.yml` and change values as you see fit. You will most likely need to change `mysql_socket_location` to `/var/run/mysql/mysql.sock`
 
 - Run the deploy script
 
 `bash deploy.sh`
+
+This script requires sudo for the initial database setup and will thus ask for your sudo password. You only need to run this once at the beginning or if you want to change the database or user name used. Past that you can use `update.sh` to apply changes to configs, plugins etc. only, which does not require sudo.
