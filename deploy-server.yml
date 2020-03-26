@@ -14,7 +14,7 @@
        dir: variables
 
    - name: Update SQL
-     include: "tasks/setup-sql.yml" shard_name={{ name }}
+     include: "tasks/setup-sql.yml shard_name={{ name }}"
 
    - name: Deploy Server
      include: "tasks/deploy-server.yml shard_name={{ name }} \
