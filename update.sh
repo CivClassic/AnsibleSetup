@@ -1,1 +1,1 @@
-ansible-playbook deploy-server.yml
+ansible-playbook update-server.yml

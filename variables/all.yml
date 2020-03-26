@@ -44,7 +44,7 @@ plugins:
 top_level_templates:
  - bukkit.yml
  - commands.yml
- - spigot.sh
+ - start.sh
  - eula.txt
  - help.yml
  - ops.json

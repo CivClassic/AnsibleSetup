@@ -13,9 +13,6 @@
      include_vars:
        dir: variables
 
-   - name: Update SQL
-     include: "tasks/setup-sql.yml
-
    - name: Deploy Server
      include: "tasks/deploy-server.yml shard_name={{ name }} \
             dir=/home/{{ username }}/{{ name }} \
