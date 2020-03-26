@@ -1,19 +1,22 @@
 #User name of the OS user who will own the server at /home/username/
 username: mc
-#Name of the server
+
+#Name of the server, folder the server is in will be /home/username/name
 name: civclassic
+
 #Port to use for MC server
 port: 25567
-#How much memory is used at max
+
+#How much memory is used by the server
 shard_mem: 4G
+
 #Use PaperMC instead of Spigot?
 use_paper: true
-host: localhost
-#Folder containg all plugin jars
-jarfiles: jarfiles/
-#Folder containing the configurations and templates files
-templates: templates/
-#Plugins to deploy, including jar and config files
+
+#Mysql socket location, you likely want to changes this something like "/var/run/mysql/mysql.sock". You can find the correct path in '/etc/my.cnf' under [mysqld] --> socket
+mysql_socket_location: "/home/mysql/mysqld.sock"
+
+#Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
 plugins:
  - AttrHider
  - BanStick
@@ -44,6 +47,17 @@ plugins:
  - Vault
  - WorldBorder
  - WorldEdit
+
+#--------------------------------------
+#Unless you know what you are doing you probably don't want to touch anything below this line
+#--------------------------------------
+
+host: localhost
+#Folder containg all plugin jars
+jarfiles: jarfiles/
+#Folder containing the configurations and templates files
+templates: templates/
+
 #Public server files not specific to a plugin, templates for these are under templates/public/
 top_level_templates:
  - bukkit.yml
@@ -70,5 +84,3 @@ server_jar: "minecraft"
 #Startup bash script file name
 startup_script: "start.sh"
 
-#Mysql socket location, you likely want to changes this something like "/var/run/mysql/mysql.sock". You can find the correct path in '/etc/my.cnf' under [mysqld] --> socket
-mysql_socket_location: "/home/mysql/mysqld.sock"
