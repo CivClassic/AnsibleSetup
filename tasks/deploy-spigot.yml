@@ -7,5 +7,5 @@
   include: "tasks/build-spigot.yml"
   when: spigot_exist.stat.exists == False
 
-- name: "Copy {{ shard_name }} Spigot.jar"
+- name: "Copy {{ servername }} Spigot.jar"
   copy: "src={{ main_folder }}/BuildTools/spigot-{{ mc_version }}.jar dest={{ full_server_folder }}/{{ server_jar }}.jar owner={{ username }}"
