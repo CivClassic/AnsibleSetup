@@ -1,0 +1,30 @@
+---
+# Ansbile task to backup a server
+
+- name: "Wait for server to stop"
+  wait_for: "port={{ port }} state=absent"
+
+- name: Setup variables
+  vars:
+    sql_file: "{{ main_folder }}/{{ backups_folder }}/{{ servername }}.sql"
+  debug:
+    var: ansible_date_time
+
+- name: Delete old SQL dump if exists
+  file:
+    state: absent
+    path: "{{ sql_file }}"
+
+- name: "Dumping {{ servername }} mysql db"
+  shell: "mysqldump --user=root --password={{ mysql_root_pass }} --hex-blob --routines --lock-all-tables --add-drop-database {{ mysql_db_name }} > {{ sql_file }}"
+
+
+- name: "Creating tar for {{ servername }}"
+  shell: "tar --exclude='*.jar' -czvf {{ main_folder }}/{{ backups_folder }}/{{ servername }}-{{ ansible_date_time.iso8601 }}.tar.gz {{ sql_file }} {{ full_server_folder }}/plugins {{ full_server_folder }}/world {{ full_server_folder }}/world_nether {{ full_server_folder }}/world_the_end"
+
+- name: Delete no longer needed SQL dump
+  file:
+    state: absent
+    path: "{{ sql_file }}"
+
+

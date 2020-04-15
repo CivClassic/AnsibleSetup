@@ -1,6 +1,6 @@
 - name: Check if Spigot exists
   stat:
-    path: "{{ dir }}/BuildTools/spigot-{{ mc_version }}.jar"
+    path: "{{ main_folder }}/BuildTools/spigot-{{ mc_version }}.jar"
   register: spigot_exist
 
 - name: Build Spigot if necessary
@@ -8,4 +8,4 @@
   when: spigot_exist.stat.exists == False
 
 - name: "Copy {{ shard_name }} Spigot.jar"
-  copy: "src={{ dir }}/BuildTools/spigot-{{ mc_version }}.jar dest={{ dir }}/{{ server_jar }}.jar owner={{ username }}"
+  copy: "src={{ main_folder }}/BuildTools/spigot-{{ mc_version }}.jar dest={{ full_server_folder }}/{{ server_jar }}.jar owner={{ username }}"

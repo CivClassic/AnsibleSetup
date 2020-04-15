@@ -1,8 +1,14 @@
 #User name of the OS user who will own the server at /home/username/
-username: mc
+username: "mc"
 
-#Name of the server, folder the server is in will be /home/username/name
-servername: civclassic
+#Name of the server, folder the servers data is in will be /home/username/name
+servername: "civclassic"
+
+#Relative name of the folder the actual MC server is in
+server_folder: "server"
+
+#Relative name of the folder backups will be in
+backups_folder: "backups"
 
 #Port to use for MC server
 mc_port: 25567
@@ -54,9 +60,9 @@ plugins:
 
 host: localhost
 #Folder containg all plugin jars
-jarfiles: jarfiles/
+jar_files: jarfiles
 #Folder containing the configurations and templates files
-templates: templates/
+templates: templates
 
 #Public server files not specific to a plugin, templates for these are under templates/public/
 top_level_templates:
@@ -83,4 +89,10 @@ paper_url: "https://papermc.io/api/v1/paper/{{ mc_version }}/latest/download"
 server_jar: "minecraft"
 #Startup bash script file name
 startup_script: "start.sh"
+#Name of the sevrer console tab in byobu
+byobu_server_tab: "server"
+
+#Folder most of the magic is happening as a variable for convenience
+main_folder: "/home/{{ username }}/{{ servername }}"
+full_server_folder: "/home/{{ username }}/{{ servername }}/{{ server_folder }}"
 

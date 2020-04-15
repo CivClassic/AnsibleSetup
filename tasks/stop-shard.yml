@@ -1,8 +1,0 @@
----
-#task to Stop shards
-
-- name: Send shutdown command
-  shell: "tmux send -t {{ shard_item.name }} ENTER 'stop' ENTER" 
- 
-#- name: Wait for Shard to stop
-#  wait_for: "port={{ shard_item.port }} state=absent"

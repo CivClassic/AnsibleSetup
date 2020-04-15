@@ -14,7 +14,4 @@
        dir: variables
 
    - name: Deploy Server
-     include: "tasks/deploy-server.yml shard_name={{ servername }} \
-            dir=/home/{{ username }}/{{ servername }} \
-            port_num={{ mc_port }} \
-            gamemode=0"
+     include: "tasks/deploy-server.yml"

@@ -1,21 +1,21 @@
 ---
 #task to deploy a single shard
 
-- name: "Create {{ shard_name }} Directory"
-  file: "path={{ dir }} state=directory owner={{ username }} mode=0755"
+- name: "Create {{ full_server_folder }} Directory"
+  file: "path={{ full_server_folder }} state=directory owner={{ username }} mode=0755"
 
-- name: "Create {{ shard_name }} Plugins Directory"
-  file: "path={{ dir }}/plugins state=directory owner={{ username }} mode=0755"
+- name: "Create {{ servername }} Plugins Directory"
+  file: "path={{ full_server_folder }}/plugins state=directory owner={{ username }} mode=0755"
 
-- name: "Copy {{ shard_name }} top level public templates"
-  template: "src={{ templates }}public/{{ item }}.j2 dest={{ dir }}/{{ item }} \
+- name: "Copy {{ servername }} top level public templates"
+  template: "src={{ templates }}/public/{{ item }}.j2 dest={{ dir }}/{{ item }} \
              owner={{ username }} mode='u=rw,g=r,o=r'"
   with_items: "{{ top_level_templates }}"
 
 - name: Make startup script executable
-  file: dest={{ dir }}/{{ startup_script }} mode=u+x
+  file: dest={{ full_server_folder }}/{{ startup_script }} mode=u+x
 
-- name: "Copy {{ shard_name }} top level private templates"
+- name: "Copy {{ servername }} top level private templates"
   template: "src={{ templates }}private/{{ item }}.j2 dest={{ dir }}/{{ item }} \
              owner={{ username }} mode='u=rw,g=r,o=r'"
   with_items: "{{ secret_top_level_templates }}"
@@ -30,9 +30,9 @@
   when: use_paper
 
 - name: "Clean existing Jarfiles"
-  shell: "rm {{ dir }}/plugins/*.jar"
+  shell: "rm {{ full_server_folder }}/plugins/*.jar"
   ignore_errors: true
 
-- name: "Deploy {{ shard_name }} plugins"
+- name: "Deploy {{ servername }} plugins"
   include: "tasks/deploy-plugin.yml plugin_name={{ item }} plugin_dir=plugins"
   with_items: "{{ plugins }}"

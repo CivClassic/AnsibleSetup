@@ -2,10 +2,10 @@
 #task to restart shards
 
 - name: Wait for Shard to stop
-  wait_for: "port={{ shard_item.port }} state=absent"
+  wait_for: "port={{ port }} state=absent"
 
 - name: Send Start command
-  shell: "tmux send -t {{ shard_item.name }} ENTER 'bash spigot.sh' ENTER" 
+  shell: "tmux send -t {{ byobu_server_tab }} ENTER 'bash {{ startup_script }}' ENTER" 
 
 - name: Wait for Shard to start
   wait_for: "port={{ shard_item.port }} state=present"

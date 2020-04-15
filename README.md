@@ -12,7 +12,7 @@ https://www.java.com/en/download/help/linux_x64_install.xml
 
 - Install Git, Python and MariaDB
 
-`sudo apt-get install git python python-pip python-dev default-libmysqlclient-dev python-mysqldb mariadb-server mariadb-client`
+`sudo apt-get install git python python-pip python-dev default-libmysqlclient-dev python-mysqldb mariadb-server mariadb-client byobu`
 
 - Install Ansible
 
@@ -49,6 +49,8 @@ mysql_host: localhost
 mysql_user: '{{ shard_name }}'
 #Name of the database to use
 mysql_db_name: 'civclassic'
+#Port mysql is using, 3306 by default
+mysql_port: 3306
 #Optional API key to make Bansticks ip hub lookup work
 ip_hub_key:
 ```

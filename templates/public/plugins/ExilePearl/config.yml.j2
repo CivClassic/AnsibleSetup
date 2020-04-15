@@ -1,0 +1,92 @@
+storage:
+  type: 1
+  mysql:
+    host: '{{ mysql_host }}'
+    dbname: '{{ mysql_db_name }}'
+    port: '{{ mysql_port }}'
+    username: '{{ mysql_user }}'
+    password: '{{ mysql_non_root_pass }}'
+    connection_timeout: 5000
+    idle_timeout: 5000
+    max_lifetime: 5000
+    pool_size: 5
+general:
+  suicide_time_seconds: 180                                                                                                                                       
+pearls:                                                                                                                                                  
+  autofree_worldborder: true                    
+  free_by_throwing: false                                             
+  free_teleport: true                                                                
+  hotbar_needed: true        
+  decay_interval_human: week                                                   
+  decay_interval_min_human: 10080                                              
+  decay_interval_min: 15                                                       
+  decay_amount: 2 # 2 hp / 15 min = 8 hp / 1 hour
+  decay_timeout_min: 10080                                            
+  start_value: 96 # 12 hours * 8 per hour                                      
+  max_value: 2688 # 336 hours (2 weeks) * 8 per hour                           
+  repair_materials:                                                            
+    PRISON:
+      mana:
+        material: BEDROCK
+        name: Mana                                                  
+        repair: 21                                                       
+    EXILE:                                              
+      mana:                         
+        material: BEDROCK                                                 
+        name: Mana                                      
+        repair: 168                         
+  bastion_harm_amount: 2.0                                         
+  upgrade_materials:                                               
+    mana:                                                                    
+      material: BEDROCK                      
+      name: Mana                                         
+      repair: 64                                                 
+  allow_pearl_stealing: true
+  allow_summoning: true
+  prison_world: world_the_end
+  main_world: world
+help_item:
+  enabled: true
+  item_name: "You've been pearled!"
+  item_text:
+  - "<a>You have been pearled."
+  - ""
+  - "<n>Another player has imprisoned you in an ender pearl."
+  - "<n>Your in-game actions will be limited until you are freed."
+  - "<n>You can type <c>/ep locate to see the location of your pearl."
+damage_log:
+  enabled: true
+  algorithm: 0
+  tick_interval: 20
+  decay_amount: 1.0
+  max_amount: 30.0
+  potion_damge: 6.0
+rules:
+  pearl_radius: 1000
+  ignite: false
+  use_bed: true
+  use_bucket: true
+  fill_bucket: true
+  milk_cows: true
+  use_potions: false
+  drink_brews: true
+  fill_cauldron: true
+  throw_pearl: false
+  pvp: false
+  kill_pets: true
+  kill_mobs: true
+  enchant: true
+  brew: true
+  suicide: true
+  mine_blocks: true
+  collect_xp: true
+  use_anvil: true
+  place_tnt: false
+  chat_local: true
+  create_bastion: true
+  damage_bastion: false
+  enter_bastion: false
+  damage_reinforcement: false
+  place_snitch: false
+  protected_mobs: []
+  disallowed_worlds:
