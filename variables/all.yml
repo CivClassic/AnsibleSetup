@@ -32,6 +32,7 @@ plugins:
  - CivChat2
  - CivModCore
  - CivSpy
+ - ClearLag
  - CombatTagPlus
  - ExilePearl
  - FactoryMod
