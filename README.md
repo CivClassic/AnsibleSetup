@@ -46,7 +46,7 @@ mysql_non_root_pass: squidlover420
 #Host of the mysql database
 mysql_host: localhost
 #Name of the mysql user to use, will be automatically created
-mysql_user: '{{ shard_name }}'
+mysql_user: '{{ servername }}'
 #Name of the database to use
 mysql_db_name: 'civclassic'
 #Port mysql is using, 3306 by default
