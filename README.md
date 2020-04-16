@@ -51,6 +51,9 @@ mysql_user: '{{ shard_name }}'
 mysql_db_name: 'civclassic'
 #Port mysql is using, 3306 by default
 mysql_port: 3306
+#Seeds used for HiddenOre noise generation
+hidden_ore_density_seed: 13
+hidden_ore_height_seed: 14
 #Optional API key to make Bansticks ip hub lookup work
 ip_hub_key:
 ```
