@@ -11,7 +11,7 @@
   file: "path={{ full_server_folder }}/plugins/{{ plugin_name }} state=directory owner={{ username }} mode=0755"
 
 
-- stat: path={{ templates }}public/{{ plugin_dir }}/{{ plugin_name }}
+- stat: path={{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}
   register: publicExists
 
 - name: "Copy {{ plugin_name }} public configuration"
