@@ -26,7 +26,7 @@
 
 - name: "Copy {{ plugin_name }} public configuration"
   template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | regex_replace({{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/,'') | regex_replace('\.j2','') }}
-  with_fileglob: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/**/**/*.j2"
+  with_fileglob: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
   loop_control:
     loop_var: configname
   when: publicExists.stat.exists and publicExists.stat.isdir
@@ -47,7 +47,7 @@
 
 - name: "Copy {{ plugin_name }} secret configuration"
   template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | regex_replace({{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/,'') | regex_replace('\.j2','') }}
-  with_fileglob: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/**/**/*.j2"
+  with_fileglob: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
   loop_control:
     loop_var: configname
   when: privateExists.stat.exists and privateExists.stat.isdir
