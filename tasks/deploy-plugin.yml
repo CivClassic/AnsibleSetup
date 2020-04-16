@@ -19,7 +19,7 @@
   with_fileglob: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
   loop_control:
     loop_var: configname
-  when: publicExists.stat.isdir is defined and publicExists.stat.isdir
+  when: publicExists.stat.exists is defined and publicExists.stat.isdir
 
 
 - stat: path={{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}
@@ -30,4 +30,4 @@
   with_fileglob: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
   loop_control:
     loop_var: configname
-  when: privateExists.stat.isdir is defined and privateExists.stat.isdir
+  when: privateExists.stat.exists and privateExists.stat.isdir
