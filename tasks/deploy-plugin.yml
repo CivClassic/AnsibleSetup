@@ -16,11 +16,13 @@
 
 - name: Create {{ plugin_name }} relative directories for public configs
   file:
-    path: "{{ full_server_folder }}/plugins/{{ plugin_name }}/{{ item.path }}"
+    path: "{{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configdirname.path }}"
     state: directory
-    mode: '{{ item.mode }}'
+    mode: '{{ configdirname.mode }}'
   with_filetree: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/"
-  when: publicExists.stat.exists and publicExists.stat.isdir and item.state == 'directory'
+  loop_control:
+    loop_var: configdirname
+  when: publicExists.stat.exists and publicExists.stat.isdir and configdirname.state == 'directory'
 
 - name: "Copy {{ plugin_name }} public configuration"
   template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | regex_replace({{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/,'') | regex_replace('\.j2','') }}
@@ -35,11 +37,13 @@
 
 - name: Create {{ plugin_name }} relative directories for private configs
   file:
-    path: "{{ full_server_folder }}/plugins/{{ plugin_name }}/{{ item.path }}"
+    path: "{{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configdirname.path }}"
     state: directory
-    mode: '{{ item.mode }}'
+    mode: '{{ configdirname.mode }}'
   with_filetree: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/"
-  when: privateExists.stat.exists and privateExists.stat.isdir and item.state == 'directory'
+  loop_control:
+    loop_var: configdirname
+  when: privateExists.stat.exists and privateExists.stat.isdir and configdirname.state == 'directory'
 
 - name: "Copy {{ plugin_name }} secret configuration"
   template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | regex_replace({{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/,'') | regex_replace('\.j2','') }}
