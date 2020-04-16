@@ -14,20 +14,36 @@
 - stat: path={{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}
   register: publicExists
 
+- name: Create {{ plugin_name }} relative directories for public configs
+  file:
+    path: "{{ full_server_folder }}/plugins/{{ plugin_name }}/{{ item.path }}"
+    state: directory
+    mode: '{{ item.mode }}'
+  with_filetree: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/"
+  when: publicExists.stat.exists and publicExists.stat.isdir and item.state == 'directory'
+
 - name: "Copy {{ plugin_name }} public configuration"
-  template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | basename | regex_replace('\.j2','') }}
-  with_fileglob: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
+  template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | regex_replace({{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/,'') | regex_replace('\.j2','') }}
+  with_fileglob: "{{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/**/**/*.j2"
   loop_control:
     loop_var: configname
-  when: publicExists.stat.exists is defined and publicExists.stat.isdir
+  when: publicExists.stat.exists and publicExists.stat.isdir
 
 
 - stat: path={{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}
   register: privateExists
 
+- name: Create {{ plugin_name }} relative directories for private configs
+  file:
+    path: "{{ full_server_folder }}/plugins/{{ plugin_name }}/{{ item.path }}"
+    state: directory
+    mode: '{{ item.mode }}'
+  with_filetree: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/"
+  when: privateExists.stat.exists and privateExists.stat.isdir and item.state == 'directory'
+
 - name: "Copy {{ plugin_name }} secret configuration"
-  template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | basename | regex_replace('\.j2','') }}
-  with_fileglob: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/*.j2"
+  template: src={{ configname }} dest={{ full_server_folder }}/plugins/{{ plugin_name }}/{{ configname | regex_replace({{ templates }}/public/{{ plugin_dir }}/{{ plugin_name }}/,'') | regex_replace('\.j2','') }}
+  with_fileglob: "{{ templates }}/private/{{ plugin_dir }}/{{ plugin_name }}/**/**/*.j2"
   loop_control:
     loop_var: configname
   when: privateExists.stat.exists and privateExists.stat.isdir
