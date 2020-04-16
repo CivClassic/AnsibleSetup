@@ -6,7 +6,7 @@ mysql:
   host: '{{ mysql_host }}'
   password: '{{ mysql_non_root_pass }}'
   database: '{{ mysql_db_name }}'
-  port: 3306
+  port: '{{ mysql_port }}'
 sqlite:
   file-name: data.db
 
