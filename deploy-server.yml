@@ -17,4 +17,4 @@
      include: "tasks/setup-sql.yml"
 
    - name: Deploy Server
-     include: "tasks/deploy-server.yml
+     include: "tasks/deploy-server.yml"
