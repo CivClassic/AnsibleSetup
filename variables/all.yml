@@ -39,6 +39,7 @@ plugins:
  - Finale
  - HiddenOre
  - HolographicDisplays
+ - ItemExchange
  - JukeAlert
  - LuckPerms
  - MemeMana
