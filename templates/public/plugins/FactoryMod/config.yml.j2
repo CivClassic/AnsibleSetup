@@ -57,6 +57,7 @@ factories:
      - upgrade_to_compactor
      - upgrade_to_printer
      - upgrade_to_concrete
+     - wordbank_item
      - repair_dirt_factory
   stone_smelter:
     type: FCC
@@ -4729,6 +4730,20 @@ recipes:
       plate:
         material: OAK_TRAPDOOR
         amount: 1
+  wordbank_item:
+    type: WORDBANK
+    name: Generate item name
+    production_time: 4s
+    key: 13
+    colors:
+    - YELLOW
+    - LIGHT_PURPLE
+    - BLUE
+    - RED
+    - GREEN
+    - AQUA
+    - WHITE
+    path: words.txt
   print_book:
     type: PRINTBOOK
     name: Print Book
