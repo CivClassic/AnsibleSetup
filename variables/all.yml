@@ -42,6 +42,7 @@ plugins:
  - ItemExchange
  - JukeAlert
  - LuckPerms
+ - KiraBukkitGateway
  - MemeMana
  - NameColors
  - NameLayer
