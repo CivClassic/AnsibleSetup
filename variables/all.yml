@@ -11,10 +11,10 @@ server_folder: "server"
 backups_folder: "backups"
 
 #Port to use for MC server
-mc_port: 25567
+mc_port: 25565
 
 #How much memory is used by the server
-shard_mem: 4G
+shard_mem: 54G
 
 #Use PaperMC instead of Spigot?
 use_paper: true
