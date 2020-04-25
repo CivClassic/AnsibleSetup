@@ -24,6 +24,8 @@ mysql_socket_location: "/home/mysql/mysqld.sock"
 
 #Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
 plugins:
+ - AAC
+ - AACPlus
  - AttrHider
  - BanStick
  - Bastion
