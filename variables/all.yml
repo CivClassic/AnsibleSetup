@@ -11,7 +11,7 @@ server_folder: "server"
 backups_folder: "backups"
 
 #Port to use for MC server
-mc_port: 25565
+mc_port: 25570
 
 #How much memory is used by the server
 shard_mem: 54G
