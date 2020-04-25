@@ -117,6 +117,7 @@ factories:
      - make_sea_lantern
      - make_redstone_lamp
      - pack_ice
+     - pack_blue_ice
      - make_smooth_stone_slab
      - make_smooth_sandstone_slab
      - make_smooth_quartz_slab
@@ -234,6 +235,7 @@ factories:
      - bake_potatoes
      - bake_cookies
      - bake_pie
+     - make_berry_bush
      - repair_bakery
   ore_smelter:
     type: FCC
@@ -412,6 +414,25 @@ factories:
      - make_mushroom_red
      - make_mushroom_stem
      - make_mushroom_pores
+     - make_kelp
+     - make_sea_pickle
+     - make_tube_coral
+     - make_tube_coral_fan
+     - make_tube_coral_block
+     - make_brain_coral
+     - make_brain_coral_fan
+     - make_brain_coral_block
+     - make_bubble_coral
+     - make_bubble_coral_fan
+     - make_bubble_coral_block
+     - make_fire_coral
+     - make_fire_coral_fan
+     - make_fire_coral_block
+     - make_horn_coral
+     - make_horn_coral_fan
+     - make_horn_coral_block
+     - make_wither_rose
+     - make_bamboo
      - repair_bio_lab
   carpentry:
     type: FCC
@@ -579,6 +600,7 @@ factories:
      - basic_xp_2
      - basic_xp_3
      - basic_xp_4
+     - uncarve_pumpkins
      - wither_skull
      - upgrade_to_intermediate_cauldron
      - repair_basic_cauldron
@@ -591,6 +613,7 @@ factories:
      - int_xp_2
      - int_xp_3
      - int_xp_4
+     - uncarve_pumpkins
      - wither_skull
      - make_energizer
      - upgrade_to_advanced_cauldron
@@ -604,6 +627,7 @@ factories:
      - adv_xp_2
      - adv_xp_3
      - adv_xp_4
+     - uncarve_pumpkins
      - wither_skull
      - make_energizer
      - repair_advanced_cauldron
@@ -696,6 +720,7 @@ factories:
      - forge_gold_chestplates
      - forge_gold_leggings
      - forge_gold_boots
+     - make_bell
      - repair_gold_forge
 #RECIPES
 recipes:
@@ -3881,6 +3906,364 @@ recipes:
       bucket:
         material: BUCKET
         amount: 1
+  make_bamboo:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bamboo
+    type: PRODUCTION
+    input:
+      sugar_cane:
+        material: SUGAR_CANE
+        amount: 8
+      kelp:
+        material: KELP
+        amount: 8
+    output:
+      bamboo:
+        material: BAMBOO
+        amount: 8
+  make_wither_rose:
+    forceInclude: true
+    production_time: 4s
+    name: Make Wither Roses
+    type: PRODUCTION
+    input:
+      coal:
+        material: COAL
+        amount: 4
+      soulsand:
+        material: SOUL_SAND
+        amount: 4
+      poppy:
+        material: POPPY
+        amount: 4
+    output:
+      wither_rose:
+        material: WITHER_ROSE
+        amount: 1
+  uncarve_pumpkins:
+    forceInclude: true
+    production_time: 1s
+    name: Uncarve Pumpkins
+    type: PRODUCTION
+    input:
+      carved_pumpkins:
+        material: CARVED_PUMPKIN
+        amount: 1
+    output:
+      pumpkins:
+        material: PUMPKIN
+        amount: 1
+  make_bell:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bell
+    type: PRODUCTION
+    input:
+      gold_ingot:
+        material: GOLD_INGOT
+        amount: 8
+      wood:
+        material: CHEST
+        amount: 1
+    output:
+      bell:
+        material: BELL
+        amount: 1
+  make_kelp:
+    forceInclude: true
+    production_time: 4s
+    name: Make Kelp
+    type: PRODUCTION
+    input:
+      sugar_cane:
+        material: SUGAR_CANE
+        amount: 8
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      Kelp:
+        material: KELP
+        amount: 8
+      bucket:
+        material: BUCKET
+        amount: 1
+  make_sea_pickle:
+    forceInclude: true
+    production_time: 4s
+    name: Make Sea Pickles
+    type: PRODUCTION
+    input:
+      cactus:
+        material: CACTUS
+        amount: 8
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      sea_pickle:
+        material: SEA_PICKLE
+        amount: 8
+      bucket:
+        material: BUCKET
+        amount: 1
+  make_tube_coral:
+    forceInclude: true
+    production_time: 4s
+    name: Make Tube Coral
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      lapis:
+        material: LAPIS_LAZULI
+        amount: 8
+    output:
+      tube_coral:
+        material: TUBE_CORAL
+        amount: 8
+  make_tube_coral_fan:
+    forceInclude: true
+    production_time: 4s
+    name: Make Tube Coral Fan
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      lapis:
+        material: LAPIS_LAZULI
+        amount: 8
+    output:
+      tube_coral_fan:
+        material: TUBE_CORAL_FAN
+        amount: 8
+  make_tube_coral_block:
+    forceInclude: true
+    production_time: 4s
+    name: Make Tube Coral Block
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS_BLOCK
+        amount: 8
+      lapis:
+        material: LAPIS_LAZULI
+        amount: 8
+    output:
+      tube_coral_block:
+        material: TUBE_CORAL_BLOCK
+        amount: 8
+  make_brain_coral:
+    forceInclude: true
+    production_time: 4s
+    name: Make Brain Coral
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      pink_dye:
+        material: PINK_DYE
+        amount: 8
+    output:
+      brain_coral:
+        material: BRAIN_CORAL
+        amount: 8
+  make_brain_coral_fan:
+    forceInclude: true
+    production_time: 4s
+    name: Make Brain Coral Fan
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      pink_dye:
+        material: PINK_DYE
+        amount: 8
+    output:
+      brain_coral_fan:
+        material: BRAIN_CORAL_FAN
+        amount: 8
+  make_brain_coral_block:
+    forceInclude: true
+    production_time: 4s
+    name: Make Brain Coral Block
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS_BLOCK
+        amount: 8
+      pink_dye:
+        material: PINK_DYE
+        amount: 8
+    output:
+      brain_coral_block:
+        material: BRAIN_CORAL_BLOCK
+        amount: 8
+  make_bubble_coral:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bubble Coral
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      magenta_dye:
+        material: MAGENTA_DYE
+        amount: 8
+    output:
+      bubble_coral:
+        material: BUBBLE_CORAL
+        amount: 8
+  make_bubble_coral_fan:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bubble Coral Fan
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      magenta_dye:
+        material: MAGENTA_DYE
+        amount: 8
+    output:
+      bubble_coral_fan:
+        material: BUBBLE_CORAL_FAN
+        amount: 8
+  make_bubble_coral_block:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bubble Coral Block
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS_BLOCK
+        amount: 8
+      magenta_dye:
+        material: MAGENTA_DYE
+        amount: 8
+    output:
+      bubble_coral_block:
+        material: BUBBLE_CORAL_BLOCK
+        amount: 8
+  make_fire_coral:
+    forceInclude: true
+    production_time: 4s
+    name: Make Fire Coral
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      red_dye:
+        material: RED_DYE
+        amount: 8
+    output:
+      fire_coral:
+        material: FIRE_CORAL
+        amount: 8
+  make_fire_coral_fan:
+    forceInclude: true
+    production_time: 4s
+    name: Make Fire Coral Fan
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      red_dye:
+        material: RED_DYE
+        amount: 8
+    output:
+      fire_coral_fan:
+        material: FIRE_CORAL_FAN
+        amount: 8
+  make_fire_coral_block:
+    forceInclude: true
+    production_time: 4s
+    name: Make Fire Coral Block
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS_BLOCK
+        amount: 8
+      red_dye:
+        material: RED_DYE
+        amount: 8
+    output:
+      fire_coral_block:
+        material: FIRE_CORAL_BLOCK
+        amount: 8
+  make_horn_coral:
+    forceInclude: true
+    production_time: 4s
+    name: Make Horn Coral
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      yellow_dye:
+        material: YELLOW_DYE
+        amount: 8
+    output:
+      horn_coral:
+        material: HORN_CORAL
+        amount: 8
+  make_horn_coral_fan:
+    forceInclude: true
+    production_time: 4s
+    name: Make Horn Coral Fan
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      yellow_dye:
+        material: YELLOW_DYE
+        amount: 8
+    output:
+      horn_coral_fan:
+        material: HORN_CORAL_FAN
+        amount: 8
+  make_horn_coral_block:
+    forceInclude: true
+    production_time: 4s
+    name: Make Horn Coral Block
+    type: PRODUCTION
+    input:
+      grass:
+        material: GRASS
+        amount: 8
+      yellow_dye:
+        material: YELLOW_DYE
+        amount: 8
+    output:
+      horn_coral_block:
+        material: HORN_CORAL_BLOCK
+        amount: 8
+  make_berry_bush:
+    forceInclude: true
+    production_time: 4s
+    name: Make Berries
+    type: PRODUCTION
+    input:
+      fern:
+        material: FERN
+        amount: 1
+      poppy:
+        material: POPPY
+        amount: 8
+    output:
+      berries:
+        material: SWEET_BERRIES
+        amount: 4
   basic_xp_1:
     production_time: 4s
     name: Make Exp 1
@@ -4025,8 +4408,8 @@ recipes:
       cactus:
         material: CACTUS
         amount: 256
-      rose:
-        material: RED_DYE
+      poppy:
+        material: POPPY
         amount: 8
       rotten_flesh:
         material: ROTTEN_FLESH
@@ -4106,8 +4489,8 @@ recipes:
       cactus:
         material: CACTUS
         amount: 256
-      rose:
-        material: RED_DYE
+      poppy:
+        material: POPPY
         amount: 8
       spider_eye:
         material: SPIDER_EYE
@@ -4207,8 +4590,8 @@ recipes:
         amount: 256
         lore:
           - Compacted Item
-      rose:
-        material: RED_DYE
+      poppy:
+        material: POPPY
         amount: 8
         lore:
           - Compacted Item
@@ -4334,8 +4717,8 @@ recipes:
         amount: 256
         lore:
           - Compacted Item
-      rose:
-        material: RED_DYE
+      poppy:
+        material: POPPY
         amount: 8
         lore:
           - Compacted Item
@@ -4626,6 +5009,19 @@ recipes:
       packed_ice:
         material: PACKED_ICE
         amount: 512
+  pack_blue_ice:
+    forceInclude: true
+    type: PRODUCTION
+    name: Pack Blue Ice
+    production_time: 4s
+    input:
+      packed_ice:
+        material: PACKED_ICE
+        amount: 512
+    output:
+      blue_ice:
+        material: BLUE_ICE
+        amount: 64
   make_smooth_stone_slab:
     forceInclude: true
     type: PRODUCTION
