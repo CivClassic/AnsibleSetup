@@ -34,5 +34,7 @@
   ignore_errors: true
 
 - name: "Deploy {{ servername }} plugins"
-  include: "tasks/deploy-plugin.yml plugin_name={{ item }} plugin_dir=plugins"
+  include: "tasks/deploy-plugin.yml plugin_name={{ server_plugin_name }} abs_plugin_dir={{ full_server_folder }}/plugins rel_jar_path=plugins rel_config_path=plugins"
   with_items: "{{ plugins }}"
+  loop_control:
+    loop_var: server_plugin_name

@@ -7,14 +7,30 @@ servername: "civclassic"
 #Relative name of the folder the actual MC server is in
 server_folder: "server"
 
+#Relative name of the folder bungee lives in
+bungee_folder: "bungee"
+
 #Relative name of the folder backups will be in
 backups_folder: "backups"
 
+#Port used to access the server from the outside, 25565 by default
+external_port: 25565
+
+#Internal port used for the minecraft server if Bungee is enabled
+internal_port: 25570
+
+#Do we want to use bungee/waterfall
+use_bungee: true
+
 #Port to use for MC server
-mc_port: 25570
+mc_port: "{{ {{ internal_port }} if use_bungee else {{ internal_port }} }}"
+bungee_port: "{{ external_port }}"
 
 #How much memory is used by the server
 shard_mem: 54G
+
+#How much memory is used by bungee
+bungee_mem: 512M
 
 #Use PaperMC instead of Spigot?
 use_paper: true
@@ -59,6 +75,10 @@ plugins:
  - WorldBorder
  - WorldEdit
 
+#Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
+bungee_plugins:
+ - ViaVersion
+
 #--------------------------------------
 #Unless you know what you are doing you probably don't want to touch anything below this line
 #--------------------------------------
@@ -84,20 +104,41 @@ top_level_templates:
 #Nonpublic server files not specific to a plugin, templates for these are under templates/private/
 secret_top_level_templates:
 
+#Public bungee files not specific to a plugin, templates for these are under templates/public/
+bungee_top_level_templates:
+ - bukkit.yml
+ - commands.yml
+ - start.sh
+ - eula.txt
+ - help.yml
+ - ops.json
+ - server.properties
+ - spigot.yml
+ - paper.yml
+ - wepif.yml
+#Nonpublic bungee files not specific to a plugin, templates for these are under templates/private/
+bungee_secret_top_level_templates:
+
 #Minecraft version
 mc_version: "1.14.4"
 #URL to pull BuildTools from for building Spigot
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 #URL to pull Paper build from
 paper_url: "https://papermc.io/api/v1/paper/{{ mc_version }}/latest/download"
+#URL to pull bungeecord/waterfall build from
+bungee_url: "https://papermc.io/ci/job/Waterfall/lastSuccessfulBuild/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar"
 #Name of the final server jar put into the server folder
 server_jar: "minecraft"
-#Startup bash script file name
+#Name of the bungee jar to put into the bungee folder
+bungee_jar: "Waterfall"
+#Minecraft startup bash script file name
 startup_script: "start.sh"
+#Bungee startup bash script file name
+bungee_startup_script: "bungee_start.sh"
 #Name of the sevrer console tab in byobu
 byobu_server_tab: "server"
 
 #Folder most of the magic is happening as a variable for convenience
 main_folder: "/home/{{ username }}/{{ servername }}"
 full_server_folder: "/home/{{ username }}/{{ servername }}/{{ server_folder }}"
-
+full_bungee_folder: "/home/{{ username }}/{{ servername }}/{{ bungee_folder }}"

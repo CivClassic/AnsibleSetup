@@ -1,0 +1,40 @@
+---
+#task to deploy bungee including plugins and their configs
+
+- name: "Create Bungee Directory"
+  file: "path={{ full_bungee_folder }} state=directory owner={{ username }} mode=0755"
+
+- name: "Create Bungee Plugins Directory"
+  file: "path={{ full_bungee_folder }}/plugins state=directory owner={{ username }} mode=0755"
+
+- name: "Copy Bungee top level public templates"
+  template: "src={{ templates }}/public/{{ item }}.j2 dest={{ full_bungee_folder }}/{{ item }} \
+             owner={{ username }} mode='u=rw,g=r,o=r'"
+  with_items: "{{ bungee_top_level_templates }}"
+
+- name: Make startup script executable
+  file: dest={{ full_bungee_folder }}/{{ bungee_startup_script }} mode=u+x
+
+- name: "Copy Bungee top level private templates"
+  template: "src={{ templates }}private/{{ item }}.j2 dest={{ full_bungee_folder }}/{{ item }} \
+             owner={{ username }} mode='u=rw,g=r,o=r'"
+  with_items: "{{ bungee_secret_top_level_templates }}"
+  when: groups["bungee_secret_top_level_templates"] is defined
+
+- name: Download Bungee
+  get_url:
+    url: "{{ bungee_url }}"
+    dest: "{{ full_bungee_folder }}/{{ bungee_jar }}.jar"
+    mode: 0755
+    owner: "{{ username }}"
+    force: true
+
+- name: "Clean existing Bungee plugin jarfiles"
+  shell: "rm {{ full_bungee_folder }}/plugins/*.jar"
+  ignore_errors: true
+
+- name: "Deploy Bungee plugins"
+  include: "tasks/deploy-plugin.yml plugin_name={{ bungee_plugin_name }} abs_plugin_dir={{ full_bungee_folder }}/plugins rel_jar_path=bungee_plugins rel_config_path=bungee_plugins"
+  with_items: "{{ bungee_plugins }}"
+  loop_control:
+    loop_var: bungee_plugin_name
