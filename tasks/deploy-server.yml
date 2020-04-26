@@ -40,5 +40,5 @@
     loop_var: server_plugin_name
 
 - name: "Deploy Bungee"
-  include: "tasks/deploy-paper.yml"
+  include: "tasks/deploy-bungee.yml"
   when: use_bungee
