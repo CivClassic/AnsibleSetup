@@ -23,7 +23,7 @@ internal_port: 25570
 use_bungee: true
 
 #Port to use for MC server
-mc_port: "{{ {{ internal_port }} if use_bungee else {{ internal_port }} }}"
+mc_port: "{{ internal_port }}"
 bungee_port: "{{ external_port }}"
 
 #How much memory is used by the server
