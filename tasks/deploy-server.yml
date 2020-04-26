@@ -38,3 +38,7 @@
   with_items: "{{ plugins }}"
   loop_control:
     loop_var: server_plugin_name
+
+- name: "Deploy Bungee"
+  include: "tasks/deploy-paper.yml"
+  when: use_bungee

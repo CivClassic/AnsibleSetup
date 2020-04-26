@@ -1,7 +1,7 @@
 server_connect_timeout: 5000
 listeners:
-- query_port: 25565
-  motd: '&1Civclassic'
+- query_port: "{{ external_port }}"
+  motd: '&1Now only one major version behind'
   tab_list: GLOBAL
   query_enabled: false
   proxy_protocol: false
@@ -11,8 +11,8 @@ listeners:
   priorities:
   - lobby
   bind_local_address: true
-  host: 0.0.0.0:25565
-  max_players: -1
+  host: "0.0.0.0:{{ external_port }}"
+  max_players: 420
   tab_size: 60
   force_default_server: false
 remote_ping_cache: -1
@@ -28,7 +28,7 @@ log_pings: true
 connection_throttle_limit: 3
 prevent_proxy_connections: false
 timeout: 30000
-player_limit: -1
+player_limit: 420
 ip_forward: true
 groups:
   md_5:
@@ -44,5 +44,5 @@ disabled_commands:
 servers:
   lobby:
     motd: '&1Civclassic'
-    address: localhost:25570
+    address: "localhost:{{ internal_port }}"
     restricted: false

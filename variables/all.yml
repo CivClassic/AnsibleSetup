@@ -106,16 +106,9 @@ secret_top_level_templates:
 
 #Public bungee files not specific to a plugin, templates for these are under templates/public/
 bungee_top_level_templates:
- - bukkit.yml
- - commands.yml
- - start.sh
- - eula.txt
- - help.yml
- - ops.json
- - server.properties
- - spigot.yml
- - paper.yml
- - wepif.yml
+ - config.yml
+ - waterfall.yml
+
 #Nonpublic bungee files not specific to a plugin, templates for these are under templates/private/
 bungee_secret_top_level_templates:
 
