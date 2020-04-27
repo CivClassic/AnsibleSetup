@@ -2,11 +2,9 @@
 # Ansbile task to backup a server
 
 - name: "Wait for server to stop"
-  wait_for: "port={{ port }} state=absent"
+  wait_for: "port={{ internal_port }} state=absent"
 
 - name: Setup variables
-  vars:
-    sql_file: "{{ main_folder }}/{{ backups_folder }}/{{ servername }}.sql"
   debug:
     var: ansible_date_time
 

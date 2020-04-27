@@ -134,6 +134,7 @@ startup_script: "start.sh"
 bungee_startup_script: "bungee_start.sh"
 #Name of the sevrer console tab in byobu
 byobu_server_tab: "server"
+sql_file: "{{ main_folder }}/{{ backups_folder }}/{{ servername }}.sql"
 
 #Folder most of the magic is happening as a variable for convenience
 main_folder: "/home/{{ username }}/{{ servername }}"

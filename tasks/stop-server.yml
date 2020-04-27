@@ -8,4 +8,4 @@
   shell: "tmux send -t {{ byobu_server_tab }} ENTER 'stop' ENTER" 
  
 - name: Wait for Shard to stop
-  wait_for: "port={{ port }} state=absent"
+  wait_for: "port={{ internal_port }} state=absent"
