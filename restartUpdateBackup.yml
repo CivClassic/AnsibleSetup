@@ -1,0 +1,29 @@
+---
+#
+## Ansible Role For shutting down the server, backing it up, updating it and restarting it
+
+- name: Deploy Server
+  hosts: "{{ host }}"
+  gather_facts: true
+  vars_files:
+   - variables/all.yml
+
+  tasks:
+   - name: Include variables
+     include_vars:
+       dir: variables
+
+   - name: Warn restart
+     include: "tasks/warn-restart.yml"
+
+   - name: Stop server
+     include: "tasks/stop-server.yml"
+
+   - name: Backup server
+     include: "tasks/backup-server.yml"
+
+   - name: Deploy Server
+     include: "tasks/deploy-server.yml"
+
+   - name: Start Server back up
+     include: "tasks/start-server.yml"
