@@ -73,6 +73,7 @@ plugins:
  - RandomSpawn
  - RealisticBiomes
  - SimpleAdminHacks
+ - SuperVanish
  - Vault
  - WorldBorder
  - WorldEdit
