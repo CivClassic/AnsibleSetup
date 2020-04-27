@@ -2,7 +2,7 @@
 # Ansible task to warn players of restart
 
 - name: "Send Restart Warning"
-  shell: "tmux send -t lobby ENTER 'say Restarting in 10 minutes' ENTER"
+  shell: "tmux send -t {{ byobu_server_tab }} ENTER 'say Restarting in 10 minutes' ENTER"
 
 - name: "Wait for 5 minutes"
   pause: minutes=5
