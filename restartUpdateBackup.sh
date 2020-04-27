@@ -1,2 +1,1 @@
-
-ansible-playbook update-server.yml
+ansible-playbook restartUpdateBackup.yml
