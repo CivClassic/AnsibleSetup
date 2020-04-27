@@ -53,6 +53,7 @@ plugins:
  - CivSpy
  - ClearLag
  - CombatTagPlus
+ - ConditionalCommands
  - ExilePearl
  - FactoryMod
  - Finale
