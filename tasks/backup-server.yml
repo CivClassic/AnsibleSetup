@@ -8,6 +8,9 @@
   debug:
     var: ansible_date_time
 
+- name: "Create Backups Directory"
+  file: "path={{ main_folder }}/{{ backups_folder }} state=directory owner={{ username }} mode=0755"
+
 - name: Delete old SQL dump if exists
   file:
     state: absent
