@@ -517,6 +517,7 @@ factories:
      - make_tripwire
      - make_shears
      - make_radar
+     - make_cauldron
      - repair_forge
   redstone_mechanics:
     type: FCC
@@ -3656,6 +3657,19 @@ recipes:
       iron_door:
         material: IRON_DOOR
         amount: 18
+  make_cauldron:
+    production_time: 4s
+    name: Make Cauldrons
+    type: PRODUCTION
+    forceInclude: true
+    input:
+      iron:
+        material: IRON_INGOT
+        amount: 32
+    output:
+      cauldron:
+        material: CAULDRON
+        amount: 10
   make_tripwire:
     production_time: 4s
     name: Make Tripwire Hooks
@@ -6055,7 +6069,7 @@ recipes:
           amount: 1
           name: Dirt!
   upgrade_to_gold_forge:
-    forceinclude: true
+    forceInclude: true
     production_time: 4s
     name: Upgrade to Gold Forge
     type: UPGRADE
