@@ -2,7 +2,7 @@
 #task to restart shards
 
 - name: Wait for Shard to stop
-  wait_for: "port={{ internal_port }} state=absent"
+  wait_for: "port={{ internal_port }} state=absent timeout=3600"
 
 - name: Send Start command
   shell: "tmux send -t {{ byobu_server_tab }} ENTER 'bash {{ startup_script }}' ENTER" 
