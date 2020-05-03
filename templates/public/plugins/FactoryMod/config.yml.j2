@@ -408,10 +408,15 @@ factories:
      - dirt_to_podzol
      - dirt_to_mycelium
      - sapling_to_spruce
+     - spruce_to_sapling
      - sapling_to_birch
+     - birch_to_sapling
      - sapling_to_jungle
+     - jungle_to_sapling
      - sapling_to_acacia
+     - acacia_to_sapling
      - sapling_to_dark_oak
+     - dark_oak_to_sapling
      - make_mushroom_brown
      - make_mushroom_red
      - make_mushroom_stem
@@ -1758,60 +1763,120 @@ recipes:
     name: Convert Oak Sapling to Spruce
     type: PRODUCTION
     input:
-      sapling:
+      oak_sapling:
         material: OAK_SAPLING
         amount: 32
     output:
       spruce_sapling:
         material: SPRUCE_SAPLING
         amount: 32
+  spruce_to_sapling:
+    production_time: 4s
+    name: Convert Spruce Sapling to Oak
+    type: PRODUCTION
+    input:
+      spruce_sapling:
+        material: SPRUCE_SAPLING
+        amount: 32
+    output:
+      oak_sapling:
+        material: OAK_SAPLING
+        amount: 32
   sapling_to_birch:
     production_time: 4s
     name: Convert Oak Sapling to Birch
     type: PRODUCTION
     input:
-      sapling:
+      oak_sapling:
         material: OAK_SAPLING
         amount: 32
     output:
       birch_sapling:
         material:  BIRCH_SAPLING
         amount: 32
+  birch_to_sapling:
+    production_time: 4s
+    name: Convert Birch Sapling to Oak
+    type: PRODUCTION
+    input:
+      oak_sapling:
+        material:  OAK_SAPLING
+        amount: 32
+    output:
+      birch_sapling:
+        material: BIRCH_SAPLING
+        amount: 32
   sapling_to_jungle:
     production_time: 4s
     name: Convert Oak Sapling to Jungle
     type: PRODUCTION
     input:
-      sapling:
+      oak_sapling:
         material: OAK_SAPLING
         amount: 32
     output:
       jungle_sapling:
         material: JUNGLE_SAPLING
         amount: 32
+  jungle_to_sapling:
+    production_time: 4s
+    name: Convert Jungle Sapling to Oak
+    type: PRODUCTION
+    input:
+      jungle_sapling:
+        material: JUNGLE_SAPLING
+        amount: 32
+    output:
+      oak_sapling:
+        material: OAK_SAPLING
+        amount: 32
   sapling_to_acacia:
     production_time: 4s
     name: Convert Oak Sapling to Acacia
     type: PRODUCTION
     input:
-      sapling:
+      oak_sapling:
         material: OAK_SAPLING
         amount: 32
     output:
       acacia_sapling:
         material: ACACIA_SAPLING
         amount: 32
+  acacia_to_sapling:
+    production_time: 4s
+    name: Convert Acacia Sapling to Oak
+    type: PRODUCTION
+    input:
+      acacia_sapling:
+        material: ACACIA_SAPLING
+        amount: 32
+    output:
+      oak_sapling:
+        material: OAK_SAPLING
+        amount: 32
   sapling_to_dark_oak:
     production_time: 4s
     name: Convert Oak Sapling to Dark Oak
     type: PRODUCTION
     input:
-      sapling:
+      oak_sapling:
         material: OAK_SAPLING
         amount: 32
     output:
       dark_oak_sapling:
         material: DARK_OAK_SAPLING
+        amount: 32
+  dark_oak_to_sapling:
+    production_time: 4s
+    name: Convert Dark Oak Sapling to Oak
+    type: PRODUCTION
+    input:
+      oak_sapling:
+        material: DARK_OAK_SAPLING
+        amount: 32
+    output:
+      oak_sapling:
+        material: OAK_SAPLING
         amount: 32
   dye_clay_white:
     production_time: 4s
