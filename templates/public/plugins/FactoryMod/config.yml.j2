@@ -68,6 +68,7 @@ factories:
         amount: 512
     recipes:
      - smelt_stone
+     - smelt_smooth_stone
      - smelt_glass
      - smelt_netherrack
      - smelt_red_netherbrick
@@ -118,6 +119,7 @@ factories:
      - make_redstone_lamp
      - pack_ice
      - pack_blue_ice
+     - make_stone_slab
      - make_smooth_stone_slab
      - make_smooth_sandstone_slab
      - make_smooth_quartz_slab
@@ -737,6 +739,18 @@ recipes:
       stone:
         material: STONE
         amount: 96
+  smelt_smooth_stone:
+    production_time: 4s
+    name: Smelt Smooth Stone
+    type: PRODUCTION
+    input:
+      cobblestone:
+        material: STONE
+        amount: 64
+    output:
+      stone:
+        material: SMOOTH_STONE
+        amount: 80
   cook_beef:
     production_time: 4s
     name: Cook Beef
@@ -1713,7 +1727,7 @@ recipes:
         amount: 64
     output:
       grass:
-        material: GRASS
+        material: GRASS_BLOCK
         amount: 64
   dirt_to_podzol:
     production_time: 4s
@@ -5036,10 +5050,10 @@ recipes:
       blue_ice:
         material: BLUE_ICE
         amount: 64
-  make_smooth_stone_slab:
+  make_stone_slab:
     forceInclude: true
     type: PRODUCTION
-    name: Make Smooth Stone Slab
+    name: Make Stone Slab
     production_time: 4s
     input:
       stone:
@@ -5048,9 +5062,20 @@ recipes:
     output:
       stone_slab:
         material: STONE_SLAB
+        amount: 128
+  make_smooth_stone_slab:
+    forceInclude: true
+    type: PRODUCTION
+    name: Make Smooth Stone Slab
+    production_time: 4s
+    input:
+      stone:
+        material: SMOOTH_STONE
         amount: 64
-        lore:
-          - Smooth double slab
+    output:
+      stone_slab:
+        material: SMOOTH_STONE_SLAB
+        amount: 128
   make_smooth_sandstone_slab:
     forceInclude: true
     type: PRODUCTION
