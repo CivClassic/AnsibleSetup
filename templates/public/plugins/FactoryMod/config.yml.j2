@@ -85,7 +85,12 @@ factories:
         material: CHARCOAL
         amount: 512
     recipes:
-     - charcoal_from_logs
+     - charcoal_from_oak_log
+     - charcoal_from_spruce_log
+     - charcoal_from_birch_log
+     - charcoal_from_jungle_log
+     - charcoal_from_acacia_log
+     - charcoal_from_dark_oak_log
      - charcoal_from_coal
      - repair_charcoal_factory
   aesthetics:
@@ -1209,13 +1214,73 @@ recipes:
       red_netherbrick:
         material: RED_NETHER_BRICKS
         amount: 32
-  charcoal_from_logs:
+  charcoal_from_oak_log:
     production_time: 4s
     name: Make Charcoal from Oak Logs
     type: PRODUCTION
     input:
       log:
         material: OAK_LOG
+        amount: 64
+    output:
+      charcoal:
+        material: CHARCOAL
+        amount: 128
+  charcoal_from_spruce_log:
+    production_time: 4s
+    name: Make Charcoal from Spruce Logs
+    type: PRODUCTION
+    input:
+      log:
+        material: SPRUCE_LOG
+        amount: 64
+    output:
+      charcoal:
+        material: CHARCOAL
+        amount: 128
+  charcoal_from_birch_log:
+    production_time: 4s
+    name: Make Charcoal from Birch Logs
+    type: PRODUCTION
+    input:
+      log:
+        material: BIRCH_LOG
+        amount: 64
+    output:
+      charcoal:
+        material: CHARCOAL
+        amount: 128
+  charcoal_from_jungle_log:
+    production_time: 4s
+    name: Make Charcoal from Jungle Logs
+    type: PRODUCTION
+    input:
+      log:
+        material: JUNGLE_LOG
+        amount: 64
+    output:
+      charcoal:
+        material: CHARCOAL
+        amount: 128
+  charcoal_from_acacia_log:
+    production_time: 4s
+    name: Make Charcoal from Acacia Logs
+    type: PRODUCTION
+    input:
+      log:
+        material: ACACIA_LOG
+        amount: 64
+    output:
+      charcoal:
+        material: CHARCOAL
+        amount: 128
+  charcoal_from_dark_oak_log:
+    production_time: 4s
+    name: Make Charcoal from Dark Oak Logs
+    type: PRODUCTION
+    input:
+      log:
+        material: DARK_OAK_LOG
         amount: 64
     output:
       charcoal:
