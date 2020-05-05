@@ -62,7 +62,7 @@ You should only have to change `mysql_root_pass` to your MariaDB root password a
 
 - Configure the setup according to your needs
 
-Check out `variables/all.yml` and change values as you see fit. You will most likely need to change `mysql_socket_location` to `/var/run/mysql/mysql.sock`
+Check out `variables/all.yml` and change values as you see fit. You will most likely need to change `mysql_socket_location` to `/var/run/mysqld/mysql.sock`
 
 - Run the deploy script
 
