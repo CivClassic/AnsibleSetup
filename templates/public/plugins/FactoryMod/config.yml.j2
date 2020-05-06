@@ -3,7 +3,6 @@ default_fuel:
   charcoal:
     material: CHARCOAL
 default_fuel_consumption_intervall: 1s
-default_menu_factory: Dirt Factory
 default_return_rate: 0.5
 default_break_grace_period: 1000d
 decay_intervall: 1h
@@ -14,50 +13,6 @@ use_recipe_yamlidentifiers: true
 log_inventories: true
 
 factories:
-  dirt_factory:
-    type: FCC
-    name: Dirt Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      Dirt:
-        material: DIRT
-        amount: 1
-    recipes:
-     - dirt
-     - craft_eyes_of_ender
-     - upgrade_to_stone_smelter
-     - upgrade_to_ore_smelter
-     - upgrade_to_aesthetics
-     - upgrade_to_bakery
-     - upgrade_to_grill
-     - upgrade_to_charcoal_maker
-     - upgrade_to_iron_armor_smith
-     - upgrade_to_iron_tool_smith
-     - upgrade_to_iron_forge
-     - upgrade_to_gold_forge
-     - upgrade_to_wool_dye
-     - upgrade_to_glass_dye
-     - upgrade_to_clay_dye
-     - upgrade_to_bio_lab
-     - upgrade_to_carpentry
-     - upgrade_to_rails
-     - upgrade_to_diamond_helm
-     - upgrade_to_diamond_chest
-     - upgrade_to_diamond_legs
-     - upgrade_to_diamond_boots
-     - upgrade_to_diamond_pick
-     - upgrade_to_diamond_shovel
-     - upgrade_to_diamond_axe
-     - upgrade_to_diamond_sword
-     - upgrade_to_diamond_hoe
-     - upgrade_to_husbandry
-     - upgrade_to_redstone
-     - upgrade_to_bastion
-     - upgrade_to_basic_cauldron
-     - upgrade_to_compactor
-     - upgrade_to_printer
-     - upgrade_to_concrete
-     - repair_dirt_factory
   stone_smelter:
     type: FCC
     name: Basic Smelter
@@ -404,10 +359,9 @@ factories:
       oak sapling:
         material: OAK_SAPLING
         amount: 32
-      Dirt!:
+      Dirt:
         material: DIRT
         amount: 256
-        name: Dirt!
     recipes:
      - dirt_to_grass
      - dirt_to_podzol
@@ -958,227 +912,6 @@ recipes:
         material: DIAMOND
         amount: 64
     factory: Ore Smelter
-  dirt:
-    production_time: 2s
-    name: Dirt!
-    type: PRODUCTION
-    input:
-      dirt:
-        material: DIRT
-        amount: 1
-    output:
-      dirt:
-        material: DIRT
-        amount: 1
-        name: Dirt!
-  craft_eyes_of_ender:
-    production_time: 2s
-    name: Craft Eyes of Ender
-    type: PRODUCTION
-    input:
-      Blaze_Powder:
-        material: BLAZE_POWDER
-        amount: 1
-      Ender_Pearl:
-        material: ENDER_PEARL
-        amount: 1
-    output:
-      craft:
-        material: ENDER_EYE
-        amount: 1
-  upgrade_to_stone_smelter:
-    production_time: 4s
-    name: Upgrade to Basic Smelter
-    type: UPGRADE
-    input:
-      stone:
-        material: STONE
-        amount: 512
-    factory: Basic Smelter
-  upgrade_to_aesthetics:
-    production_time: 4s
-    name: Upgrade to Aesthetics Factory
-    type: UPGRADE
-    input:
-      stone:
-        material: STONE
-        amount: 256
-      bone meal:
-        material: BONE_MEAL
-        amount: 32
-    factory: Aesthetics Factory
-  upgrade_to_charcoal_maker:
-    production_time: 4s
-    name: Upgrade to Charcoal Maker
-    type: UPGRADE
-    input:
-      charcoal:
-        material: CHARCOAL
-        amount: 512
-    factory: Charcoal Maker
-  upgrade_to_bakery:
-    production_time: 4s
-    name: Upgrade to Bakery
-    type: UPGRADE
-    input:
-      brick:
-        material: BRICKS
-        amount: 64
-      log:
-        material: OAK_LOG
-        amount: 12
-    factory: Bakery
-  upgrade_to_grill:
-    production_time: 4s
-    name: Upgrade to Grill
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 16
-      stone:
-        material: STONE
-        amount: 128
-    factory: Grill
-  upgrade_to_diamond_helm:
-    production_time: 4s
-    name: Upgrade to Diamond Helmet Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 192
-    factory: Diamond Helmet Smith
-  upgrade_to_diamond_chest:
-    production_time: 4s
-    name: Upgrade to Diamond Chestplate Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 320
-    factory: Diamond Chestplate Smith
-  upgrade_to_diamond_legs:
-    production_time: 4s
-    name: Upgrade to Diamond Leggings Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 256
-    factory: Diamond Leggings Smith
-  upgrade_to_diamond_boots:
-    production_time: 4s
-    name: Upgrade to Diamond Boots Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 160
-    factory: Diamond Boots Smith
-  upgrade_to_diamond_pick:
-    production_time: 4s
-    name: Upgrade to Diamond Pickaxe Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 96
-    factory: Diamond Pickaxe Smith
-  upgrade_to_diamond_axe:
-    production_time: 4s
-    name: Upgrade to Diamond Axe Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 64
-    factory: Diamond Axe Smith
-  upgrade_to_diamond_shovel:
-    production_time: 4s
-    name: Upgrade to Diamond Shovel Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 48
-    factory: Diamond Shovel Smith
-  upgrade_to_diamond_hoe:
-    production_time: 4s
-    name: Upgrade to Diamond Hoe Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 32
-    factory: Diamond Hoe Smith
-  upgrade_to_diamond_sword:
-    production_time: 4s
-    name: Upgrade to Diamond Sword Smith
-    type: UPGRADE
-    input:
-      diamond:
-        material: DIAMOND
-        amount: 80
-    factory: Diamond Sword Smith
-  upgrade_to_iron_armor_smith:
-    production_time: 4s
-    name: Upgrade to Iron Armor Smith
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 96
-    factory: Iron Armor Smith
-  upgrade_to_iron_tool_smith:
-    production_time: 4s
-    name: Upgrade to Iron Tool Smith
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 64
-    factory: Iron Tool Smith
-  upgrade_to_clay_dye:
-    production_time: 4s
-    name: Upgrade to Clay Dying Factory
-    type: UPGRADE
-    input:
-      Terracotta:
-        material: TERRACOTTA
-        amount: 32
-    factory: Clay Dying Factory
-  upgrade_to_wool_dye:
-    production_time: 4s
-    name: Upgrade to Wool Dying Factory
-    type: UPGRADE
-    input:
-      wool:
-        material: WHITE_WOOL
-        amount: 32
-    factory: Wool Dying Factory
-  upgrade_to_glass_dye:
-    production_time: 4s
-    name: Upgrade to Glass Dying Factory
-    type: UPGRADE
-    input:
-      glass:
-        material: GLASS
-        amount: 32
-    factory: Glass Dying Factory
-  upgrade_to_concrete:
-    forceInclude: true
-    production_time: 4s
-    name: Upgrade to Concrete Mixer
-    type: UPGRADE
-    input:
-      sand:
-        material: SAND
-        amount: 64
-      gravel:
-        material: GRAVEL
-        amount: 64
-    factory: Concrete Mixer
   smelt_glass:
     type: PRODUCTION
     production_time: 4s
@@ -1782,10 +1515,10 @@ recipes:
       sapling:
         material: OAK_SAPLING
         amount: 32
-      Dirt!:
+      Dirt:
         material: DIRT
         amount: 256
-        name: Dirt!
+        name: Dirt
     factory: Bio Lab
   dirt_to_grass:
     production_time: 4s
@@ -2936,16 +2669,6 @@ recipes:
       black_concrete:
         material: BLACK_CONCRETE_POWDER
         amount: 64
-  repair_dirt_factory:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      Dirt!:
-        material: DIRT
-        name: Dirt!
-        amount: 1
-    health_gained: 10000
   repair_stone_smelter:
     production_time: 4s
     name: Repair Factory
@@ -3050,7 +2773,7 @@ recipes:
     name: Repair Factory
     type: REPAIR
     input:
-      Dirt!:
+      Dirt:
         material: DIRT
         amount: 8
     health_gained: 10000
@@ -7484,3 +7207,4 @@ recipes:
             ds:
               enchant: DEPTH_STRIDER
               level: 3
+              
