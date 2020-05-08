@@ -54,6 +54,7 @@ plugins:
  - ClearLag
  - CombatTagPlus
  - ConditionalCommands
+ - EssenceGlue
  - ExilePearl
  - FactoryMod
  - Finale
