@@ -15,6 +15,7 @@ biome_aliases:
   - RIVER
   - FROZEN_RIVER
   cold_water:
+  - SNOWY_BEACH
   - FROZEN_OCEAN
   - FROZEN_RIVER
   temperate:
@@ -44,11 +45,14 @@ biome_aliases:
   - TAIGA_HILLS
   - TAIGA_MOUNTAINS
   - SNOWY_TUNDRA
-  - SNOWY_BEACH
   - SNOWY_MOUNTAINS
   - SNOWY_TAIGA
   - SNOWY_TAIGA_HILLS
   - SNOWY_TAIGA_MOUNTAINS
+  - MOUNTAINS
+  - MOUNTAIN_EDGE
+  - GRAVELLY_MOUNTAINS
+  - MODIFIED_GRAVELLY_MOUNTAINS
   - WOODED_MOUNTAINS
   cold_forest:
   - GIANT_SPRUCE_TAIGA
@@ -62,10 +66,18 @@ biome_aliases:
   - DESERT
   - DESERT_HILLS
   - DESERT_LAKES
+  - BADLANDS
+  - BADLANDS_PLATEAU
+  - ERODED_BADLANDS
+  - WOODED_BADLANDS_PLATEAU
   hot_rainy:
   - JUNGLE
   - JUNGLE_EDGE
   - JUNGLE_HILLS
+  - MODIFIED_JUNGLE
+  - MODIFIED_JUNGLE_EDGE
+  - SWAMP
+  - SWAMP_HILLS
   mountain:
   - MOUNTAINS
   - MOUNTAIN_EDGE
@@ -77,12 +89,16 @@ biome_aliases:
   - BADLANDS_PLATEAU
   - ERODED_BADLANDS
   - WOODED_BADLANDS_PLATEAU
+  - MODIFIED_BADLANDS_PLATEAU
+  - MODIFIED_WOODED_BADLANDS_PLATEAU
   mushroom:
   - MUSHROOM_FIELDS
   - MUSHROOM_FIELD_SHORE
   swamp:
   - SWAMP
   - SWAMP_HILLS
+  nether:
+  - NETHER
   end:
   - END_BARRENS
   - END_HIGHLANDS
@@ -98,8 +114,14 @@ biome_aliases:
   - NETHER
 
 plants:
+
+# formerly inheriting CROP properties
+
   WHEAT:
    persistent_growth_period: 3h
+   soil_max_layers:4
+   soil_boni:
+    CLAY: 0.5
    biomes:
     temperate: 1.0
     forest: 0.75 
@@ -139,7 +161,6 @@ plants:
     hot_dry: 0.25
     mountain: 0.25
     mushroom: 0.25
-
   
   NETHER_WART:
    persistent_growth_period: 16h
@@ -148,7 +169,7 @@ plants:
    soil_boni:
      SOUL_SAND: 0.5
    biomes:
-    NETHER: 1.0
+    nether: 1.0
     mushroom: 0.5
     hot_dry: 0.25
 
@@ -159,7 +180,6 @@ plants:
      VINE: 0.3
    biomes:
     hot_rainy: 1.0
-
 
 
   MELON:
@@ -189,13 +209,13 @@ plants:
     cold: 1.0
     temperate: 0.25
 
-
+# formerly inheriting Column properties
 
   CACTUS:
    persistent_growth_period: 6h
    biomes:
     hot_dry: 1.0
-    NETHER: 0.5
+    nether: 0.5
     mesa: 0.5
 
   SUGAR_CANE:
@@ -203,11 +223,15 @@ plants:
    biomes:
     hot_rainy: 1.0
     swamp: 0.5
-    water: 0.5  
+    water: 0.5
+
+# formerly inheriting "basetree" properties
 
   OAK_SAPLING:
    persistent_growth_period: 6h
    biomes:
+    mushroom: 0.5
+    freshwater: 0.5
     swamp: 0.5
     forest: 2.0
     temperate: 0.25
@@ -217,12 +241,16 @@ plants:
   BIRCH_SAPLING:
    persistent_growth_period: 6h
    biomes:
+    mushroom: 0.5
+    freshwater: 0.5
     forest: 2.0
     temperate: 0.25
 
   SPRUCE_SAPLING:
    persistent_growth_period: 6h
    biomes:
+    mushroom: 0.5
+    freshwater: 0.5
     cold: 0.75
     cold_forest: 2.0
     mountain: 0.75
@@ -248,9 +276,6 @@ plants:
     forest: 1.0
     cold_forest: 0.5
 
-
-
-
 database:
   ==: vg.civcraft.mc.civmodcore.dao.ManagedDatasource
   plugin: RealisticBiomes
@@ -263,4 +288,3 @@ database:
   connection_timeout: 10000
   idle_timeout: 600000
   max_lifetime: 7200000
-
