@@ -20,27 +20,33 @@ pearls:
   decay_interval_human: week                                                   
   decay_interval_min_human: 10080                                              
   decay_interval_min: 15                                                       
-  decay_amount: 2 # 2 hp / 15 min = 8 hp / 1 hour
-  decay_timeout_min: 10080                                            
-  start_value: 96 # 12 hours * 8 per hour                                      
-  max_value: 2688 # 336 hours (2 weeks) * 8 per hour                           
-  repair_materials:                                                            
+  decay_amount: 1 # 1 hp/15 min = 4 hp/hour or 32hp/hour at maximum login streak
+  decay_timeout_min: 86400 #9 days, should be identical to no mana streak
+  start_value: 384 # 12 hours * 32 per hour
+  max_value: 10752 # 32hp/hour * 24hours * 14 days            
+  repair_materials:
     PRISON:
-      mana:
-        material: BEDROCK
-        name: Mana                                                  
-        repair: 21                                                       
+     mana:
+       material: ENDER_EYE    
+       name: Player Essence
+       lore:
+         - Activity reward used to fuel pearls                                                      
+       repair: 36 #768 health is consumed per day, so 36 allows a player to fill 0.375 prison pearls of equal streak                                                   
     EXILE:                                              
       mana:                         
-        material: BEDROCK                                                 
-        name: Mana                                      
-        repair: 168                         
+        material: ENDER_EYE    
+        name: Player Essence
+        lore:
+         - Activity reward used to fuel pearls                                                      
+        repair: 144 #768 health is consumed per day, so 144 allows a player to fill 1.5 exile pearls of equal streak (768*1.5/8)
   bastion_harm_amount: 2.0                                         
   upgrade_materials:                                               
     mana:                                                                    
-      material: BEDROCK                      
-      name: Mana                                         
-      repair: 64                                                 
+      material: ENDER_EYE    
+      name: Player Essence
+      lore:
+       - Activity reward used to fuel pearls                                                      
+      repair: 384
   allow_pearl_stealing: true
   allow_summoning: true
   prison_world: world_the_end
