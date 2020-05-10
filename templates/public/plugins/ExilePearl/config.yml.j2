@@ -12,7 +12,7 @@ storage:
     pool_size: 5
 general:
   suicide_time_seconds: 180                                                                                                                                       
-pearls:                                                                                                                                                  
+pearls:
   autofree_worldborder: true                    
   free_by_throwing: false                                             
   free_teleport: true                                                                
@@ -23,7 +23,8 @@ pearls:
   decay_amount: 1 # 1 hp/15 min = 4 hp/hour or 32hp/hour at maximum login streak
   decay_timeout_min: 86400 #9 days, should be identical to no mana streak
   start_value: 384 # 12 hours * 32 per hour
-  max_value: 10752 # 32hp/hour * 24hours * 14 days            
+  max_value: 10752 # 32hp/hour * 24hours * 14 days
+  cost_multiplier_days: 270
   repair_materials:
     PRISON:
      mana:
