@@ -181,6 +181,7 @@ factories:
      - cook_rabbit
      - cook_fish
      - cook_salmon
+     - cook_cactus
      - repair_grill
   bakery:
     type: FCC
@@ -799,6 +800,18 @@ recipes:
     output:
       cooked_salmon:
         material: COOKED_SALMON
+        amount: 48
+  cook_cactus:
+    production_time: 4s
+    name: Cook Cactus
+    type: PRODUCTION
+    input:
+      cactus:
+        material: CACTUS
+        amount: 32
+    output:
+      green dye:
+        material: GREEN_DYE
         amount: 48
   bake_bread:
     production_time: 4s
