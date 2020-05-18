@@ -182,6 +182,7 @@ factories:
      - cook_fish
      - cook_salmon
      - cook_cactus
+     - cook_kelp
      - repair_grill
   bakery:
     type: FCC
@@ -812,6 +813,18 @@ recipes:
     output:
       green dye:
         material: GREEN_DYE
+        amount: 48
+  cook_kelp:
+    production_time: 4s
+    name: Cook Kelp
+    type: PRODUCTION
+    input:
+      kelp:
+        material: KELP
+        amount: 32
+    output:
+      dried kelp:
+        material: DRIED_KELP
         amount: 48
   bake_bread:
     production_time: 4s
