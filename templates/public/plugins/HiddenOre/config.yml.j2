@@ -192,7 +192,7 @@ drops:
    quartz_transform:
       package:
       -  ==: org.bukkit.inventory.ItemStack
-         type: QUARTZ_ORE
+         type: NETHER_QUARTZ_ORE
          amount: 1
       tools:
       - anything
@@ -256,10 +256,10 @@ drops:
       tools:
       - anything
       minY: 1
-      maxY: 48
-      chance: 0.004
-      minAmount: 1
-      maxAmount: 4
+      maxY: 70
+      chance: 0.0013
+      minAmount: 2
+      maxAmount: 8
       transformIfAble: true
    redstone_ore_transform:
       package:
@@ -269,10 +269,10 @@ drops:
       tools:
       - anything
       minY: 1
-      maxY: 26
-      chance: 0.004
+      maxY: 70
+      chance: 0.0013
       minAmount: 1
-      maxAmount: 4
+      maxAmount: 3
       transformIfAble: true
    lapis_ore_transform:
       package:
@@ -283,9 +283,9 @@ drops:
       - anything
       minY: 1
       maxY: 44
-      chance: 0.002
-      minAmount: 1
-      maxAmount: 3
+      chance: 0.003
+      minAmount: 2
+      maxAmount: 8
       transformIfAble: true
    emerald_ore_dank:
       package:
@@ -296,7 +296,7 @@ drops:
       - gold_pickaxe
       minY: 42
       maxY: 42
-      chance: 3.0E-8
+      chance: 0.00000003
       minAmount: 1
       maxAmount: 1
       transformIfAble: true
@@ -310,7 +310,7 @@ drops:
       - anything
       minY: 1
       maxY: 16
-      chance: 1.0
+      chance: 0.488
 #if you're using a blockconfig for a vein you probably want chance at 100%
 #and configure chance in the vein itself as density
       minAmount: 1
@@ -320,11 +320,11 @@ drops:
 #used for generator, should be different for each vein
          densitySeed: "{{ hidden_ore_density_seed }}"
          heightSeed: "{{ hidden_ore_height_seed }}"
-         density: 0.05
+         density: 0.03
 #ore chance multiplier
-         maxSpan: 3
+         maxSpan: 13
 #max thickness of the vein
-         densityBonus: 0
+         densityBonus: -0.3
 #applied to the result of the noise function which will be between -1 and 1
 #added before density is applied
 #e.g. 0.0 will result in 50% ore coverage, -0.5 25%, -1 0%, 1 100%
@@ -334,7 +334,7 @@ drops:
 #maximum random difference from the average
          heightLength: 10
 #distance in blocks between height slope change
-         densityLength: 130
+         densityLength: 90
 #distance in blocks between density slope change
          forceVisibleTransform: true
 # Basically, if a vein block condition is met, check all immediate neighboring, and now visible blocks
