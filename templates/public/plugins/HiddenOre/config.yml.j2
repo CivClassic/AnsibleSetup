@@ -6,117 +6,13 @@ ignore_silktouch: true
 map_save_active: false
 
 transform_attempt_multiplier: 3
-tools:
-   anything:
-      ignore:
-         all: true
-      modifiers:
-         dropChance: 0.95
-         minAmount: 0.0
-         maxAmount: 0.0
-   wood_pickaxe:
-# Give the item a "friendly name" that you'll use in the "tools" section of each drop config.
-      template:
-# Open an issue if the config-advanced.yml data doesn't give you enough to go on to
-#  design the template of your desire.
-         ==: org.bukkit.inventory.ItemStack
-         type: WOOD_PICKAXE
-         amount: 1
-      ignore:
-         amount: true
-# Ignore the amount held.
-         durability: true
-# Ignore the durability of the item held.
-         enchants: true
-# Ignore all enchantments.
-         otherEnchants: true
-# Ignore any enchantments not specified in the template
-         enchantsLvl: true
-# Ignore the specific lvl of the enchantments considered
-         lore: true
-# Ignore any differences in lore
-         name: true
-# Ignore any differences in display name.
-      modifiers:
-         dropChance: 0.95
-# Multiplier to drop chance; applied _after_ biome computation
-         minAmount: 0.0
-# Adder on minimum drop size; so, drop config min + this min.
-         maxAmount: 0.0
-# Adder on maximum drop size; so, drop config max + this max. Both can be negative.
-   gold_pickaxe:
-      template:
-         ==: org.bukkit.inventory.ItemStack
-         type: GOLD_PICKAXE
-         amount: 1
-      ignore:
-         amount: true
-         durability: true
-         enchants: true
-         otherEnchants: true
-         enchantsLvl: true
-         lore: true
-         name: true
-      modifiers:
-         dropChance: 0.95
-         minAmount: 0.0
-         maxAmount: 0.0
-   iron_pickaxe:
-      template:
-         ==: org.bukkit.inventory.ItemStack
-         type: IRON_PICKAXE
-         amount: 1
-      ignore:
-         amount: true
-         durability: true
-         enchants: true
-         otherEnchants: true
-         enchantsLvl: true
-         lore: true
-         name: true
-      modifiers:
-         dropChance: 1.0
-         minAmount: 0.0
-         maxAmount: 0.0
-   stone_pickaxe:
-      template:
-         ==: org.bukkit.inventory.ItemStack
-         type: STONE_PICKAXE
-         amount: 1
-      ignore:
-         amount: true
-         durability: true
-         enchants: true
-         otherEnchants: true
-         enchantsLvl: true
-         lore: true
-         name: true
-      modifiers:
-         dropChance: 0.95
-         minAmount: 0.0
-         maxAmount: 0.0
-   diamond_pickaxe:
-      template:
-         ==: org.bukkit.inventory.ItemStack
-         type: DIAMOND_PICKAXE
-         amount: 1
-      ignore:
-         amount: true
-         durability: true
-         enchants: true
-         otherEnchants: true
-         enchantsLvl: true
-         lore: true
-         name: true
-      modifiers:
-         dropChance: 0.95
-         minAmount: 0.0
-         maxAmount: 0.0
+tools: {}
 blocks:
    stone:
-      material: STONE
       allTypes: false
-      validTransforms:
+      materials:
+         stone:
+            material: STONE
          cobblestone:
             material: COBBLESTONE
          dirt:
@@ -128,29 +24,7 @@ blocks:
          granite:
             material: GRANITE
          hard_clay:
-            material: HARD_CLAY
-         gravel:
-            material: GRAVEL
-      dropMultiple: false
-      dropList:
-      - coal_ore_transform
-      - iron_ore_transform
-      - redstone_ore_transform
-      - gold_ore_transform
-      - lapis_ore_transform
-      - fossil_drop
-      - diamond_ore_vein
-   hard_clay:
-      material: HARD_CLAY
-      allTypes: true
-      validTransforms:
-         cobblestone:
-            material: COBBLESTONE
-            allTypes: true
-         dirt:
-            material: DIRT
-         stone:
-            material: STONE
+            material: TERRACOTTA
          gravel:
             material: GRAVEL
       dropMultiple: false
@@ -164,11 +38,6 @@ blocks:
       - diamond_ore_vein
    rack:
       material: NETHERRACK
-      allTypes: true
-      validTransforms:
-         netherrack:
-            material: NETHERRACK
-            allTypes: true
       dropMultiple: false
       drops:
       - quartz_transform
@@ -194,8 +63,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: QUARTZ_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 256
       chance: 0.004
@@ -207,8 +74,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: COAL_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 256
       chance: 0.012
@@ -220,8 +85,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: DIAMOND_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 16
       chance: 1.6E-4
@@ -233,8 +96,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: IRON_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 256
       chance: 0.015
@@ -253,8 +114,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: GOLD_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 70
       chance: 0.0013
@@ -266,8 +125,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: REDSTONE_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 70
       chance: 0.0013
@@ -279,8 +136,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: LAPIS_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 70
       chance: 0.003
@@ -292,8 +147,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: EMERALD_ORE
          amount: 1
-      tools:
-      - gold_pickaxe
       minY: 42
       maxY: 42
       chance: 3.0E-8
@@ -306,8 +159,6 @@ drops:
       -  ==: org.bukkit.inventory.ItemStack
          type: DIAMOND_ORE
          amount: 1
-      tools:
-      - anything
       minY: 1
       maxY: 16
       chance: 0.488
@@ -340,5 +191,3 @@ drops:
 # Basically, if a vein block condition is met, check all immediate neighboring, and now visible blocks
 # if they should be revealed, subject to the drop & block configurations.
 # revealed as well
-         loots:
-         - diamond_ore_vein
