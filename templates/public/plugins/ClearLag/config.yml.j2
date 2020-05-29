@@ -95,34 +95,8 @@ player-speed-limiter:
 #Material list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
 # -- 'items' Lists the material names of the entities with their spawn-age (In seconds)
 item-spawn-age-setter:
-  enabled: false
-  items:
-    stone: 240
-    grass: 240
-    cobblestone: 240
-    log: 240
-    stone_axe: 240
-    stone_pickaxe: 240
-    stone_sword: 240
-    wooden_axe: 240
-    wooden_pickaxe: 240
-    wooden_sword: 240
-    rotten_flesh: 240
-    gravel: 240
-    dirt: 240
-    leather: 200
-    sand: 240
-    bone: 240
-    beef: 240
-    chicken: 160
-    rabbit: 240
-    salmon: 240
-    cactus: 210
-    wool: 180
-    arrow: 160
-    PORKCHOP: 240
-    potato: 240
-    RED_TULIP: 240
+  enabled: false #We do this in paper settings
+  items: {}
 
 #Should mobs be nerfed to prevent over-breeding to reduce CPU usage (And possibly raise TPS)
 #When mobs are stuck too close, collisions are extremely intensive putting a pretty mean load on the server
@@ -188,12 +162,12 @@ mob-range:
 live-time:
   enabled: true
   interval: 10
-  mobtimer: false
+  mobtimer: true
   itemtimer: true
   arrowtimer: true
   arrowkilltime: 15
-  moblivetime: 6000
-  itemlivetime: 6000
+  moblivetime: 12000
+  itemlivetime: 12000
 
 #This option disallows the placement of too many tnt-minecarts
 # -- 'radius' is the radius clearlag will check for TNT-Minecarts
@@ -227,46 +201,54 @@ firespread-reducer:
 #     and possibly removed.
 chunk-entity-limiter:
   enabled: true
-  limit: 5
+  limit: 32
   entities:
-    - bat
-    - blaze
-    - cave_spider
+    - bat !hasName
+    - blaze !hasName
+    - blaze liveTime=1200
+    - cave_spider !hasName
+    - cave_spider liveTime=1200
     - chicken !hasName
     - cow !hasName
-    - creeper
-    - donkey !hasName
-    - drowned
-    - elder_guardian
-    - enderman
+    - creeper !hasName
+    - drowned !hasName
+    - elder_guardian !hasName
+    - enderman !hasName
     - endermite !hasName
-    - ghast
-    - guardian
+    - ghast !hasName
+    - guardian !hasName
+    - guardian liveTime=1200
     - horse !hasName
-    - husk
+    - husk !hasName
     - iron_golem !hasName
-    - magma_cube
+    - magma_cube !hasName
     - mule !hasName
     - mushroom_cow !hasName
     - ocelot !hasName
+    - phantom !hasName
     - pig !hasName
-    - pig_zombie
-    - pillager
+    - pig_zombie !hasName
+    - pig_zombie liveTime=1200
+    - pillager !hasName
     - polar_bear !hasName
     - rabbit !hasName
     - sheep !hasName
-    - silverfish
-    - skeleton
-    - skeleton_horse
-    - slime
-    - snowman !hasName
-    - spider
-    - squid
-    - villager
-    - wither_skeleton
-    - wolf
-    - zombie
-    - zombie_villager
+    - silverfish !hasName
+    - skeleton !hasName
+    - pig_zombie liveTime=1200
+    - skeleton_horse !hasName
+    - slime !hasName
+    - slime liveTime=1200
+    - snowman !hasName !hasName
+    - spider !hasName
+    - stray !hasName
+    - squid !hasName
+    - villager !hasName
+    - wither_skeleton !hasName
+    - wolf !hasName
+    - zombie !hasName
+    - zombie liveTime=1200
+    - zombie_villager !hasName
   # - Pig liveTime=100 <- This mob will be REMOVED if it's been alive for 100 ticks (5 seconds)
 
 #How many mobs should be allowed to spawn globally
@@ -274,8 +256,8 @@ chunk-entity-limiter:
 spawn-limiter:
   enabled: true
   interval: 15
-  mobs: 400
-  animals: 300
+  mobs: 5000
+  animals: 4000
 
 #Meters your TPS, if it goes to low, run the commands you wrote below!
 # -- 'interval' is how often tps-meter will check the TPS
@@ -323,7 +305,7 @@ kill-mobs:
 # --  the mobs spawned by the mobspawner upon chunk unload (Highly Recommended)
 mobspawner:
   enabled: true
-  max-spawn: 5
+  max-spawn: 8
   remove-mobs-on-chunk-unload: true
 
 #Dont use if you have CB++ or Spigot!
@@ -345,7 +327,7 @@ item-merger:
 # -- 'item-filter' What ground-items should NOT be removed during removal
 # -- 'remove-entities' What entities SHOULD be removed during removal
 auto-removal:
-  enabled: true
+  enabled: false
   broadcast-message: '[ClearLag] Autoremoving lazy mobs'
   broadcast-removal: false
   autoremoval-interval: 460
