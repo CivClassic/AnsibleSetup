@@ -54,6 +54,8 @@ mysql_port: 3306
 #Seeds used for HiddenOre noise generation
 hidden_ore_density_seed: 13
 hidden_ore_height_seed: 14
+#Seed used for FactoryMod wordbank
+wordbank_seed: abcd
 #Optional API key to make Bansticks ip hub lookup work
 ip_hub_key:
 ```
