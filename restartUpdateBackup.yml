@@ -19,8 +19,8 @@
    - name: Stop server
      include: "tasks/stop-server.yml"
 
-#   - name: Backup server
-#     include: "tasks/backup-server.yml"
+   - name: Backup server
+     include: "tasks/backup-server.yml"
 
    - name: Deploy Server
      include: "tasks/deploy-server.yml"
