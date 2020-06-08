@@ -46,6 +46,7 @@ plugins:
  - BanStick
  - Bastion
  - Brewery
+ - BungeeGuard
  - Citadel
  - CivChat2
  - CivDuties
@@ -82,6 +83,7 @@ plugins:
 
 #Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
 bungee_plugins:
+ - BungeeGuard
  - ViaVersion
 
 #--------------------------------------
