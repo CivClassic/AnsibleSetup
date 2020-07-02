@@ -58,6 +58,8 @@ hidden_ore_height_seed: 14
 wordbank_seed: abcd
 #Optional API key to make Bansticks ip hub lookup work
 ip_hub_key:
+#BungeeGuard Key used to avoid BungeeSpoofing (change this if you don't have a firewall setup properly)
+bungee_guard_token: abcdef
 ```
 
 You should only have to change `mysql_root_pass` to your MariaDB root password and change `mysql_non_root_pass` to an arbitrary random string for this to work
