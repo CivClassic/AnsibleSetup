@@ -33,12 +33,12 @@ reinforcements:
     damage_effect:
       type: SMOKE_NORMAL
       speed: 0.06
-      particleCount: 100
+      particleCount: 40
       offset: 0
     destruction_effect:
       type: SMOKE_LARGE
       speed: 0.04
-      particleCount: 250
+      particleCount: 80
       offset: 0.0
     mature_time: 5m
     acid_time: 20m
@@ -58,12 +58,12 @@ reinforcements:
     damage_effect:
       type: END_ROD
       speed: 0.07
-      particleCount: 100
+      particleCount: 60
       offset: 0.0
     destruction_effect:
       type: END_ROD
       speed: 0.13
-      particleCount: 500
+      particleCount: 200
       offset: 0
     mature_time: 30m
     acid_time: 6h
@@ -157,6 +157,9 @@ non_reinforceables:
  
 acidblock_material:
  - GOLD_BLOCK
+
+# Determines whether hanging entities (such as Item Frames) can be protected by their host block
+hangers_inherit_reinforcement: true
 
 # reinforcement_damageMultiplier is m where BlockDamage = 2 ^ (n/m) where n is equal to the number of days the group has been inactive
 reinforcement_damageMultiplier: 365
