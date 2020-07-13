@@ -25,6 +25,12 @@ https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mari
 
 Note that in the following the terms MariaDB and Mysql are used interchangeably
 
+- Create a user under which the server will be running
+
+By default this user is named mc, so: `sudo adduser mc`
+You may use a different user name, if you do so you will need to adjust the user name setting in `variables/all.yml`
+
+
 - Clone this repo
 ```
 git clone https://github.com/CivClassic/AnsibleSetup.git
