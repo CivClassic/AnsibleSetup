@@ -21,4 +21,5 @@ java -server \
  -XX:MaxTenuringThreshold=1 \
  -Dusing.aikars.flags=https://mcflags.emc.gs \
  -Daikars.new.flags=true -jar \
+ -Xmx{{ shard_mem }} -Xms{{ shard_mem }} \
  -jar {{ server_jar }}.jar nogui
