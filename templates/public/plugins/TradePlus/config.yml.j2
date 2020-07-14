@@ -13,9 +13,11 @@ permissions:
 requestcooldownseconds: 10
 allow-trade-in-creative: false
 blocked:
-  blacklist: []   
+  blacklist: []
   named-items: false
-  lore: []
+  lore:
+  - §aExile Pearl
+  - §aPrison Pearl
   regex: ''
 action: none
 ranges:
@@ -24,7 +26,7 @@ ranges:
   allowcrossworld: false
   blocked-worlds: []
 antiscam:
-  countdown: 10
+  countdown: 4
   cancelonchange: true
   preventchangeonaccept: true
   discrepancy-detection: true
@@ -79,7 +81,7 @@ extras:
     taxpercent: 0
     mode: chat
   experience:
-    enabled: falsee
+    enabled: false
     name: experience points
     material: experience_bottle
     display: '&aYour current XP offer is &2%AMOUNT%'
