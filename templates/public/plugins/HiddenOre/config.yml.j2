@@ -80,17 +80,6 @@ drops:
       minAmount: 3
       maxAmount: 12
       transformIfAble: true
-   diamond_ore_transform:
-      package:
-      -  ==: org.bukkit.inventory.ItemStack
-         type: DIAMOND_ORE
-         amount: 1
-      minY: 1
-      maxY: 16
-      chance: 1.6E-4
-      minAmount: 1
-      maxAmount: 3
-      transformIfAble: true
    iron_ore_transform:
       package:
       -  ==: org.bukkit.inventory.ItemStack
@@ -161,7 +150,8 @@ drops:
          amount: 1
       minY: 1
       maxY: 16
-      chance: 0.488
+      chance: 1.0
+      transformIfAble: true
 #if you're using a blockconfig for a vein you probably want chance at 100%
 #and configure chance in the vein itself as density
       minAmount: 1
