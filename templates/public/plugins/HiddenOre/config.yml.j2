@@ -161,11 +161,11 @@ drops:
 #used for generator, should be different for each vein
          densitySeed: "{{ hidden_ore_density_seed }}"
          heightSeed: "{{ hidden_ore_height_seed }}"
-         density: 0.03
+         density: 0.18
 #ore chance multiplier
          maxSpan: 3
 #max thickness of the vein
-         densityBonus: -0.3
+         densityBonus: -0.55
 #applied to the result of the noise function which will be between -1 and 1
 #added before density is applied
 #e.g. 0.0 will result in 50% ore coverage, -0.5 25%, -1 0%, 1 100%
@@ -175,7 +175,7 @@ drops:
 #maximum random difference from the average
          heightLength: 10
 #distance in blocks between height slope change
-         densityLength: 90
+         densityLength: 70
 #distance in blocks between density slope change
          forceVisibleTransform: true
 # Basically, if a vein block condition is met, check all immediate neighboring, and now visible blocks
