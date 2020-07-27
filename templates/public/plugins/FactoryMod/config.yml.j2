@@ -26,6 +26,7 @@ factories:
      - smelt_stone
      - smelt_smooth_stone
      - smelt_glass
+     - smelt_glass_red
      - smelt_netherrack
      - smelt_red_netherbrick
      - smelt_bricks
@@ -944,10 +945,22 @@ recipes:
   smelt_glass:
     type: PRODUCTION
     production_time: 4s
-    name: Smelt Glass
+    name: Smelt Glass from White Sand
     input:
       sand:
         material: SAND
+        amount: 64
+    output:
+      glass:
+        material: GLASS
+        amount: 128
+  smelt_glass_red:
+    type: PRODUCTION
+    production_time: 4s
+    name: Smelt Glass from Red Sand
+    input:
+      sand:
+        material: RED_SAND
         amount: 64
     output:
       glass:
