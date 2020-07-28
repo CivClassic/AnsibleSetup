@@ -379,6 +379,8 @@ factories:
      - acacia_to_sapling
      - sapling_to_dark_oak
      - dark_oak_to_sapling
+     - grow_mushroom_brown
+     - grow_mushroom_red
      - make_mushroom_brown
      - make_mushroom_red
      - make_mushroom_stem
@@ -4834,6 +4836,50 @@ recipes:
         amount: 128
         lore:
           - Crate
+  grow_mushroom_brown:
+    type: PRODUCTION
+    name: Make Brown Mushrooms
+    production_time: 60s
+    fuel_consumption_intervall: 2s
+    input:
+      podzol:
+        material: PODZOL
+        amount: 64
+      spider_eye:
+        material: SPIDER_EYE
+        amount: 128
+      red_dye:
+        material: BROWN_DYE
+        amount: 64
+      white_dye:
+        material: WHITE_DYE
+        amount: 64
+    output:
+      brown_mushroom:
+        material: BROWN_MUSHROOM
+        amount: 64
+  grow_mushroom_red:
+    type: PRODUCTION
+    name: Make Red Mushrooms
+    production_time: 60s
+    fuel_consumption_intervall: 2s
+    input:
+      podzol:
+        material: PODZOL
+        amount: 64
+      spider_eye:
+        material: SPIDER_EYE
+        amount: 128
+      red_dye:
+        material: RED_DYE
+        amount: 64
+      white_dye:
+        material: WHITE_DYE
+        amount: 64
+    output:
+      red_mushroom:
+        material: RED_MUSHROOM
+        amount: 64
   make_mushroom_brown:
     type: PRODUCTION
     name: Make Brown Mushroom Blocks
