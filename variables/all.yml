@@ -69,7 +69,7 @@ plugins:
  - NameColors
  - NameLayer
  - OldEnchanting
- - Orebfuscator
+ - Orebfuscator4
  - ProtocolLib
  - RailSwitch
  - RandomSpawn
