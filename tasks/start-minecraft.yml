@@ -1,0 +1,11 @@
+---
+#task to start up minecraft
+
+- name: Wait for Shard to stop
+  wait_for: "port={{ mc_port }} state=absent timeout=3600"
+
+- name: Send Start command
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'cd {{ full_server_folder }}' ENTER 'bash {{ startup_script }}' ENTER" 
+
+- name: Wait for Shard to start
+  wait_for: "port={{ mc_port }} state=present"

@@ -63,9 +63,8 @@ plugins:
  - HolographicDisplays
  - ItemExchange
  - JukeAlert
- - LuckPerms
  - KiraBukkitGateway
- - MemeMana
+ - LuckPerms
  - NameColors
  - NameLayer
  - OldEnchanting
@@ -138,11 +137,13 @@ bungee_jar: "Waterfall"
 startup_script: "start.sh"
 #Bungee startup bash script file name
 bungee_startup_script: "bungee_start.sh"
-#Name of the sevrer console tab in byobu
-byobu_server_tab: "server"
+#Name of the minecraft server console tab in byobu
+byobu_minecraft_tab: "server"
+#Name of the bungee console tab in byobu
+byobu_bungee_tab: "bungee"
 sql_file: "{{ main_folder }}/{{ backups_folder }}/{{ servername }}.sql"
 
-#Folder most of the magic is happening as a variable for convenience
+#Folder most of the magic is happening in as a variable for convenience
 main_folder: "/home/{{ username }}/{{ servername }}"
 full_server_folder: "/home/{{ username }}/{{ servername }}/{{ server_folder }}"
 full_bungee_folder: "/home/{{ username }}/{{ servername }}/{{ bungee_folder }}"

@@ -1,0 +1,55 @@
+---
+#
+## Ansible Role For shutting down the server, backing it up, updating it and restarting it
+
+- name: Deploy Server
+  hosts: "{{ host }}"
+  gather_facts: true
+  vars_files:
+   - variables/all.yml
+
+  tasks:
+   - name: Include variables
+     include_vars:
+       dir: variables
+
+   - name: Update SQL
+     include: "tasks/setup-sql.yml"
+     when: "{{ do_deploy | default('false') }}"
+     include: "tasks/deploy-server.yml"
+
+   - name: Warn restart
+     include: "tasks/warn-restart-10.yml"
+     when: "{{ do_warn10 | default('false') }}"
+
+   - name: Warn restart
+     include: "tasks/warn-restart-5.yml"
+     when: "{{ do_warn5 | default('false') }}"
+
+   - name: Warn restart
+     include: "tasks/warn-restart-1.yml"
+     when: "{{ do_warn1 | default('false') }}"
+
+   - name: Stop Minecraft Server
+     include: "tasks/stop-minecraft.yml"
+     when: "{{ do_stopminecraft | default('false') }}"
+
+   - name: Stop BungeeCord
+     include: "tasks/stop-bungee.yml"
+     when: "{{ do_stopbungee | default('false') }}"
+
+   - name: Backup server
+     include: "tasks/backup-server.yml"
+     when: "{{ do_backup | default('false') }}"
+
+   - name: Deploy Server
+     include: "tasks/deploy-server.yml"
+     when: "{{ do_update | default('false') }} or {{ do_deploy | default('false') }}"
+
+   - name: Start BungeeCord
+     include: "tasks/start-ungee.yml"
+     when: "{{ do_startbungee | default('false') }} and {{ use_bungee }}"
+
+   - name: Start Minecraft Server
+     include: "tasks/start-minecraft.yml"
+     when: "{{ do_startminecraft | default('false') }}"
