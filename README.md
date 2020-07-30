@@ -71,10 +71,10 @@ You should only have to change `mysql_root_pass` to your MariaDB root password a
 
 - Configure the setup according to your needs
 
-Check out `variables/all.yml` and change values as you see fit. You will most likely need to change `mysql_socket_location` to `/var/run/mysqld/mysqld.sock`
+Check out `variables/all.yml` and change values as you see fit. You will most likely need to change `mysql_socket_location` to `/var/run/mysqld/mysqld.sock` and you also most likely want to use less RAM than we do.
 
 - Run the deploy script
 
-`sudo bash deploy.sh`
+`sudo bash server.sh deploy`
 
-This script requires sudo for the initial database setup and will thus ask for your sudo password. You only need to run this once at the beginning or if you want to change the database or user name used. Past that you can use `update.sh` to apply changes to configs, plugins etc. only, which does not require sudo.
+This script requires sudo for the initial database setup. You only need to run it as root once at the beginning or if you want to change the database or user name used. Past that any invocations of `server.sh` should not require sudo. `server.sh` is your single access point to controlling your entire setup, run `bash server.sh help` to see a full list of available commands. 
