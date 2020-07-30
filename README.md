@@ -78,3 +78,13 @@ Check out `variables/all.yml` and change values as you see fit. You will most li
 `sudo bash server.sh deploy`
 
 This script requires sudo for the initial database setup. You only need to run it as root once at the beginning or if you want to change the database or user name used. Past that any invocations of `server.sh` should not require sudo. `server.sh` is your single access point to controlling your entire setup, run `bash server.sh help` to see a full list of available commands. 
+
+---
+
+For reference, Civclassic has the following cronjobs setup for the user `mc`:
+
+```
+44 7 * * * mv /home/mc/restart.log.txt /home/mc/restart.old.log.txt
+45 7 * * * cd /home/mc/AnsibleSetup && bash server.sh pull >> /home/mc/restart.log.txt
+50 7 * * * cd /home/mc/AnsibleSetup && bash server.sh warn10 stop backup update start >> /home/mc/restart.log.txt
+```
