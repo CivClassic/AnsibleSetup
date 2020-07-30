@@ -1,0 +1,11 @@
+---
+#task to Stop shards
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'say Restarting NOW' ENTER"
+
+- name: Send shutdown command
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'stop' ENTER" 
+ 
+- name: Wait for Shard to stop
+  wait_for: "port={{ mc_port }} state=absent timeout=3600"

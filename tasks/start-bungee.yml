@@ -1,0 +1,11 @@
+---
+#task to restart shards
+
+- name: Wait for Shard to stop
+  wait_for: "port={{ bungee_port }} state=absent timeout=3600"
+
+- name: Send Start command
+  shell: "tmux send -t {{ byobu_bungee_tab }} ENTER 'cd {{ full_bungee_folder }}' ENTER 'bash {{ bungee_startup_script }}' ENTER" 
+
+- name: Wait for Shard to start
+  wait_for: "port={{ bungee_port }} state=present"

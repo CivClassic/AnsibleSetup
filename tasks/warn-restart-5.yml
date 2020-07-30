@@ -1,0 +1,26 @@
+---
+# Ansible task to warn players of restart
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'say Restarting in 5 minutes' ENTER"
+
+- name: "Wait for 3 minutes"
+  pause: minutes=3
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'say Restarting in 2 minutes' ENTER"
+
+- name: "Wait for 1 minute"
+  pause: minutes=1
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'say Restarting in 1 minute' ENTER"
+
+- name: "Wait for 50 seconds"
+  pause: seconds=50
+
+- name: "Send Restart Warning"
+  shell: "tmux send -t {{ byobu_minecraft_tab }} ENTER 'say Restarting in 10 seconds' ENTER"
+
+- name: "Wait for 10 seconds"
+  pause: seconds=10

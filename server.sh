@@ -7,6 +7,8 @@ function showCivAnsibleHelp() {
 	echo "update           # Updates all plugin jars and configurations in the deployed setup"
 	echo "pull             # Pulls from the master branch of the git repository configured as origin"
 	echo "warn10           # Announces an upcoming restart to the server in 10 minutes in increments and blocks until that time span has elapsed"
+	echo "warn5            # Announces an upcoming restart to the server in 5 minutes in increments and blocks until that time span has elapsed"
+	echo "warn1            # Announces an upcoming restart to the server in 1 minute in increments and blocks until that time span has elapsed"
 	echo "backup           # Creates full backup of the map, plugin configs and mysql database in the deployed setup"
 	echo "stopminecraft    # Stops the minecraft server"
 	echo "stopbungee       # Stops BungeeCord"
@@ -49,6 +51,14 @@ do
 		warn10)
 			echo "Announcing a restart in 10 minutes to the server"
 			ansible-playbook server.yml --extra-vars '{"do_warn10":"true"}'
+			;;
+		warn5)
+			echo "Announcing a restart in 5 minutes to the server"
+			ansible-playbook server.yml --extra-vars '{"do_warn5":"true"}'
+			;;
+		warn1)
+			echo "Announcing a restart in 1 minute to the server"
+			ansible-playbook server.yml --extra-vars '{"do_warn1":"true"}'
 			;;
 		backup)
 			echo "Creating a backup of the current minecraft map, configs and database"
