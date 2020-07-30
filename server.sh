@@ -84,7 +84,7 @@ do
 			echo "Starting Bungee"
 			ansible-playbook server.yml --extra-vars '{"do_startbungee":"true"}'
 			;;
-		stop)
+		start)
 			echo "Starting Bungee and Minecraft"
 			ansible-playbook server.yml --extra-vars '{"do_startbungee":"true", "do_startminecraft":"true"}'
 			;;
