@@ -47,7 +47,7 @@
      when: "{{ do_update | default('false') }} or {{ do_deploy | default('false') }}"
 
    - name: Start BungeeCord
-     include: "tasks/start-ungee.yml"
+     include: "tasks/start-bungee.yml"
      when: "{{ do_startbungee | default('false') }} and {{ use_bungee }}"
 
    - name: Start Minecraft Server
