@@ -63,13 +63,12 @@ plugins:
  - HolographicDisplays
  - ItemExchange
  - JukeAlert
- - LuckPerms
  - KiraBukkitGateway
- - MemeMana
+ - LuckPerms
  - NameColors
  - NameLayer
  - OldEnchanting
- - Orebfuscator4
+ - Orebfuscator
  - ProtocolLib
  - RailSwitch
  - RandomSpawn
@@ -85,6 +84,7 @@ plugins:
 #Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
 bungee_plugins:
  - BungeeGuard
+ - ViaBackwards
  - ViaVersion
 
 #--------------------------------------
@@ -122,7 +122,7 @@ bungee_top_level_templates:
 bungee_secret_top_level_templates:
 
 #Minecraft version
-mc_version: "1.14.4"
+mc_version: "1.16.1"
 #URL to pull BuildTools from for building Spigot
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 #URL to pull Paper build from

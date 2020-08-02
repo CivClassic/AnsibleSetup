@@ -15,6 +15,7 @@ config-version: 19
 settings:
   load-permissions-yml-before-plugins: true
   bungee-online-mode: true
+  console-has-all-permissions: true
   region-file-cache-size: 256
   incoming-packet-spam-threshold: 300
   save-player-data: true
@@ -31,8 +32,8 @@ settings:
     enable: true
     load-threads: -1
   watchdog:
-    early-warning-every: 5000
-    early-warning-delay: 10000
+    early-warning-every: 1000
+    early-warning-delay: 5000
   spam-limiter:
     tab-spam-increment: 1
     tab-spam-limit: 500
@@ -62,13 +63,13 @@ world-settings:
     per-player-mob-spawns: false
     duplicate-uuid-resolver: saferegen
     duplicate-uuid-saferegen-delete-range: 32
-    optimize-explosions: false
+    optimize-explosions: true
     portal-search-radius: 128
     disable-teleportation-suffocation-check: false
     fixed-chunk-inhabited-time: -1
     use-vanilla-world-scoreboard-name-coloring: false
-    remove-corrupt-tile-entities: false
-    enable-treasure-maps: true
+    remove-corrupt-tile-entities: true
+    enable-treasure-maps: false
     treasure-maps-return-already-discovered: false
     experience-merge-max-value: -1
     prevent-moving-into-unloaded-chunks: false
@@ -85,13 +86,13 @@ world-settings:
     skeleton-horse-thunder-spawn-chance: 0.00
     disable-ice-and-snow: false
     count-all-mobs-for-spawning: false
-    armor-stands-do-collision-entity-lookups: true
+    armor-stands-do-collision-entity-lookups: false
     nether-ceiling-void-damage-height: 0
     water-over-lava-flow-speed: 5
     grass-spread-tick-rate: 1
     bed-search-radius: 1
     fix-zero-tick-instant-grow-farms: true
-    use-faster-eigencraft-redstone: false
+    use-faster-eigencraft-redstone: true
     allow-non-player-entities-on-scoreboards: false
     disable-explosion-knockback: false
     parrots-are-unaffected-by-player-movement: false
@@ -127,8 +128,10 @@ world-settings:
         JUKEBOX: 36000
 
     game-mechanics:
+      disable-pillager-patrols: true
+      enable-treasure-maps: false
       scan-for-legacy-ender-dragon: true
-      disable-chest-cat-detection: false
+      disable-chest-cat-detection: true
       shield-blocking-delay: 5
       disable-player-crits: false
       disable-sprint-interruption-on-attack: false
@@ -186,6 +189,8 @@ world-settings:
       - stone
       - oak_planks
     generator-settings:
-      flat-bedrock: false
+      flat-bedrock: true
     squid-spawn-height:
       maximum: 0.0
+    viewdistances:
+      no-tick-view-distance: 7
