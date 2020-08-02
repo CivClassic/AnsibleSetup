@@ -85,6 +85,9 @@ factories:
      - make_smooth_stone_slab
      - make_smooth_sandstone_slab
      - make_smooth_quartz_slab
+     - make_soul_soil
+     - make_basalt
+     - make_blackstone
      - repair_aesthetics
   dye_wool:
     type: FCC
@@ -5018,6 +5021,58 @@ recipes:
         amount: 64
         lore:
           - Smooth double slab
+  make_soul_soil:
+    forceInclude: true
+    type: PRODUCTION
+    name: Make Soul Soil
+    production_time: 4s
+    input:
+      soulsand:
+        material: SOUL_SAND
+        amount: 32
+      dirt:
+        material: DIRT
+        amount: 32
+    output:
+      soulsoil:
+        material: SOUL_SOIL
+        amount: 64
+  make_basalt:
+    forceInclude: true
+    type: PRODUCTION
+    name: Make Basalt
+    production_time: 4s
+    input:
+      cobblestone:
+        material: NETHERRACK
+        amount: 64
+      blue_ice:
+        material: BLUE_ICE
+        amount: 4
+      soul_soil:
+        material: SOUL_SOIL
+        amount: 4
+    output:
+      basalt:
+        material: BASALT
+        amount: 96
+  make_blackstone:
+    forceInclude: true
+    type: PRODUCTION
+    name: Make Blackstone
+    production_time: 4s
+    input:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 32
+      netherrack:
+        material: NETHERRACK
+        amount: 32
+    output:
+      blackstone:
+        material: BLACKSTONE
+        amount: 64
+    
   upgrade_to_printer:
     forceInclude: true
     production_time: 4s
