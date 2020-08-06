@@ -45,6 +45,7 @@ plugins:
  - AttrHider
  - BanStick
  - Bastion
+ - BetterChairs
  - Brewery
  - BungeeGuard
  - Citadel
