@@ -88,6 +88,7 @@ factories:
      - make_soul_soil
      - make_basalt
      - make_blackstone
+     - make_crying_obsidian
      - repair_aesthetics
   dye_wool:
     type: FCC
@@ -4904,6 +4905,23 @@ recipes:
       blackstone:
         material: BLACKSTONE
         amount: 64
+  make_crying_obsidian:
+    forceInclude: true
+    type: PRODUCTION
+    name: Make Crying Obsidian
+    production_time: 4s
+    input:
+      obsidian:
+        material: OBSIDIAN
+        amount: 64
+      tears:
+        material: GHAST_TEAR
+        amount: 2
+    output:
+      crying_obsidian:
+        material: CRYING_OBSIDIAN
+        amount: 64
+
   bind_books:
     type: PRODUCTION
     name: Bind Books
