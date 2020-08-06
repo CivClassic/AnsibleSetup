@@ -930,21 +930,6 @@ recipes:
       lapis:
         material: LAPIS_BLOCK
         amount: 48
-  upgrade_to_ore_smelter:
-    production_time: 30s
-    name: Upgrade to Ore Smelter
-    type: UPGRADE
-    input:
-      coal:
-        material: COAL
-        amount: 512
-      iron:
-        material: IRON_INGOT
-        amount: 256
-      diamond:
-        material: DIAMOND
-        amount: 64
-    factory: Ore Smelter
   smelt_glass:
     type: PRODUCTION
     production_time: 4s
@@ -1552,19 +1537,6 @@ recipes:
         lore:
           - City bastions block exiled players and reinforcements
         amount: 4
-  upgrade_to_bio_lab:
-    production_time: 4s
-    name: Upgrade to Bio Lab
-    type: UPGRADE
-    input:
-      sapling:
-        material: OAK_SAPLING
-        amount: 32
-      Dirt:
-        material: DIRT
-        amount: 256
-        name: Dirt
-    factory: Bio Lab
   dirt_to_grass:
     production_time: 4s
     name: Convert Dirt to Grass
@@ -2822,15 +2794,6 @@ recipes:
         material: DIRT
         amount: 8
     health_gained: 10000
-  upgrade_to_carpentry:
-    production_time: 4s
-    name: Upgrade to Carpentry Factory
-    type: UPGRADE
-    input:
-      chest:
-        material: CHEST
-        amount: 32
-    factory: Carpentry Factory
   make_fences:
     production_time: 4s
     name: Make Fences
@@ -3005,21 +2968,6 @@ recipes:
         material: CHEST
         amount: 2
     health_gained: 10000
-  upgrade_to_rails:
-    production_time: 4s
-    name: Upgrade to Rail Factory
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 64
-      redstone:
-        material: REDSTONE
-        amount: 32
-      gold:
-        material: GOLD_INGOT
-        amount: 8
-    factory: Rail Factory
   make_rail:
     production_time: 4s
     name: Make Rails
@@ -3086,102 +3034,6 @@ recipes:
         material: IRON_INGOT
         amount: 4
     health_gained: 10000
-  upgrade_to_husbandry:
-    production_time: 4s
-    name: Upgrade to Animal Husbandry
-    type: UPGRADE
-    input:
-      iron_block:
-        material: IRON_BLOCK
-        amount: 32
-      slime:
-        material: SLIME_BALL
-        amount: 16
-      leather:
-        material: LEATHER
-        amount: 32
-    factory: Animal Husbandry
-  upgrade_to_iron_forge:
-    production_time: 4s
-    name: Upgrade to Iron Forge
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 128
-      lava_bucket:
-        material: LAVA_BUCKET
-        amount: 1
-    factory: Iron Forge
-  upgrade_to_redstone:
-    production_time: 4s
-    name: Upgrade to Redstone Mechanics Factory
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 64
-      redstone:
-        material: REDSTONE
-        amount: 256
-      gold:
-        material: GOLD_INGOT
-        amount: 32
-    factory: Redstone Mechanics Factory
-  upgrade_to_bastion:
-    production_time: 4s
-    name: Upgrade to Bastion Factory
-    type: UPGRADE
-    input:
-      casing:
-        material: ENDER_CHEST
-        amount: 32
-        name: Casing
-        lore:
-          - Casing for bastion
-      gearbox:
-        material: CLOCK
-        amount: 32
-        name: Gearbox
-        lore:
-          - Gear mechanism for bastion
-      radar:
-        material: COMPASS
-        amount: 32
-        name: Radar
-        lore:
-          - Radar for detecting pearls
-      energizer:
-        material: EMERALD
-        amount: 32
-        name: Energizer
-        lore:
-          - Power source for bastion
-      refractor:
-        material: DIAMOND
-        amount: 32
-        name: Refractor
-        lore:
-          - Refractor for bastion
-      bio_component:
-        material: MAGMA_CREAM
-        amount: 32
-        name: Bio-Component
-        lore:
-             - Bio-Component for bastion
-    factory: Bastion Factory
-  upgrade_to_basic_cauldron:
-    production_time: 4s
-    name: Upgrade to Basic Cauldron
-    type: UPGRADE
-    input:
-      iron:
-        material: IRON_INGOT
-        amount: 128
-      gold:
-        material: GOLD_INGOT
-        amount: 32
-    factory: Basic Cauldron
   make_saddle:
     production_time: 4s
     name: Make Saddles
@@ -4773,26 +4625,6 @@ recipes:
         material: EMERALD_BLOCK
         amount: 16
     health_gained: 10000
-  upgrade_to_compactor:
-    production_time: 4s
-    name: Upgrade to Compactor
-    type: UPGRADE
-    input:
-      iron_block:
-        material: IRON_BLOCK
-        amount: 32
-      redstone_block:
-        material: REDSTONE_BLOCK
-        amount: 16
-      piston:
-        material: PISTON
-        amount: 64
-      crate:
-        material: CHEST
-        amount: 32
-        lore:
-          - Crate
-    factory: Compactor
   compact:
     production_time: 1s
     fuel_consumption_intervall: 99999s
@@ -5072,20 +4904,6 @@ recipes:
       blackstone:
         material: BLACKSTONE
         amount: 64
-    
-  upgrade_to_printer:
-    forceInclude: true
-    production_time: 4s
-    type: UPGRADE
-    name: Upgrade to Printing Press
-    input:
-      ink:
-        material: INK_SAC
-        amount: 32
-      paper:
-        material: PAPER
-        amount: 64
-    factory: Printing Press
   bind_books:
     type: PRODUCTION
     name: Bind Books
@@ -6065,16 +5883,6 @@ recipes:
           material: DIRT
           amount: 1
           name: Dirt!
-  upgrade_to_gold_forge:
-    forceInclude: true
-    production_time: 4s
-    name: Upgrade to Gold Forge
-    type: UPGRADE
-    input:
-      gold:
-        material: GOLD_INGOT
-        amount: 64
-    factory: Gold Forge
   repair_gold_forge:
     production_time: 4s
     name: Repair Factory
