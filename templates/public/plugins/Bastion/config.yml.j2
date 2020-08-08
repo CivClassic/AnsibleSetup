@@ -10,6 +10,11 @@ mysql:
   idleTimout: 600000
   maxLifetime: 7200000
   savesPerDay: 64
+commonSettings:
+  cancelReinforcementModeInBastionField: false
+  listBastionTimeout: 2000
+  cancelPlacementAndDamage:
+    - SCAFFOLDING
 bastions:
 #The first bastion in this list will be used as the default type
 #This only really matters the first time your start it up when converting from old bastion
