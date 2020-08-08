@@ -1,0 +1,10 @@
+- name: Perform Duplicity backup
+  shell: "duplicity \
+         --volsize 1000 \
+         --gpg-options '--cipher-algo AES256' \
+         {{ main_folder }}/{{ backups_folder }}\
+         rsync://{{ duplicity_server }}//home/{{ duplicity_username }}/{{ duplicity_folder }}"
+  environment:
+   PASSPHRASE: "{{ backup_pass }}"
+  async: 108000
+  poll: 0

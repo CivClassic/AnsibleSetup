@@ -143,6 +143,9 @@ byobu_minecraft_tab: "server"
 #Name of the bungee console tab in byobu
 byobu_bungee_tab: "bungee"
 sql_file: "{{ main_folder }}/{{ backups_folder }}/{{ servername }}.sql"
+duplicity_folder: "backups"
+duplicity_server: "test.civclassic.com"
+duplicity_username: "backups"
 
 #Folder most of the magic is happening in as a variable for convenience
 main_folder: "/home/{{ username }}/{{ servername }}"
