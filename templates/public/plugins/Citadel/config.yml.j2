@@ -45,6 +45,7 @@ reinforcements:
     name: Stone
     hit_points: 50
     id: 1
+    acid_priority: 2
     legacy_id: 1
   iron_tier:
     item:
@@ -70,6 +71,7 @@ reinforcements:
     name: Iron
     hit_points: 300
     id: 265
+    acid_priority: 5
     legacy_id: 265
   diamond_tier:
     item:
@@ -95,6 +97,7 @@ reinforcements:
     name: Diamond
     hit_points: 2000
     id: 264
+    acid_priority: 10
     legacy_id: 264
   paper_tier:
     item:
@@ -104,6 +107,7 @@ reinforcements:
     acid_time: 10s
     name: Paper
     hit_points: 1
+    acid_priority: 0
     id: 339
     legacy_id: 339
   bedrock_tier:
@@ -113,7 +117,9 @@ reinforcements:
     mature_time: 1s
     acid_time: 1s
     name: Bedrock
+    acid_priority: 10000
     hit_points: 420420420
+    return_chance: 0.0
     id: 7
     legacy_id: 7
 
