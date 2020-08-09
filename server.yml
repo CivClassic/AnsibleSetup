@@ -16,7 +16,7 @@
    - name: Update SQL
      include: "tasks/setup-sql.yml"
      when: "{{ do_deploy | default('false') }}"
-     include: "tasks/deploy-server.yml"
+     include: "tasks/setup-sql.yml"
 
    - name: Warn restart
      include: "tasks/warn-restart-10.yml"
