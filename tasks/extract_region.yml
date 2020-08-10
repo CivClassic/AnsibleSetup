@@ -12,7 +12,7 @@
 
 - name: Get latest backup
   set_fact:
-    latest_backup: "{{ found_backups.files | sort(attribute='mtime',reverse=true) | first }}"
+    latest_backup: "{{ found_backups.files | sort(attribute='mtime',reverse=true) [{{ backup_go_back_count }}] }}"
 
 
 - name: "Extracting region file"
