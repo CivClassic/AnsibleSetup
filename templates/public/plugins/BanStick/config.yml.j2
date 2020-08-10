@@ -63,7 +63,7 @@ log:
 #   - shareBans: If banstick should enforce the share threshold with bans.
 events:
  proxy:
-  threshold: 2.5
+  threshold: 2.1
   banMessage: VPS / VPN Proxy use is generally prohibited. Please disable your VPS/VPN Proxy and try again.
  share:
   threshold: 0
@@ -71,11 +71,13 @@ events:
  enable:
   ipBans: true
   subnetBans: true
-  proxyBans: false
-  newProxyBans: false
+  proxyBans: true
+  newProxyBans: true
   proxyKicks: true
   shareBans: false
   transitiveBans: true
+  lovetapOnJoin: true
+  proxyCheckRegistrar: true
 # Configure the data source for VPS / VPN proxy list grabs.
 # For cloud9:  
 #  ban.length is in millisecond
