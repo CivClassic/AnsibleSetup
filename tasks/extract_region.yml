@@ -1,0 +1,23 @@
+---
+# Ansbile task to extract a single region file
+
+
+- name: Get all backups
+  find:
+    paths: "{{ main_folder }}/{{ backups_folder }}/"
+    file_type: file
+    use_regex: yes
+    patterns: '*.tar.gz'
+  register: found_backups
+
+- name: Get latest backup
+  set_fact:
+    latest_backup: "{{ found_backups.files | sort(attribute='mtime',reverse=true) | first }}"
+
+
+- name: "Extracting region file"
+  shell: "tar -zxvf {{ latest_backup }} {{ full_server_folder }}/{{ region_world }}/region/r.-{{ region_x }}.{{ region_z }}.mca --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/r.-{{ target_region_x }}.{{ target_region_z }}.mca"
+
+
+
+
