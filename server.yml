@@ -53,3 +53,8 @@
    - name: Start Minecraft Server
      include: "tasks/start-minecraft.yml"
      when: "{{ do_startminecraft | default('false') }}"
+
+   - name: Extract partial backup
+     include: "tasks/extract-region.yml"
+     when: "{{ extract_single_region | default('false') }}"
+
