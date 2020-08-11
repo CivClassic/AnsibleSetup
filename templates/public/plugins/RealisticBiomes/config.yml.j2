@@ -1,5 +1,3 @@
-cache_entire_database: true
-
  # Set to true if you want tapping a plant with bonemeal to double it.
 allow_tallplant_replication: true
 
@@ -128,6 +126,9 @@ plants:
 
   WHEAT:
    persistent_growth_period: 3h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: SEEDS
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -146,6 +147,9 @@ plants:
 
   CARROT:
    persistent_growth_period: 3h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: CARROT
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -159,6 +163,9 @@ plants:
 
   POTATO:
    persistent_growth_period: 3h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: POTATO
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -171,6 +178,9 @@ plants:
 
   BEETROOT:
    persistent_growth_period: 3h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: BEETROOT_SEEDS
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -186,6 +196,9 @@ plants:
   
   NETHER_WART:
    persistent_growth_period: 16h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: NETHER_WART
    needs_sun_light: false
    soil_max_layers: 4
    soil_boni:
@@ -197,6 +210,9 @@ plants:
 
   COCOA:
    persistent_growth_period: 24h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: COCOA_BEANS
    soil_max_layers: 25
    soil_boni:
      VINE: 0.3
@@ -215,6 +231,9 @@ plants:
 
   MELON_STEM:
    persistent_growth_period: 12h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: MELON_SEEDS
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -234,6 +253,9 @@ plants:
 
   PUMPKIN_STEM:
    persistent_growth_period: 12h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: PUMPKIN_SEEDS
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -245,6 +267,9 @@ plants:
 
   CACTUS:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: CACTUS
    biomes:
     hot_dry: 1.0
     nether: 0.5
@@ -252,6 +277,9 @@ plants:
 
   SUGAR_CANE:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: SUGAR_CANE
    biomes:
     hot_rainy: 1.0
     swampy: 0.5
@@ -261,6 +289,9 @@ plants:
 
   OAK_SAPLING:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: OAK_SAPLING
    biomes:
     mushroom: 0.5
     freshwater: 0.5
@@ -272,6 +303,9 @@ plants:
 
   BIRCH_SAPLING:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: BIRCH_SAPLING
    biomes:
     foresty: 2.0
     mushroom: 0.5
@@ -280,6 +314,9 @@ plants:
 
   SPRUCE_SAPLING:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: SPRUCE_SAPLING
    biomes:
     mushroom: 0.5
     freshwater: 0.5
@@ -289,11 +326,17 @@ plants:
 
   JUNGLE_SAPLING:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: JUNGLE_SAPLING
    biomes:
     hot_rainy: 1.0
 
   ACACIA_SAPLING:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: ACACIA_SAPLING
    biomes:
     hot_dry: 2.0
     mesa: 2.0
@@ -303,6 +346,9 @@ plants:
 
   DARK_OAK_SAPLING:
    persistent_growth_period: 6h
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: DARK_OAK_SAPLING
    biomes:
     swampy: 2.0
     foresty: 1.0
