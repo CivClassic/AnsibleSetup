@@ -283,6 +283,10 @@ plants:
    persistent_growth_period: 3h
    name: Melon
    id: 7
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: MELON
+   can_be_planted: false
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -310,7 +314,7 @@ plants:
    grower:
      type: stem
      material: MELON_STEM
-     fruit_config: MELON
+     fruit_config: Melon
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -323,6 +327,10 @@ plants:
    persistent_growth_period: 3h
    name: Pumpkin
    id: 9
+   can_be_planted: false
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: PUMPKIN
    grower:
      type: fruit
      material: PUMPKIN
@@ -344,7 +352,7 @@ plants:
    grower:
      type: stem
      material: PUMPKIN_STEM
-     fruit_config: PUMPKIN
+     fruit_config: Pumpkin
    id: 10
    item:
      ==: org.bukkit.inventory.ItemStack
@@ -401,7 +409,7 @@ plants:
 
   OAK_SAPLING:
    persistent_growth_period: 6h
-   name: Oak sapling
+   name: Oak Tree
    id: 13
    grower:
      type: tree
@@ -423,7 +431,7 @@ plants:
 
   BIRCH_SAPLING:
    persistent_growth_period: 6h
-   name: Birch sapling
+   name: Birch Tree
    id: 14
    grower:
      type: tree
@@ -442,7 +450,7 @@ plants:
 
   SPRUCE_SAPLING:
    persistent_growth_period: 6h
-   name: Spruce sapling
+   name: Spruce Tree
    id: 15
    grower:
      type: tree
@@ -462,7 +470,7 @@ plants:
 
   JUNGLE_SAPLING:
    persistent_growth_period: 6h
-   name: Jungle sapling
+   name: Jungle Tree
    id: 16
    grower:
      type: tree
@@ -478,7 +486,7 @@ plants:
 
   ACACIA_SAPLING:
    persistent_growth_period: 6h
-   name: Acacia sapling
+   name: Acacia Tree
    grower:
      type: tree
      material: ACACIA_SAPLING
@@ -498,7 +506,7 @@ plants:
 
   DARK_OAK_SAPLING:
    persistent_growth_period: 6h
-   name: Dark oak sapling
+   name: Dark Oak Tree
    grower:
      type: tree
      material: DARK_OAK_SAPLING
