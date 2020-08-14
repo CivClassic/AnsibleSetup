@@ -37,6 +37,6 @@ case "${argument,,}" in
     		echo "Backups to go back must be a positive number"
     		exit 1
 		fi
-		ansible-playbook server.yml --extra-vars '{"extract_single_region":"true", "backup_go_back_count":"$backupGoBack", "region_x":"$regionX", "region_z":"$regionZ", "region_world":"world", "target_region_x":"195", "target_region_z":"195"}'
+		ansible-playbook server.yml --extra-vars '{"extract_single_region":"true", "backup_go_back_count":"'"$backupGoBack"'", "region_x":"'"$regionX"'", "region_z":"'"$regionZ"'", "region_world":"world", "target_region_x":"195", "target_region_z":"195"}'
 		;;
 esac

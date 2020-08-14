@@ -6,17 +6,21 @@
   find:
     paths: "{{ main_folder }}/{{ backups_folder }}/"
     file_type: file
-    use_regex: yes
     patterns: '*.tar.gz'
   register: found_backups
 
-- name: Get latest backup
+- name: Sort backups
   set_fact:
-    latest_backup: "{{ found_backups.files | sort(attribute='mtime',reverse=true) [{{ backup_go_back_count }}] }}"
+    sorted_backups: "{{ found_backups.files | sort(attribute='mtime',reverse=true) }}"
+
+- name: Get backup by index
+  set_fact:
+    latest_backup: "{{ sorted_backups [{{ backup_go_back_count }}] }}"
 
 
 - name: "Extracting region file"
-  shell: "tar -zxvf {{ latest_backup }} {{ full_server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --force-local --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/ --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|'"
+  warn: false
+  shell: "tar -zxvf {{ latest_backup.path }} {{ full_server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --force-local --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/ --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|'"
 
 
 
