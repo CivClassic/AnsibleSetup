@@ -33,7 +33,7 @@ case "${argument,,}" in
     		backupGoBack="$4"
 		fi
 		backupGoBack=$(( backupGoBack - 1 )) #Both converts into 0 based indices and ensures it's actually a number
-		if [ "$backupGoBack" -lt 1 ]; then
+		if [ "$backupGoBack" -lt 0 ]; then
     		echo "Backups to go back must be a positive number"
     		exit 1
 		fi
