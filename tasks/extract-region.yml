@@ -19,7 +19,7 @@
 
 - name: Construct tar command
   set_fact:
-    tar_command: "tar -zxvf {{ latest_backup.path }} home/{{ username }}/{{ servername }}/{{ server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --force-local --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/ --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|'"
+    tar_command: "tar -zxvf {{ latest_backup.path }} -C {{ full_server_folder }}/{{ region_world }}/region/ --force-local --strip-components 6 home/{{ username }}/{{ servername }}/{{ server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|'"
 
 - name: Print tar command
   debug:
