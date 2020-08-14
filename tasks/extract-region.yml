@@ -15,7 +15,7 @@
 
 - name: Get backup by index
   set_fact:
-    latest_backup: "{{ sorted_backups [backup_go_back_count] }}"
+    latest_backup: "{{ sorted_backups [backup_go_back_count | int] }}"
 
 #Note that the relative path reference to the files in the tar does not include a / in front of home/
 - name: "Extracting region file"
