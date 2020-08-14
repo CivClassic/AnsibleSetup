@@ -15,12 +15,11 @@
 
 - name: Get backup by index
   set_fact:
-    latest_backup: "{{ sorted_backups [{{ backup_go_back_count }}] }}"
+    latest_backup: "{{ sorted_backups [backup_go_back_count] }}"
 
-
+#Note that the relative path reference to the files in the tar does not include a / in front of home/
 - name: "Extracting region file"
-  warn: false
-  shell: "tar -zxvf {{ latest_backup.path }} {{ full_server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --force-local --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/ --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|'"
+  shell: "tar -zxvf {{ latest_backup.path }} home/{{ username }}/{{ servername }}/{{ server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --force-local --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/ --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|'"
 
 
 
