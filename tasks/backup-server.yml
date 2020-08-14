@@ -19,9 +19,9 @@
 - name: "Dumping {{ servername }} mysql db"
   shell: "mysqldump --user=root --password={{ mysql_root_pass }} --hex-blob --routines --lock-all-tables --add-drop-database {{ mysql_db_name }} > {{ sql_file }}"
 
-
+#We don't use Ansibles iso8601 format for the timestamp, because it contains ':' which tar interprets as remote destination
 - name: "Creating tar for {{ servername }}"
-  shell: "tar --exclude='*.jar' -czvf {{ main_folder }}/{{ backups_folder }}/{{ servername }}-{{ ansible_date_time.iso8601 }}.tar.gz {{ sql_file }} {{ full_server_folder }}/plugins {{ full_server_folder }}/world {{ full_server_folder }}/world_nether {{ full_server_folder }}/world_the_end"
+  shell: "tar --exclude='*.jar' -czvf {{ main_folder }}/{{ backups_folder }}/{{ servername }}-{{ ansible_date_time.date }}T{{ ansible_date_time.hour }}-{{ ansible_date_time.minute }}-{{ ansible_date_time.second }}.tar.gz {{ sql_file }} {{ full_server_folder }}/plugins {{ full_server_folder }}/world {{ full_server_folder }}/world_nether {{ full_server_folder }}/world_the_end"
 
 - name: Delete no longer needed SQL dump
   file:

@@ -16,7 +16,7 @@
 
 
 - name: "Extracting region file"
-  shell: "tar -zxvf {{ latest_backup }} {{ full_server_folder }}/{{ region_world }}/region/r.-{{ region_x }}.{{ region_z }}.mca --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/r.-{{ target_region_x }}.{{ target_region_z }}.mca"
+  shell: "tar -zxvf {{ latest_backup }} {{ full_server_folder }}/{{ region_world }}/region/r.{{ region_x }}.{{ region_z }}.mca --force-local --strip-components 6 -C {{ full_server_folder }}/{{ region_world }}/region/ --transform='flags=r;s|r.{{ region_x }}.{{ region_z }}.mca|r.{{ target_region_x }}.{{ target_region_z }}.mca|"
 
 
 
