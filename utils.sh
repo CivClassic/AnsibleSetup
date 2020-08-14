@@ -29,7 +29,7 @@ case "${argument,,}" in
 		zOffset=$(( "$zOffset" + startRegion100 )) 
 		echo "Desired location will be at $xOffset , $zOffset"
 		backupGoBack=1
-		if [ "$#" -lt 3 ]; then
+		if [ "$#" -gt 3 ]; then
     		backupGoBack="$4"
 		fi
 		backupGoBack=$(( backupGoBack - 1 )) #Both converts into 0 based indices and ensures it's actually a number
