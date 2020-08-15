@@ -27,7 +27,7 @@
     src: "{{ backup_file.path }}"
     dest: "{{ main_folder }}/{{ duplicity_folder }}/backups/{{ backup_file.path | basename }}"
     force: no
-  with_items: "{{ found_backups }}"
+  with_items: "{{ found_backups.files }}"
   loop_control:
     loop_var: backup_file
 
@@ -49,7 +49,7 @@
     src: "{{ found_log.path }}"
     dest: "{{ main_folder }}/{{ duplicity_folder }}/logs/{{ found_log.path | basename }}"
     force: no
-  with_items: "{{ found_logs }}"
+  with_items: "{{ found_logs.files }}"
   loop_control:
     loop_var: found_log
 
