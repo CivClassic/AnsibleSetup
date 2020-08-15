@@ -9,7 +9,7 @@
 - name: "Mount remote"
   shell: "curlftpfs {{ remote_backup_user }}:{{ remote_backup_password }}@{{ remote_backup_server }} {{ main_folder }}/{{ duplicity_folder }}"
   when:
-    - mount_count|int == 0
+    - mount_count.stdout|int == 0
 
 - name: "Create remote backup folder"
   file: "path={{ main_folder }}/{{ duplicity_folder }}/backups/ state=directory"
