@@ -58,3 +58,6 @@
      include: "tasks/extract-region.yml"
      when: "{{ extract_single_region | default('false') }}"
 
+   - name: Do duplicity
+     include: "tasks/duplicity-backups.yml"
+     when: "{{ do_duplicity | default('false') }}"

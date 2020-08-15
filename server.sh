@@ -16,6 +16,7 @@ function showCivAnsibleHelp() {
 	echo "startminecraft   # Starts the minecraft server"
 	echo "startbungee      # Starts BungeeCord"
 	echo "start            # Starts BungeeCord and then the minecraft server"
+	echo "duplicity        # Culls backups and syncs them with a remote FTP location"
 	echo "help             # Shows this list of commands"
 }
 
@@ -87,6 +88,10 @@ do
 		start)
 			echo "Starting Bungee and Minecraft"
 			ansible-playbook server.yml --extra-vars '{"do_startbungee":"true", "do_startminecraft":"true"}'
+			;;
+		duplicity)
+			echo "Applying culling and duplicity to backups"
+			ansible-playbook server.yml --extra-vars '{"do_duplicity":"true"}'
 			;;
 		help)
 			echo "Printing help:"
