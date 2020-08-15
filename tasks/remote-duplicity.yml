@@ -32,7 +32,7 @@
     loop_var: found_backups
 
 - name: "Cull remote backups"
-  include: "tasks/cull-duplicity.yml backup_cull_path={{ main_folder }}/{{ duplicity_folder }} backup_retention_time={{ remote_backup_retention_time }} backup_retention_count={{ remote_backup_retention_count}}"
+  include: "tasks/cull-duplicity.yml backup_cull_path={{ main_folder }}/{{ duplicity_folder }}/backups/ backup_retention_time={{ remote_backup_retention_time }} backup_retention_count={{ remote_backup_retention_count}}"
 
 - name: "Create remote log folder"
   file: "path={{ main_folder }}/{{ duplicity_folder }}/logs/ state=directory owner={{ username }} mode=0755"

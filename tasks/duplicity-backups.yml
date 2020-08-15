@@ -3,7 +3,6 @@
   when:
     - do_remote_backup
 
-
 - name: "Cull local backups"
   include: "tasks/cull-duplicity.yml backup_cull_path={{ main_folder }}/{{ backups_folder }} backup_retention_time={{ local_backup_retention_time }} backup_retention_count={{ local_backup_retention_count}}"
 
