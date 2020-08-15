@@ -8,8 +8,6 @@
     patterns: '*.tar.gz'
   register: outdated_backups
 
-- set_fact:
-  x_days_ago_epoch: "{{ (ansible_date_time['epoch']|int)-(86400*30) }}"
 
 - name: Delete older backups
   file:
