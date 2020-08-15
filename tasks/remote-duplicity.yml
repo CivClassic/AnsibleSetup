@@ -27,9 +27,9 @@
     src: "{{ backup_file.path }}"
     dest: "{{ main_folder }}/{{ duplicity_folder }}/backups/{{ backup_file.path | basename }}"
     force: no
-  with_items: "{{ backup_file }}"
+  with_items: "{{ found_backups }}"
   loop_control:
-    loop_var: found_backups
+    loop_var: backup_file
 
 - name: "Cull remote backups"
   include: "tasks/cull-duplicity.yml backup_cull_path={{ main_folder }}/{{ duplicity_folder }}/backups/ backup_retention_time={{ remote_backup_retention_time }} backup_retention_count={{ remote_backup_retention_count}}"
@@ -49,9 +49,9 @@
     src: "{{ found_log.path }}"
     dest: "{{ main_folder }}/{{ duplicity_folder }}/logs/{{ found_log.path | basename }}"
     force: no
-  with_items: "{{ found_log }}"
+  with_items: "{{ found_logs }}"
   loop_control:
-    loop_var: found_logs
+    loop_var: found_log
 
 
 #Good practice in case of machine infections
