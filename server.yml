@@ -35,7 +35,7 @@
 
    - name: Stop BungeeCord
      include: "tasks/stop-bungee.yml"
-     when: "{{ (do_stopbungee | default('false')) and use_bungee }}"
+     when: "{{ do_stopbungee | default('false') }}"
 
    - name: Backup server
      include: "tasks/backup-server.yml"
@@ -47,7 +47,7 @@
 
    - name: Start BungeeCord
      include: "tasks/start-bungee.yml"
-     when: "{{ (do_startbungee | default('false')) and use_bungee }}"
+     when: "{{ do_startbungee | default('false') }} and {{ use_bungee }}"
 
    - name: Start Minecraft Server
      include: "tasks/start-minecraft.yml"
