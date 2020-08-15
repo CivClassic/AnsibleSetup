@@ -42,10 +42,7 @@
   register: found_logs
 
 - name: Copy logs over
-  copy:
-    src: "{{ found_log.path }}"
-    dest: "{{ main_folder }}/{{ duplicity_folder }}/logs/{{ found_log.path | basename }}"
-    force: no
+  shell: "cp -n {{ found_log.path }} {{ main_folder }}/{{ duplicity_folder }}/logs/{{ found_log.path | basename }}"
   with_items: "{{ found_logs.files }}"
   loop_control:
     loop_var: found_log
