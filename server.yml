@@ -15,48 +15,48 @@
 
    - name: Update SQL
      include: "tasks/setup-sql.yml"
-     when: "do_deploy | default('false')"
+     when: "{{ do_deploy | default('false') }}"
 
    - name: Warn restart
      include: "tasks/warn-restart-10.yml"
-     when: "do_warn10 | default('false')"
+     when: "{{ do_warn10 | default('false') }}"
 
    - name: Warn restart
      include: "tasks/warn-restart-5.yml"
-     when: "do_warn5 | default('false')"
+     when: "{{ do_warn5 | default('false') }}"
 
    - name: Warn restart
      include: "tasks/warn-restart-1.yml"
-     when: "do_warn1 | default('false')"
+     when: "{{ do_warn1 | default('false') }}"
 
    - name: Stop Minecraft Server
      include: "tasks/stop-minecraft.yml"
-     when: "do_stopminecraft | default('false')"
+     when: "{{ do_stopminecraft | default('false') }}"
 
    - name: Stop BungeeCord
      include: "tasks/stop-bungee.yml"
-     when: "(do_stopbungee | default('false')) and use_bungee"
+     when: "{{ (do_stopbungee | default('false')) and use_bungee }}"
 
    - name: Backup server
      include: "tasks/backup-server.yml"
-     when: "do_backup | default('false')"
+     when: "{{ do_backup | default('false') }}"
 
    - name: Deploy Server
      include: "tasks/deploy-server.yml"
-     when: "(do_update | default('false')) or (do_deploy | default('false'))"
+     when: "{{ (do_update | default('false')) or (do_deploy | default('false')) }}"
 
    - name: Start BungeeCord
      include: "tasks/start-bungee.yml"
-     when: "(do_startbungee | default('false')) and use_bungee"
+     when: "{{ (do_startbungee | default('false')) and use_bungee }}"
 
    - name: Start Minecraft Server
      include: "tasks/start-minecraft.yml"
-     when: "do_startminecraft | default('false')"
+     when: "{{ do_startminecraft | default('false') }}"
 
    - name: Extract partial backup
      include: "tasks/extract-region.yml"
-     when: "extract_single_region | default('false')"
+     when: "{{ extract_single_region | default('false') }}"
 
    - name: Do duplicity
      include: "tasks/duplicity-backups.yml"
-     when: "do_duplicity | default('false')"
+     when: "{{ do_duplicity | default('false') }}"
