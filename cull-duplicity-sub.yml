@@ -1,7 +1,0 @@
-- name: Delete older backups
-  file:
-    path: "{{ item.path }}" 
-    state: absent
-  loop: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
-  when: 
-    - "{{ '%d' | strftime ( item.ctime | int ) | int != 1 }}"
