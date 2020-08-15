@@ -1,0 +1,19 @@
+#Delete backups in a given path based on a retention policy
+
+- name: Collect older backups
+  find:
+    paths: "{{ backup_cull_path }}"
+    age: "{{ backup_retention_time }}"
+    file_type: file
+    patterns: '*.tar.gz'
+  register: outdated_backups
+
+- name: Delete older backups
+  file:
+    path: "{{ outdated_backup.path }}" 
+    state: absent
+    with_items: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
+    loop_control:
+      loop_var: outdated_backup
+    when:
+      - outdated_backup.ctime.day != 1

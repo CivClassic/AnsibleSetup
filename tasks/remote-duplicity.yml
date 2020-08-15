@@ -1,0 +1,59 @@
+- name: "Create remote backup mount point"
+  file: "path={{ main_folder }}/{{ duplicity_folder }} state=directory owner={{ username }} mode=0755"
+
+- name: "Check if remote is already mounted"
+  shell: "grep {{ main_folder }}/{{ duplicity_folder }} /etc/mtab | wc -l"
+  register: mount_count
+
+
+- name: "Mount remote"
+  shell: "curlftpfs {{ remote_backup_user }}:{{ remote_backup_password }}@{{ remote_backup_server }} {{ main_folder }}/{{ duplicity_folder }}"
+  when:
+    - mount_count|int == 0
+
+- name: "Create remote backup folder"
+  file: "path={{ main_folder }}/{{ duplicity_folder }}/backups/ state=directory owner={{ username }} mode=0755"
+
+- name: Get all backups
+  find:
+    paths: "{{ main_folder }}/{{ backups_folder }}/"
+    file_type: file
+    patterns: '*.tar.gz'
+  register: found_backups
+
+
+- name: Copy backups over
+  copy:
+    src: "{{ backup_file.path }}"
+    dest: "{{ main_folder }}/{{ duplicity_folder }}/backups/{{ backup_file.path | basename }}"
+    force: no
+  with_items: "{{ backup_file }}"
+  loop_control:
+    loop_var: found_backups
+
+- name: "Cull remote backups"
+  include: "tasks/cull-duplicity.yml backup_cull_path={{ main_folder }}/{{ duplicity_folder }} backup_retention_time={{ remote_backup_retention_time }} backup_retention_count={{ remote_backup_retention_count}}"
+
+- name: "Create remote log folder"
+  file: "path={{ main_folder }}/{{ duplicity_folder }}/logs/ state=directory owner={{ username }} mode=0755"
+
+- name: Get all logs
+  find:
+    paths: "{{ full_server_folder }}/logs/"
+    file_type: file
+    patterns: '*.log.gz'
+  register: found_logs
+
+- name: Copy logs over
+  copy:
+    src: "{{ found_log.path }}"
+    dest: "{{ main_folder }}/{{ duplicity_folder }}/logs/{{ found_log.path | basename }}"
+    force: no
+  with_items: "{{ found_log }}"
+  loop_control:
+    loop_var: found_logs
+
+
+#Good practice in case of machine infections
+- name: "Unmount remote"
+  shell: "fusermount -u {{ main_folder }}/{{ duplicity_folder }}"

@@ -13,7 +13,7 @@ https://www.java.com/en/download/help/linux_x64_install.xml
 
 - Install Git, Python and MariaDB
 
-`sudo apt-get install git python python3-pip python-dev default-libmysqlclient-dev python3-pymysql mariadb-server mariadb-client byobu duplicity ncftp`
+`sudo apt-get install git python python3-pip python-dev default-libmysqlclient-dev python3-pymysql mariadb-server mariadb-client byobu curlftpfs`
 
 If `python3-mysql` can't be found or you are later on getting an error like ` "The PyMySQL (Python 2.7 and Python 3.X) or MySQL-python (Python 2.X) module is required."` try `sudo apt-get install python-pymysql`
 
@@ -65,6 +65,12 @@ wordbank_seed: abcd
 ip_hub_key:
 #BungeeGuard Key used to avoid BungeeSpoofing (change this if you don't have a firewall setup properly)
 bungee_guard_token: abcdef
+#FTP user name to use for mounting backup point
+remote_backup_user: squid
+#Password to use for mounting FTP backup point
+remote_backup_password: ink
+#URL to use for FTP backup point
+remote_backup_server: some.backup.domain
 ```
 
 You should only have to change `mysql_root_pass` to your MariaDB root password and change `mysql_non_root_pass` to an arbitrary random string for this to work

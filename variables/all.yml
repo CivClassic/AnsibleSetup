@@ -143,9 +143,17 @@ byobu_minecraft_tab: "server"
 #Name of the bungee console tab in byobu
 byobu_bungee_tab: "bungee"
 sql_file: "{{ main_folder }}/{{ backups_folder }}/{{ servername }}.sql"
-duplicity_folder: "backups"
-duplicity_server: "test.civclassic.com"
-duplicity_username: "backups"
+duplicity_folder: "remote_backups"
+do_remote_backup: true
+
+#Backups older than this which we were not made on the first of the month will be deleted locally
+local_backup_retention_time: 7d
+#Minimum amount of backups to keep locally
+local_backup_retention_count: 7
+#Backups older than this which we were not made on the first of the month will be deleted on the remote backup
+remote_backup_retention_time: 14d
+#Minimum amount of backups to keep remote
+remote_backup_retention_count: 14
 
 #Folder most of the magic is happening in as a variable for convenience
 main_folder: "/home/{{ username }}/{{ servername }}"
