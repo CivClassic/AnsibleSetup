@@ -12,6 +12,5 @@
   file:
     path: "{{ item.path }}" 
     state: absent
-    loop: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
-    when:
-      - item.ctime.day != 1
+  loop: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
+  when: item.ctime.day != 1
