@@ -44,7 +44,7 @@
 
    - name: Deploy Server
      include: "tasks/deploy-server.yml"
-     when: "do_update | default('false') or do_deploy | default('false')"
+     when: "(do_update | default('false')) or (do_deploy | default('false'))"
 
    - name: Start BungeeCord
      include: "tasks/start-bungee.yml"
