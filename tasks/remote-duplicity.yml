@@ -12,7 +12,7 @@
     - mount_count|int == 0
 
 - name: "Create remote backup folder"
-  file: "path={{ main_folder }}/{{ duplicity_folder }}/backups/ state=directory"
+  file: "path={{ main_folder }}/{{ duplicity_folder }}/backups/ state=directory owner=root"
 
 - name: Get all backups
   find:
@@ -35,7 +35,7 @@
   include: "tasks/cull-duplicity.yml backup_cull_path={{ main_folder }}/{{ duplicity_folder }}/backups/ backup_retention_time={{ remote_backup_retention_time }} backup_retention_count={{ remote_backup_retention_count}}"
 
 - name: "Create remote log folder"
-  file: "path={{ main_folder }}/{{ duplicity_folder }}/logs/ state=directory"
+  file: "path={{ main_folder }}/{{ duplicity_folder }}/logs/ state=directory owner=root"
 
 - name: Get all logs
   find:
