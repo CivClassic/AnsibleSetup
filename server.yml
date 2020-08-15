@@ -3,7 +3,7 @@
 ## Ansible Role For shutting down the server, backing it up, updating it and restarting it
 
 - name: Deploy Server
-  hosts: "host"
+  hosts: "{{ host }}"
   gather_facts: true
   vars_files:
    - variables/all.yml
@@ -16,7 +16,6 @@
    - name: Update SQL
      include: "tasks/setup-sql.yml"
      when: "do_deploy | default('false')"
-     include: "tasks/setup-sql.yml"
 
    - name: Warn restart
      include: "tasks/warn-restart-10.yml"
@@ -36,7 +35,7 @@
 
    - name: Stop BungeeCord
      include: "tasks/stop-bungee.yml"
-     when: "do_stopbungee | default('false')"
+     when: "(do_stopbungee | default('false')) and use_bungee"
 
    - name: Backup server
      include: "tasks/backup-server.yml"
@@ -48,7 +47,7 @@
 
    - name: Start BungeeCord
      include: "tasks/start-bungee.yml"
-     when: "do_startbungee | default('false') and use_bungee"
+     when: "(do_startbungee | default('false')) and use_bungee"
 
    - name: Start Minecraft Server
      include: "tasks/start-minecraft.yml"
