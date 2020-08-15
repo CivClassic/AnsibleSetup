@@ -8,10 +8,8 @@
     patterns: '*.tar.gz'
   register: outdated_backups
 
-
+#Need to be in separate file because ansible wont let us do a conditional both per loop iteration for for general loop execution
 - name: Delete older backups
-  file:
-    path: "{{ item.path }}" 
-    state: absent
-  loop: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
-  when: "('%Y-%m-%d %H:%M:%S' | ( strftime ( item.ctime | int ) ) | to_datetime).day != 1"
+  include: "tasks/cull-duplicity-sub.yml"
+  when: 
+    - outdated_backups.matched > 0
