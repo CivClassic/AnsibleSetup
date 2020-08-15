@@ -8,16 +8,10 @@
     patterns: '*.tar.gz'
   register: outdated_backups
 
-- name: Filter backups
-  vars:
-    filtered_backups: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
-
 - name: Delete older backups
   file:
-    path: "{{ outdated_backup.path }}" 
+    path: "{{ item.path }}" 
     state: absent
-    with_items: "{{ filtered_backups }}"
-    loop_control:
-      loop_var: outdated_backup
+    loop: "{{ (outdated_backups.files | sort(attribute='ctime'))[:- backup_retention_count ] | list }}"
     when:
-      - outdated_backup.ctime.day != 1
+      - item.ctime.day != 1
