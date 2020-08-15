@@ -21,12 +21,9 @@
     patterns: '*.tar.gz'
   register: found_backups
 
-
+#Copy module throws '[Errno 95] Operation not supported' when operating on FTP because it uses symlinks internally
 - name: Copy backups over
-  copy:
-    src: "{{ backup_file.path }}"
-    dest: "{{ main_folder }}/{{ duplicity_folder }}/backups/{{ backup_file.path | basename }}"
-    force: no
+  shell: "cp -n {{ backup_file.path }} {{ main_folder }}/{{ duplicity_folder }}/backups/{{ backup_file.path | basename }}"
   with_items: "{{ found_backups.files }}"
   loop_control:
     loop_var: backup_file
