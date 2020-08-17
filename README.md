@@ -17,6 +17,10 @@ https://www.java.com/en/download/help/linux_x64_install.xml
 
 If `python3-mysql` can't be found or you are later on getting an error like ` "The PyMySQL (Python 2.7 and Python 3.X) or MySQL-python (Python 2.X) module is required."` try `sudo apt-get install python-pymysql`
 
+Recommendend optionals for managing a server:
+
+`sudo apt-get install htop iotop`
+
 - Install Ansible
 
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
