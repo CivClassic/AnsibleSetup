@@ -1,7 +1,10 @@
-cache_entire_database: true
-
  # Set to true if you want tapping a plant with bonemeal to double it.
 allow_tallplant_replication: true
+
+no_bonemeal_blocks:
+  - WARPED_NYLIUM
+  - CRIMSON_NYLIUM
+  - SEA_PICKLE
 
  # categories of biomes
 biome_aliases:
@@ -128,6 +131,19 @@ plants:
 
   WHEAT:
    persistent_growth_period: 3h
+   name: Wheat
+   id: 1
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: WHEAT_SEEDS
+     v: 1
+   grower:
+     type: ageable
+     material: WHEAT
+     max_stage: 7
+     increment: 1
+   vanilla_materials:
+    - WHEAT
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -146,6 +162,19 @@ plants:
 
   CARROT:
    persistent_growth_period: 3h
+   name: Carrots
+   id: 2
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: CARROT
+     v: 1
+   grower:
+     type: ageable
+     material: CARROTS
+     max_stage: 7
+     increment: 3
+   vanilla_materials:
+    - CARROTS
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -159,6 +188,19 @@ plants:
 
   POTATO:
    persistent_growth_period: 3h
+   name: Potatoes
+   id: 3
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: POTATO
+     v: 1
+   grower:
+     type: ageable
+     material: POTATOES
+     max_stage: 7
+     increment: 3
+   vanilla_materials:
+    - POTATOES
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -171,6 +213,19 @@ plants:
 
   BEETROOT:
    persistent_growth_period: 3h
+   name: Beetroots
+   id: 4
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: BEETROOT_SEEDS
+     v: 1
+   grower:
+     type: ageable
+     material: BEETROOTS
+     max_stage: 3
+     increment: 1
+   vanilla_materials:
+    - BEETROOTS
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -186,6 +241,19 @@ plants:
   
   NETHER_WART:
    persistent_growth_period: 16h
+   name: Nether wart
+   id: 5
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: NETHER_WART
+     v: 1
+   grower:
+     type: ageable
+     material: NETHER_WART
+     max_stage: 3
+     increment: 1
+   vanilla_materials:
+    - NETHER_WART
    needs_sun_light: false
    soil_max_layers: 4
    soil_boni:
@@ -197,6 +265,19 @@ plants:
 
   COCOA:
    persistent_growth_period: 24h
+   name: Cocoa
+   id: 6
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: COCOA_BEANS
+     v: 1
+   grower:
+     type: ageable
+     material: COCOA
+     max_stage: 2
+     increment: 1
+   vanilla_materials:
+    - COCOA
    soil_max_layers: 25
    soil_boni:
      VINE: 0.3
@@ -205,9 +286,23 @@ plants:
 
   MELON:
    persistent_growth_period: 3h
+   name: Melon
+   id: 7
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: MELON
+   can_be_planted: false
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
+   grower:
+     type: fruit
+     material: MELON
+     stem_type: MELON_STEM
+     attached_stem_type: ATTACHED_MELON_STEM
+   vanilla_materials:
+    - ATTACHED_MELON_STEM
+    - MELON_STEM
    biomes:
     swampy: 1.0
     hot_rainy: 0.5
@@ -215,6 +310,16 @@ plants:
 
   MELON_STEM:
    persistent_growth_period: 12h
+   name: Melon stem
+   id: 8
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: MELON_SEEDS
+     v: 1
+   grower:
+     type: stem
+     material: MELON_STEM
+     fruit_config: Melon
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -225,6 +330,20 @@ plants:
 
   PUMPKIN:
    persistent_growth_period: 3h
+   name: Pumpkin
+   id: 9
+   can_be_planted: false
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: PUMPKIN
+   grower:
+     type: fruit
+     material: PUMPKIN
+     stem_type: PUMPKIN_STEM
+     attached_stem_type: ATTACHED_PUMPKIN_STEM
+   vanilla_materials:
+    - ATTACHED_PUMPKIN_STEM
+    - PUMPKIN_STEM
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -234,6 +353,16 @@ plants:
 
   PUMPKIN_STEM:
    persistent_growth_period: 12h
+   name: Pumpkin stem
+   grower:
+     type: stem
+     material: PUMPKIN_STEM
+     fruit_config: Pumpkin
+   id: 10
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: PUMPKIN_SEEDS
+     v: 1
    soil_max_layers: 4
    soil_boni:
      CLAY: 0.5
@@ -245,6 +374,18 @@ plants:
 
   CACTUS:
    persistent_growth_period: 6h
+   name: Cactus
+   grower:
+     type: column
+     material: CACTUS
+     max_height: 3
+   vanilla_materials:
+    - CACTUS
+   id: 11
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: CACTUS
+     v: 1
    biomes:
     hot_dry: 1.0
     nether: 0.5
@@ -252,6 +393,18 @@ plants:
 
   SUGAR_CANE:
    persistent_growth_period: 6h
+   name: Sugar cane
+   id: 12
+   grower:
+     type: column
+     material: SUGAR_CANE
+     max_height: 3
+   vanilla_materials:
+    - SUGAR_CANE
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: SUGAR_CANE
+     v: 1
    biomes:
     hot_rainy: 1.0
     swampy: 0.5
@@ -261,6 +414,17 @@ plants:
 
   OAK_SAPLING:
    persistent_growth_period: 6h
+   name: Oak Tree
+   id: 13
+   grower:
+     type: tree
+     material: OAK_SAPLING
+   vanilla_materials:
+    - OAK_SAPLING
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: OAK_SAPLING
+     v: 1
    biomes:
     mushroom: 0.5
     freshwater: 0.5
@@ -272,6 +436,17 @@ plants:
 
   BIRCH_SAPLING:
    persistent_growth_period: 6h
+   name: Birch Tree
+   id: 14
+   grower:
+     type: tree
+     material: BIRCH_SAPLING
+   vanilla_materials:
+    - BIRCH_SAPLING
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: BIRCH_SAPLING
+     v: 1
    biomes:
     foresty: 2.0
     mushroom: 0.5
@@ -280,6 +455,17 @@ plants:
 
   SPRUCE_SAPLING:
    persistent_growth_period: 6h
+   name: Spruce Tree
+   id: 15
+   grower:
+     type: tree
+     material: SPRUCE_SAPLING
+   vanilla_materials:
+    - SPRUCE_SAPLING
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: SPRUCE_SAPLING
+     v: 1
    biomes:
     mushroom: 0.5
     freshwater: 0.5
@@ -289,11 +475,33 @@ plants:
 
   JUNGLE_SAPLING:
    persistent_growth_period: 6h
+   name: Jungle Tree
+   id: 16
+   grower:
+     type: tree
+     material: JUNGLE_SAPLING
+   vanilla_materials:
+    - JUNGLE_SAPLING
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: JUNGLE_SAPLING
+     v: 1
    biomes:
     hot_rainy: 1.0
 
   ACACIA_SAPLING:
    persistent_growth_period: 6h
+   name: Acacia Tree
+   grower:
+     type: tree
+     material: ACACIA_SAPLING
+   vanilla_materials:
+    - ACACIA_SAPLING
+   id: 17
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: ACACIA_SAPLING
+     v: 1
    biomes:
     hot_dry: 2.0
     mesa: 2.0
@@ -303,6 +511,17 @@ plants:
 
   DARK_OAK_SAPLING:
    persistent_growth_period: 6h
+   name: Dark Oak Tree
+   grower:
+     type: tree
+     material: DARK_OAK_SAPLING
+   vanilla_materials:
+    - DARK_OAK_SAPLING
+   id: 18
+   item:
+     ==: org.bukkit.inventory.ItemStack
+     type: DARK_OAK_SAPLING
+     v: 1
    biomes:
     swampy: 2.0
     foresty: 1.0
