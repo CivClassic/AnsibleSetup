@@ -485,6 +485,7 @@ factories:
         amount: 1
     recipes:
      - make_iron_fence
+     - make_chains
      - make_anvil
      - make_bucket
      - make_iron_trapdoor
@@ -3375,6 +3376,21 @@ recipes:
       iron_bars:
         material: IRON_BARS
         amount: 256
+  make_chains:
+    production_time: 4s
+    name: Make Chains
+    type: PRODUCTION
+    input:
+      iron:
+        material: IRON_INGOT
+        amount: 16
+      iron:
+        material: IRON_NUGGET
+        amount: 32
+    output:
+      chain:
+        material: CHAIN
+        amount: 64
   make_anvil:
     production_time: 4s
     name: Make Anvils
