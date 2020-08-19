@@ -41,6 +41,7 @@ blocks:
       dropMultiple: false
       dropList:
       - quartz_transform
+      - glowstone_transform
 drops:
    fossil_drop:
       package:
@@ -69,6 +70,18 @@ drops:
       chance: 0.004
       minAmount: 2
       maxAmount: 6
+      transformIfAble: true
+   glowstone_transform:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: GLOWSTONE
+         v: 1
+         amount: 1
+      minY: 1
+      maxY: 256
+      chance: 0.004
+      minAmount: 2
+      maxAmount: 4
       transformIfAble: true
    coal_ore_transform:
       package:
