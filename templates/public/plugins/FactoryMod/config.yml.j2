@@ -485,6 +485,7 @@ factories:
         amount: 1
     recipes:
      - make_iron_fence
+     - make_chains
      - make_anvil
      - make_bucket
      - make_iron_trapdoor
@@ -493,6 +494,8 @@ factories:
      - make_shears
      - make_radar
      - make_cauldron
+     - make_lantern
+     - make_soul_lantern
      - repair_forge
   redstone_mechanics:
     type: FCC
@@ -3375,6 +3378,48 @@ recipes:
       iron_bars:
         material: IRON_BARS
         amount: 256
+  make_chains:
+    production_time: 4s
+    name: Make Chains
+    type: PRODUCTION
+    input:
+      iron:
+        material: IRON_INGOT
+        amount: 20
+    output:
+      chain:
+        material: CHAIN
+        amount: 64
+  make_lantern:
+    production_time: 4s
+    name: Make Lanterns
+    type: PRODUCTION
+    input:
+      iron:
+        material: IRON_INGOT
+        amount: 12
+      torch:
+        material: TORCH
+        amount: 16
+    output:
+      lantern:
+        material: LANTERN
+        amount: 64
+  make_soul_lantern:
+    production_time: 4s
+    name: Make Soul Lanterns
+    type: PRODUCTION
+    input:
+      iron:
+        material: IRON_INGOT
+        amount: 12
+      soul_torch:
+        material: SOUL_TORCH
+        amount: 16
+    output:
+      soul_lantern:
+        material: SOUL_LANTERN
+        amount: 64
   make_anvil:
     production_time: 4s
     name: Make Anvils
