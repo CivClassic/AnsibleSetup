@@ -383,6 +383,8 @@ factories:
      - acacia_to_sapling
      - sapling_to_dark_oak
      - dark_oak_to_sapling
+     - make_crimson_stem
+     - make_warped_stem
      - grow_mushroom_brown
      - grow_mushroom_red
      - make_mushroom_brown
@@ -1698,6 +1700,38 @@ recipes:
       oak_sapling:
         material: OAK_SAPLING
         amount: 32
+  make_crimson_stem:
+    forceInclude: true
+    production_time: 4s
+    name: Make Crimson Stem
+    type: PRODUCTION
+    input:
+      sugar_cane:
+        material: OAK_LOG
+        amount: 8
+      sugar_cane:
+        material: GLOWSTONE_DUST
+        amount: 1
+    output:
+      bamboo:
+        material: CRIMSON_STEM
+        amount: 8
+  make_warped_stem:
+    forceInclude: true
+    production_time: 4s
+    name: Make Warped Stem
+    type: PRODUCTION
+    input:
+      sugar_cane:
+        material: OAK_LOG
+        amount: 8
+      sugar_cane:
+        material: PRISMARINE_SHARD
+        amount: 1
+    output:
+      bamboo:
+        material: WARPED_STEM
+        amount: 8
   dye_clay_white:
     production_time: 4s
     name: Dye Clay White
