@@ -424,6 +424,7 @@ factories:
      - make_bookshelves
      - make_trapdoors
      - make_wood_doors
+     - make_beehive
      - make_six_sided_oak
      - make_six_sided_spruce
      - make_six_sided_birch
@@ -2874,6 +2875,21 @@ recipes:
       door:
         material: OAK_DOOR
         amount: 32
+   make_beehive:
+    production_time: 4s
+    name: Make Beehive
+    type: PRODUCTION
+    input:
+      chest:
+        material: CHEST
+        amount: 32
+      membrane:
+        material: PHANTOM_MEMBRANE
+        amount: 8
+    output:
+      beehive:
+        material: BEEHIVE
+        amount: 1
   make_six_sided_oak:
     forceInclude: true
     production_time: 4s
