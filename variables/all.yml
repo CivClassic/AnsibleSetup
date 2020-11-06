@@ -81,6 +81,7 @@ plugins:
  - Votifier #This is actually NuVotifier
  - WorldBorder
  - WorldEdit
+ - TAB
 
 #Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
 bungee_plugins:
