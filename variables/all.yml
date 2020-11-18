@@ -75,6 +75,7 @@ plugins:
  - RandomSpawn
  - RealisticBiomes
  - SimpleAdminHacks
+ - Spark
  - SuperVanish
  - TradePlus
  - Vault
