@@ -96,5 +96,5 @@ For reference, Civclassic has the following cronjobs setup for the user `mc`:
 ```
 44 7 * * * mv /home/mc/restart.log.txt /home/mc/restart.old.log.txt
 45 7 * * * cd /home/mc/AnsibleSetup && bash server.sh pull >> /home/mc/restart.log.txt
-50 7 * * * cd /home/mc/AnsibleSetup && bash server.sh warn10 stop backup update start >> /home/mc/restart.log.txt
+50 7 * * * cd /home/mc/AnsibleSetup && bash server.sh warn10 stop backup update start duplicity >> /home/mc/restart.log.txt
 ```
