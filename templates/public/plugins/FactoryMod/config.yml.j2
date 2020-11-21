@@ -648,6 +648,7 @@ factories:
       - bind_books
       - bind_writable_books
       - craft_printing_plate
+      - craft_printing_plate_json
       - print_book
       - print_note
       - print_secure_note
@@ -5016,6 +5017,18 @@ recipes:
   craft_printing_plate:
     type: PRINTINGPLATE
     name: Craft Printing Plate
+    production_time: 4s
+    input:
+      iron:
+        material: IRON_INGOT
+        amount: 1
+    output:
+      plate:
+        material: OAK_TRAPDOOR
+        amount: 1
+  craft_json_printing_plate:
+    type: PRINTINGPLATEJSON
+    name: Craft JSON Printing Plate
     production_time: 4s
     input:
       iron:
