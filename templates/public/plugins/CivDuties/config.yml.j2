@@ -18,13 +18,13 @@ tiers:
         timing: ENABLE
         executor: CONSOLE
       vanish:
-        syntax: vanish
+        syntax: vanish on %PLAYER_NAME%
         timing: ENABLE
-        executor: PLAYER
+        executor: CONSOLE
       unvanish:
-        syntax: vanish
+        syntax: vanish off %PLAYER_NAME%
         timing: DISABLE
-        executor: PLAYER
+        executor: CONSOLE
     temporary:
       groups:
         - dutied
