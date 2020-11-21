@@ -384,6 +384,8 @@ factories:
      - acacia_to_sapling
      - sapling_to_dark_oak
      - dark_oak_to_sapling
+     - make_crimson_fungus
+     - make_warped_fungus
      - grow_mushroom_brown
      - grow_mushroom_red
      - make_mushroom_brown
@@ -1694,6 +1696,42 @@ recipes:
       oak_sapling:
         material: OAK_SAPLING
         amount: 32
+  make_crimson_fungus:
+    production_time: 4s
+    name: Convert Red Mushrooms to Crimson Fungus
+    type: PRODUCTION
+    input:
+      red_mushroom:
+        material: RED_MUSHROOM
+        amount: 64
+      netherrack:
+        material: NETHERRACK
+        amount: 32
+      phantom_membrane:
+        material: PHANTOM_MEMBRANE
+        amount: 4
+    output:
+      crimson_fungus:
+        material: CRIMSON_FUNGUS
+        amount: 64
+  make_warped_fungus:
+    production_time: 4s
+    name: Convert Brown Mushrooms to Warped Fungus
+    type: PRODUCTION
+    input:
+      brown_mushroom:
+        material: BROWN_MUSHROOM
+        amount: 64
+      netherrack:
+        material: NETHERRACK
+        amount: 32
+      phantom_membrane:
+        material: PHANTOM_MEMBRANE
+        amount: 4
+    output:
+      warped_fungus:
+        material: WARPED_FUNGUS
+        amount: 64
   dye_clay_white:
     production_time: 4s
     name: Dye Clay White
