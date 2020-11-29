@@ -702,6 +702,29 @@ factories:
      - forge_gold_boots
      - make_bell
      - repair_gold_forge
+  grinding_mill:
+    type: FCC
+    name: Grinding Mill
+    citadelBreakReduction: 1.0
+    setupcost:
+      leather:
+        material: LEATHER
+        amount: 32
+      stone:
+        material: STONE
+        amount: 128
+      chest:
+        material: CHEST
+        amount: 256
+    recipes:
+     - crush_stone
+     - crush_cobble
+     - crush_gravel
+     - grind_sandstone
+     - grind_red_sandstone
+     - crush_coarse
+     - shave_snow
+     - repair_grinding_mill
 #RECIPES
 recipes:
   smelt_stone:
@@ -4980,6 +5003,102 @@ recipes:
       crying_obsidian:
         material: CRYING_OBSIDIAN
         amount: 128
+  crush_coarse:
+    production_time: 4s
+    name: Crush Coarse Dirt
+    type: PRODUCTION
+    input:
+      coarse_dirt:
+        material: COARSE_DIRT
+        amount: 64
+    output:
+      dirt:
+        material: DIRT
+        amount: 64
+  shave_snow:
+    production_time: 4s
+    name: Shave Snow from Ice
+    type: PRODUCTION
+    input:
+      ice:
+        material: ICE
+        amount: 64
+    output:
+      snow:
+        material: SNOW_BLOCK
+        amount: 64
+  crush_stone:
+    production_time: 16s
+    name: Crush Stone
+    type: PRODUCTION
+    input:
+      stone:
+        material: STONE
+        amount: 32
+    output:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 32
+  crush_cobble:
+    production_time: 4s
+    name: Crush Cobblestone
+    type: PRODUCTION
+    input:
+      cobble:
+        material: COBBLESTONE
+        amount: 32
+    output:
+      gravel:
+        material: GRAVEL
+        amount: 32
+  crush_gravel:
+    production_time: 4s
+    name: Crush Gravel
+    type: PRODUCTION
+    input:
+      gravel:
+        material: GRAVEL
+        amount: 32
+    output:
+      sand:
+        material: SAND
+        amount: 32
+  grind_sandstone:
+    production_time: 4s
+    name: Grind Sandstone
+    type: PRODUCTION
+    input:
+      sandstone:
+        material: SANDSTONE
+        amount: 64
+    output:
+      sand:
+        material: SAND
+        amount: 64
+  grind_red_sandstone:
+    production_time: 4s
+    name: Grind Red Sandstone
+    type: PRODUCTION
+    input:
+      red sandstone:
+        material: RED_SANDSTONE
+        amount: 64
+    output:
+      red sand:
+        material: SAND
+        amount: 64
+  repair_grinding_mill:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      stone:
+        material: STONE
+        amount: 64
+      leather:
+        material: LEATHER
+        amount: 4
+    health_gained: 10000      
 
   bind_books:
     type: PRODUCTION
