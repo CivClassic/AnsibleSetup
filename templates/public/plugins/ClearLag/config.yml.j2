@@ -263,6 +263,14 @@ chunk-entity-limiter:
     - zombified_piglin !hasName
     - zombified_piglin liveTime=1200
   # - Pig liveTime=100 <- This mob will be REMOVED if it's been alive for 100 ticks (5 seconds)
+  
+#A per-entity chunk limiter. Very useful to limiting useless mobs like squid, but not zombies
+# -- 'entity-limits' lists all the entities, their filters, and 'limit' to specify their limit
+#    to be removed/culled
+per-entity-chunk-entity-limiter:
+  enabled: true
+  entity-limits:
+    - COD limit:1
 
 #How many mobs should be allowed to spawn globally
 # -- 'interval' is the check interval check the current spawn amounts
