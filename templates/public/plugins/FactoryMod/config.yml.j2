@@ -374,6 +374,8 @@ factories:
      - dirt_to_grass
      - dirt_to_podzol
      - dirt_to_mycelium
+     - netherrack_to_crimson_nylium
+     - netherrack_to_warped_nylium
      - sapling_to_spruce
      - spruce_to_sapling
      - sapling_to_birch
@@ -1599,6 +1601,36 @@ recipes:
     output:
       mycelium:
         material: MYCELIUM
+        amount: 64
+  netherrack_to_crimson_nylium:
+    production_time: 4s
+    name: Convert Netherrack to Crimson Nylium
+    type: PRODUCTION
+    input:
+      netherrack:
+        material: NETHERRACK
+        amount: 64
+      crimson_fungus:
+        material: CRIMSON_FUNGUS
+        amount: 32
+    output:
+      crimson_nylium:
+        material: CRIMSON_NYLIUM
+        amount: 64
+  netherrack_to_warped_nylium:
+    production_time: 4s
+    name: Convert Netherrack to Warped Nylium
+    type: PRODUCTION
+    input:
+      netherrack:
+        material: NETHERRACK
+        amount: 64
+      warped_fungus:
+        material: WARPED_FUNGUS
+        amount: 32
+    output:
+      warped_nylium:
+        material: WARPED_NYLIUM
         amount: 64
   sapling_to_spruce:
     production_time: 4s
