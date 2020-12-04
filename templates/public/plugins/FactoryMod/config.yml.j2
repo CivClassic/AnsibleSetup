@@ -720,6 +720,7 @@ factories:
      - crush_stone
      - crush_cobble
      - crush_gravel
+     - grind_flint
      - grind_sandstone
      - grind_red_sandstone
      - crush_coarse
@@ -5058,6 +5059,18 @@ recipes:
     input:
       gravel:
         material: GRAVEL
+        amount: 32
+    output:
+      sand:
+        material: SAND
+        amount: 32
+  grind_flint:
+    production_time: 4s
+    name: Grind Flint
+    type: PRODUCTION
+    input:
+      flint:
+        material: FLINT
         amount: 32
     output:
       sand:
