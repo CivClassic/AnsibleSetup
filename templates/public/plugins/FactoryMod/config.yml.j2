@@ -727,6 +727,33 @@ factories:
      - crush_coarse
      - shave_snow
      - repair_grinding_mill
+#Pipes     
+  normalpipe:
+    type: PIPE
+    name: Standard Pipe
+    setupcost: 
+      redstone:
+        material: REDSTONE
+        amount: 48
+    transfer_time_multiplier: 1s
+    transfer_amount: 16
+    maximum_length: 256
+    glass_type: ORANGE_STAINED_GLASS
+  betterpipe:
+    type: PIPE
+    name: Improved Pipe
+    setupcost: 
+      redstone:
+        material: REDSTONE
+        amount: 384
+      gold:
+        material: GOLD_INGOT
+        amount: 32
+    transfer_time_multiplier: 10
+    transfer_amount: 24
+    maximum_length: 512
+    glass_type: MAGENTA_STAINED_GLASS
+
 #RECIPES
 recipes:
   smelt_stone:
