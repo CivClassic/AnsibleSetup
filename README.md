@@ -39,7 +39,7 @@ You may use a different user name, if you do so you will need to adjust the user
 
 - Clone this repo
 ```
-git clone https://github.com/CivClassic/AnsibleSetup.git
+git clone --depth 1 https://github.com/CivClassic/AnsibleSetup.git
 cd AnsibleSetup
 ```
 
