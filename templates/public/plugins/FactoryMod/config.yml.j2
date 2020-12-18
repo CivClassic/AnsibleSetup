@@ -432,6 +432,7 @@ factories:
      - make_beehive
      - make_casing
      - make_crates
+     - sticks_to_chest
      - repair_carpentry
   rails:
     type: FCC
@@ -2979,6 +2980,18 @@ recipes:
       beehive:
         material: BEEHIVE
         amount: 1
+  sticks_to_chest:
+    production_time: 4s
+    name: Reconstitute Sticks to Chests
+    type: PRODUCTION
+    input:
+      stick:
+        material: STICK
+        amount: 64
+    output:
+      chest:
+        material: CHEST
+        amount: 4
   repair_carpentry:
     production_time: 4s
     name: Repair Factory
