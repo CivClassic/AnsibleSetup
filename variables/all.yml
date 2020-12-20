@@ -77,7 +77,6 @@ plugins:
  - SimpleAdminHacks
  - Spark
  - SuperVanish
- - TradePlus
  - Vault
  - Votifier #This is actually NuVotifier
  - WorldBorder
