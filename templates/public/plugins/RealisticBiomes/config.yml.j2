@@ -11,14 +11,12 @@ no_bonemeal_blocks:
  # categories of biomes
 biome_aliases:
   water:
-  - BEACH
   - DEEP_OCEAN
-  - RIVER
   - OCEAN
   - STONE_SHORE
   freshwater:
   - RIVER
-  - FROZEN_RIVER
+  - BEACH
   cold_water:
   - SNOWY_BEACH
   - FROZEN_OCEAN
@@ -81,8 +79,6 @@ biome_aliases:
   - JUNGLE_HILLS
   - MODIFIED_JUNGLE
   - MODIFIED_JUNGLE_EDGE
-  - SWAMP
-  - SWAMP_HILLS
   mountain:
   - MOUNTAINS
   - MOUNTAIN_EDGE
@@ -158,9 +154,11 @@ plants:
     mountain: 0.25
     mesa: 0.25
     mushroom: 0.25
+    freshwater: 0.25
     water: 0.1
     cold_water: 0.1
     hot_rainy: 0.1 
+    swampy: 0.1
 
   CARROT:
    persistent_growth_period: 3h
@@ -264,6 +262,7 @@ plants:
     nether: 1.0
     mushroom: 0.5
     hot_dry: 0.25
+    mesa: 0.25
 
   COCOA:
    persistent_growth_period: 24h
@@ -285,6 +284,7 @@ plants:
      VINE: 0.3
    biomes:
     hot_rainy: 1.0
+    swampy: 1.0
 
   MELON:
    persistent_growth_period: 3h
@@ -411,7 +411,7 @@ plants:
    biomes:
     hot_rainy: 1.0
     swampy: 0.5
-    water: 0.5
+    freshwater: 0.5
 
 # formerly inheriting "basetree" properties
 
@@ -471,7 +471,7 @@ plants:
      v: 1
    biomes:
     mushroom: 0.5
-    freshwater: 0.5
+    cold_water: 0.5
     cold: 0.75
     cold_forest: 2.0
     mountain: 0.75
