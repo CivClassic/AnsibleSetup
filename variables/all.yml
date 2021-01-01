@@ -122,15 +122,19 @@ bungee_top_level_templates:
 bungee_secret_top_level_templates:
 
 #Minecraft version
-mc_version: "1.16.1"
+mc_version: "1.16.4"
 #Version of PaperMC to use
-paper_version: "138"
+paper_version: "355"
+#Raw Bungee version, used in the URL of Waterfall downloads
+raw_bungee_version: 1.16
+#Specific waterfall version to use
+waterfall_version: 389
 #URL to pull BuildTools from for building Spigot
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 #URL to pull Paper build from
 paper_url: "https://papermc.io/api/v2/projects/paper/versions/{{ mc_version }}/builds/{{ paper_version }}/downloads/paper-{{ mc_version }}-{{ paper_version }}.jar"
 #URL to pull bungeecord/waterfall build from
-bungee_url: "https://papermc.io/ci/job/Waterfall/lastSuccessfulBuild/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar"
+bungee_url: "https://papermc.io/api/v2/projects/waterfall/versions/{{ raw_bungee_version }}/builds/{{ waterfall_version }}/downloads/waterfall-{{ raw_bungee_version }}-{{ waterfall_version }}.jar"
 #Name of the final server jar put into the server folder
 server_jar: "minecraft"
 #Name of the bungee jar to put into the bungee folder
