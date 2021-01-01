@@ -42,7 +42,6 @@ mysql_socket_location: "/home/mysql/mysqld.sock"
 plugins:
  - AAC
  - AACPlus
- - AttrHider
  - BanStick
  - Bastion
  - BetterChairs
@@ -67,7 +66,6 @@ plugins:
  - LuckPerms
  - NameColors
  - NameLayer
- - OldEnchanting
  - Orebfuscator
  - ProtocolLib
  - RailSwitch
