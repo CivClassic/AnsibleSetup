@@ -52,7 +52,6 @@ plugins:
  - CivChat2
  - CivDuties
  - CivModCore
- - CivSpy
  - ClearLag
  - CombatTagPlus
  - ConditionalCommands
