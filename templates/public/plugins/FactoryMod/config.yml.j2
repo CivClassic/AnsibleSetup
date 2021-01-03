@@ -727,6 +727,7 @@ factories:
      - grind_red_sandstone
      - crush_coarse
      - shave_snow
+     - split_snow
      - repair_grinding_mill
 #RECIPES
 recipes:
@@ -5072,6 +5073,18 @@ recipes:
       snow:
         material: SNOW_BLOCK
         amount: 64
+  split_snow:
+    production_time: 4s
+    name: Split Packed Snow into Snow Slices
+    type: PRODUCTION
+    input:
+      snow:
+        material: SNOW_BLOCK
+        amount: 64
+    output:
+      snow_slice:
+        material: SNOW
+        amount: 256
   crush_stone:
     production_time: 16s
     name: Crush Stone
