@@ -47,6 +47,18 @@ hacks:
     hideEffects: true
     # Hide the health of entities
     hideHealth: true
+  AutoRespawn:
+    enabled: true
+    # Delay in MS
+    # Default: 300000 (five minutes)
+    respawnDelay: 10000
+    # The respawn delay (in MS) if someone logs in dead
+    # Default 0 (instant)
+    loginRespawnDelay: 0
+    # Jokey joke messages sent to the player if auto-respawned
+    # Deactivate by removing all the quotes below
+    respawnQuotes:
+    - You wake up in an unfamiliar place...
   ############################################################
   ## Simple Hacks
   ############################################################
@@ -265,17 +277,6 @@ hacks:
     ghastChance: 0.01
     witherSkeletonChance: 0.05
     witherHeadDropChance: 0.04
-  AutoRespawn:
-    enabled: true
-    # Delay in MS
-    respawnDelay: 10000
-    # The respawn delay (in MS) if someone logs in dead
-    # Default 0 (instant)
-    loginRespawnDelay: 0
-    # Jokey joke messages sent to the player if auto-respawned
-    # Deactivate by removing all the quotes below
-    respawnQuotes:
-    - You wake up in an unfamiliar place...
   PhantomMenace:
     enabled: true
     # Players have a statistic called TIME_SINCE_REST. If a player's value is above 72k (3 days minecraft time) then
