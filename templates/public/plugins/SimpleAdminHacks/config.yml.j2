@@ -69,6 +69,15 @@ hacks:
     # its stinger and thus die when successfully attacking an entity.
     # Default: 1.0 (100%)
     severStingerChance: 0.7
+  BuffSpanker:
+    enabled: true
+    # The list of PotionEffectType's that you do not wish players to receive.
+    naughty:
+      - DOLPHINS_GRACE
+      - BAD_OMEN
+      - SLOW_DIGGING
+      - SLOW_FALLING
+      - UNLUCK
   ############################################################
   ## Simple Hacks
   ############################################################
@@ -306,15 +315,6 @@ hacks:
   HorseStats:
     enabled: true
     wand: COMPASS
-  BuffSpanker:
-    enabled: true
-    # The list of PotionEffectType's that you do not wish players to receive.
-    naughty:
-      - DOLPHINS_GRACE
-      - BAD_OMEN
-      - SLOW_DIGGING
-      - SLOW_FALLING
-      - UNLUCK
   ShipOutOfLuck:
     enabled: true
     boatBreakers:
