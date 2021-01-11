@@ -59,6 +59,16 @@ hacks:
     # Deactivate by removing all the quotes below
     respawnQuotes:
     - You wake up in an unfamiliar place...
+  BeeKeeping:
+    enabled: true
+    # Value between 0 and 1 that determines the percentage chance that a bee will replace
+    # the natural spawning of a passive creature should certain conditions be met.
+    # Default: 0.2 (20%)
+    spawnChance: 0.1
+    # Value between 0 and 1 that determines the percentage chance that a bee will lose
+    # its stinger and thus die when successfully attacking an entity.
+    # Default: 1.0 (100%)
+    severStingerChance: 0.7
   ############################################################
   ## Simple Hacks
   ############################################################
@@ -105,16 +115,6 @@ hacks:
     # NOTE: Modifiers must be 0 or greater
     entityExpDropModifiers:
       ENDER_DRAGON: 0.0
-  BeeKeeping:
-    enabled: true
-    # Value between 0 and 1 that determines the percentage chance that a bee will replace
-    # the natural spawning of a passive creature should certain conditions be met.
-    # Default: 0.2 (20%)
-    spawnChance: 0.1
-    # Value between 0 and 1 that determines the percentage chance that a bee will lose
-    # its stinger and thus die when successfully attacking an entity.
-    # Default: 1.0 (100%)
-    severStingerChance: 0.7
   Experimental:
     enabled: true
     combatspy: false
