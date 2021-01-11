@@ -253,8 +253,6 @@ hacks:
     hardLimitBookPageCount: true
   GameTuning:
     enabled: true
-    badOmen: false
-    pigPortalSpawnMultiplier: 1000001
     chunkLimits:
       enabled: true
       exceededMessage: '&9Limit (%Limit%) reached for this chunk, you cannot place more of this type of block (%Material%).'
@@ -274,12 +272,33 @@ hacks:
     daytimeBed:
       enabled: true
       spawnSetMessage: '&bYour spawn has been set.'
-    allowNetherTravel: false 
-    noplace:
-     - GRINDSTONE
     rainReduction:
       enabled: true
       rainOccurrenceChance: .5
+    # Makes nether ratio 1 to 1
+    oneToOneNether: false
+    # Return nether portal, true = enabled    false = disabled
+    returnNetherPortal: true
+    allowNetherTravel: false
+    # Disables minecart inventories (trying to fix dupe issues)
+    # enabled = able to right click   disabled = not able to right click
+    chestedMinecartInventories: true
+    hopperMinecartInventories: true
+    enderChestInventories: false
+    stopTrapHorses: true
+    killTrapHorses: true
+    changeSpawnerType: false
+    allowVillagerTrading: false
+    enderGrief: false
+    witherGrief: false
+    dragonGrief: true
+    allowEnchantedApples: false
+    preventFallingThroughBedrock: true
+    # Disable the Bad Omen effect that player receive when killing pillager patrols
+    badOmen: false
+    #a list of materials players shouldn't be allowed to place at all
+    noplace:
+     - GRINDSTONE
   NewfriendAssist:
     enabled: true
     announce: '&f%Player% is brand new!'
