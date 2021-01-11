@@ -210,6 +210,11 @@ hacks:
       - PISTON_BASE
       - PISTON_STICKY_BASE
       - OBSERVER
+  CTAnnounce:
+    enabled: true
+    delay: 10000
+    message: '%Victim% was combat tagged by %Attacker%'
+    broadcast: [OP, CONSOLE]
   Experimental:
     enabled: true
     combatspy: false
@@ -259,11 +264,6 @@ hacks:
     rainReduction:
       enabled: true
       rainOccurrenceChance: .5
-  CTAnnounce:
-    enabled: true
-    delay: 10000
-    message: '%Victim% was combat tagged by %Attacker%'
-    broadcast: [OP, CONSOLE]
   NewfriendAssist:
     enabled: true
     announce: '&f%Player% is brand new!'
