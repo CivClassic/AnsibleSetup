@@ -2943,7 +2943,7 @@ recipes:
         amount: 256
   make_bookshelves:
     production_time: 4s
-    name: Make Bookshelves
+      name: Make Bookshelves
     type: PRODUCTION
     input:
       paper:
@@ -5403,6 +5403,45 @@ recipes:
     printingplate:
       plate:
         material: OAK_TRAPDOOR
+        amount: 1
+  globe_banner:
+    type: PRODUCTION
+    name: Craft Globe Banner Pattern
+    production_time: 4s
+    input:
+      paper:
+        material: PAPER
+        amount: 1
+      emerald_block:
+        material: EMERALD_BLOCK
+        amount: 1
+      villager_spawn_egg:
+        material: VILLAGER_SPAWN_EGG
+        amount: 1
+    output:
+      globe_banner_pattern:
+        material: GLOBE_BANNER_PATTERN
+        amount: 1
+    villager_spawn_egg:
+        material: VILLAGER_SPAWN_EGG
+        amount: 1
+  piglin_banner:
+    type: PRODUCTION
+    name: Craft Piglin Banner Pattern
+    production_time: 4s
+    input:
+      paper:
+        material: PAPER
+        amount: 1
+      gold_block:
+        material: GOLD_BLOCK
+        amount: 1
+      chiseled_polished_blackstone:
+        material: CHISELED_POLISHED_BLACKSTONE
+        amount: 16
+    output:
+      piglin_banner_pattern:
+        material: PIGLIN_BANNER_PATTERN
         amount: 1
   repair_printer:
     forceInclude: true
