@@ -80,6 +80,12 @@ hacks:
       - UNLUCK
   DebugWand:
     enabled: true
+  DogFacts:
+    enabled: true
+    intervalTime: 30m
+    announcements:
+      - "Buy &4$DOGE"
+      - "Very &cWOW"
   EventDebugHack:
     enabled: true
   EventHandlerList:
@@ -177,6 +183,19 @@ hacks:
       - PACKED_ICE
       - FROSTED_ICE
       - BLUE_ICE
+  # Currently changes a striders speed to be between 0.175 (Default) and 0.3375 (Horse max speed)
+  # aswell as default health to between 20 (Default) and 50 (2.5 heart bars)
+  # Only works on newly spawned striders, not pre-existing mobs
+  StriderBreeding:
+    enabled: false
+    #Default strider speed is 0.175
+    minSpeed: 0.175
+    #Max horse speed is 0.3375
+    maxSpeed: 0.3375
+    #10 Hearts
+    minHealth: 20
+    #25 Hearts
+    maxHealth: 50
   TestConfigHack:
     enabled: true
     # Please do not change any of the values below, otherwise it will undermine the test.
@@ -353,6 +372,7 @@ hacks:
   NewfriendAssist:
     enabled: true
     announce: '&f%Player% is brand new!'
+    giveIntroKitToRandomSpawners: false
     broadcast: [CONSOLE, ALL]
     helptips: on 
     helptips_end: 20m
