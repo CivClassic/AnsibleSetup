@@ -661,6 +661,7 @@ factories:
       - repair_printer
       - craft_globe_banner_pattern
       - craft_piglin_banner_pattern
+      - craft_creeper_banner_pattern
   concrete_mixer:
     type: FCC
     name: Concrete Mixer
@@ -5440,10 +5441,37 @@ recipes:
         amount: 1
       chiseled_polished_blackstone:
         material: CHISELED_POLISHED_BLACKSTONE
-        amount: 16
+        amount: 64
     output:
       piglin_banner_pattern:
         material: PIGLIN_BANNER_PATTERN
+        amount: 1
+  craft_creeper_banner_pattern:
+    type: PRODUCTION
+    name: Craft Creeper Banner Pattern
+    production_time: 4s
+    input:
+      paper:
+        material: PAPER
+        amount: 1
+      creeper_spawn_egg:
+        material: CREEPER_SPAWN_EGG
+        amount: 2
+      trident:
+        material: TRIDENT
+        amount: 1
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      creeper_banner_pattern:
+        material: CREEPER_BANNER_PATTERN
+        amount: 1
+      trident:
+        material: TRIDENT
+        amount: 1
+      bucket:
+        material: BUCKET
         amount: 1
   repair_printer:
     forceInclude: true
