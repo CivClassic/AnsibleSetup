@@ -29,13 +29,13 @@
      include: "tasks/warn-restart-1.yml"
      when: "{{ do_warn1 | default('false') }}"
 
-   - name: Stop Minecraft Server
-     include: "tasks/stop-minecraft.yml"
-     when: "{{ do_stopminecraft | default('false') }}"
-
    - name: Stop BungeeCord
      include: "tasks/stop-bungee.yml"
      when: "{{ do_stopbungee | default('false') }}"
+     
+   - name: Stop Minecraft Server
+     include: "tasks/stop-minecraft.yml"
+     when: "{{ do_stopminecraft | default('false') }}"
 
    - name: Backup server
      include: "tasks/backup-server.yml"
