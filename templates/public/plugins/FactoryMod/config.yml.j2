@@ -25,6 +25,7 @@ factories:
     recipes:
      - smelt_stone
      - smelt_smooth_stone
+     - smelt_cracked_stone_bricks
      - smelt_glass
      - smelt_glass_red
      - smelt_netherrack
@@ -32,6 +33,9 @@ factories:
      - smelt_bricks
      - smelt_hard_clay
      - smelt_sandstone
+     - smelt_smooth_sandstone
+     - smelt_smooth_red_sandstone
+     - smelt_smooth_quartz
      - repair_stone_smelter
   charcoal_factory:
     type: FCC
@@ -745,12 +749,24 @@ recipes:
     name: Smelt Smooth Stone
     type: PRODUCTION
     input:
-      cobblestone:
+      stone:
         material: STONE
         amount: 64
     output:
       stone:
         material: SMOOTH_STONE
+        amount: 80
+  smelt_cracked_stone_bricks:
+    production_time: 4s
+    name: Smelt Smooth Stone
+    type: PRODUCTION
+    input:
+      stone_bricks:
+        material: STONE_BRICKS
+        amount: 64
+    output:
+      cracked_stone_bricks:
+        material: CRACKED_STONE_BRICKS
         amount: 80
   cook_beef:
     production_time: 4s
@@ -3559,6 +3575,45 @@ recipes:
       sandstone:
         material: SANDSTONE
         amount: 128
+  smelt_smooth_sandstone:
+    forceInclude: true
+    production_time: 4s
+    name: Make Smooth Sandstone
+    type: PRODUCTION
+    input:
+      sandstone:
+        material: SANDSTONE
+        amount: 64
+    output:
+      smooth_sandstone:
+        material: SMOOTH_SANDSTONE
+        amount: 64
+  smelt_sandstone:
+    forceInclude: true
+    production_time: 4s
+    name: Make Smooth Red Sandstone
+    type: PRODUCTION
+    input:
+      red_sandstone:
+        material: RED_SANDSTONE
+        amount: 64
+    output:
+      smooth_red_sandstone:
+        material: SMOOTH_RED_SANDSTONE
+        amount: 64
+  smelt_smooth_quartz:
+    forceInclude: true
+    production_time: 4s
+    name: Make Smooth Quartz
+    type: PRODUCTION
+    input:
+      quartz_block:
+        material: QUARTZ_BLOCK
+        amount: 64
+    output:
+      smooth_quartz:
+        material: SMOOTH_QUARTZ
+        amount: 64
   repair_iron_tools_factory:
     production_time: 4s
     name: Repair Factory
