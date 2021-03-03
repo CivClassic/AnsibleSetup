@@ -63,10 +63,6 @@ factories:
         material: BONE_MEAL
         amount: 32
     recipes:
-     - make_cracked_stone_brick
-     - make_mossy_stone_brick
-     - make_circle_stone_brick
-     - make_mossy_cobble
      - make_quartz
      - aggregate_andesite
      - aggregate_diorite
@@ -82,10 +78,6 @@ factories:
      - make_redstone_lamp
      - pack_ice
      - pack_blue_ice
-     - make_stone_slab
-     - make_smooth_stone_slab
-     - make_smooth_sandstone_slab
-     - make_smooth_quartz_slab
      - make_soul_soil
      - make_basalt
      - make_blackstone
@@ -1113,66 +1105,6 @@ recipes:
     output:
       charcoal:
         material: BLACK_DYE
-        amount: 64
-  make_cracked_stone_brick:
-    production_time: 4s
-    name: Make Cracked Stone Brick
-    type: PRODUCTION
-    input:
-      stone_brick:
-        material: STONE_BRICKS
-        amount: 64
-      gravel:
-        material: GRAVEL
-        amount: 8
-    output:
-      cracked_stone_brick:
-        material: CRACKED_STONE_BRICKS
-        amount: 64
-  make_circle_stone_brick:
-    production_time: 4s
-    name: Make Chiseled Stone Brick
-    type: PRODUCTION
-    input:
-      stone_brick:
-        material: STONE_BRICKS
-        amount: 64
-      flint:
-        material: FLINT
-        amount: 8
-    output:
-      circle_stone_brick:
-        material: CHISELED_STONE_BRICKS
-        amount: 64
-  make_mossy_stone_brick:
-    production_time: 4s
-    name: Make Mossy Stone Brick
-    type: PRODUCTION
-    input:
-      stone_brick:
-        material: STONE_BRICKS
-        amount: 64
-      vine:
-        material: VINE
-        amount: 8
-    output:
-      moss_stone_brick:
-        material: MOSSY_STONE_BRICKS
-        amount: 64
-  make_mossy_cobble:
-    production_time: 4s
-    name: Make Mossy Cobble
-    type: PRODUCTION
-    input:
-      cobblestone:
-        material: COBBLESTONE
-        amount: 64
-      vine:
-        material: VINE
-        amount: 8
-    output:
-      mossy_cobble:
-        material: MOSSY_COBBLESTONE
         amount: 64
   make_quartz:
     production_time: 4s
@@ -5062,62 +4994,6 @@ recipes:
       blue_ice:
         material: BLUE_ICE
         amount: 64
-  make_stone_slab:
-    forceInclude: true
-    type: PRODUCTION
-    name: Make Stone Slab
-    production_time: 4s
-    input:
-      stone:
-        material: STONE
-        amount: 64
-    output:
-      stone_slab:
-        material: STONE_SLAB
-        amount: 128
-  make_smooth_stone_slab:
-    forceInclude: true
-    type: PRODUCTION
-    name: Make Smooth Stone Slab
-    production_time: 4s
-    input:
-      stone:
-        material: SMOOTH_STONE
-        amount: 64
-    output:
-      stone_slab:
-        material: SMOOTH_STONE_SLAB
-        amount: 128
-  make_smooth_sandstone_slab:
-    forceInclude: true
-    type: PRODUCTION
-    name: Make Smooth Sandstone Slab
-    production_time: 4s
-    input:
-      sandstone:
-        material: SANDSTONE
-        amount: 64
-    output:
-      sandstone_slab:
-        material: SANDSTONE_SLAB
-        amount: 64
-        lore:
-          - Smooth double slab
-  make_smooth_quartz_slab:
-    forceInclude: true
-    type: PRODUCTION
-    name: Make Smooth Quartz Slab
-    production_time: 4s
-    input:
-      quartz:
-        material: QUARTZ_BLOCK
-        amount: 64
-    output:
-      quartz_slab:
-        material: QUARTZ_SLAB
-        amount: 64
-        lore:
-          - Smooth double slab
   make_soul_soil:
     forceInclude: true
     type: PRODUCTION
