@@ -2,35 +2,52 @@
 alterAttack:
   enabled: true
   speed: 1024
+#CombatTag player on login?
+ctpOnLogin: true
   
 cleanerCombat:
   maxReach: 6.0
+  cps:
+    limit: 9
+    counterInterval: 1000
+  attackCooldownEnabled: false
   sweepEnabled: false
+  sprintResetEnabled: true # should the sprint of the attacker reset upon hitting the victim?
+  waterSprintResetEnabled: false # should the sprint of the attacker reset upon hitting if they are in water?
+  knockbackSwordsEnabled: true # should knockback swords work?
   sounds:
     weak: false
     strong: false
     knockback: false
     crit: false
-  knockback:
-    horizontal: 1
-    vertical: 0.5
-    sprint:
-      horizontal: 1.5
-      vertical: 1.0
-    air:
-      horizontal: 0.5
-      vertical: 2.0
-    water:
-      horizontal: 1.0
-      vertical: 0.5
-  attackerMotionModifier: 0.6
-  stopSprinting: true
-  noCooldown:
-    enabled: true
-    cps:
-      limit: 9
-      counterInterval: 1000
-  potionCutOffDistance: 3.0
+  sprintMultiplier: # modifies knockback if the attacker is sprinting.
+    x: 3.0
+    y: 1.0
+    z: 3.0
+  knockbackMultiplier: # modifies knockback in general.
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  waterKnockbackMultiplier: # modifies knockback if the victim is in water.
+    x: 0.7
+    y: 0.7
+    z: 0.7
+  airKnockbackMultiplier: # modifies knockback if the victim is in the air
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  attackerMotion: # modifies motion of attacker upon attacking.
+    x: 0.6
+    y: 1.0
+    z: 0.6
+  victimMotion: # modifies motion of victim upon getting hit.
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  maxVictimMotion: # maximum motion of victim upon getting hit.
+    x: 10.0
+    y: 1.0
+    z: 10.0
     
 # gives full control over health / regen, default is full reversion to 1.8 mechanics
 foodHealthRegen:
@@ -93,16 +110,32 @@ weaponModification:
 armourModification:
    diamondHelmet:
       material: DIAMOND_HELMET
-      toughness: 4
+      toughness: 3
    diamondChestplate:
       material: DIAMOND_CHESTPLATE
-      toughness: 4
+      toughness: 3
    diamondLeggings:
       material: DIAMOND_LEGGINGS
-      toughness: 4
+      toughness: 3
    diamondBoots:
       material: DIAMOND_BOOTS
-      toughness: 4
+      toughness: 3
+   netheriteHelmet:
+     material: NETHERITE_HELMET
+     toughness: 4
+     knockbackResistance: 0.1 # knockback resistance is a value between 0 and 1.
+   netheriteChestplate:
+     material: NETHERITE_CHESTPLATE
+     toughness: 4
+     knockbackResistance: 0.1
+   netheriteLeggings:
+     material: NETHERITE_LEGGINGS
+     toughness: 4
+     knockbackResistance: 0.1
+   netheriteBoots:
+     material: NETHERITE_BOOTS
+     toughness: 4
+     knockbackResistance: 0.1
 
 #allows disabling enchantments. Use official spigot identifiers from https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html
 #This will not remove them from enchanting, but simply remove the enchant as soon as the item is touched
@@ -144,13 +177,15 @@ potions:
     splash:
 #All splash pots reduced
       splash: true
-      multiplier: 0.75
+      multiplier: 1.0
 #Except for health
     health:
       type: INSTANT_HEAL
       multiplier: 1.0
 #Multiplier applied to the health gain from all health potions
-  healthMultiplier: 2
+  healthMultiplier: 1.5
+  minIntensityCutOff: 0.3 # minimum intensity for non-thrower to steal some health effect.
+  minIntensityImpact: 0.5 # minimum intensity for thrower to get full health effect.
   
 velocity:
 #In newer Minecraft versions when a player launches a projectile the players velocity will be added to the projectiles base velocity. This can lead to 
@@ -183,18 +218,18 @@ velocity:
 damageModifiers: 
 #Decrease all damage by 20 % 
   ALL:
-    multiplier: 0.5
+    multiplier: 0.6
     mode: DIRECT
 #Increase sword damage by 25 %
   SHARPNESS_ENCHANT:
-    multiplier: 1.5
+    multiplier: 1.0
     mode: DIRECT
   SWORD:
     mode: DIRECT
-    multiplier: 1.5
+    multiplier: 1.0
   CRIT:
     mode: DIRECT
-    multiplier: 1.0
+    multiplier: 0.86
   STRENGTH_EFFECT:
     mode: DIRECT
     multiplier: 0.8
