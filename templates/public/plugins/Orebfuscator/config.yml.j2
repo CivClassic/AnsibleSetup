@@ -1,5 +1,6 @@
 version: 1
 general:
+  checkForUpdates: true
   updateOnBlockDamage: true
   bypassNotification: true
   initialRadius: 1
@@ -7,119 +8,141 @@ general:
   proximityHiderRunnerSize: 4
 cache:
   enabled: true
-  baseDirectory: 'orebfuscator_cache/'
+  baseDirectory: orebfuscator_cache
   maximumOpenRegionFiles: 256
-  deleteRegionFilesAfterAccess: 172800000‬
-  maximumSize: 4096
+  deleteRegionFilesAfterAccess: 172800000
+  maximumSize: 8192
   expireAfterAccess: 30000
+  maximumTaskQueueSize: 32768
+  protocolLibThreads: -1
 world:
-  - worlds:
-      - world
-    enabled: true
-    darknessBlocks:
-      - chest
-      - ender_chest
-      - trapped_chest
-      - spawner
-    hiddenBlocks:
-      - chest
-      - ender_chest
-      - trapped_chest
-      - barrel
-      - emerald_ore
-      - diamond_ore
-      - gold_ore
-      - iron_ore
-      - coal_ore
-      - lapis_ore
-      - redstone_ore
-      - stone
-      - clay
-      - shulker_box
-      - white_shulker_box
-      - orange_shulker_box
-      - magenta_shulker_box
-      - light_blue_shulker_box
-      - yellow_shulker_box
-      - lime_shulker_box
-      - pink_shulker_box
-      - gray_shulker_box
-      - light_gray_shulker_box
-      - cyan_shulker_box
-      - purple_shulker_box
-      - blue_shulker_box
-      - brown_shulker_box
-      - green_shulker_box
-      - red_shulker_box
-      - black_shulker_box
-    randomBlocks:
-      clay: 1
-      coal_ore: 1
-      cobblestone: 1
-      diamond_ore: 25
-      emerald_ore: 10
-      gold_ore: 5
-      iron_ore: 5
-      lapis_ore: 1
-      mossy_cobblestone: 1
-      obsidian: 1
-      redstone_ore: 1
-      stone: 1
-      air: 15
-      
+- enabled: true
+  worlds:
+  - world
+  hiddenBlocks:
+  - minecraft:chest
+  - minecraft:ender_chest
+  - minecraft:trapped_chest
+  - minecraft:barrel
+  - minecraft:jukebox
+  - minecraft:sponge
+  - minecraft:note_block
+  - minecraft:spawner
+  - minecraft:emerald_ore
+  - minecraft:diamond_ore
+  - minecraft:gold_ore
+  - minecraft:iron_ore
+  - minecraft:coal_ore
+  - minecraft:lapis_ore
+  - minecraft:redstone_ore
+  - minecraft:stone
+  randomBlocks:
+    minecraft:clay: 1
+    minecraft:coal_ore: 1
+    minecraft:cobblestone: 1
+    minecraft:diamond_ore: 5
+    minecraft:emerald_ore: 5
+    minecraft:gold_ore: 5
+    minecraft:iron_ore: 5
+    minecraft:lapis_ore: 1
+    minecraft:mossy_cobblestone: 1
+    minecraft:obsidian: 1
+    minecraft:redstone_ore: 1
+    minecraft:stone: 1
+- enabled: true
+  worlds:
+  - world_the_end
+  hiddenBlocks:
+  - minecraft:chest
+  - minecraft:ender_chest
+  - minecraft:trapped_chest
+  - minecraft:jukebox
+  - minecraft:note_block
+  - minecraft:barrel
+  - minecraft:spawner
+  - minecraft:sponge
+  randomBlocks:
+    minecraft:end_stone: 1
+    minecraft:end_stone_bricks: 1
+    minecraft:bedrock: 1
+    minecraft:obsidian: 1
+    minecraft:purpur_block: 1
 proximity:
-  - worlds:
-      - world
-      - world_the_end
-    enabled: true
-    distance: 8
-    useFastGazeCheck: true
-    hiddenBlocks:
-      diamond_ore: {}
-      emerald_ore: {}
-      chest: {}
-      ender_chest: {}
-      trapped_chest: {}
-      barrel: {}
-      anvil: {}
-      crafting_table: {}
-      dispenser: {}
-      enchanting_table: {}
-      furnace: {}
-      blast_furnace: {}
-      cartography_table: {}
-      fletching_table: {}
-      grindstone: {}
-      composter: {}
-      lectern: {}
-      loom: {}
-      smithing_table: {}
-      smoker: {}
-      stonecutter: {}
-      hopper: {}
-      spawner: {}
-      shulker_box: {}
-      white_shulker_box: {}
-      orange_shulker_box: {}
-      magenta_shulker_box: {}
-      light_blue_shulker_box: {}
-      yellow_shulker_box: {}
-      lime_shulker_box: {}
-      pink_shulker_box: {}
-      gray_shulker_box: {}
-      light_gray_shulker_box: {}
-      cyan_shulker_box: {}
-      purple_shulker_box: {}
-      blue_shulker_box: {}
-      brown_shulker_box: {}
-      green_shulker_box: {}
-      red_shulker_box: {}
-      black_shulker_box: {}
-      bee_nest: {}
-      beehive: {}
-      bone_block: {}
-      sponge: {}
-      note_block: {}
-      jukebox: {}
-    randomBlocks:
-      stone: 1 
+- enabled: true
+  worlds:
+  - world
+  distance: 16
+  useFastGazeCheck: false
+  defaults:
+    y: 0
+    above: true
+    useBlockBelow: true
+  hiddenBlocks:
+    minecraft:diamond_ore: {}
+    minecraft:emerald_ore: {}
+    minecraft:chest: {}
+    minecraft:ender_chest: {}
+    minecraft:trapped_chest: {}
+    minecraft:barrel: {}
+    minecraft:anvil: {}
+    minecraft:crafting_table: {}
+    minecraft:dispenser: {}
+    minecraft:enchanting_table: {}
+    minecraft:furnace: {}
+    minecraft:blast_furnace: {}
+    minecraft:cartography_table: {}
+    minecraft:fletching_table: {}
+    minecraft:grindstone: {}
+    minecraft:composter: {}
+    minecraft:lectern: {}
+    minecraft:loom: {}
+    minecraft:smithing_table: {}
+    minecraft:smoker: {}
+    minecraft:stonecutter: {}
+    minecraft:hopper: {}
+    minecraft:spawner: {}
+    minecraft:bee_nest: {}
+    minecraft:beehive: {}
+    minecraft:jukebox: {}
+    minecraft:note_block: {}
+    minecraft:sponge: {}
+  randomBlocks:
+    minecraft:stone: 1
+- enabled: true
+  worlds:
+  - world_the_end
+  distance: 16
+  useFastGazeCheck: false
+  defaults:
+    y: 0
+    above: true
+    useBlockBelow: true
+  hiddenBlocks:
+    minecraft:chest: {}
+    minecraft:ender_chest: {}
+    minecraft:trapped_chest: {}
+    minecraft:barrel: {}
+    minecraft:anvil: {}
+    minecraft:crafting_table: {}
+    minecraft:dispenser: {}
+    minecraft:enchanting_table: {}
+    minecraft:furnace: {}
+    minecraft:blast_furnace: {}
+    minecraft:cartography_table: {}
+    minecraft:fletching_table: {}
+    minecraft:grindstone: {}
+    minecraft:composter: {}
+    minecraft:lectern: {}
+    minecraft:loom: {}
+    minecraft:smithing_table: {}
+    minecraft:smoker: {}
+    minecraft:stonecutter: {}
+    minecraft:hopper: {}
+    minecraft:spawner: {}
+    minecraft:bee_nest: {}
+    minecraft:beehive: {}
+    minecraft:jukebox: {}
+    minecraft:note_block: {}
+    minecraft:sponge: {}
+  randomBlocks:
+    minecraft:end_stone: 1

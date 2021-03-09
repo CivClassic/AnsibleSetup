@@ -161,11 +161,11 @@ mob-range:
 #How long should items/Mobs be left on the ground
 # -- live-time's go by ticks (20 ticks a second)
 live-time:
-  enabled: true
+  enabled: false
   interval: 10
   mobtimer: false
-  itemtimer: true
-  arrowtimer: true
+  itemtimer: false
+  arrowtimer: false
   arrowkilltime: 15
   moblivetime: 12000
   itemlivetime: 12000
@@ -279,7 +279,7 @@ per-entity-chunk-entity-limiter:
 # -- 'interval' is the check interval check the current spawn amounts
 spawn-limiter:
   enabled: true
-  interval: 15
+  interval: 30
   mobs: 5000
   animals: 4000
 
