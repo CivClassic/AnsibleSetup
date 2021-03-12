@@ -421,6 +421,7 @@ factories:
         amount: 32
     recipes:
      - make_fences
+     - make_fence_gates
      - make_signs
      - make_ladders
      - make_bookshelves
@@ -2863,11 +2864,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 12
+        amount: 8
     output:
       fence:
         material: OAK_FENCE
-        amount: 256
+        amount: 128
   make_signs:
     production_time: 4s
     name: Make Signs
@@ -2875,11 +2876,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 8
+        amount: 12
     output:
       sign:
         material: OAK_SIGN
-        amount: 64
+        amount: 128
   make_ladders:
     production_time: 4s
     name: Make Ladders
@@ -2887,11 +2888,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 8
+        amount: 6
     output:
       ladder:
         material: LADDER
-        amount: 256
+        amount: 128
   make_bookshelves:
     production_time: 4s
     name: Make Bookshelves
@@ -2914,11 +2915,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 48
+        amount: 16
     output:
       trapdoor:
         material: OAK_TRAPDOOR
-        amount: 256
+        amount: 128
   make_wood_doors:
     production_time: 4s
     name: Make Wood Doors
@@ -2926,11 +2927,23 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 16
+        amount: 12
     output:
       door:
         material: OAK_DOOR
-        amount: 32
+        amount: 128
+  make_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      chest:
+        material: CHEST
+        amount: 8
+    output:
+      door:
+        material: OAK_FENCE_GATE
+        amount: 128
   make_beehive:
     production_time: 4s
     name: Make Beehive
