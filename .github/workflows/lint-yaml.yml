@@ -1,0 +1,24 @@
+name: Lint YAML
+
+on: [push]
+
+jobs:
+  lint-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: lint-yaml
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: .
+          config_data: |
+            extends: default
+            yaml-files:
+              - '*.yaml'
+              - '*.yml'
+              - '*.yml.j2'
+            rules:
+              trailing-spaces:
+                level: warning
+              line-length:
+                level: warning
