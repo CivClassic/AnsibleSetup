@@ -12,13 +12,11 @@ jobs:
         with:
           file_or_dir: .
           config_data: |
-            extends: default
             yaml-files:
               - '*.yaml'
               - '*.yml'
               - '*.yml.j2'
             rules:
-              trailing-spaces:
-                level: warning
-              line-length:
+              indentation:
+                spaces: consistent
                 level: warning
