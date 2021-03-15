@@ -10,7 +10,8 @@ jobs:
       - name: lint-yaml
         uses: ibiqlik/action-yamllint@v3
         with:
-          file_or_dir: ./**/*
+          file_or_dir: .
+          format: standard
           config_data: |
             yaml-files:
               - '*.yaml'
