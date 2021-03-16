@@ -420,123 +420,53 @@ factories:
         material: CHEST
         amount: 32
     recipes:
-     - make_fences
-     - make_fence_gates
-     - make_signs
      - make_ladders
      - make_bookshelves
-     - make_trapdoors
-     - make_wood_doors
      - make_beehive
      - make_casing
      - make_crates
      - sticks_to_chest
+     - make_fences
+     - make_fence_gates
+     - make_signs
+     - make_trapdoors
+     - make_wood_doors
+     - make_spruce_fences
+     - make_spruce_fence_gates
+     - make_spruce_signs
+     - make_spruce_trapdoors
+     - make_spruce_doors
+     - make_birch_fences
+     - make_birch_fence_gates
+     - make_birch_signs
+     - make_birch_trapdoors
+     - make_birch_doors
+     - make_jungle_fences
+     - make_jungle_fence_gates
+     - make_jungle_signs
+     - make_jungle_trapdoors
+     - make_jungle_doors
+     - make_acacia_fences
+     - make_acacia_fence_gates
+     - make_acacia_signs
+     - make_acacia_trapdoors
+     - make_acacia_doors
+     - make_dark_oak_fences
+     - make_dark_oak_fence_gates
+     - make_dark_oak_signs
+     - make_dark_oak_trapdoors
+     - make_dark_oak_doors
+     - make_crimson_fences
+     - make_crimson_fence_gates
+     - make_crimson_signs
+     - make_crimson_trapdoors
+     - make_crimson_doors
+     - make_warped_fences
+     - make_warped_fence_gates
+     - make_warped_signs
+     - make_warped_trapdoors
+     - make_warped_doors
      - repair_carpentry
-  spruce_carpentry:
-    type: FCC
-    name: Spruce Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: SPRUCE_LOG
-        amount: 256
-    recipes:
-      - make_spruce_fences
-      - make_spruce_fence_gates
-      - make_spruce_signs
-      - make_spruce_trapdoors
-      - make_spruce_doors
-      - repair_spruce_carpentry
-  birch_carpentry:
-    type: FCC
-    name: Birch Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: BIRCH_LOG
-        amount: 256
-    recipes:
-      - make_birch_fences
-      - make_birch_fence_gates
-      - make_birch_signs
-      - make_birch_trapdoors
-      - make_birch_doors
-      - repair_birch_carpentry
-  jungle_carpentry:
-    type: FCC
-    name: Jungle Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: JUNGLE_LOG
-        amount: 256
-    recipes:
-      - make_jungle_fences
-      - make_jungle_fence_gates
-      - make_jungle_signs
-      - make_jungle_trapdoors
-      - make_jungle_doors
-      - repair_jungle_carpentry
-  acacia_carpentry:
-    type: FCC
-    name: Acacia Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: ACACIA_LOG
-        amount: 256
-    recipes:
-      - make_acacia_fences
-      - make_acacia_fence_gates
-      - make_acacia_signs
-      - make_acacia_trapdoors
-      - make_acacia_doors
-      - repair_acacia_carpentry
-  dark_oak_carpentry:
-    type: FCC
-    name: Dark Oak Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: DARK_OAK_LOG
-        amount: 256
-    recipes:
-      - make_dark_oak_fences
-      - make_dark_oak_fence_gates
-      - make_dark_oak_signs
-      - make_dark_oak_trapdoors
-      - make_dark_oak_doors
-      - repair_dark_oak_carpentry
-  crimson_carpentry:
-    type: FCC
-    name: Crimson Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: CRIMSON_STEM
-        amount: 256
-    recipes:
-      - make_crimson_fences
-      - make_crimson_fence_gates
-      - make_crimson_signs
-      - make_crimson_trapdoors
-      - make_crimson_doors
-      - repair_crimson_carpentry
-  warped_carpentry:
-    type: FCC
-    name: Warped Carpentry Factory
-    citadelBreakReduction: 1.0
-    setupcost:
-      chest:
-        material: WARPED_STEM
-        amount: 256
-    recipes:
-      - make_warped_fences
-      - make_warped_fence_gates
-      - make_warped_signs
-      - make_warped_trapdoors
-      - make_warped_doors
-      - repair_warped_carpentry
   rails:
     type: FCC
     name: Rail Factory
@@ -3145,15 +3075,6 @@ recipes:
       door:
         material: SPRUCE_FENCE_GATE
         amount: 128
-  repair_spruce_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: SPRUCE_LOG
-        amount: 64
-    health_gained: 10000
   make_birch_fences:
     production_time: 4s
     name: Make Fences
@@ -3214,15 +3135,6 @@ recipes:
       door:
         material: BIRCH_FENCE_GATE
         amount: 128
-  repair_birch_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: BIRCH_LOG
-        amount: 64
-    health_gained: 10000
   make_jungle_fences:
     production_time: 4s
     name: Make Fences
@@ -3283,15 +3195,6 @@ recipes:
       door:
         material: JUNGLE_FENCE_GATE
         amount: 128
-  repair_jungle_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: JUNGLE_LOG
-        amount: 64
-    health_gained: 10000
   make_acacia_fences:
     production_time: 4s
     name: Make Fences
@@ -3352,15 +3255,6 @@ recipes:
       door:
         material: ACACIA_FENCE_GATE
         amount: 128
-  repair_acacia_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: ACACIA_LOG
-        amount: 64
-    health_gained: 10000
   make_dark_oak_fences:
     production_time: 4s
     name: Make Fences
@@ -3421,15 +3315,6 @@ recipes:
       door:
         material: DARK_OAK_FENCE_GATE
         amount: 128
-  repair_dark_oak_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: DARK_OAK_LOG
-        amount: 64
-    health_gained: 10000
   make_crimson_fences:
     production_time: 4s
     name: Make Fences
@@ -3490,15 +3375,6 @@ recipes:
       door:
         material: CRIMSON_FENCE_GATE
         amount: 128
-  repair_crimson_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: CRIMSON_STEM
-        amount: 64
-    health_gained: 10000
   make_warped_fences:
     production_time: 4s
     name: Make Fences
@@ -3559,15 +3435,6 @@ recipes:
       door:
         material: WARPED_FENCE_GATE
         amount: 128
-  repair_warped_carpentry:
-    production_time: 4s
-    name: Repair Factory
-    type: REPAIR
-    input:
-      chest:
-        material: WARPED_STEM
-        amount: 64
-    health_gained: 10000
   make_rail:
     production_time: 4s
     name: Make Rails
