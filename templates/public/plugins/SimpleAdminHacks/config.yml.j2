@@ -437,3 +437,36 @@ hacks:
   ToggleLamp:
     enabled: true
     cooldownTime: 100
+  UnblockingHack:
+    enabled: true
+    # Block materials that turn into 9 item materials
+    # Example => NETHER_WART_BLOCK: NETHER_WART
+    9block:
+      BROWN_MUSHROOM_BLOCK: BROWN_MUSHROOM
+      NETHER_WART_BLOCK: NETHER_WART
+      RED_MUSHROOM_BLOCK: RED_MUSHROOM
+    # Block materials that turn into 4 item materials
+    # Example => CLAY: CLAY_BALL
+    4block:
+      BRICKS: BRICK
+      CLAY: CLAY_BALL
+      GLOWSTONE: GLOWSTONE_DUST
+      HONEY_BLOCK: HONEY_BOTTLE
+      NETHER_BRICKS: NETHER_BRICK
+      POLISHED_ANDESITE: ANDESITE
+      POLISHED_BASALT: BASALT
+      POLISHED_DIORITE: DIORITE
+      POLISHED_GRANITE: GRANITE
+      PRISMARINE: PRISMARINE_SHARD
+      PURPUR_BLOCK: POPPED_CHORUS_FRUIT
+      QUARTZ_BLOCK: QUARTZ
+      SNOW_BLOCK: SNOWBALL
+    # Item materials, 9 of which combine into a block material
+    # Example => NETHER_WART: NETHER_WART_BLOCK
+    9items:
+      BROWN_MUSHROOM: BROWN_MUSHROOM_BLOCK
+      RED_MUSHROOM: RED_MUSHROOM_BLOCK
+    # Item materials, 4 of which combine into a block material
+    # Example => CLAY_BALL: CLAY
+    4items:
+      STICK: OAK_PLANKS
