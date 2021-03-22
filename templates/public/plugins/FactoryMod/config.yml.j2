@@ -420,16 +420,52 @@ factories:
         material: CHEST
         amount: 32
     recipes:
-     - make_fences
-     - make_signs
      - make_ladders
      - make_bookshelves
-     - make_trapdoors
-     - make_wood_doors
      - make_beehive
      - make_casing
      - make_crates
      - sticks_to_chest
+     - make_fences
+     - make_fence_gates
+     - make_signs
+     - make_trapdoors
+     - make_wood_doors
+     - make_spruce_fences
+     - make_spruce_fence_gates
+     - make_spruce_signs
+     - make_spruce_trapdoors
+     - make_spruce_doors
+     - make_birch_fences
+     - make_birch_fence_gates
+     - make_birch_signs
+     - make_birch_trapdoors
+     - make_birch_doors
+     - make_jungle_fences
+     - make_jungle_fence_gates
+     - make_jungle_signs
+     - make_jungle_trapdoors
+     - make_jungle_doors
+     - make_acacia_fences
+     - make_acacia_fence_gates
+     - make_acacia_signs
+     - make_acacia_trapdoors
+     - make_acacia_doors
+     - make_dark_oak_fences
+     - make_dark_oak_fence_gates
+     - make_dark_oak_signs
+     - make_dark_oak_trapdoors
+     - make_dark_oak_doors
+     - make_crimson_fences
+     - make_crimson_fence_gates
+     - make_crimson_signs
+     - make_crimson_trapdoors
+     - make_crimson_doors
+     - make_warped_fences
+     - make_warped_fence_gates
+     - make_warped_signs
+     - make_warped_trapdoors
+     - make_warped_doors
      - repair_carpentry
   rails:
     type: FCC
@@ -2863,11 +2899,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 12
+        amount: 8
     output:
       fence:
         material: OAK_FENCE
-        amount: 256
+        amount: 128
   make_signs:
     production_time: 4s
     name: Make Signs
@@ -2875,11 +2911,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 8
+        amount: 12
     output:
       sign:
         material: OAK_SIGN
-        amount: 64
+        amount: 128
   make_ladders:
     production_time: 4s
     name: Make Ladders
@@ -2887,11 +2923,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 8
+        amount: 6
     output:
       ladder:
         material: LADDER
-        amount: 256
+        amount: 128
   make_bookshelves:
     production_time: 4s
     name: Make Bookshelves
@@ -2914,11 +2950,11 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 48
+        amount: 16
     output:
       trapdoor:
         material: OAK_TRAPDOOR
-        amount: 256
+        amount: 128
   make_wood_doors:
     production_time: 4s
     name: Make Wood Doors
@@ -2926,11 +2962,23 @@ recipes:
     input:
       chest:
         material: CHEST
-        amount: 16
+        amount: 12
     output:
       door:
         material: OAK_DOOR
-        amount: 32
+        amount: 128
+  make_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      chest:
+        material: CHEST
+        amount: 8
+    output:
+      door:
+        material: OAK_FENCE_GATE
+        amount: 128
   make_beehive:
     production_time: 4s
     name: Make Beehive
@@ -2967,6 +3015,426 @@ recipes:
         material: CHEST
         amount: 2
     health_gained: 10000
+  make_spruce_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      SPRUCE_LOG:
+        material: SPRUCE_LOG
+        amount: 16
+    output:
+      fence:
+        material: SPRUCE_FENCE
+        amount: 128
+  make_spruce_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      SPRUCE_LOG:
+        material: SPRUCE_LOG
+        amount: 24
+    output:
+      sign:
+        material: SPRUCE_SIGN
+        amount: 128
+  make_spruce_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      SPRUCE_LOG:
+        material: SPRUCE_LOG
+        amount: 32
+    output:
+      trapdoor:
+        material: SPRUCE_TRAPDOOR
+        amount: 128
+  make_spruce_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      SPRUCE_LOG:
+        material: SPRUCE_LOG
+        amount: 24
+    output:
+      door:
+        material: SPRUCE_DOOR
+        amount: 128
+  make_spruce_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      SPRUCE_LOG:
+        material: SPRUCE_LOG
+        amount: 16
+    output:
+      door:
+        material: SPRUCE_FENCE_GATE
+        amount: 128
+  make_birch_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      BIRCH_LOG:
+        material: BIRCH_LOG
+        amount: 16
+    output:
+      fence:
+        material: BIRCH_FENCE
+        amount: 128
+  make_birch_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      BIRCH_LOG:
+        material: BIRCH_LOG
+        amount: 24
+    output:
+      sign:
+        material: BIRCH_SIGN
+        amount: 128
+  make_birch_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      BIRCH_LOG:
+        material: BIRCH_LOG
+        amount: 32
+    output:
+      trapdoor:
+        material: BIRCH_TRAPDOOR
+        amount: 128
+  make_birch_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      BIRCH_LOG:
+        material: BIRCH_LOG
+        amount: 24
+    output:
+      door:
+        material: BIRCH_DOOR
+        amount: 128
+  make_birch_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      BIRCH_LOG:
+        material: BIRCH_LOG
+        amount: 16
+    output:
+      door:
+        material: BIRCH_FENCE_GATE
+        amount: 128
+  make_jungle_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      JUNGLE_LOG:
+        material: JUNGLE_LOG
+        amount: 16
+    output:
+      fence:
+        material: JUNGLE_FENCE
+        amount: 128
+  make_jungle_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      JUNGLE_LOG:
+        material: JUNGLE_LOG
+        amount: 24
+    output:
+      sign:
+        material: JUNGLE_SIGN
+        amount: 128
+  make_jungle_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      JUNGLE_LOG:
+        material: JUNGLE_LOG
+        amount: 32
+    output:
+      trapdoor:
+        material: JUNGLE_TRAPDOOR
+        amount: 128
+  make_jungle_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      JUNGLE_LOG:
+        material: JUNGLE_LOG
+        amount: 24
+    output:
+      door:
+        material: JUNGLE_DOOR
+        amount: 128
+  make_jungle_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      JUNGLE_LOG:
+        material: JUNGLE_LOG
+        amount: 16
+    output:
+      door:
+        material: JUNGLE_FENCE_GATE
+        amount: 128
+  make_acacia_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      ACACIA_LOG:
+        material: ACACIA_LOG
+        amount: 16
+    output:
+      fence:
+        material: ACACIA_FENCE
+        amount: 128
+  make_acacia_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      ACACIA_LOG:
+        material: ACACIA_LOG
+        amount: 24
+    output:
+      sign:
+        material: ACACIA_SIGN
+        amount: 128
+  make_acacia_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      ACACIA_LOG:
+        material: ACACIA_LOG
+        amount: 32
+    output:
+      trapdoor:
+        material: ACACIA_TRAPDOOR
+        amount: 128
+  make_acacia_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      ACACIA_LOG:
+        material: ACACIA_LOG
+        amount: 24
+    output:
+      door:
+        material: ACACIA_DOOR
+        amount: 128
+  make_acacia_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      ACACIA_LOG:
+        material: ACACIA_LOG
+        amount: 16
+    output:
+      door:
+        material: ACACIA_FENCE_GATE
+        amount: 128
+  make_dark_oak_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      DARK_OAK_LOG:
+        material: DARK_OAK_LOG
+        amount: 16
+    output:
+      fence:
+        material: DARK_OAK_FENCE
+        amount: 128
+  make_dark_oak_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      DARK_OAK_LOG:
+        material: DARK_OAK_LOG
+        amount: 24
+    output:
+      sign:
+        material: DARK_OAK_SIGN
+        amount: 128
+  make_dark_oak_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      DARK_OAK_LOG:
+        material: DARK_OAK_LOG
+        amount: 32
+    output:
+      trapdoor:
+        material: DARK_OAK_TRAPDOOR
+        amount: 128
+  make_dark_oak_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      DARK_OAK_LOG:
+        material: DARK_OAK_LOG
+        amount: 24
+    output:
+      door:
+        material: DARK_OAK_DOOR
+        amount: 128
+  make_dark_oak_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      DARK_OAK_LOG:
+        material: DARK_OAK_LOG
+        amount: 16
+    output:
+      door:
+        material: DARK_OAK_FENCE_GATE
+        amount: 128
+  make_crimson_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      CRIMSON_STEM:
+        material: CRIMSON_STEM
+        amount: 16
+    output:
+      fence:
+        material: CRIMSON_FENCE
+        amount: 128
+  make_crimson_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      CRIMSON_STEM:
+        material: CRIMSON_STEM
+        amount: 24
+    output:
+      sign:
+        material: CRIMSON_SIGN
+        amount: 128
+  make_crimson_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      CRIMSON_STEM:
+        material: CRIMSON_STEM
+        amount: 32
+    output:
+      trapdoor:
+        material: CRIMSON_TRAPDOOR
+        amount: 128
+  make_crimson_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      CRIMSON_STEM:
+        material: CRIMSON_STEM
+        amount: 24
+    output:
+      door:
+        material: CRIMSON_DOOR
+        amount: 128
+  make_crimson_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      CRIMSON_STEM:
+        material: CRIMSON_STEM
+        amount: 16
+    output:
+      door:
+        material: CRIMSON_FENCE_GATE
+        amount: 128
+  make_warped_fences:
+    production_time: 4s
+    name: Make Fences
+    type: PRODUCTION
+    input:
+      WARPED_STEM:
+        material: WARPED_STEM
+        amount: 16
+    output:
+      fence:
+        material: WARPED_FENCE
+        amount: 128
+  make_warped_signs:
+    production_time: 4s
+    name: Make Signs
+    type: PRODUCTION
+    input:
+      WARPED_STEM:
+        material: WARPED_STEM
+        amount: 24
+    output:
+      sign:
+        material: WARPED_SIGN
+        amount: 128
+  make_warped_trapdoors:
+    production_time: 4s
+    name: Make Trap Doors
+    type: PRODUCTION
+    input:
+      WARPED_STEM:
+        material: WARPED_STEM
+        amount: 32
+    output:
+      trapdoor:
+        material: WARPED_TRAPDOOR
+        amount: 128
+  make_warped_doors:
+    production_time: 4s
+    name: Make Doors
+    type: PRODUCTION
+    input:
+      WARPED_STEM:
+        material: WARPED_STEM
+        amount: 24
+    output:
+      door:
+        material: WARPED_DOOR
+        amount: 128
+  make_warped_fence_gates:
+    production_time: 4s
+    name: Make Fence Gates
+    type: PRODUCTION
+    input:
+      WARPED_STEM:
+        material: WARPED_STEM
+        amount: 16
+    output:
+      door:
+        material: WARPED_FENCE_GATE
+        amount: 128
   make_rail:
     production_time: 4s
     name: Make Rails
