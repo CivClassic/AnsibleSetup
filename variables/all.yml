@@ -122,9 +122,9 @@ bungee_top_level_templates:
 bungee_secret_top_level_templates:
 
 #Minecraft version
-mc_version: "1.16.4"
+mc_version: "1.16.5"
 #Version of PaperMC to use
-paper_version: "355"
+paper_version: "581"
 #Raw Bungee version, used in the URL of Waterfall downloads
 raw_bungee_version: 1.16
 #Specific waterfall version to use
