@@ -103,23 +103,10 @@ biome_aliases:
   - END_MIDLANDS
   - THE_VOID
   - THE_END
-  other:
-  - END_BARRENS
-  - END_HIGHLANDS
-  - END_MIDLANDS
-  - THE_VOID
-  - THE_END
-  - NETHER_WASTES
-  - SOUL_SAND_VALLEY
-  - CRIMSON_FOREST
-  - WARPED_FOREST
-  - BASALT_DELTAS  
-
 
 plants:
 
 # formerly inheriting CROP properties
-
   WHEAT:
     persistent_growth_period: 3h
     name: Wheat
@@ -152,7 +139,8 @@ plants:
     biomes:
       temperate: 1.0
       foresty: 0.75 
-      other: 0.5
+      nether: 0.5
+      end: 0.5
       cold: 0.25
       hot_dry: 0.25
       mountain: 0.25
@@ -231,7 +219,8 @@ plants:
       temperate: 0.5
       cold: 0.25
       mesa: 0.1
-      other: 0.1
+      nether: 0.1
+      end: 0.1
 
   BEETROOT:
     persistent_growth_period: 3h
@@ -263,7 +252,8 @@ plants:
     biomes:    
       temperate: 1.0
       foresty: 0.75
-      other: 0.5
+      nether: 0.5
+      end: 0.5
       cold: 0.25
       hot_dry: 0.25
       mesa: 0.25
@@ -336,13 +326,13 @@ plants:
       swampy: 1.0
 
   MELON:
-    persistent_growth_period: 3h
+    persistent_growth_period: 0
     name: Melon
     id: 7
     item:
       ==: org.bukkit.inventory.ItemStack
       type: MELON
-      v: 1
+      v: 2584
     can_be_planted: false
     soil_max_layers: 4
     soil_boni:
@@ -370,7 +360,7 @@ plants:
       temperate: 0.25
 
   MELON_STEM:
-    persistent_growth_period: 12h
+    persistent_growth_period: 0
     name: Melon stem
     id: 8
     item:
@@ -399,7 +389,7 @@ plants:
       temperate: 0.25
 
   PUMPKIN:
-    persistent_growth_period: 3h
+    persistent_growth_period: 0
     name: Pumpkin
     id: 9
     can_be_planted: false
@@ -433,7 +423,7 @@ plants:
       temperate: 0.25
 
   PUMPKIN_STEM:
-    persistent_growth_period: 12h
+    persistent_growth_period: 0
     name: Pumpkin stem
     grower:
       type: stem
@@ -535,7 +525,8 @@ plants:
       foresty: 2.0
       temperate: 0.25
       hot_rainy: 0.5
-      other: 0.25
+      nether: 0.25
+      end: 0.25
 
   BIRCH_SAPLING:
     persistent_growth_period: 6h
