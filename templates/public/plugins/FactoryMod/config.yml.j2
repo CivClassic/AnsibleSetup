@@ -227,7 +227,23 @@ factories:
      - smelt_lapis_ore
      - make_refractor
      - crack_fossil
+     - upgrade_to_adv_ore_smelter
      - repair_ore_smelter
+  adv_ore_smelter:
+    type: FCCUPGRADE
+    name: Advanced Ore Smelter
+    citadelBreakReduction: 1.0
+    recipes:
+     - smelt_coal_ore
+     - smelt_iron_ore
+     - smelt_diamond_ore
+     - adv_smelt_gold_ore
+     - adv_smelt_redstone_ore
+     - adv_smelt_lapis_ore
+     - adv_smelt_ancient_debris
+     - make_refractor
+     - crack_fossil
+     - repair_adv_ore_smelter
   diamond_helm:
     type: FCC
     name: Diamond Helmet Smith
@@ -986,6 +1002,18 @@ recipes:
       gold:
         material: GOLD_INGOT
         amount: 48
+  adv_smelt_gold_ore:
+    production_time: 4s
+    name: Advanced Smelt Gold Ore
+    type: PRODUCTION
+    input:
+      gold_ore:
+        material: GOLD_ORE
+        amount: 32
+    output:
+      gold:
+        material: GOLD_INGOT
+        amount: 64
   smelt_redstone_ore:
     production_time: 4s
     name: Smelt Redstone Ore
@@ -998,6 +1026,18 @@ recipes:
       redstone:
         material: REDSTONE_BLOCK
         amount: 48
+  adv_smelt_redstone_ore:
+    production_time: 4s
+    name: Advanced Smelt Redstone Ore
+    type: PRODUCTION
+    input:
+      redstone_ore:
+        material: REDSTONE_ORE
+        amount: 64
+    output:
+      redstone:
+        material: REDSTONE_BLOCK
+        amount: 64
   smelt_lapis_ore:
     production_time: 4s
     name: Smelt Lapis Ore
@@ -1010,6 +1050,57 @@ recipes:
       lapis:
         material: LAPIS_BLOCK
         amount: 48
+  adv_smelt_lapis_ore:
+    production_time: 4s
+    name: Advanced Smelt Lapis Ore
+    type: PRODUCTION
+    input:
+      lapis_ore:
+        material: LAPIS_ORE
+        amount: 32
+    output:
+      lapis:
+        material: LAPIS_BLOCK
+        amount: 64
+  adv_smelt_ancient_debris:
+    production_time: 4s
+    name: Smelt Ancient Debris
+    type: PRODUCTION
+    input:
+      ancient_debris:
+        material: ANCIENT DEBRIS
+        amount: 16
+      emerald:
+        material: EMERALD
+        amount: 32
+      gold_ingot:
+        material: GOLD_INGOT
+        amount: 16
+      essence:
+        material: EYE_OF_ENDER
+        amount: 16
+        name: Player Essence
+        lore:
+          - Activity reward used to fuel pearls
+    output:
+      netherite_ingot:
+        material: NETHERITE_INGOT
+        amount: 2
+  upgrade_to_adv_ore_smelter:
+    production_time: 4s
+    name: Upgrade to Advanced Ore Smelter
+    type: UPGRADE
+    input:
+      diamond:
+        material: DIAMOND
+        amount: 64
+      emerald_block:
+        material: EMERALD_BLOCK
+        amount: 32
+      ancient_debris:
+        material: ANCIENT_DEBRIS
+        amount: 32
+    factory: Advanced Ore Smelter
   smelt_glass:
     type: PRODUCTION
     production_time: 4s
@@ -2882,6 +2973,21 @@ recipes:
       diamond:
         material: DIAMOND
         amount: 6
+    health_gained: 10000
+  repair_adv_ore_smelter:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      diamond:
+        material: DIAMOND
+        amount: 8
+      emerald:
+        material: EMERALD
+        amount: 8
+      ancient_debris:
+        material: ANCIENT_DEBRIS
+        amount: 1
     health_gained: 10000
   repair_bio_lab:
     production_time: 4s
