@@ -34,6 +34,7 @@ blocks:
       - redstone_ore_transform
       - gold_ore_transform
       - lapis_ore_transform
+      - ancient_debris_transform
       - fossil_drop
       - diamond_ore_vein
    rack:
@@ -42,6 +43,7 @@ blocks:
       dropList:
       - quartz_transform
       - glowstone_transform
+      - ancient_debris_transform
 drops:
    fossil_drop:
       package:
@@ -145,6 +147,20 @@ drops:
       minAmount: 1
       maxAmount: 4
       transformIfAble: true
+   ancient_debris_transform:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: ANCIENT_DEBRIS
+         amount: 1
+      minY: 1
+      maxY: 70
+      chance: 0.0009
+      minAmount: 1
+      maxAmount: 1
+      transformIfAble: true
+      biomes:
+         NETHER_WASTES:
+            chance: 0.0018
    emerald_ore_dank:
       package:
       -  ==: org.bukkit.inventory.ItemStack
