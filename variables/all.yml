@@ -55,6 +55,7 @@ plugins:
  - CombatTagPlus
  - ConditionalCommands
  - CraftEnhance
+ - Donum
  - EssenceGlue
  - ExilePearl
  - FactoryMod
