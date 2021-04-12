@@ -1,0 +1,7 @@
+- name: Download Tuinity
+  get_url:
+    url: "{{ tuinity_url }}"
+    dest: "{{ full_server_folder }}/{{ server_jar }}.jar"
+    mode: 0755
+    owner: "{{ username }}"
+    force: true
