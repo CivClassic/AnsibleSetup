@@ -114,6 +114,7 @@ top_level_templates:
  - spigot.yml
  - paper.yml
  - wepif.yml
+ - tuinity.yml
 #Nonpublic server files not specific to a plugin, templates for these are under templates/private/
 secret_top_level_templates:
 
