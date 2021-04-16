@@ -33,7 +33,10 @@ shard_mem: 53G
 bungee_mem: 1024M
 
 #Use PaperMC instead of Spigot?
-use_paper: true
+use_paper: false
+
+#Use Tuinity instead of Spigot or Paper? IF USING THIS SETTING, SET PAPER TO FALSE
+use_tuinity: true
 
 #Mysql socket location, you likely want to changes this something like "/var/run/mysqld/mysqld.sock". You can find the correct path in '/etc/my.cnf' under [mysqld] --> socket
 mysql_socket_location: "/home/mysql/mysqld.sock"
@@ -111,6 +114,7 @@ top_level_templates:
  - spigot.yml
  - paper.yml
  - wepif.yml
+ - tuinity.yml
 #Nonpublic server files not specific to a plugin, templates for these are under templates/private/
 secret_top_level_templates:
 
@@ -135,6 +139,8 @@ waterfall_version: 389
 spigot_url: "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 #URL to pull Paper build from
 paper_url: "https://papermc.io/api/v2/projects/paper/versions/{{ mc_version }}/builds/{{ paper_version }}/downloads/paper-{{ mc_version }}-{{ paper_version }}.jar"
+#URL to pull Tuinity build from
+tuinity_url: "https://ci.codemc.io/job/Spottedleaf/job/Tuinity/lastStableBuild/artifact/tuinity-paperclip.jar"
 #URL to pull bungeecord/waterfall build from
 bungee_url: "https://papermc.io/api/v2/projects/waterfall/versions/{{ raw_bungee_version }}/builds/{{ waterfall_version }}/downloads/waterfall-{{ raw_bungee_version }}-{{ waterfall_version }}.jar"
 #Name of the final server jar put into the server folder

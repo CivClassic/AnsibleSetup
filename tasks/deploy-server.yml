@@ -29,6 +29,10 @@
   include: "tasks/deploy-paper.yml"
   when: use_paper
 
+- name: Deploy Tuinity
+  include: "tasks/deploy-tuinity.yml"
+  when: not use_paper and use_tuinity
+
 - name: "Clean existing Jarfiles"
   shell: "rm {{ full_server_folder }}/plugins/*.jar"
   ignore_errors: true
