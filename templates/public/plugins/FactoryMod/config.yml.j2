@@ -685,7 +685,9 @@ factories:
     recipes:
       - compact
       - decompact
+      - make_compact_repair_kit
       - repair_compactor
+      - repair_compactor_kit
   printing_press:
     type: FCC
     name: Printing Press
@@ -5441,6 +5443,44 @@ recipes:
         lore:
           - Crate
     health_gained: 10000
+  repair_compactor_kit:
+    production_time: 4s
+    name: Repair Factory using Repair Kit
+    type: REPAIR
+    input:
+      kit:
+        material: BARREL
+        amount: 1
+        name: Compact Repair Kit
+        lore:
+          - One kit will repair a compactor to full health.
+    health_gained: 10000
+  make_compact_repair_kit:
+    production_time: 4s
+    name: Make Crates
+    type: PRODUCTION
+    input:
+      iron_block:
+        material: IRON_BLOCK
+        amount: 4
+      redstone_block:
+        material: REDSTONE_BLOCK
+        amount: 2
+      piston:
+        material: PISTON
+        amount: 6
+      crate:
+        material: CHEST
+        amount: 3
+        lore:
+          - Crate
+    output:
+      kit:
+        material: BARREL
+        amount: 1
+        name: Compact Repair Kit
+        lore:
+          - One kit will repair a compactor to full health.
   make_crates:
     production_time: 4s
     name: Make Crates
