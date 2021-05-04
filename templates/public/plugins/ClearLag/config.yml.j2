@@ -385,17 +385,17 @@ item-merger:
 # -- 'item-filter' What ground-items should NOT be removed during removal
 # -- 'remove-entities' What entities SHOULD be removed during removal
 auto-removal:
-  enabled: false
+  enabled: true
   broadcast-message: '&6[ClearLag] &aRemoved +RemoveAmount Entities!'
-  broadcast-removal: true
-  autoremoval-interval: 460
+  broadcast-removal: false
+  autoremoval-interval: 920
   world-filter:
   # - this_world <-This world will be ignored during removal!
   boat: false
   falling-block: false
   experience-orb: false
   painting: false
-  projectile: false
+  projectile: true
   item: false
   itemframe: false
   minecart: false
@@ -408,17 +408,13 @@ auto-removal:
     - Snowball
     - Egg
     - Fireball
-    - Boat !isMounted
-    - Minecart !isMounted
-    - MINECART_TNT
   # - cow <- This mob-type will be REMOVED during removal!
   # - MINECART_MOB_SPAWNER
   # - Pig liveTime=100 <- This mob will be REMOVED if it's been alive for 100 ticks (5 seconds)
   # - Minecart !isMounted <- This entity will be REMOVED if it's NOT mounted
   # - Wolf !hasName <- This entity will be REMOVED if it doesn't have a name
   warnings:
-        - 'time:400 msg:&4[ClearLag] &cWarning Ground items will be removed in &7+remaining &cseconds!'
-        - 'time:440 msg:&4[ClearLag] &cWarning Ground items will be removed in &7+remaining &cseconds!'
+
 
 #What should be removed during /lagg clear, nearly the same thing as auto-removal
 command-remove:
