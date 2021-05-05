@@ -81,6 +81,7 @@ plugins:
  - SuperVanish
  - Vault
  - Votifier #This is actually NuVotifier
+ - WDLCompanion
  - WorldBorder
  - WorldEdit
  - TAB
