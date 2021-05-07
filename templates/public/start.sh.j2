@@ -22,4 +22,5 @@ java -server \
  -Dusing.aikars.flags=https://mcflags.emc.gs \
  -Daikars.new.flags=true -jar \
  -Xmx{{ shard_mem }} -Xms{{ shard_mem }} \
+ --illegal-access=permit \
  -jar {{ server_jar }}.jar nogui
