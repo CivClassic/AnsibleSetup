@@ -21,10 +21,10 @@ pearls:
   decay_interval_min_human: 10080                                              
   decay_interval_min: 15                                                       
   decay_amount: 1 # 1 hp/15 min = 4 hp/hour or 32hp/hour at maximum login streak
-  decay_timeout_min: 86400 #9 days, should be identical to no mana streak
+  decay_timeout_min: 9590400 #999 days to make essentially zero
   start_value: 384 # 12 hours * 32 per hour
   max_value: 10752 # 32hp/hour * 24hours * 14 days
-  cost_multiplier_days: 270
+  cost_multiplier_days: 9999 #essentially never kick in
   repair_materials:
     PRISON:
      mana:
