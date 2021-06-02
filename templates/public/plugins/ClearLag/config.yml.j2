@@ -134,7 +134,7 @@ item-spawn-age-setter:
 # -- 'check-radius' is the radius of what clearlag will check for 'max-mobs'
 mob-breeding-limiter:
   enabled: true
-  max-mobs: 20
+  max-mobs: 10
   check-radius: 15
 
 #Should clearlag purge logs under /logs when the server starts?
@@ -302,6 +302,9 @@ per-entity-chunk-entity-limiter:
     - COD limit:1
     - ZOMBIFIED_PIGLIN limit:8
     - GHAST limit:3
+    - ZOMBIE limit:8
+    - SPIDER limit:8
+    - CAVE_SPIDER limit:8
   passive-cleaner:
     passive-cleaning-enabled: false
     check-interval: 20
