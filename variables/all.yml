@@ -27,10 +27,10 @@ mc_port: "{{ internal_port }}"
 bungee_port: "{{ external_port }}"
 
 #How much memory is used by the server
-shard_mem: 53G
+shard_mem: 52G
 
 #How much memory is used by bungee
-bungee_mem: 1024M
+bungee_mem: 2048M
 
 #Use PaperMC instead of Spigot?
 use_paper: false
