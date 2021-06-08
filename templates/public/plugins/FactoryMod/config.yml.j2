@@ -5725,34 +5725,43 @@ recipes:
       stone:
         material: STONE
         amount: 32
+      flint:
+        material: FLINT
+        amount: 1
     output:
       cobblestone:
         material: COBBLESTONE
         amount: 32
   crush_cobble:
-    production_time: 4s
+    production_time: 16s
     name: Crush Cobblestone
     type: PRODUCTION
     input:
       cobble:
         material: COBBLESTONE
-        amount: 32
+        amount: 64
+      flint:
+        material: FLINT
+        amount: 4
     output:
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 48
   crush_gravel:
-    production_time: 4s
+    production_time: 16s
     name: Crush Gravel
     type: PRODUCTION
     input:
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 64
+      flint:
+        material: FLINT
+        amount: 4
     output:
       sand:
         material: SAND
-        amount: 32
+        amount: 48
   grind_sandstone:
     production_time: 4s
     name: Grind Sandstone
@@ -5761,6 +5770,9 @@ recipes:
       sandstone:
         material: SANDSTONE
         amount: 64
+      flint:
+        material: FLINT
+        amount: 1
     output:
       sand:
         material: SAND
@@ -5773,6 +5785,9 @@ recipes:
       red sandstone:
         material: RED_SANDSTONE
         amount: 64
+      flint:
+        material: FLINT
+        amount: 1
     output:
       red sand:
         material: SAND
@@ -5787,6 +5802,9 @@ recipes:
         amount: 64
       leather:
         material: LEATHER
+        amount: 4
+      flint:
+        material: FLINT
         amount: 4
     health_gained: 10000      
 
