@@ -53,7 +53,6 @@ factories:
      - charcoal_from_acacia_log
      - charcoal_from_dark_oak_log
      - charcoal_from_coal
-     - lamp_black
      - repair_charcoal_factory
   aesthetics:
     type: FCC
@@ -1236,18 +1235,6 @@ recipes:
     output:
       charcoal:
         material: CHARCOAL
-        amount: 64
-  lamp_black:
-    production_time: 4s
-    name: Make Lamp Black Dye from Charcoal
-    type: PRODUCTION
-    input:
-      log:
-        material: CHARCOAL
-        amount: 64
-    output:
-      charcoal:
-        material: BLACK_DYE
         amount: 64
   make_quartz:
     production_time: 4s
