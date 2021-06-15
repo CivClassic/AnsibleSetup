@@ -577,6 +577,7 @@ factories:
      - make_saddle
      - make_lead
      - make_bio_component
+     - make_elytra
      - repair_husbandry
   iron_forge:
     type: FCC
@@ -3741,6 +3742,33 @@ recipes:
       saddle:
         material: SADDLE
         amount: 8
+  make_elytra:
+    production_time: 4s
+    name: Make Elytra
+    type: PRODUCTION
+    input:
+      bamboo:
+        material: BAMBOO
+        amount: 256
+      membrane:
+        material: PHANTOM_MEMBRANE
+        amount: 64
+      essence:
+        material: ENDER_EYE
+        amount: 64
+        name: Player Essence
+        lore:
+          - Activity reward used to fuel pearls
+      leather:
+        material: LEATHER
+        amount: 16
+      emerald:
+        material: EMERALD
+        amount: 16
+    output:
+      elytra:
+        material: ELYTRA
+        amount: 1
   make_torch:
     production_time: 4s
     name: Make Redstone Torches
