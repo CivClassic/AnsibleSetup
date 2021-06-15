@@ -6,7 +6,58 @@ ignore_silktouch: true
 map_save_active: false
 
 transform_attempt_multiplier: 3
-tools: {}
+tools: 
+ # Giving a tool ignore:all:true will make it the default catchall, if specified in a config.
+ # So if you have a "default" behavior you want for any non-specified tool, use that.
+ # Great for things that are often broken by hand or with random crap held, like dirt, sand, gravel.
+ # "ignore" section is ignored but "modifiers" section will be applied.
+ # Give the item a "friendly name" that you'll use in the "tools" section of each drop config.
+ netherite_pickaxe:
+  template:
+   ==: org.bukkit.inventory.ItemStack
+   v: 2856
+   type: NETHERITE_PICKAXE
+   amount: 1
+  ignore:
+   # Ignore the amount held.
+   amount: true
+   # Ignore the durability of the item held.
+   durability: true
+   # Ignore all enchantments.
+   enchants: true
+   # Ignore any enchantments not specified in the template
+   otherEnchants: true
+   # Ignore the specific lvl of the enchantments considered
+   enchantsLvl: true
+   # Ignore any differences in lore
+   lore: true
+   # Ignore any differences in display name.
+   name: true
+  modifiers:
+   # Multiplier to drop chance; applied _after_ biome computation
+   dropChance: 1.05
+   # Adder on minimum drop size; so, drop config min + this min.
+   minAmount: 0.0
+   # Adder on maximum drop size; so, drop config max + this max. Both can be negative.
+   maxAmount: 0.0
+ netherite_axe:
+  template:
+   ==: org.bukkit.inventory.ItemStack
+   v: 2586
+   type: NETHERITE_AXE
+   amount: 1
+  ignore:
+   amount: true
+   durability: true
+   enchants: true
+   otherEnchants: true
+   enchantsLvl: true
+   lore: true
+   name: true
+  modifiers:
+   dropChance: 1
+   minAmount: 1
+   maxAmount: 1
 blocks:
    stone:
       allTypes: false
@@ -44,6 +95,56 @@ blocks:
       - quartz_transform
       - glowstone_transform
       - ancient_debris_transform
+   oak:
+     material: OAK_LOG
+     dropMultiple: false
+     dropList:
+      - oak_drop
+   spruce:
+     material: SPRUCE_LOG
+     dropMultiple: false
+     dropList:
+      - spruce_drop
+   birch:
+     material: BIRCH_LOG
+     dropMultiple: false
+     dropList:
+      - birch_drop
+   jungle:
+     material: JUNGLE_LOG
+     dropMultiple: false
+     dropList:
+      - jungle_drop
+   acacia:
+     material: ACACIA_LOG
+     dropMultiple: false
+     dropList:
+      - acacia_drop
+   dark_oak:
+     material: DARK_OAK_LOG
+     dropMultiple: false
+     dropList:
+      - dark_oak_drop
+   crimson:
+     material: CRIMSON_STEM
+     dropMultiple: false
+     dropList:
+      - crimson_drop
+   warped:
+     material: WARPED_STEM
+     dropMultiple: false
+     dropList:
+      - warped_drop
+   pumpkin:
+     material: PUMPKIN
+     dropMultiple: false
+     dropList:
+      - pumpkin_drop
+   melon:
+     material: MELON
+     dropMultiple: false
+     dropList:
+      - melon_drop
 drops:
    fossil_drop:
       package:
@@ -174,6 +275,136 @@ drops:
       minAmount: 1
       maxAmount: 1
       transformIfAble: true
+   oak_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: OAK_LOG
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   spruce_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: SPRUCE_LOG
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	 
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   birch_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: BIRCH_LOG
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	 
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   jungle_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: JUNGLE_LOG
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	 
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   acacia_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: ACACIA_LOG
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	 
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   dark_oak_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: DARK_OAK_LOG
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	 
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   crimson_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: CRIMSON_STEM
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	 
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   warped_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: WARPED_STEM
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   melon_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: MELON
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
+   pumpkin_drop:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: PUMPKIN
+         v: 2586
+         amount: 1
+      tools:
+       - netherite_axe	
+      minY: 1
+      maxY: 256
+      chance: 0.05
+      minAmount: 1
+      maxAmount: 1
    diamond_ore_vein:
       prefix: You sense a diamond nearby
       package:
