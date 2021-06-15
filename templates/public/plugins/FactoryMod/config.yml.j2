@@ -343,6 +343,62 @@ factories:
     recipes:
      - make_diamond_hoe
      - repair_diamond_hoe_factory
+  netherite_pick:
+    type: FCC
+    name: Netherite Pickaxe Smith
+    citadelBreakReduction: 1.0
+    setupcost:
+      netherite_ingot:
+        material: NETHERITE_INGOT
+        amount: 12
+      diamond:
+        material: DIAMOND
+        amount: 24
+    recipes:
+     - make_netherite_pick
+     - repair_netherite_pick_factory
+  netherite_axe:
+    type: FCC
+    name: Netherite Axe Smith
+    citadelBreakReduction: 1.0
+    setupcost:
+      netherite_ingot:
+        material: NETHERITE_INGOT
+        amount: 9
+      diamond:
+        material: DIAMOND
+        amount: 9
+    recipes:
+     - make_netherite_axe
+     - repair_netherite_axe_factory
+  netherite_shovel:
+    type: FCC
+    name: Netherite Shovel Smith
+    citadelBreakReduction: 1.0
+    setupcost:
+      netherite_ingot:
+        material: NETHERITE_INGOT
+        amount: 6
+      diamond:
+        material: DIAMOND
+        amount: 4
+    recipes:
+     - make_netherite_shovel
+     - repair_netherite_shovel_factory
+  netherite_hoe:
+    type: FCC
+    name: Netherite Hoe Smith
+    citadelBreakReduction: 1.0
+    setupcost:
+      netherite_ingot:
+        material: NETHERITE_INGOT
+        amount: 6
+      diamond:
+        material: DIAMOND
+        amount: 4
+    recipes:
+     - make_netherite_hoe
+     - repair_netherite_hoe_factory
   iron_tools:
     type: FCC
     name: Iron Tool Smith
@@ -1561,6 +1617,66 @@ recipes:
       diamond_shovel:
         material: DIAMOND_SHOVEL
         amount: 15
+  make_netherite_pick:
+    production_time: 4s
+    name: Make Netherite Pick
+    type: PRODUCTION
+    input:
+      netherite:
+        material: NETHERITE_INGOT
+        amount: 3
+      diamond:
+        material: DIAMOND
+        amount: 6
+    output:
+      netherite_pick:
+        material: NETHERITE_PICKAXE
+        amount: 8
+  make_netherite_axe:
+    production_time: 4s
+    name: Make Netherite Axe
+    type: PRODUCTION
+    input:
+      netherite:
+        material: NETHERITE_INGOT
+        amount: 3
+      diamond:
+        material: DIAMOND
+        amount: 6
+    output:
+      netherite_pick:
+        material: NETHERITE_AXE
+        amount: 8
+  make_netherite_shovel:
+    production_time: 4s
+    name: Make Netherite Shovel
+    type: PRODUCTION
+    input:
+      netherite:
+        material: NETHERITE_INGOT
+        amount: 2
+      diamond:
+        material: DIAMOND
+        amount: 4
+    output:
+      netherite_pick:
+        material: NETHERITE_SHOVEL
+        amount: 6
+  make_netherite_hoe:
+    production_time: 4s
+    name: Make Netherite Hoe
+    type: PRODUCTION
+    input:
+      netherite:
+        material: NETHERITE_INGOT
+        amount: 2
+      diamond:
+        material: DIAMOND
+        amount: 4
+    output:
+      netherite_pick:
+        material: NETHERITE_HOE
+        amount: 6
   make_bastion:
     production_time: 4s
     name: Make Bastion
@@ -3891,6 +4007,54 @@ recipes:
       diamond:
         material: DIAMOND
         amount: 3
+    health_gained: 10000
+  repair_netherite_pick_factory:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      netherite:
+        material: NETHERITE_INGOT
+        amount: 1
+      diamond:
+        material: DIAMOND
+        amount: 3
+    health_gained: 10000
+  repair_netherite_axe_factory:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      netherite:
+        material: NETHERITE_INGOT
+        amount: 1
+      diamond:
+        material: DIAMOND
+        amount: 1
+    health_gained: 10000
+  repair_netherite_shovel_factory:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      debris:
+        material: ANCIENT_DEBRIS
+        amount: 8
+      diamond:
+        material: DIAMOND
+        amount: 1
+    health_gained: 10000
+  repair_netherite_hoe_factory:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      debris:
+        material: ANCIENT_DEBRIS
+        amount: 8
+      diamond:
+        material: DIAMOND
+        amount: 1
     health_gained: 10000
   repair_bastion:
     production_time: 4s
