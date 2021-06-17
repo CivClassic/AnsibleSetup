@@ -838,6 +838,13 @@ factories:
      - grind_red_sandstone
      - crush_coarse
      - shave_snow
+     - crush_compacted_stone
+     - crush_compacted_cobble
+     - crush_compacted_gravel
+     - grind_compacted_sandstone
+     - grind_compacted_red_sandstone
+     - crush_compacted_coarse
+     - shave_compacted_snow
      - repair_grinding_mill
 #RECIPES
 recipes:
@@ -5897,6 +5904,22 @@ recipes:
       dirt:
         material: DIRT
         amount: 64
+  crush_compacted_coarse:
+    production_time: 4s
+    name: Crush Compacted Coarse Dirt
+    type: PRODUCTION
+    input:
+      coarse_dirt:
+        material: COARSE_DIRT
+        amount: 64
+        lore:
+          - Compacted Item
+    output:
+      dirt:
+        material: DIRT
+        amount: 64
+        lore:
+          - Compacted Item
   shave_snow:
     production_time: 4s
     name: Shave Snow from Ice
@@ -5909,6 +5932,22 @@ recipes:
       snow:
         material: SNOW_BLOCK
         amount: 64
+  shave_compacted_snow:
+    production_time: 4s
+    name: Shave Compacted Snow from Compacted Ice
+    type: PRODUCTION
+    input:
+      ice:
+        material: ICE
+        amount: 64
+        lore:
+          - Compacted Item
+    output:
+      snow:
+        material: SNOW_BLOCK
+        amount: 64
+        lore:
+          - Compacted Item
   crush_stone:
     production_time: 16s
     name: Crush Stone
@@ -5921,6 +5960,22 @@ recipes:
       cobblestone:
         material: COBBLESTONE
         amount: 32
+  crush_compacted_stone:
+    production_time: 16s
+    name: Crush Compacted Stone
+    type: PRODUCTION
+    input:
+      stone:
+        material: STONE
+        amount: 32
+        lore:
+          - Compacted Item
+    output:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 32
+        lore:
+          - Compacted Item
   crush_cobble:
     production_time: 4s
     name: Crush Cobblestone
@@ -5933,6 +5988,22 @@ recipes:
       gravel:
         material: GRAVEL
         amount: 32
+  crush_compacted_cobble:
+    production_time: 4s
+    name: Crush Compacted Cobblestone
+    type: PRODUCTION
+    input:
+      cobble:
+        material: COBBLESTONE
+        amount: 32
+        lore:
+          - Compacted Item
+    output:
+      gravel:
+        material: GRAVEL
+        amount: 32
+        lore:
+          - Compacted Item
   crush_gravel:
     production_time: 4s
     name: Crush Gravel
@@ -5945,6 +6016,22 @@ recipes:
       sand:
         material: SAND
         amount: 32
+  crush_compacted_gravel:
+    production_time: 4s
+    name: Crush Compacted Gravel
+    type: PRODUCTION
+    input:
+      gravel:
+        material: GRAVEL
+        amount: 32
+        lore:
+          - Compacted Item
+    output:
+      sand:
+        material: SAND
+        amount: 32
+        lore:
+          - Compacted Item
   grind_sandstone:
     production_time: 4s
     name: Grind Sandstone
@@ -5957,6 +6044,22 @@ recipes:
       sand:
         material: SAND
         amount: 64
+  grind_compacted_sandstone:
+    production_time: 4s
+    name: Grind Compacted Sandstone
+    type: PRODUCTION
+    input:
+      sandstone:
+        material: SANDSTONE
+        amount: 64
+        lore:
+          - Compacted Item
+    output:
+      sand:
+        material: SAND
+        amount: 64
+        lore:
+          - Compacted Item
   grind_red_sandstone:
     production_time: 4s
     name: Grind Red Sandstone
@@ -5967,8 +6070,24 @@ recipes:
         amount: 64
     output:
       red sand:
-        material: SAND
+        material: RED_SAND
         amount: 64
+  grind_compacted_red_sandstone:
+    production_time: 4s
+    name: Grind Compacted Red Sandstone
+    type: PRODUCTION
+    input:
+      red sandstone:
+        material: RED_SANDSTONE
+        amount: 64
+        lore:
+          - Compacted Item
+    output:
+      red sand:
+        material: RED_SAND
+        amount: 64
+        lore:
+          - Compacted Item
   repair_grinding_mill:
     production_time: 4s
     name: Repair Factory
