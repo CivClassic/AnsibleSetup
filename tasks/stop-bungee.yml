@@ -2,7 +2,7 @@
 #task to Stop bungee
 
 - name: Send shutdown command
-  shell: "tmux send -t {{ byobu_bungee_tab }} ENTER 'end Server Restarting' ENTER" 
+  shell: "tmux send -t {{ byobu_bungee_tab }} ENTER 'end Server Restarting, this may take up to 30 minutes.' ENTER" 
  
 - name: Wait for Shard to stop
   wait_for: "port={{ bungee_port }} state=absent timeout=300"
