@@ -23,7 +23,7 @@
 
 - name: Deploy Spigot
   include: "tasks/deploy-spigot.yml"
-  when: not use_paper
+  when: not use_paper and not use_tuinity
 
 - name: Deploy Paper
   include: "tasks/deploy-paper.yml"
