@@ -24,9 +24,11 @@ factories:
         amount: 512
     recipes:
      - smelt_stone
+     - smelt_stone_compacted
      - smelt_smooth_stone
      - smelt_cracked_stone_bricks
      - smelt_glass
+     - smelt_glass_compacted
      - smelt_glass_red
      - smelt_netherrack
      - smelt_red_netherbrick
@@ -111,6 +113,7 @@ factories:
      - dye_wool_green
      - dye_wool_red
      - dye_wool_black
+     - craft_wool
      - repair_wool
   dye_clay:
     type: FCC
@@ -137,6 +140,7 @@ factories:
      - dye_clay_green
      - dye_clay_red
      - dye_clay_black
+     - craft_clay
      - repair_clay
   dye_glass:
     type: FCC
@@ -163,6 +167,7 @@ factories:
      - dye_glass_green
      - dye_glass_red
      - dye_glass_black
+     - craft_glass_bottle
      - repair_glass
   grill:
     type: FCC
@@ -455,6 +460,7 @@ factories:
      - acacia_to_sapling
      - sapling_to_dark_oak
      - dark_oak_to_sapling
+     - bamboo_to_stick
      - make_crimson_fungus
      - make_warped_fungus
      - grow_mushroom_brown
@@ -482,6 +488,8 @@ factories:
      - make_horn_coral_block
      - make_wither_rose
      - make_bamboo
+     - make_bone_meal
+     - make_bone_block
      - repair_bio_lab
   carpentry:
     type: FCC
@@ -624,6 +632,7 @@ factories:
      - make_comparator
      - make_repeater
      - make_gearbox
+     - make_piston
      - repair_redstone
   bastion_factory:
     type: FCC
@@ -762,6 +771,7 @@ factories:
       - craft_printing_plate_json
       - print_book
       - print_note
+      - craft_paper
       - print_secure_note
       - repair_printer
       - craft_globe_banner_pattern
@@ -814,6 +824,8 @@ factories:
      - forge_gold_chestplates
      - forge_gold_leggings
      - forge_gold_boots
+     - forge_gold_ingot
+     - forge_gold_block
      - make_bell
      - repair_gold_forge
   grinding_mill:
@@ -853,6 +865,23 @@ recipes:
       stone:
         material: STONE
         amount: 96
+  smelt_stone_compacted:
+    forceInclude: true
+    production_time: 256s
+    name: Smelt Stone Compacted
+    type: PRODUCTION
+    input:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 64
+        lore:
+          - Compacted Item
+    output:
+      stone:
+        material: STONE
+        amount: 96
+        lore:
+          - Compacted Item
   smelt_smooth_stone:
     production_time: 4s
     name: Smelt Smooth Stone
@@ -1170,6 +1199,23 @@ recipes:
       glass:
         material: GLASS
         amount: 128
+  smelt_glass_compacted:
+    forceInclude: true
+    type: PRODUCTION
+    production_time: 256s
+    name: Smelt Glass Compacted
+    input:
+      sand:
+        material: SAND
+        amount: 64
+        lore:
+          - Compacted Item
+    output:
+      glass:
+        material: GLASS
+        amount: 128
+        lore:
+          - Compacted Item
   smelt_glass_red:
     type: PRODUCTION
     production_time: 4s
@@ -1963,6 +2009,19 @@ recipes:
       oak_sapling:
         material: OAK_SAPLING
         amount: 32
+  bamboo_to_stick:
+    forceInclude: true
+    production_time: 4s
+    name: Craft Bamboo into Sticks
+    type: PRODUCTION
+    input:
+      bamboo:
+        material: BAMBOO
+        amount: 128
+    output:
+      sticks:
+        material: STICK
+        amount: 64
   make_crimson_fungus:
     production_time: 4s
     name: Convert Red Mushrooms to Crimson Fungus
@@ -2014,6 +2073,19 @@ recipes:
       white_terracotta:
         material: WHITE_TERRACOTTA
         amount: 64
+  craft_clay:
+    forceInclude: true
+    production_time: 4s
+    name: Craft Clay
+    type: PRODUCTION
+    input:
+      clay_ball:
+        material: CLAY_BALL
+        amount: 64
+    output:
+      clay_block:
+        material: CLAY
+        amount: 16
   dye_clay_orange:
     production_time: 4s
     name: Dye Clay Orange
@@ -2254,6 +2326,19 @@ recipes:
       orange_wool:
         material: ORANGE_WOOL
         amount: 64
+  craft_wool:
+    forceInclude: true
+    production_time: 4s
+    name: Craft Wool
+    type: PRODUCTION
+    input:
+      string:
+        material: STRING
+        amount: 64
+    output:
+      wool:
+        material: WHITE_WOOL
+        amount: 16
   dye_wool_magenta:
     production_time: 4s
     name: Dye Wool Magenta
@@ -2479,6 +2564,19 @@ recipes:
       white_glass:
         material: WHITE_STAINED_GLASS
         amount: 64
+  craft_glass_bottle:
+    forceInclude: true
+    production_time: 4s
+    name: Craft Glass Bottle
+    type: PRODUCTION
+    input:
+      glass:
+        material: GLASS
+        amount: 192
+    output:
+      bottle:
+        material: GLASS_BOTTLE
+        amount: 192
   dye_glass_orange:
     production_time: 4s
     name: Dye Glass Orange
@@ -3832,6 +3930,28 @@ recipes:
       repeater:
         material: REPEATER
         amount: 96
+  make_piston:
+    forceInclude: true
+    production_time: 4s
+    name: Make Pistons
+    type: PRODUCTION
+    input:
+      redstone:
+        material: REDSTONE
+        amount: 64
+      iron_ingot:
+        material: IRON_INGOT
+        amount: 64
+      cobblestone:
+        material: COBBLESTONE
+        amount: 256
+      oak_planks:
+        material: OAK_PLANKS
+        amount: 192
+    output:
+      piston:
+        material: PISTON
+        amount: 96
   repair_redstone:
     production_time: 4s
     name: Repair Factory
@@ -4546,6 +4666,32 @@ recipes:
       bamboo:
         material: BAMBOO
         amount: 8
+  make_bone_meal:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bone Meal
+    type: PRODUCTION
+    input:
+      bone:
+        material: BONE
+        amount: 64
+    output:
+      bone_meal:
+        material: BONE_MEAL
+        amount: 192
+  make_bone_block:
+    forceInclude: true
+    production_time: 4s
+    name: Make Bone Block
+    type: PRODUCTION
+    input:
+      bone_meal:
+        material: BONE_MEAL
+        amount: 180
+    output:
+      bone_block:
+        material: BONE_BLOCK
+        amount: 20
   make_wither_rose:
     forceInclude: true
     production_time: 4s
@@ -6015,6 +6161,18 @@ recipes:
       books:
         material: WRITABLE_BOOK
         amount: 12
+  craft_paper:
+    type: PRODUCTION
+    name: Craft Paper
+    production_time: 4s
+    input:
+      sugarcane:
+        material: SUGARCANE
+        amount: 192
+    output:
+      paper:
+        material: PAPER
+        amount: 192
   craft_printing_plate:
     type: PRINTINGPLATE
     name: Craft Printing Plate
@@ -7609,7 +7767,7 @@ recipes:
         amount: 6
     outputs:
       ub3_eff4:
-        chance: 0.20000000000000000
+        chance: 0.15000000000000000
         ub3_eff4:
           material: GOLDEN_HOE
           amount: 1
@@ -7621,7 +7779,7 @@ recipes:
               enchant: efficiency
               level: 4
       ub3_for3:
-        chance: 0.15000000000000000
+        chance: 0.10000000000000000
         ub3_for3:
           material: GOLDEN_HOE
           amount: 1
@@ -7633,7 +7791,7 @@ recipes:
               enchant: fortune
               level: 3
       ub3_silk:
-        chance: 0.15000000000000000
+        chance: 0.10000000000000000
         ub3_silk:
           material: GOLDEN_HOE
           amount: 1
@@ -7645,7 +7803,7 @@ recipes:
               enchant: silk_touch
               level: 1
       ub3:
-        chance: 0.40000000000000000
+        chance: 0.35000000000000000
         ub3:
           material: GOLDEN_HOE
           amount: 1
@@ -7654,7 +7812,7 @@ recipes:
               enchant: unbreaking
               level: 3
       ub3_for3_eff4:
-        chance: 0.10000000000000000
+        chance: 0.05000000000000000
         ub3_for3_eff4:
           material: GOLDEN_HOE
           amount: 1
@@ -7669,7 +7827,7 @@ recipes:
               enchant: efficiency
               level: 4
       ub3_silk_eff4:
-        chance: 0.10000000000000000
+        chance: 0.05000000000000000
         ub3_silk_eff4:
           material: GOLDEN_HOE
           amount: 1
@@ -7684,7 +7842,7 @@ recipes:
               enchant: efficiency
               level: 4
       ub3_eff5:
-        chance: 0.10000000000000000
+        chance: 0.05000000000000000
         ub3_eff5:
           material: GOLDEN_HOE
           amount: 1
@@ -7729,7 +7887,7 @@ recipes:
               enchant: efficiency
               level: 5
       ub4:
-        chance: 0.10000000000000000
+        chance: 0.05000000000000000
         ub4:
           material: GOLDEN_HOE
           amount: 1
@@ -8448,4 +8606,29 @@ recipes:
             ds:
               enchant: DEPTH_STRIDER
               level: 3
-              
+  forge_gold_ingot:
+    forceInclude: true
+    type: PRODUCTION
+    name: Forge Gold Ingot
+    production_time: 4s
+    input:
+      gold_nugget:
+        material: GOLD_NUGGET
+        amount: 180
+    output:
+      gold_ingot:
+        material: GOLD_INGOT
+        amount: 20
+  forge_gold_block:
+    forceInclude: true
+    type: PRODUCTION
+    name: Forge Gold Block
+    production_time: 4s
+    input:
+      gold_nugget:
+        material: GOLD_INGOT
+        amount: 180
+    output:
+      gold_ingot:
+        material: GOLD_BLOCK
+        amount: 20
