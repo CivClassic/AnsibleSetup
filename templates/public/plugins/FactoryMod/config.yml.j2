@@ -829,6 +829,9 @@ factories:
       chest:
         material: CHEST
         amount: 256
+      flint:
+        material: FLINT
+        amount: 64
     recipes:
      - crush_stone
      - crush_cobble
@@ -5897,17 +5900,20 @@ recipes:
         material: SNOW_BLOCK
         amount: 64
   crush_stone:
-    production_time: 16s
+    production_time: 4s
     name: Crush Stone
     type: PRODUCTION
     input:
       stone:
         material: STONE
         amount: 32
+      flint:
+        material: FLINT
+        amount: 2
     output:
       cobblestone:
         material: COBBLESTONE
-        amount: 32
+        amount: 24
   crush_cobble:
     production_time: 4s
     name: Crush Cobblestone
@@ -5916,10 +5922,13 @@ recipes:
       cobble:
         material: COBBLESTONE
         amount: 32
+      flint:
+        material: FLINT
+        amount: 2
     output:
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
   crush_gravel:
     production_time: 4s
     name: Crush Gravel
@@ -5928,10 +5937,13 @@ recipes:
       gravel:
         material: GRAVEL
         amount: 32
+      flint:
+        material: FLINT
+        amount: 2
     output:
       sand:
         material: SAND
-        amount: 32
+        amount: 8
   grind_sandstone:
     production_time: 4s
     name: Grind Sandstone
@@ -5940,6 +5952,9 @@ recipes:
       sandstone:
         material: SANDSTONE
         amount: 64
+      flint:
+        material: FLINT
+        amount: 1
     output:
       sand:
         material: SAND
@@ -5952,6 +5967,9 @@ recipes:
       red sandstone:
         material: RED_SANDSTONE
         amount: 64
+      flint:
+        material: FLINT
+        amount: 1
     output:
       red sand:
         material: SAND
@@ -5967,6 +5985,9 @@ recipes:
       leather:
         material: LEATHER
         amount: 4
+      flint:
+        material: FLINT
+        amount: 16
     health_gained: 10000      
 
   bind_books:
