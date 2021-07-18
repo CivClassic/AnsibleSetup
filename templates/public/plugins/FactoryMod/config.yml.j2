@@ -715,7 +715,6 @@ factories:
      - adv_xp_5
      - adv_xp_6
      - uncarve_pumpkins
-     - uncarve_compacted_pumpkins
      - wither_skull
      - make_energizer
      - repair_advanced_cauldron
@@ -4565,23 +4564,6 @@ recipes:
       pumpkins:
         material: PUMPKIN
         amount: 64
-  uncarve_compacted_pumpkins:
-    forceInclude: true
-    production_time: 1s
-    name: Uncarve Pumpkins
-    type: PRODUCTION
-    input:
-      carved_pumpkins:
-        material: CARVED_PUMPKIN
-        amount: 8
-        lore:
-          - Compacted Item
-    output:
-      pumpkins:
-        material: PUMPKIN
-        amount: 8
-        lore:
-          - Compacted Item
   make_bell:
     forceInclude: true
     production_time: 4s
