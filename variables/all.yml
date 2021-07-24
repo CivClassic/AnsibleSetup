@@ -39,7 +39,7 @@ use_paper: false
 use_tuinity: true
 
 #Mysql socket location, you likely want to changes this something like "/var/run/mysqld/mysqld.sock". You can find the correct path in '/etc/my.cnf' under [mysqld] --> socket
-mysql_socket_location: "/home/mysql/mysqld.sock"
+mysql_socket_location: "/var/run/mysqld/mysqld.sock"
 
 #Plugins to deploy, including jar and config files. Plugins may be removed or commented out of this list without issue
 plugins:
