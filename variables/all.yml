@@ -133,7 +133,7 @@ mc_version: "1.17.1"
 #Version of PaperMC to use
 paper_version: "131"
 #Version of Tuinity to use
-tuinity_version: "26"
+tuinity_version: "31"
 #Raw Bungee version, used in the URL of Waterfall downloads
 raw_bungee_version: 1.17
 #Specific waterfall version to use
