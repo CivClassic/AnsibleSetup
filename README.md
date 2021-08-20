@@ -1,5 +1,5 @@
 # AnsibleSetup
-Civclassic 1.16.1 Ansible setup
+Civclassic 1.17.1 Ansible setup
 
 
 ## How to deploy:

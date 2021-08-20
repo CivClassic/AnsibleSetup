@@ -82,6 +82,7 @@ blocks:
       dropList:
       - coal_ore_transform
       - iron_ore_transform
+      - copper_ore_transform
       - redstone_ore_transform
       - gold_ore_transform
       - lapis_ore_transform
@@ -204,17 +205,28 @@ drops:
          amount: 1
       minY: 1
       maxY: 256
-      chance: 0.015
+      chance: 0.0083
       minAmount: 1
       maxAmount: 4
       transformIfAble: true
       biomes:
          MESA:
-            chance: 0.01
+            chance: 0.0055
          MESA_ROCK:
-            chance: 0.01
+            chance: 0.0055
          MESA_CLEAR_ROCK:
-            chance: 0.01
+            chance: 0.0055
+   copper_ore_transform:
+      package:
+      -  ==: org.bukkit.inventory.ItemStack
+         type: COPPER_ORE
+         amount: 1
+      minY: 1
+      maxY: 96
+      chance: 0.0035
+      minAmount: 2
+      maxAmount: 6
+      transformIfAble: true
    gold_ore_transform:
       package:
       -  ==: org.bukkit.inventory.ItemStack
@@ -222,7 +234,7 @@ drops:
          amount: 1
       minY: 1
       maxY: 70
-      chance: 0.0035
+      chance: 0.0019
       minAmount: 1
       maxAmount: 4
       transformIfAble: true

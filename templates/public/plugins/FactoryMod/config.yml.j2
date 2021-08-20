@@ -25,6 +25,7 @@ factories:
     recipes:
      - smelt_stone
      - smelt_smooth_stone
+     - smelt_deepslate
      - smelt_cracked_stone_bricks
      - smelt_glass
      - smelt_glass_red
@@ -85,6 +86,10 @@ factories:
      - make_basalt
      - make_blackstone
      - make_crying_obsidian
+     - make_budding_amethyst
+     - make_calcite
+     - make_cobbled_deepslate
+     - make_tuff
      - repair_aesthetics
   dye_wool:
     type: FCC
@@ -162,6 +167,7 @@ factories:
      - dye_glass_green
      - dye_glass_red
      - dye_glass_black
+     - tint_glass
      - repair_glass
   grill:
     type: FCC
@@ -219,9 +225,10 @@ factories:
         amount: 64
     recipes:
      - smelt_coal_ore
-     - smelt_iron_ore
+     - smelt_raw_copper
+     - smelt_raw_iron
      - smelt_diamond_ore
-     - smelt_gold_ore
+     - smelt_raw_gold
      - smelt_redstone_ore
      - smelt_lapis_ore
      - make_refractor
@@ -235,9 +242,10 @@ factories:
     recipes:
      - adv_smelt_ancient_debris
      - smelt_coal_ore
-     - smelt_iron_ore
+     - smelt_raw_copper
+     - smelt_raw_iron
      - smelt_diamond_ore
-     - adv_smelt_gold_ore
+     - adv_smelt_raw_gold
      - adv_smelt_redstone_ore
      - adv_smelt_lapis_ore
      - make_refractor
@@ -442,6 +450,8 @@ factories:
      - dirt_to_grass
      - dirt_to_podzol
      - dirt_to_mycelium
+     - dirt_to_moss_block
+     - dirt_to_rooted_dirt
      - netherrack_to_crimson_nylium
      - netherrack_to_warped_nylium
      - sapling_to_spruce
@@ -481,6 +491,10 @@ factories:
      - make_horn_coral_block
      - make_wither_rose
      - make_bamboo
+     - sweet_berries_to_glow_berries
+     - make_small_dripleaf
+     - make_glow_lichen
+     - make_pointed_dripstone
      - repair_bio_lab
   carpentry:
     type: FCC
@@ -715,6 +729,7 @@ factories:
      - adv_xp_5
      - adv_xp_6
      - uncarve_pumpkins
+     - uncarve_compacted_pumpkins
      - wither_skull
      - make_energizer
      - repair_advanced_cauldron
@@ -837,6 +852,35 @@ factories:
      - crush_coarse
      - shave_snow
      - repair_grinding_mill
+  copper_workshop:
+    type: FCC
+    name: Copper Workshop
+    citadelBreakReduction: 1.0
+    setupcost:
+      copper_block:
+        material: COPPER_BLOCK
+        amount: 64
+      exposed_copper:
+        material: EXPOSED_COPPER
+        amount: 64
+      weathered_copper:
+        material: WEATHERED_COPPER
+        amount: 64
+      oxidized_copper:
+        material: OXIDIZED_COPPER
+        amount: 64
+      honeycomb:
+        material: HONEYCOMB
+        amount: 32
+    recipes:
+     - wax_copper_block
+     - wax_exposed_copper
+     - wax_weathered_copper
+     - wax_oxidized_copper
+     - weather_copper_block
+     - weather_exposed_copper
+     - weather_weathered_copper
+     - repair_copper_workshop
 #RECIPES
 recipes:
   smelt_stone:
@@ -863,6 +907,18 @@ recipes:
       stone:
         material: SMOOTH_STONE
         amount: 80
+  smelt_deepslate:
+    production_time: 4s
+    name: Smelt Deepslate
+    type: PRODUCTION
+    input:
+      cobbled_deepslate:
+        material: COBBLED_DEEPSLATE
+        amount: 64
+    output:
+      deepslate:
+        material: DEEPSLATE
+        amount: 96
   smelt_cracked_stone_bricks:
     production_time: 4s
     name: Smelt Cracked Stone Bricks
@@ -1021,18 +1077,30 @@ recipes:
       coal:
         material: COAL
         amount: 256
-  smelt_iron_ore:
+  smelt_raw_copper:
     production_time: 4s
-    name: Smelt Iron Ore
+    name: Smelt Raw Copper
     type: PRODUCTION
     input:
-      iron_ore:
-        material: IRON_ORE
+      raw_copper:
+        material: RAW_COPPER
+        amount: 64
+    output:
+      copper:
+        material: COPPER_INGOT
+        amount: 96
+  smelt_raw_iron:
+    production_time: 4s
+    name: Smelt Raw Iron
+    type: PRODUCTION
+    input:
+      raw_iron:
+        material: RAW_IRON
         amount: 64
     output:
       iron:
         material: IRON_INGOT
-        amount: 96
+        amount: 80
   smelt_diamond_ore:
     production_time: 4s
     name: Smelt Diamond Ore
@@ -1045,30 +1113,30 @@ recipes:
       diamond:
         material: DIAMOND
         amount: 48
-  smelt_gold_ore:
+  smelt_raw_gold:
     production_time: 4s
-    name: Smelt Gold Ore
+    name: Smelt Raw Gold
     type: PRODUCTION
     input:
-      gold_ore:
-        material: GOLD_ORE
-        amount: 32
-    output:
-      gold:
-        material: GOLD_INGOT
-        amount: 48
-  adv_smelt_gold_ore:
-    production_time: 4s
-    name: Advanced Smelt Gold Ore
-    type: PRODUCTION
-    input:
-      gold_ore:
-        material: GOLD_ORE
-        amount: 32
-    output:
-      gold:
-        material: GOLD_INGOT
+      raw_gold:
+        material: RAW_GOLD
         amount: 64
+    output:
+      gold:
+        material: GOLD_INGOT
+        amount: 80
+  adv_smelt_raw_gold:
+    production_time: 4s
+    name: Advanced Smelt Raw Gold
+    type: PRODUCTION
+    input:
+      raw_gold:
+        material: RAW_GOLD
+        amount: 64
+    output:
+      gold:
+        material: GOLD_INGOT
+        amount: 112
   smelt_redstone_ore:
     production_time: 4s
     name: Smelt Redstone Ore
@@ -1799,6 +1867,30 @@ recipes:
       mycelium:
         material: MYCELIUM
         amount: 64
+  dirt_to_moss_block:
+    production_time: 4s
+    name: Convert Dirt to Moss Block
+    type: PRODUCTION
+    input:
+      dirt:
+        material: DIRT
+        amount: 64
+    output:
+      moss_block:
+        material: MOSS_BLOCK
+        amount: 64
+  dirt_to_rooted_dirt:
+    production_time: 4s
+    name: Convert Dirt to Rooted Dirt
+    type: PRODUCTION
+    input:
+      dirt:
+        material: DIRT
+        amount: 64
+    output:
+      rooted_dirt:
+        material: ROOTED_DIRT
+        amount: 64        
   netherrack_to_crimson_nylium:
     production_time: 4s
     name: Convert Netherrack to Crimson Nylium
@@ -2689,6 +2781,21 @@ recipes:
     output:
       black_glass:
         material: BLACK_STAINED_GLASS
+        amount: 64
+  tint_glass:
+    production_time: 4s
+    name: Tint Glass
+    type: PRODUCTION
+    input:
+      glass:
+        material: GLASS
+        amount: 64
+      amethyst_shard:
+        material: AMETHYST_SHARD
+        amount: 16
+    output:
+      tinted_glass:
+        material: TINTED_GLASS
         amount: 64
   mix_concrete_white:
     production_time: 4s
@@ -4532,6 +4639,72 @@ recipes:
       bamboo:
         material: BAMBOO
         amount: 8
+  sweet_berries_to_glow_berries:
+    production_time: 4s
+    name: Convert Sweet berries to Glow berries
+    type: PRODUCTION
+    input:
+      sweet_berries:
+        material: SWEET_BERRIES
+        amount: 8
+      glowstone_dust:
+        material: GLOWSTONE_DUST
+        amount: 8
+    output:
+      bamboo:
+        material: GLOW_BERRIES
+        amount: 8
+  make_small_dripleaf:
+    production_time: 4s
+    name: Make Small Dripleaf
+    type: PRODUCTION
+    input:
+      sugar_cane:
+        material: SUGAR_CANE
+        amount: 8
+      lily_pad:
+        material: LILY_PAD
+        amount: 8
+    output:
+      small_dripleaf:
+        material: SMALL_DRIPLEAF
+        amount: 8
+  make_glow_lichen:
+    production_time: 4s
+    name: Make Glow Lichen
+    type: PRODUCTION
+    input:
+      red_mushroom:
+        material: RED_MUSHROOM
+        amount: 8
+      brown_mushroom:
+        material: BROWN_MUSHROOM
+        amount: 8
+      glowstone_dust:
+        material: GLOWSTONE_DUST
+        amount: 8
+    output:
+      glow_lichen:
+        material: GLOW_LICHEN
+        amount: 8
+  make_pointed_dripstone:
+    production_time: 4s
+    name: Make Pointed Dripstone
+    type: PRODUCTION
+    input:
+      calcite:
+        material: CALCITE
+        amount: 8
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      pointed_dripstone:
+        material: POINTED_DRIPSTONE
+        amount: 8
+      bucket:
+        material: BUCKET
+        amount: 1
   make_wither_rose:
     forceInclude: true
     production_time: 4s
@@ -4564,6 +4737,23 @@ recipes:
       pumpkins:
         material: PUMPKIN
         amount: 64
+  uncarve_compacted_pumpkins:
+    forceInclude: true
+    production_time: 1s
+    name: Uncarve Pumpkins
+    type: PRODUCTION
+    input:
+      carved_pumpkins:
+        material: CARVED_PUMPKIN
+        amount: 8
+        lore:
+          - Compacted Item
+    output:
+      pumpkins:
+        material: PUMPKIN
+        amount: 8
+        lore:
+          - Compacted Item
   make_bell:
     forceInclude: true
     production_time: 4s
@@ -5854,6 +6044,66 @@ recipes:
       crying_obsidian:
         material: CRYING_OBSIDIAN
         amount: 128
+  make_budding_amethyst:
+    production_time: 4s
+    name: Make Budding Amethyst
+    type: PRODUCTION
+    input:
+      quartz:
+        material: QUARTZ_BLOCK
+        amount: 64
+      purple_dye:
+        material: PURPLE_DYE
+        amount: 8
+    output:
+      budding_amethyst:
+        material: BUDDING_AMETHYST
+        amount: 16
+  make_calcite:
+    production_time: 4s
+    name: Make Calcite
+    type: PRODUCTION
+    input:
+      bone:
+        material: BONE
+        amount: 16
+      coal:
+        material: COAL
+        amount: 16
+    output:
+      calcite:
+        material: CALCITE
+        amount: 64
+  make_cobbled_deepslate:
+    production_time: 4s
+    name: Make Cobbled Deepslate
+    type: PRODUCTION
+    input:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 64
+    output:
+      cobbled_deepslate:
+        material: COBBLED_DEEPSLATE
+        amount: 64
+  make_tuff:
+    production_time: 4s
+    name: Make Tuff
+    type: PRODUCTION
+    input:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 64
+      lava:
+        material: LAVA_BUCKET
+        amount: 1
+    output:
+      tuff:
+        material: TUFF
+        amount: 64
+      bucket:
+        material: BUCKET
+        amount: 1
   crush_coarse:
     production_time: 4s
     name: Crush Coarse Dirt
@@ -5949,8 +6199,142 @@ recipes:
       leather:
         material: LEATHER
         amount: 4
-    health_gained: 10000      
-
+    health_gained: 10000
+  wax_copper_block:
+    production_time: 4s
+    name: Wax Copper Block
+    type: PRODUCTION
+    input:
+      copper_block:
+        material: COPPER_BLOCK
+        amount: 64
+      honeycomb:
+        material: HONEYCOMB
+        amount: 4
+    output:
+      waxed_copper_block:
+        material: WAXED_COPPER_BLOCK
+        amount: 64
+  wax_exposed_copper:
+    production_time: 4s
+    name: Wax Exposed Copper
+    type: PRODUCTION
+    input:
+      exposed_copper:
+        material: EXPOSED_COPPER
+        amount: 64
+      honeycomb:
+        material: HONEYCOMB
+        amount: 4
+    output:
+      waxed_exposed_copper:
+        material: WAXED_EXPOSED_COPPER
+        amount: 64
+  wax_weathered_copper:
+    production_time: 4s
+    name: Wax Weathered Copper
+    type: PRODUCTION
+    input:
+      weathered_copper:
+        material: WEATHERED_COPPER
+        amount: 64
+      honeycomb:
+        material: HONEYCOMB
+        amount: 4
+    output:
+      waxed_weathered_copper:
+        material: WAXED_WEATHERED_COPPER
+        amount: 64
+  wax_oxidized_copper:
+    production_time: 4s
+    name: Wax Oxidized Copper
+    type: PRODUCTION
+    input:
+      oxidized_copper:
+        material: OXIDIZED_COPPER
+        amount: 64
+      honeycomb:
+        material: HONEYCOMB
+        amount: 4
+    output:
+      waxed_oxidized_copper:
+        material: WAXED_OXIDIZED_COPPER
+        amount: 64
+  weather_copper_block:
+    production_time: 4s
+    name: Weather Copper Block
+    type: PRODUCTION
+    input:
+      copper_Block:
+        material: COPPER_BLOCK
+        amount: 64
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      exposed_copper:
+        material: EXPOSED_COPPER
+        amount: 64
+      bucket:
+        material: BUCKET
+        amount: 1
+  weather_exposed_copper:
+    production_time: 4s
+    name: Weather Exposed Copper
+    type: PRODUCTION
+    input:
+      exposed_copper:
+        material: EXPOSED_COPPER
+        amount: 64
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      weathered_copper:
+        material: WEATHERED_COPPER
+        amount: 64
+      bucket:
+        material: BUCKET
+        amount: 1
+  weather_weathered_copper:
+    production_time: 4s
+    name: Weather Weathered Copper
+    type: PRODUCTION
+    input:
+      weathered_copper:
+        material: WEATHERED_COPPER
+        amount: 64
+      water_bucket:
+        material: WATER_BUCKET
+        amount: 1
+    output:
+      oxidized_copper:
+        material: OXIDIZED_COPPER
+        amount: 64
+      bucket:
+        material: BUCKET
+        amount: 1
+  repair_copper_workshop:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      copper_block:
+        material: COPPER_BLOCK
+        amount: 16
+      exposed_copper:
+        material: EXPOSED_COPPER
+        amount: 16
+      weathered_copper:
+        material: WEATHERED_COPPER
+        amount: 16
+      oxidized_copper:
+        material: OXIDIZED_COPPER
+        amount: 16
+      honeycomb:
+        material: HONEYCOMB
+        amount: 16
+    health_gained: 10000
   bind_books:
     type: PRODUCTION
     name: Bind Books
