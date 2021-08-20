@@ -1,0 +1,52 @@
+enabled: true
+chunkLimits:
+  enabled: true
+  exceededMessage: '&9Limit (%Limit%) reached for this chunk, you cannot place more of this type of block (%Material%).'
+  tileEntities:
+    HOPPER: 16
+#        PISTON: 8 Limiting pistons doesn't actually work, because all the blocks being moved are counted as the piston entities
+#        STICKY_PISTON: 8 So this just makes it so you can't have flying machines, etc 
+#        MOVING_PISTON: 8 Without actually stopping placement of pistons
+#        PISTON_HEAD: 8
+    DISPENSER: 16
+    DROPPER: 16
+    COMPARATOR: 12
+    FURNACE: 40
+    BLAST_FURNACE: 40
+    BREWING_STAND: 40
+    SMOKER: 40
+    CAMPFIRE: 40
+    SOUL_CAMPFIRE: 40
+  exempt:
+  - Steve
+  - Alex
+daytimeBed:
+  enabled: true
+  spawnSetMessage: '&bYour spawn has been set.'
+rainReduction:
+  enabled: true
+  rainOccurrenceChance: .5
+# Makes nether ratio 1 to 1
+oneToOneNether: false
+# Return nether portal, true = enabled    false = disabled
+returnNetherPortal: true
+allowNetherTravel: false
+# Disables minecart inventories (trying to fix dupe issues)
+# enabled = able to right click   disabled = not able to right click
+chestedMinecartInventories: true #These were false to prevent a chestcart dupe, think it's patched now?
+hopperMinecartInventories: true #These were false to prevent a chestcart dupe, think it's patched now?
+enderChestInventories: false
+stopTrapHorses: true
+killTrapHorses: true
+changeSpawnerType: false
+allowVillagerTrading: false
+enderGrief: false
+witherGrief: false
+dragonGrief: true
+allowEnchantedApples: false
+preventFallingThroughBedrock: true
+# Disable the Bad Omen effect that player receive when killing pillager patrols
+badOmen: false
+#a list of materials players shouldn't be allowed to place at all
+noplace:
+  #- GRINDSTONE Leaving here so future dev's know the config format for this

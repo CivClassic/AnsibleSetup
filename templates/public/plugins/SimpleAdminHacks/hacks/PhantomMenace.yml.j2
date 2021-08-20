@@ -1,0 +1,13 @@
+enabled: true
+# Players have a statistic called TIME_SINCE_REST. If a player's value is above 72k (3 days minecraft time) then
+# they will start spawning phantoms. Setting the cap to below 72k will effectively disable phantoms. Setting the
+# cap to -1 will disable the cap. Default: 80k (10% chance per two minutes during the night and thunder storms.)
+# Read more here: https://minecraft.gamepedia.com/Phantom#Java_Edition
+timeSinceRestCap: 75000
+# Determines whether phantoms are allowed to spawn during the night.
+nightSpawn: true
+# Determines whether phantoms are allowed to spawn during thunder storms.
+stormSpawn: true
+# Determines the maximum light level at the spawning entity's location that phantoms are allowed to spawn at.
+# Note: 15 will enable spawning at all light levels.
+maximumLightSpawn: 7
