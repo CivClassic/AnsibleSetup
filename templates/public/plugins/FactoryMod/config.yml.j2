@@ -685,7 +685,6 @@ factories:
      - basic_xp_2
      - basic_xp_3
      - basic_xp_4
-     - uncarve_pumpkins
      - wither_skull
      - upgrade_to_intermediate_cauldron
      - repair_basic_cauldron
@@ -698,7 +697,6 @@ factories:
      - int_xp_2
      - int_xp_3
      - int_xp_4
-     - uncarve_pumpkins
      - wither_skull
      - make_energizer
      - upgrade_to_advanced_cauldron
@@ -714,7 +712,6 @@ factories:
      - adv_xp_4
      - adv_xp_5
      - adv_xp_6
-     - uncarve_pumpkins
      - wither_skull
      - make_energizer
      - repair_advanced_cauldron
@@ -4551,19 +4548,6 @@ recipes:
       wither_rose:
         material: WITHER_ROSE
         amount: 1
-  uncarve_pumpkins:
-    forceInclude: true
-    production_time: 1s
-    name: Uncarve Pumpkins
-    type: PRODUCTION
-    input:
-      carved_pumpkins:
-        material: CARVED_PUMPKIN
-        amount: 64
-    output:
-      pumpkins:
-        material: PUMPKIN
-        amount: 64
   make_bell:
     forceInclude: true
     production_time: 4s
