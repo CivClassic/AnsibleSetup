@@ -59,6 +59,7 @@ plugins:
  - ConditionalCommands
  - CraftEnhance
  - Donum
+ - EntityDetection
  - EssenceGlue
  - ExilePearl
  - FactoryMod
