@@ -19,6 +19,7 @@ java -server \
  -XX:SurvivorRatio=32 \
  -XX:+PerfDisableSharedMem \
  -XX:MaxTenuringThreshold=1 \
+ -Xlog:gc*:logs/gc.log:time,uptime:filecount=5,filesize=1M \
  -Dusing.aikars.flags=https://mcflags.emc.gs \
  -Daikars.new.flags=true -jar \
  -Xmx{{ shard_mem }} -Xms{{ shard_mem }} \
