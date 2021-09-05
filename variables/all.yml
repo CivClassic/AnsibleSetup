@@ -27,7 +27,7 @@ mc_port: "{{ internal_port }}"
 bungee_port: "{{ external_port }}"
 
 #How much memory is used by the server
-shard_mem: 52G
+shard_mem: 51G
 
 #How much memory is used by bungee
 bungee_mem: 2048M
