@@ -81,6 +81,8 @@ plugins:
  - Spark
  - SuperVanish
  - Vault
+ - ViaBackwards
+ - ViaVersion
  - Votifier #This is actually NuVotifier
  - WDLCompanion
  - WorldBorder
@@ -91,8 +93,6 @@ plugins:
 bungee_plugins:
  - BungeeGuard
  - Spark
- - ViaBackwards
- - ViaVersion
 
 #--------------------------------------
 #Unless you know what you are doing you probably don't want to touch anything below this line
