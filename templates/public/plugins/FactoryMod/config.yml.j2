@@ -792,6 +792,22 @@ factories:
      - mix_concrete_green
      - mix_concrete_red
      - mix_concrete_black
+     - harden_concrete_white
+     - harden_concrete_orange
+     - harden_concrete_magenta
+     - harden_concrete_light_blue
+     - harden_concrete_yellow
+     - harden_concrete_lime
+     - harden_concrete_pink
+     - harden_concrete_gray
+     - harden_concrete_light_gray
+     - harden_concrete_cyan
+     - harden_concrete_purple
+     - harden_concrete_blue
+     - harden_concrete_brown
+     - harden_concrete_green
+     - harden_concrete_red
+     - harden_concrete_black
      - repair_mixer
   gold_forge:
     type: FCC
@@ -2696,10 +2712,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       white_dye:
         material: WHITE_DYE
         amount: 4
@@ -2714,10 +2730,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       orange_dye:
         material: ORANGE_DYE
         amount: 4
@@ -2732,10 +2748,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       magenta_dye:
         material: MAGENTA_DYE
         amount: 4
@@ -2750,10 +2766,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       light_blue_dye:
         material: LIGHT_BLUE_DYE
         amount: 4
@@ -2768,10 +2784,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       yellow_dye:
         material: YELLOW_DYE
         amount: 4
@@ -2786,10 +2802,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       lime_dye:
         material: LIME_DYE
         amount: 4
@@ -2804,10 +2820,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       pink_dye:
         material: PINK_DYE
         amount: 4
@@ -2822,10 +2838,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       gray_dye:
         material: GRAY_DYE
         amount: 4
@@ -2840,10 +2856,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       light_gray_dye:
         material: LIGHT_GRAY_DYE
         amount: 4
@@ -2858,10 +2874,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       cyan_dye:
         material: CYAN_DYE
         amount: 4
@@ -2876,10 +2892,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       purple_dye:
         material: PURPLE_DYE
         amount: 4
@@ -2894,10 +2910,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       blue_dye:
         material: BLUE_DYE
         amount: 4
@@ -2912,10 +2928,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       brown_dye:
         material: BROWN_DYE
         amount: 4
@@ -2930,10 +2946,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       green_dye:
         material: GREEN_DYE
         amount: 4
@@ -2948,10 +2964,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       red_dye:
         material: RED_DYE
         amount: 4
@@ -2966,10 +2982,10 @@ recipes:
     input:
       sand:
         material: SAND
-        amount: 32
+        amount: 16
       gravel:
         material: GRAVEL
-        amount: 32
+        amount: 16
       black_dye:
         material: BLACK_DYE
         amount: 4
@@ -2977,6 +2993,310 @@ recipes:
       black_concrete:
         material: BLACK_CONCRETE_POWDER
         amount: 64
+  harden_concrete_white:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden White Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: WHITE_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: WHITE_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_orange:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Orange Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: ORANGE_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: ORANGE_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_magenta:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Magenta Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: MAGENTA_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: MAGENTA_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_light_blue:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Light Blue Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: LIGHT_BLUE_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: LIGHT_BLUE_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_yellow:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Yellow Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: YELLOW_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: YELLOW_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_lime:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Lime Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: LIME_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: LIME_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_pink:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Pink Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: PINK_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: PINK_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_gray:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Gray Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: GRAY_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: GRAY_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_light_gray:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Light Gray Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: LIGHT_GRAY_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: LIGHT_GRAY_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_cyan:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Cyan Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: CYAN_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: CYAN_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_purple:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Purple Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: PURPLE_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: PURPLE_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_blue:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Blue Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: BLUE_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: BLUE_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_brown:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Brown Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: BROWN_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: BROWN_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_green:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Green Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: GREEN_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: GREEN_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_red:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Red Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: RED_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: RED_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
+  harden_concrete_black:
+    production_time: 4s
+    fuel_consumption_intervall: 99999s
+    name: Harden Black Concrete
+    type: PRODUCTION
+    input:
+      concrete_powder:
+        material: BLACK_CONCRETE_POWDER
+        amount: 64
+      water_bucket:
+        materia: WATER_BUCKET
+        amount: 1
+    output:
+      concrete:
+        material: BLACK_CONCRETE
+        amount: 64
+      empty_bucket:
+        materia: BUCKET
+        amount: 1
   repair_stone_smelter:
     production_time: 4s
     name: Repair Factory
