@@ -103,9 +103,27 @@ hacks:
       - '["",{"text":"[CivClassic] ","color":"gold"},{"text":"You may not give another player access to any of your accounts. If you share an account with a friend, you and that friend will be considered the same person.","color":"green"}]'
   ElytraFeatures:
     enabled: true
+    # Whether Elytra flight should be outright disabled
     disableFlight: false
-    disableFireworkBoosting: false
+    # Whether Elytra flight should be disabled in combat
     disableFlightInCombat: false
+    # Whether firework boosting should be outright disabled
+    disableFireworkBoosting: false
+    # Whether firework boosting should be disabled in combat
+    disableFireworkBoostingInCombat: true
+    # Whether to restrict firework boosting to explosive fireworks
+    disableSafeFireworkBoosting: false
+    # This regulates player damage when Elytra flying above world height.
+    heightDamage:
+      # The amount of damage (in half-hearts) the flier should take.
+      # NOTE: Setting to 0 will disable the damage.
+      damage: 1
+      # The damage is multiplied by the number of blocks above world height multiplied by this number.
+      scales: 1.0
+      # The amount of blocks above height limit where damage is not applied.
+      buffer: 5
+      # The interval (in milliseconds) between damage ticks.
+      interval: 1000
   EventDebugHack:
     enabled: true
   EventHandlerList:
