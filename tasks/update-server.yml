@@ -1,13 +1,14 @@
 ---
 #task to update the server
 
+
+- name: "Create {{ servername }} Plugins Directory"
+  file: "path={{ full_server_folder }}/plugins state=directory owner={{ username }} mode=0755"
+
 - name: "Copy {{ servername }} top level public templates"
   template: "src={{ templates }}/public/{{ item }}.j2 dest={{ full_server_folder }}/{{ item }} \
              owner={{ username }} mode='u=rw,g=r,o=r'"
   with_items: "{{ top_level_templates }}"
-
-- name: Make startup script executable
-  file: dest={{ full_server_folder }}/{{ startup_script }} mode=u+x
   
 - name: "Copy {{ servername }} top level private templates"
   template: "src={{ templates }}private/{{ item }}.j2 dest={{ full_server_folder }}/{{ item }} \
