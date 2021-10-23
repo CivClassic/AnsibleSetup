@@ -11,6 +11,10 @@ hacks:
     enabled: true
     laggLenciency: 1.5
     breakDenyDuration: 3000
+  #Prevents pearls from landing that have been in flight for more than the configured amount of time
+  AntiStatisChamber:
+    enabled: true
+    pearlLifetime: 2m
   ArthropodEggHack:
     enabled: true
     eggChance: 0.03
@@ -127,6 +131,8 @@ hacks:
   EventDebugHack:
     enabled: true
   EventHandlerList:
+    enabled: true
+  GoldBlockElevators:
     enabled: true
   HumbugBatchOne:
     enabled: true
@@ -323,7 +329,6 @@ hacks:
     obsidianGenerators: true
     personalDeathMessages: false
     disableNetheriteCrafting: false
-    goldBlockTeleport: false
   GameFixes:
     enabled: true
     # Does not fully work atm
