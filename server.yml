@@ -40,10 +40,14 @@
    - name: Backup server
      include: "tasks/backup-server.yml"
      when: "{{ do_backup | default('false') }}"
+     
+   - name: Update Server
+     include: "tasks/update-server.yml"
+     when: "{{ (do_update | default('false')) }}"
 
    - name: Deploy Server
      include: "tasks/deploy-server.yml"
-     when: "{{ (do_update | default('false')) or (do_deploy | default('false')) }}"
+     when: "{{ (do_deploy | default('false')) }}"
 
    - name: Start BungeeCord
      include: "tasks/start-bungee.yml"
