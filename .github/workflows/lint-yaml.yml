@@ -21,3 +21,6 @@ jobs:
                 spaces: consistent
                 indent-sequences: consistent
                 level: warning
+              hyphens:
+                max-sapces-after: 1
+              trailing-spaces: {}
