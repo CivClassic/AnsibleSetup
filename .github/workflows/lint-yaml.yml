@@ -19,4 +19,5 @@ jobs:
             rules:
               indentation:
                 spaces: consistent
+                indent-sequences: consistent
                 level: warning
