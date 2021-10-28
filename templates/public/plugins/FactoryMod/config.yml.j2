@@ -28,6 +28,8 @@ factories:
      - smelt_cracked_stone_bricks
      - smelt_glass
      - smelt_glass_red
+     - synth_tnt
+     - synth_tnt_red
      - smelt_netherrack
      - smelt_red_netherbrick
      - smelt_bricks
@@ -1211,6 +1213,36 @@ recipes:
       glass:
         material: GLASS
         amount: 128
+  synth_tnt:
+    type: PRODUCTION
+    production_time: 8s
+    name: Synthesize TNT
+    input:
+      sand:
+        material: SAND
+        amount: 256
+      gunpowder:
+        material: GUNPOWDER
+        amount: 64
+    output:
+      tnt:
+        material: TNT
+        amount: 64
+  synth_tnt_red:
+    type: PRODUCTION
+    production_time: 8s
+    name: Synthesize TNT
+    input:
+      sand:
+        material: RED_SAND
+        amount: 256
+      gunpowder:
+        material: GUNPOWDER
+        amount: 64
+    output:
+      tnt:
+        material: TNT
+        amount: 64
   smelt_netherrack:
     production_time: 4s
     name: Smelt Netherrack
