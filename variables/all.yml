@@ -33,10 +33,10 @@ shard_mem: 48G
 bungee_mem: 3072M
 
 #Use PaperMC instead of Spigot?
-use_paper: false
+use_paper: true
 
 #Use Tuinity instead of Spigot or Paper? IF USING THIS SETTING, SET PAPER TO FALSE
-use_tuinity: true
+use_tuinity: false
 
 #Mysql socket location, you likely want to changes this something like "/var/run/mysqld/mysqld.sock". You can find the correct path in '/etc/my.cnf' under [mysqld] --> socket
 mysql_socket_location: "/var/run/mysqld/mysqld.sock"
@@ -132,7 +132,7 @@ bungee_secret_top_level_templates:
 #Minecraft version
 mc_version: "1.16.5"
 #Version of PaperMC to use
-paper_version: "787"
+paper_version: "791"
 #Version of Tuinity to use
 tuinity_version: "241"
 #Raw Bungee version, used in the URL of Waterfall downloads
