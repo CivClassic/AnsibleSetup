@@ -240,7 +240,7 @@ velocity:
 damageModifiers: 
 #Decrease all damage by 20 % 
   ALL:
-    multiplier: 0.8
+    multiplier: 0.75
     mode: DIRECT
 #Increase sword damage by 25 %
   SHARPNESS_ENCHANT:
@@ -251,10 +251,10 @@ damageModifiers:
     multiplier: 1.0
   CRIT:
     mode: DIRECT
-    multiplier: 1.0
+    multiplier: 0.8
   STRENGTH_EFFECT:
     mode: DIRECT
-    multiplier: 1.0
+    multiplier: 0.9
     
 invulTicksEnabled: false #disabled because currently it messes up invulnerability with other damage types
 invulnerableTicks:
@@ -263,4 +263,4 @@ invulnerableTicks:
   POISON: 1
   PROJECTILE: 1
   DROWNING: 1
-  ENTITY_ATTACK: 9
+  ENTITY_ATTACK: 10
